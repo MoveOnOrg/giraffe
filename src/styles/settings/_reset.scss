@@ -4,3 +4,10 @@
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
 }
+
+& {
+  font-family: 'Roboto Regular', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: $black;
+}
