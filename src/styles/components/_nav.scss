@@ -45,6 +45,7 @@
     position: absolute;
     top: 22px;
     right: 22px;
+    left: auto;
     z-index: 900;
     @include respond((
       display: block null none,
