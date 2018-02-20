@@ -14,9 +14,9 @@ deploy:
     branch: main
   provider: s3
   access_key_id: AKIAITZUUGIJNKLB4PHA
-  bucket: s3.moveon.org
+  bucket: static.moveon.org
   skip_cleanup: true
-  region: us-east-1
+  region: us-east-2
   acl: public_read
   local_dir: deploy
   upload-dir: giraffe
