@@ -6,7 +6,7 @@ let gulp = require('gulp');
 module.exports = {
 
   fn: async function () {
-    return gulp.src('src/fonts/**/*.*',)
+    return gulp.src('src/fonts/**/*.*')
         .pipe(gulp.dest('public/fonts'));
   },
 
