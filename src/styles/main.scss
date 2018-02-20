@@ -2,7 +2,6 @@
 @import "settings/breakpoints";
 @import "settings/colors";
 @import "settings/typography";
-@import "settings/reset";
 
 // MIXINS
 @import "mixins/breakpoint";
@@ -16,6 +15,7 @@
 @import 'components/buttons';
 
 .giraffe {
+  @import "settings/reset";
 
   // COMPONENTS
   @import 'components/container';
