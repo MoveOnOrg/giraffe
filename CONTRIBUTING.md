@@ -1,8 +1,5 @@
 # Contributing
 
-Development server is [http://moveon-dev.netlify.com](http://moveon-dev.netlify.com).
-
-
 ## Development Requirements
 - Node v7.10.1 and above
 - NPM
@@ -13,13 +10,9 @@ Development server is [http://moveon-dev.netlify.com](http://moveon-dev.netlify.
 
 - Clone this repository.
 - Install node dependencies: `npm install`
+- Edit .env to set `ENV=LOCAL`
 - Run `gulp watch` to boot up local development server and build tools. Normally this would boot up `localhost:3000`, or whichever port is available.
 - Get some coffee. Shake up. Start coding :).
-
-## Deployment
-
-Pushed commits are automatically deployed to the development server, along with the compressed public files.
-
 
 ## Build
 
@@ -27,12 +20,10 @@ Run `gulp` to compile all the source files into the `public` folder.
 
 Run `yarn zip` to create a compressed zip file. This is saved as `moveon.zip` in the `public` folder.
 
-> This steps may not be necessary as the deployment automatically creates downloadable zip file in the development server: [http://moveon-dev.netlify.com/moveon.zip](http://moveon-dev.netlify.com/moveon.zip)
-
 
 ## Files and Directories
 
-All the edittable files are located inside the `src` folder.  
+All the editable files are located inside the `src` folder.  
 
 The local server files are located inside the `public` folder.
 
