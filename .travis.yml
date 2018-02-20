@@ -11,7 +11,7 @@ before_deploy:
   - cp -r public/styles deploy/
 deploy:
   on:
-    branch: 8-cors-headers
+    branch: main
   provider: s3
   access_key_id: AKIAITZUUGIJNKLB4PHA
   bucket: static.moveon.org
