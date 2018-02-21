@@ -8,11 +8,11 @@
 @import "mixins/respond";
 @import "mixins/aspect-ratio";
 @import "mixins/clearfix";
+@import "mixins/buttons";
 
 // CONFIGS
 @include define-breakpoints($breakpoints);
 
-@import 'components/buttons';
 
 .giraffe {
   @import "settings/reset";
@@ -20,6 +20,7 @@
   // COMPONENTS
   @import 'components/container';
   @import 'components/headings';
+  @import 'components/buttons';
   @import 'components/lists';
   @import 'components/links';
   @import 'components/blockquote';
