@@ -87,13 +87,13 @@ $bouncy-easing: cubic-bezier(.43,2.9,.64,.99);
       &--edit {
         width: 18px;
         height: 18px;
-        background-image: url('/images/icons/edit.svg');
+        background-image: url('../images/icons/edit.svg');
       }
 
       &--completed {
         width: 18px;
         height: 14px;
-        background-image: url('/images/icons/check.svg');
+        background-image: url('../images/icons/check.svg');
       }
     }
 
