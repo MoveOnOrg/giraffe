@@ -6,10 +6,6 @@
     max-width: 1180px;
     margin: auto;
     border-top: 1px solid rgba(34, 34, 34, 0.38);
-    @include respond((
-      display: block null block,
-      padding: (100px 30px 170px) null (100px 0 170px),
-    ));
   }
 
 
