@@ -1,0 +1,87 @@
+// HELPER MIXINS
+// Used to apply different buttons variations by color:
+//   btn--transparent
+//   btn--transparent-dark
+//   btn--transparent-light
+//   btn--azure
+// ------------------------------------------------
+
+@mixin include-links() {
+  &,
+  &:link,
+  &:visited,
+  &:active {
+    @content;
+  }
+}
+
+@mixin btn--transparent() {
+  @include include-links {
+    background-color: transparent;
+    color: $black;
+
+    svg {
+      fill: $black;
+    }
+
+    &:hover {
+      color: $azure;
+
+      svg {
+        fill: $azure;
+      }
+    }
+  }
+}
+
+@mixin btn--transparent-dark() {
+  background-color: transparent;
+  color: $black;
+
+  svg {
+    fill: $black;
+  }
+
+  &:hover {
+    color: $white;
+
+    svg {
+      fill: $white;
+    }
+  }
+}
+
+@mixin btn--transparent-light() {
+  @include include-links {
+    background-color: transparent;
+    color: $white;
+
+    svg {
+      fill: $white;
+    }
+
+    &:hover {
+      color: $azure;
+
+      svg {
+        fill: $azure;
+      }
+    }
+  }
+}
+
+@mixin btn--azure() {
+  background-color: $azure;
+  color: $white;
+
+  &:hover {
+    color: $white;
+    background-color: $cerulean;
+  }
+
+  // DISABLED
+  &[disabled] {
+    background-color: rgba(0, 0, 0, 0.12);
+    color: transparentize($black, 1-.26);
+  }
+}
