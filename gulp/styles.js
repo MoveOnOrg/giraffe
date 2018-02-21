@@ -8,6 +8,7 @@ let combineMq = require('gulp-combine-mq');
 let autoprefixer = require('gulp-autoprefixer');
 let cleanCSS = require('gulp-clean-css');
 let notifier = require('node-notifier');
+var preprocess = require('gulp-preprocess');
 
 let isDev = isLocal || isDevelopment ? true : false;
 let src = projectRoot('src/styles/main.scss');
@@ -20,6 +21,15 @@ module.exports = {
             .pipe(onStreamError('Styles Task Failed!'))
             .pipe(gulpif( isDev, sourcemaps.init() ))
             .pipe(sass().on('error', sass.logError))
+            .pipe(
+              preprocess({
+                context: {
+                  FONT_PATH: isProduction
+                    ? 'https://s3.us-east-2.amazonaws.com/static.moveon.org/giraffe/'
+                    : '/'
+                }
+              })
+            )
               .pipe( gulpif( isProduction, combineMq()) )
               .pipe( gulpif( isProduction, autoprefixer()) )
               .pipe( gulpif( isProduction, cleanCSS()) )

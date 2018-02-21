@@ -14,6 +14,7 @@
     "gulp": "^3.9.1",
     "gulp-font": "^1.0.4",
     "gulp-imagemin": "^4.1.0",
+    "gulp-preprocess": "^2.0.0",
     "gulp-svg-sprite": "^1.3.7",
     "gulp-tasks-preset": "^0.3.4",
     "gulp-twig": "^1.1.1",
