@@ -42,7 +42,8 @@
   }
 }
 
-body {
+// You can use either a '.giraffe>body' or a .giraffe#wrapper to add padding for the nav
+body, &#wrapper {
   @include respond((
     padding-top: 57px null 120px,
   ));
