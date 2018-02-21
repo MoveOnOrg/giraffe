@@ -3,6 +3,7 @@ node_js:
 - 7.10.1
 before_script:
 - npm install -g gulp-cli
+- export ENV=production
 script: gulp
 before_deploy:
   - cp -r public/fonts deploy/
