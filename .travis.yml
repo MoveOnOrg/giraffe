@@ -4,11 +4,6 @@ node_js:
 before_script:
 - npm install -g gulp-cli
 script: gulp
-before_deploy:
-  - cp -r public/fonts deploy/
-  - cp -r public/images deploy/
-  - cp -r public/scripts deploy/
-  - cp -r public/styles deploy/
 deploy:
   on:
     branch: main
@@ -18,7 +13,7 @@ deploy:
   skip_cleanup: true
   region: us-east-2
   acl: public_read
-  local_dir: deploy
+  local_dir: public
   upload-dir: giraffe
   secret_access_key:
     secure: NSVq3yaM3TfVtZ5DYYPhpPqgT+eNyi8xYwt/pDLfTZBpXewUAWAME7jGxzPzRO2h7gPQVH1JZTd3fufnu5BY0zhFmMDe8LgDVlxS7IoBI+ah+4RE61kkVSa7JAMstLMcDXPma0qDBGj5VniAcQ8DjfUR3kZ/MpRJ+sHzPF24QJTq34BlQOKwsjmu8TuBilP+kzjOI6kjZsn2q0bDeNeZdypvvFrm+61YpGafPOUuVLff/1vgSJd7bL0M6xHn0Ubk4JKzOG4/Vbcn+Gk33lHZclYyuhSnJe1N3ueuW3B4TvEEPOnClQfvgzH28q36VOHHWAFXazRD6xRhJAWxuwOHOjQCibEWxMpDPY7Fbt7aVffJBWb8sQJvR+AiXvsi4HrhJNVPCen/pPYRni2u0Rf6WY+ieCYluoipjmS+l85DUgrcb3VOqOKt5PCBPS87e/+gCoH89sV6RKwtQG+LL7outhVJ4g86qDc7zVsYFGwyj65j2yfNFbeompdMdQfVY1jMt0uOMej/6N43XmuC2VePF/SxYvfzmQGjRUznlkGWByQ41aFoauCFPv2P7r3iD6wNgnQAZdKjQrcDcyKTC1lHePhvnYbWujZYXc10a8oLn6trYYMuBaro0kk7LyRY3JOiyhfq5BE8XHAsAALgYe3Gf8xDvj+GngzeRny9YwaRTo8=

@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>{% block title %}Move On Styleguide{% endblock %}</title>
-        <link rel="stylesheet" href="/styles/vendors.css" />
-        <link rel="stylesheet" href="/styles/main.css" />
-        <link rel="stylesheet" href="/styles/styleguide.css" />
+        <link rel="stylesheet" href="styles/vendors.css" />
+        <link rel="stylesheet" href="styles/main.css" />
+        <link rel="stylesheet" href="styles/styleguide.css" />
     </head>
     <body class="giraffe {% block bodyclass %}styleguide {% endblock %}">
         <div style="display:none">{% include 'components/symbol/svg/sprite.symbol.svg' %}</div>
@@ -296,13 +296,13 @@
                     </div>
                     <div class="styleguide-round-image">
                         <div class="round-image">
-                            <img src="/images/testimonial-image.jpg" alt="">
+                            <img src="images/testimonial-image.jpg" alt="">
                         </div>
                     </div>
                 {% endblock %}
 {% block markup %}
 <div class="round-image">
-    <img src="/images/testimonial-image.jpg" alt="">
+    <img src="images/testimonial-image.jpg" alt="">
 </div>
 {% endblock %}
             {% endembed %}
@@ -313,7 +313,7 @@
                 {% block content %}
                     <div class="styleguide-media">
                         <div class="media">
-                          <img src="/images/petition-card-media.jpg" alt="">
+                          <img src="images/petition-card-media.jpg" alt="">
                           <button class="mo-btn media__play"></button>
                           <div class="media__meta">
                             Posted by MoveOn <br>
@@ -324,7 +324,7 @@
                 {% endblock %}
 {% block markup %}
 <div class="media">
-  <img src="/images/petition-card-media.jpg" alt="">
+  <img src="images/petition-card-media.jpg" alt="">
   <button class="mo-btn media__play"></button>
   <div class="media__meta">
     Posted by MoveOn <br>
@@ -338,8 +338,8 @@
 
         </div>
 
-        <script src="/scripts/vendors.js"></script>
-        <script src="/scripts/app.js"></script>
+        <script src="scripts/vendors.js"></script>
+        <script src="scripts/app.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
     </body>
 </html>
