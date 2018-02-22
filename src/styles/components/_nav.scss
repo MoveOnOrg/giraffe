@@ -99,7 +99,7 @@
 
     &:hover,
     &:active {
-      color: $azure;
+      color: $azure !important;
 
       svg {
         fill: $azure;
