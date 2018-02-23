@@ -95,6 +95,9 @@
       @include respond((
         color: $black null $white,
       ));
+      &:hover {
+        color: $azure;
+      }
     }
 
     &:hover,
