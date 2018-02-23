@@ -95,11 +95,14 @@
       @include respond((
         color: $black null $white,
       ));
+      &:hover {
+        color: $azure;
+      }
     }
 
     &:hover,
     &:active {
-      color: $azure !important;
+      color: $azure;
 
       svg {
         fill: $azure;
