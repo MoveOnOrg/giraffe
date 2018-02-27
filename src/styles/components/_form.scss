@@ -9,7 +9,7 @@ form {
       line-height: 20px,
     ));
 
-    &:not(:first-of-type) {
+    &:not(:first-of-type), &.override-collapse {
       @include respond((
         margin-top: 30px,
       ));
@@ -80,7 +80,9 @@ form {
       left: 0;
       transition: all .3s;
       transform-origin: top left;
+      font-weight: normal;
       @include respond((
+        font-size: 14px null 16px,
         display: flex,
         align-items: center,
         height: 100%,
