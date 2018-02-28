@@ -4,7 +4,7 @@ node_js:
 before_script:
 - npm install -g gulp-cli
 script: gulp
-before-deploy:
+before_deploy:
 - cp -r public/images deploy/
 - cp -r public/scripts deploy/
 - cp -r public/styles deploy/
