@@ -29,7 +29,7 @@ deploy:
     access_key_id: AKIAITZUUGIJNKLB4PHA
     bucket: mop-static-stage
     skip_cleanup: true
-    region: us-east-2
+    region: us-west-1
     acl: public_read
     local_dir: deploy
     upload-dir: giraffe
