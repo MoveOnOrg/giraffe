@@ -90,7 +90,7 @@
       @include font(roboto-condensed-bold);
     }
 
-    &:link,
+    &,
     &:visited {
       @include respond((
         color: $black null $white,
@@ -177,7 +177,7 @@
 
     @include breakpoint(lg) {
       &:hover {
-        & > a:link,
+        & > a,
         & > a:visited,
         & > a:active, {
           color: $azure;
