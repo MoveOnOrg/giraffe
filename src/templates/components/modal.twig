@@ -1,6 +1,9 @@
 <div
   class="mo-modal {% block modal_class %}{% endblock %}"
   id="{% block modal_id %}{% endblock %}"
+  {% if modal_on %}
+    style="display:block"
+  {% endif %}
 >
   <div class="mo-modal__backdrop"></div>
 
