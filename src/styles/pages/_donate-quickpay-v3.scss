@@ -5,7 +5,7 @@
     }
 
     .donate-form__fields {
-      display: block !important;
+      display: block !important; /* override display: flex from donate-v3 */
       border-bottom: 0;
 
       .donate-quickpay-form {
@@ -31,7 +31,7 @@
         max-width: none;
 
         .radio-input-other.radio-input-other {
-          margin-left: 0 !important;
+          margin-left: 0 !important /* override left margin from donate-v3*/;
           margin-top: 24px;
         }
       }
