@@ -18,6 +18,15 @@
 
           <div class="stylguide-content">
 
+            {# SECTIONS #}
+            {% embed 'styleguide/block' %}
+                {% block heading %}External Sections{% endblock %}
+                {% block content %}
+                <ul>
+                   <li><a href="styleguide-forms.html">Form Elements</a>
+                </ul>
+                {% endblock %}
+            {% endembed %}
 
             {# COLOR PALETTE #}
             {% embed 'styleguide/block' %}
