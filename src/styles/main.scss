@@ -16,6 +16,7 @@
 
 .giraffe {
   @import "settings/reset";
+  @import "bootstrap/bootstrap-grid.scss";
 
   // COMPONENTS
   @import 'components/container';
