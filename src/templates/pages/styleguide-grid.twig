@@ -19,22 +19,31 @@
           <div class="stylguide-content">
 
 
-            {# Section Stuff #}
-            {% embed 'styleguide/block' %}
+
+            
+            
+            {# Section Center columns #}
+            {% embed 'styleguide/block' with markup%}
                 {% block heading %}Center columns{% endblock %}
                 {% block content %}
                     <div class="styleguide-centered-columns">
-                      <div class="row">
-                        <div class="col-md-6 col-md-push-3">
-                          <p>This is a centered column</p>
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-6 col-md-push-3">
+                            <p>This is a centered column, note the class col-md-push-3 which push the column 6 spaces to the left.</p>
+                          </div>
                         </div>
                       </div>
                     </div>
                 {% endblock %}
                 {% block markup %}
-                  <div class="col-md-6 col-md-push-3">
-                    <p>This is a centered column</p>
-                  </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-push-3">
+      <p>This is a centered column</p>
+    </div>
+  </div>
+</div>
                 {% endblock %}
             {% endembed %}
 
