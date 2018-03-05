@@ -14,6 +14,7 @@
 @include define-breakpoints($breakpoints);
 
 body {
+  // All styles here must be compatible with moui.css
   margin: 0;
 }
 
