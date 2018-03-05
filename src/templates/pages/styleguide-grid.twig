@@ -1,0 +1,49 @@
+{% set markup = { blocks: ['markup']} %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">                <meta charset="utf-8">
+        <title>{% block title %}Grid - Move On Styleguide{% endblock %}</title>
+        <link rel="stylesheet" href="styles/vendors.css" />
+        <link rel="stylesheet" href="styles/main.css" />
+        <link rel="stylesheet" href="styles/styleguide.css" />
+    </head>
+    <body class="giraffe {% block bodyclass %}styleguide {% endblock %}">
+        <div style="display:none">{% include 'components/symbol/svg/sprite.symbol.svg' %}</div>
+        <div class="wrapper">
+
+          {% include 'styleguide/header' %}
+
+          <div class="stylguide-content">
+
+
+            {# Section Stuff #}
+            {% embed 'styleguide/block' %}
+                {% block heading %}Center columns{% endblock %}
+                {% block content %}
+                    <div class="styleguide-centered-columns">
+                      <div class="row">
+                        <div class="col-md-6 col-md-push-3">
+                          <p>This is a centered column</p>
+                        </div>
+                      </div>
+                    </div>
+                {% endblock %}
+                {% block markup %}
+                  <div class="col-md-6 col-md-push-3">
+                    <p>This is a centered column</p>
+                  </div>
+                {% endblock %}
+            {% endembed %}
+
+          </div>
+
+        </div>
+
+        <script src="scripts/vendors.js"></script>
+        <script src="scripts/app.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</html>
