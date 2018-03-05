@@ -97,6 +97,7 @@
 
       .radio-input {
         margin-right: 0;
+        box-sizing: border-box;
 
         &:nth-child(2) {
           @include respond((

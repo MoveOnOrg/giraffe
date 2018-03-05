@@ -152,6 +152,7 @@
       margin-right: 0;
       margin-left: auto;
       background-color: transparent;
+      box-sizing: border-box;
       @include respond((
         margin-left: null null 4px,
       ));
