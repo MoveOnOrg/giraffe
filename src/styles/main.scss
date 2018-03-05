@@ -13,6 +13,9 @@
 // CONFIGS
 @include define-breakpoints($breakpoints);
 
+body {
+  margin: 0;
+}
 
 .giraffe {
   @import "settings/reset";
