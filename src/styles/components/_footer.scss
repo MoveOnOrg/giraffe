@@ -89,6 +89,10 @@
             line-height: 36px,
             color: $white,
           ));
+
+          &:hover{
+            color: $azure;
+          }
         }
       }
     }
@@ -123,6 +127,10 @@
           color: $white,
           margin-top: 6px null 0,
         ));
+
+        &:hover {
+          color: $azure;
+        }
       }
 
 
@@ -202,6 +210,10 @@
           margin-top: 1em,
           color: $white,
         ));
+      }
+
+      &:hover {
+        color: $azure;
       }
 
       svg {
