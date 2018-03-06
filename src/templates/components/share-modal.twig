@@ -47,12 +47,16 @@ Thanks!
 
 
     <div class="share-modal__links">
-      <a href="#" class="mo-btn share-modal__link">
-        {% include 'components/svg' with {id: 'twitter'} only %} Twitter
-      </a>
-      <a href="#" class="mo-btn share-modal__link">
-        {% include 'components/svg' with {id: 'link'} only %} Copy Link
-      </a>
+      <div class="mo-btn share-modal__link">
+        <a href="#">
+          {% include 'components/svg' with {id: 'twitter'} only %} Twitter
+        </a>
+      </div>
+      <div class="mo-btn share-modal__link">
+        <a href="#">
+          {% include 'components/svg' with {id: 'link'} only %} Copy Link
+        </a>
+      </div>
     </div>
 
   </div>
