@@ -103,32 +103,27 @@
 
 
   &__text {
-    overflow: auto;
+    cursor: default;
     @include respond((
       background-color: $white,
       margin-top: 25px null 38px,
       padding: 15px null (26px 32px),
       height: 167px,
+      width: 100%,
       border: (1px solid $azure) null,
     ));
 
 
-    p {
-      @include font(roboto);
+    @include font(roboto);
+    @include respond((
+      font-size: 11px null 12px,
+      line-height: 15px null 18px,
+    ));
+
+    &:not(:first-child) {
       @include respond((
-        font-size: 11px null 12px,
-        line-height: 15px null 18px,
+        margin-top: 1.2em,
       ));
-
-      &:not(:first-child) {
-        @include respond((
-          margin-top: 1.2em,
-        ));
-      }
-
-      a:hover {
-        color: $cerulean;
-      }
     }
   }
 
