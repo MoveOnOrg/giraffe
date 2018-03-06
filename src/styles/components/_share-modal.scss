@@ -142,20 +142,9 @@
     ));
   }
 
-
-  &__link:link,
-  &__link:visited,
-  &__link:active {
-    color: $azure;
+  &__link {
+    @include respond((display: flex null inline-flex));
     justify-content: flex-start;
-    text-transform: none;
-    color: $azure;
-    @include font(roboto);
-    @include respond((
-      display: flex null inline-flex,
-      font-size: 12px null 14px,
-      line-height: 20px,
-    ));
 
     &:not(:first-child) {
       @include respond((
@@ -164,11 +153,27 @@
       ));
     }
 
-    &:hover {
-      color: $cerulean;
+    a,
+    a:visited,
+    a:active {
+      @include respond((
+        font-size: 12px null 14px,
+        line-height: 20px,
+      ));
+      display: flex;
+      color: $azure;
+      align-items: center;
+      justify-content: flex-start;
+      text-transform: none;
+      color: $azure;
+      @include font(roboto);
 
-      svg {
-        fill: $cerulean;
+      &:hover {
+        color: $cerulean;
+
+        svg {
+          fill: $cerulean;
+        }
       }
     }
 
@@ -182,4 +187,5 @@
       ));
     }
   }
+
 }
