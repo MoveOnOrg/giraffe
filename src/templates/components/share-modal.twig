@@ -13,14 +13,18 @@
     <p><strong>Share</strong></p>
 
     <div class="share-modal__cta-group">
-      <a href="#" class="share-modal__cta">
-        {% include 'components/svg' with {id: 'mail'} only %}
-        Email Petition
-      </a>
-      <a href="#" class="share-modal__cta">
-        {% include 'components/svg' with {id: 'facebook'} only %}
-        Share on Facebook
-      </a>
+      <div class="share-modal__cta">
+        <a href="#">
+          {% include 'components/svg' with {id: 'mail'} only %}
+          Email Petition
+        </a>
+      </div>
+      <div class="share-modal__cta">
+        <a href="#">
+          {% include 'components/svg' with {id: 'facebook'} only %}
+          Share on Facebook
+        </a>
+      </div>
     </div>
 
     <p>Or <a href="#" class="share-modal__copy">copy</a> and paste the text below into a message:</p>
