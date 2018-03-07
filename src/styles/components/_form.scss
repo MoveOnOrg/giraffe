@@ -51,7 +51,19 @@ form {
         border: 0,
         border-bottom: (2px solid transparentize($black, 1-0.42)) null,
       ));
-
+      &[multiple] {
+        height:4em;
+        ~ label {
+          @include respond((
+            transform: (scale(.8) translateY(-4em)) null (scale(.8) translateY(-3.8em)),
+          ));
+        }
+        &:focus ~ label {
+          @include respond((
+            transform: (scale(.8) translateY(-4em)) null (scale(.8) translateY(-3.8em)),
+          ));
+        }
+      }
       &:invalid:focus {
         box-shadow: none;
       }
