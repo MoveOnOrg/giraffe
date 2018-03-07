@@ -103,7 +103,6 @@
     background-color: $azure;
     transition: background-color .3s;
     position: relative;
-    box-sizing: border-box;
     @include respond((
       overflow: hidden null visible,
       width: null null percentage(665px/$bp-xl),
