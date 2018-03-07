@@ -323,7 +323,62 @@ form {
     display: inline-table;
     text-align: center;
   }
+  
+  button {
+    &.btn {
+      font-size: 18px;
+      @include btn--azure;
+      padding: 5px 10px;
+      min-width: 100px;
 
+      svg {
+        width: 14px;
+        height: 14px;
+        color: inherit;
+        fill: currentcolor;
+        margin-left: 10px;
+      }
+
+      &.azure {
+        @include btn--azure;
+
+        &:hover {
+
+          svg {
+            fill: $white;
+          }
+        }
+      }
+
+      &.transparent {
+        @include btn--transparent;
+
+        &:hover {
+          color: $white;
+        }
+      }
+
+      &.transparent-dark {
+        @include btn--transparent-dark;
+
+        &:hover {
+          color: $white;
+        }
+      }
+
+      &.transparent-light {
+        @include btn--transparent-light;
+
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .buttons {
+    margin:1.4em 0;
+  }
 
 }
 
