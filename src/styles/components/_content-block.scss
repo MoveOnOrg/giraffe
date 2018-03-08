@@ -1,0 +1,59 @@
+.content-block {
+  &.background {
+    background-color: $light-blue;
+    padding:1em;
+    &.background-white {
+      background-color: $white;
+    }
+    &.background-off-white {
+      background-color: $off-white;
+    }
+    &.background-gray {
+      background-color: $gray;
+    }
+    &.background-light-gray {
+      background-color: $light-gray;
+    }
+    &.background-slate-gray {
+      background-color: $slate-gray;
+      color: $white;
+    }
+    &.background-dark-gray-38 {
+      background-color: $dark-gray-38;
+      color: $white;
+    }
+    &.background-dark-gray {
+      background-color: $dark-gray;
+      color: $white;
+    }
+    &.background-light-gray {
+      background-color: $light-gray;
+      color: $white;
+    }
+    &.background-black {
+      background-color: $black;
+      color: $white;
+    }
+    &.background-off-deep-sea-blue {
+      background-color: $deep-sea-blue;
+      color: $white;
+    }
+    &.background-off-cerulean {
+      background-color: $cerulean;
+      color: $white;
+    }
+    &.background-off-azure {
+      background-color: $azure;
+    }
+    &.background-off-light-blue {
+      background-color: $light-blue;
+    }
+    &.background-off-ice-blue {
+      background-color: $ice-blue;
+    }
+    &.background-off-red {
+      background-color: $red;
+      color: $white;
+    }
+  }
+}

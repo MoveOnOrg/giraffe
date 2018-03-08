@@ -1,0 +1,85 @@
+{% set markup = { blocks: ['markup']} %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">                <meta charset="utf-8">
+        <title>{% block title %}Form Elements - Move On Styleguide{% endblock %}</title>
+        <link rel="stylesheet" href="styles/vendors.css" />
+        <link rel="stylesheet" href="styles/main.css" />
+        <link rel="stylesheet" href="styles/styleguide.css" />
+    </head>
+    <body class="giraffe {% block bodyclass %}styleguide {% endblock %}">
+        <div style="display:none">{% include 'components/symbol/svg/sprite.symbol.svg' %}</div>
+        <div class="wrapper">
+
+          {% include 'styleguide/header' %}
+
+          <div class="stylguide-content">
+
+            
+            {# Section Content block #}
+            {% embed 'styleguide/block' %}
+              
+              {% block content %}
+                {% embed 'components/content-block' %}
+                    {% block conent_block_content %}
+                        <p>Content</p>
+                    {% endblock %}
+                {% endembed %}
+              {% endblock %}
+              
+              {% block heading %}Content block{% endblock %}
+                
+            {% endembed %}
+            
+            {# Section Content block with background #}
+            {% embed 'styleguide/block' %}
+              
+              {% block content %}
+                {% embed 'components/content-block' %}
+                    {% block conent_block_classes %}background{% endblock %}
+                    {% block conent_block_content %}
+                        <p>Content</p>
+                    {% endblock %}
+                {% endembed %}
+                
+              {% endblock %}
+              
+              
+            
+              {% block heading %}Content block with background{% endblock %}
+              
+              
+                
+            {% endembed %}
+            
+            {# Section Content block with background black #}
+            {% embed 'styleguide/block' %}
+              
+              {% block content %}
+                {% embed 'components/content-block' %}
+                    {% block conent_block_classes %}background background-black{% endblock %}
+                    {% block conent_block_content %}
+                        <p>Content</p>
+                    {% endblock %}
+                {% endembed %}
+              {% endblock %}
+
+              {% block heading %}Content block with background black {% endblock %}
+                
+            {% endembed %}
+            
+            
+            
+            
+          </div>
+
+        </div>
+
+        <script src="scripts/vendors.js"></script>
+        <script src="scripts/app.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</html>
