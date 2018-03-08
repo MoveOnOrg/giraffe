@@ -1,4 +1,11 @@
-.share-modal {
+.petition-thanks {
+
+  &__container {
+    @include respond((
+      margin-top: 25px null 75px,
+      margin-bottom: 25px null 40px
+    ));
+  }
 
   &__heading {
     display: block;
@@ -7,7 +14,6 @@
     @include font(roboto-condensed-bold);
     @include respond((
       font-size: 21px null 48px,
-      line-height: 22.6px null 27px,
     ));
   }
 
