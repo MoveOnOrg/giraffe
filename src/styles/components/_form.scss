@@ -1,10 +1,10 @@
 form {
   
+  box-sizing: border-box;
   
   box-shadow: none;
 
   .input-block {
-    box-sizing: border-box;
     position: relative;
     color: $light-gray;
     @include respond((
@@ -37,7 +37,6 @@ form {
 
     input,
     select {
-      box-sizing: border-box;
       padding: 5px;
       border-radius: 0;
       font-size: inherit;
@@ -91,7 +90,6 @@ form {
     }
 
     label {
-      box-sizing: border-box;
       position: absolute;
       top: 0;
       left: 0;
@@ -107,7 +105,6 @@ form {
     }
 
     select {
-      box-sizing: border-box;
       -webkit-appearance: none;
       width: 100%;
       background-color: transparent;
@@ -120,7 +117,6 @@ form {
     }
 
     textarea {
-      box-sizing: border-box;
       width: 100%;
       resize: vertical;
       border: 1px solid $gray;
@@ -157,7 +153,6 @@ form {
     }
 
     .select-caret {
-      box-sizing: border-box;
       position: absolute;
       display: block;
       fill: $light-gray;
@@ -174,7 +169,6 @@ form {
 
   // INPUT HELPER
   .input-helper {
-    box-sizing: border-box;
     display: block;
     margin-top: 7px;
     opacity: .54;
@@ -184,11 +178,46 @@ form {
       line-height: 20px,
     ));
   }
+  
+  // RADIO AND CHECKBOX
+  .checkbox-input, .radio-input {
+    label {
+      font-weight:inherit;
+      color: rgba(0,0,0,0.54);
+      @include font(roboto);
+      @include respond((
+        margin-left: 10px,
+        font-size: 16px,
+        line-height: 24px,
+      ));
+    }
+    &.title-label { 
+      display:block;
+      color: rgba(0,0,0,0.54);
+      label {
+        display:block;
+        margin:0 0 1em 0;
+        position:relative;
+        width:100%;
+      }
+    }
+    &.border {
+      margin:0;
+      padding:10px 0;
+      @include respond((
+        width: 100%,
+        border-bottom: (2px solid transparentize($black, 1-0.42)) null,
+      ));
+      padding-bottom:5px;
+    }
+    &.margin {
+      margin:30px 0;
+    }
+  }
 
 
   // RADIO
   .radio-input {
-    box-sizing: border-box;
     display: inline-flex;
     align-items: center;
     margin-bottom: 28px;
@@ -215,10 +244,16 @@ form {
         box-shadow: inset 0 0 0 3px $white;
       }
     }
-
+    
+    label {
+      color:inherit;
+      @include respond((
+        line-height: 1,
+      ));
+    }
+    
     & input[type="text"],
     & input[type="number"] {
-      box-sizing: border-box;
       appearance: none;
       -webkit-appearance: none;
       width: 200px;
@@ -237,7 +272,6 @@ form {
 
   // CHECKBOX
   .checkbox-input {
-    box-sizing: border-box;
     display: flex;
     align-items: top;
     margin-right: 20px;
@@ -253,7 +287,6 @@ form {
     }
 
     input[type=checkbox] {
-      box-sizing: border-box;
       appearance: none;
       -webkit-appearance: none;
       display: inline-block;
@@ -278,7 +311,6 @@ form {
       }
 
       &::after {
-        box-sizing: border-box;
         content: '';
         display: block;
         font-size: 1.5em;
@@ -315,36 +347,7 @@ form {
     }
   }
   
-  .checkbox-input, .radio-input {
-    display:block;
-    padding:10px 0;
-    margin:0;
-    label {
-      color: rgba(0,0,0,0.54);
-      @include font(roboto);
-      @include respond((
-        margin-left: 10px,
-        font-size: 16px,
-        line-height: 24px,
-      ));
-      &.title-label {
-        display:block;
-        margin:0 0 1em 0;
-        position:relative;
-        width:100%;
-      }
-    }
-    &.border {
-      @include respond((
-        width: 100%,
-        border-bottom: (2px solid transparentize($black, 1-0.42)) null,
-      ));
-      padding-bottom:5px;
-    }
-    &.margin {
-      margin:30px 0;
-    }
-  }
+  
 
 
   // DISABLED FIELDS
