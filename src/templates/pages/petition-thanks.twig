@@ -3,6 +3,11 @@
 {% block bodyclass %}petition{% endblock %}
 
 {% block content %}
-  {% set modal_on = true %}
-  {% include 'components/share-modal' %}
+    <div class='container'>
+      <div class='row justify-content-center'>
+        <div class='col-10 col-md-7 petition-thanks__container'>
+          {% include 'components/petition-thanks' %}
+        </div>
+      </div>
+    </div>
 {% endblock %}
