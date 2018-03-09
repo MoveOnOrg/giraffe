@@ -1,6 +1,6 @@
 {% extends 'layout' %}
 
-{% block bodyclass %}petition{% endblock %}
+{% block bodyclass %}petition rp{% endblock %}
 
 {% block content %}
   <div class="mo-container">
@@ -16,7 +16,6 @@
   </div>
 
   {% include 'components/sign-form-modal' %}
-  {% include 'components/share-modal' %}
 
   <button class="sign-form__modal-toggle">Sign Now</button>
 {% endblock %}
