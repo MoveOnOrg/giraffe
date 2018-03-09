@@ -5,7 +5,7 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">                <meta charset="utf-8">
-        <title>{% block title %}Form Elements - Move On Styleguide{% endblock %}</title>
+        <title>{% block title %}Content block - Move On Styleguide{% endblock %}</title>
         <link rel="stylesheet" href="styles/vendors.css" />
         <link rel="stylesheet" href="styles/main.css" />
         <link rel="stylesheet" href="styles/styleguide.css" />
@@ -31,10 +31,24 @@
                       {% endblock %}
                   {% endembed %}
                 </div>
-                <hr>
-                <div id="content-bolock-options">
-
-                </div>
+                <h2 class="mt-3 mb-3">Markup code, if you copy this, remove the style attribute</h2>
+                <pre class="styleguide-markup"><code></code></pre>
+                <h2 class="mt-3 pb-3">Options</h2>
+                <form>
+                  <div id="content-bolock-options" class="mt-3 mb-3">
+                    <div class="input-block">
+                      <input type="text" name="content_block_width" id="id_content_block_width" value="100%" style="max-width:100px">
+                      <label for="id_content_block_width">Width</label>
+                      <botton class="button">Set width</botton>
+                    </div>
+                    <div class="input-block">
+                      <textarea type="text" name="content_block_html" id="id_content_block_html" value="100%" style="min-height:300px;"></textarea>
+                      <label for="id_content_block_html">HTML</label>
+                      <botton class="button">Set the content block HTML</botton>
+                    </div>
+                  </div>
+                </form>
+                  
               {% endblock %}
               
               {% block heading %}Content block{% endblock %}
@@ -52,8 +66,10 @@
         
         <script type="text/javascript" charset="utf-8">
           (function($) {
+            let $content_block = $('#content-block-example .content-block:first');
+            
             var classes_options = {
-              'Background classes' : [
+              'Background Classes' : [
                'background',
                'background-white',
                'background-off-white',
@@ -73,12 +89,108 @@
               ]
             }
             
+            /* https://v4-alpha.getbootstrap.com/utilities/spacing/ */
+            classes_options['Spacing Margin Classes'] = [];
+            classes_options['Spacing Padding Classes'] = [];
+            
+            classes_options['Spacing Margin Classes'].push('mx-auto');
+            
+            let spacing_types = [
+              'm',
+              'p'
+            ];
+            
+            let spacing_sides = [
+              't',
+              'b',
+              'l',
+              'r',
+              'x',
+              'y',
+              'blank'
+            ];
+            
+            let breakpoints = [
+              'sm',
+              'md',
+              'lg',
+              'xl'
+            ];
+            
+            let spacing_sizes = [
+              '0',
+              '1',
+              '2',
+              '3',
+              '4',
+              '5'
+            ];
+            
+            for (var spacing_types_k in spacing_types) {
+
+              for (var spacing_sides_k in spacing_sides) {
+
+                for (var spacing_sizes_k in spacing_sizes) {
+                                
+                  var spacing_class = spacing_types[spacing_types_k].toString();
+
+                  if (spacing_sides[spacing_sides_k] != 'blank') {
+                    spacing_class = spacing_class + spacing_sides[spacing_sides_k].toString(); 
+                  }
+                  
+                  spacing_class = spacing_class + '-'
+                  spacing_class = spacing_class + spacing_sizes[spacing_sizes_k].toString();
+                  
+                  console.log('spacing_types[spacing_types_k], spacing_types_k: ', spacing_types[spacing_types_k], spacing_types_k, spacing_types);
+                  
+                  
+                  if (spacing_types[spacing_types_k] == 'm') {
+                    classes_options['Spacing Margin Classes'].push(spacing_class);
+                  }
+                  if (spacing_types[spacing_types_k] == 'p') {
+                    classes_options['Spacing Padding Classes'].push(spacing_class);
+                  }
+                }
+                for (var spacing_sizes_k in spacing_sizes) {
+                  for (var breakpoints_k in breakpoints) {
+                                
+                    var spacing_class = spacing_types[spacing_types_k].toString();
+
+                    if (spacing_sides[spacing_sides_k] != 'blank') {
+                      spacing_class = spacing_class + spacing_sides[spacing_sides_k].toString(); 
+                    }
+                  
+                    spacing_class = spacing_class + '-'
+                  
+                    spacing_class = spacing_class + breakpoints[breakpoints_k].toString();
+                  
+                    spacing_class = spacing_class + '-'
+                    spacing_class = spacing_class + spacing_sizes[spacing_sizes_k].toString();
+                  
+                    console.log('spacing_types[spacing_types_k], spacing_types_k: ', spacing_types[spacing_types_k], spacing_types_k, spacing_types);
+                  
+                  
+                    if (spacing_types[spacing_types_k] == 'm') {
+                      classes_options['Spacing Margin Classes'].push(spacing_class);
+                    }
+                    if (spacing_types[spacing_types_k] == 'p') {
+                      classes_options['Spacing Padding Classes'].push(spacing_class);
+                    }
+                  }
+                }
+                
+              }              
+            }
+            
+            
+           
+            
             //add options
             var $content_bolock_options = $('#content-bolock-options');
             for (var k in classes_options) {
-              let $options_tmpl = $('<div class="content_block_classes_options">\
-                <h2>'+k+'</h2>\
-                <form><div class="options"></div></form>\
+              let $options_tmpl = $('<div class="content_block_classes_options mt-3 mb-3">\
+                <h3 class="mt-3">'+k+'</h3>\
+                <div class="options"></div>\
               </div>');
               
               
@@ -97,17 +209,44 @@
             }
             
             $(document).on('change', 'input[name="content_block_class_option"]', function(e) {
-              let $content_block = $('#content-block-example .content-block:first');
+              
               $content_block.removeClass();
               $content_block.addClass('content-block');
               $('input[name="content_block_class_option"]:checked').each(function() {
                 $content_block.addClass($(this).val());
               });
+              $('.styleguide-markup:first code').html($content_block.parent().html().replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'));
             });
             $('input[name="content_block_class_option"]').change();
             
+            
+            $(document).on('change', 'input[name="content_block_width"]', function(e) {
+              let width = $(this).val();
+              $content_block.css('width', width);
+              $('.styleguide-markup:first code').html($content_block.parent().html().replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'));
+            });
+            $('input[name="content_block_width"]').change();
+            
+            $(document).on('change', 'textarea[name="content_block_html"]', function(e) {
+              let html = $(this).val();
+              if (html == '') {
+                html = '<h2>This is a content block!</h2>\
+<p>Use the options below to customize it, once you are done use the console to see the final HTML.</p>';
+              }
+              $content_block.html(html);
+              $('.styleguide-markup:first code').html($content_block.parent().html().replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'));
+            });
+            $('textarea[name="content_block_html"]').change();
+            
+            
           })(jQuery);
         </script>
+        
+        <style type="text/css" media="screen">
+          .giraffe form .checkbox-input {
+            display:inline-flex;
+          }
+        </style>
         
     </body>
 </html>
