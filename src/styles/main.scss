@@ -22,8 +22,12 @@ body {
   @import "settings/reset";
   @import "bootstrap/bootstrap-grid.scss";
 
+  // UTILITY CLASSES
+  @import 'utilities/color-classes';
+
   // COMPONENTS
   @import 'components/container';
+  @import 'components/cards';
   @import 'components/headings';
   @import 'components/buttons';
   @import 'components/lists';

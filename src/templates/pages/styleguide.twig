@@ -343,6 +343,57 @@
 {% endblock %}
             {% endembed %}
 
+            {# PAGE DIVIDERS #}
+            {% embed 'styleguide/block' with markup %}
+            {% block heading %}Page Dividers{% endblock %}
+            {% block content %}
+            <div class="row">
+                <div class="card-wrapper col-md-7">
+                    <div class="card bg-ice-blue">
+                        <div class="card__content">
+                            <h2>Heading inside a card! just use h3 etc</h2>
+                            <p>This is a generic version of the blue card that holds petition content on the <a href="/petition.html">petition sign page.</a></p>
+                            <p>Set the width of the card using a bootstrap column class in the wrapper div, like col-md-4</p>
+                            <div class="card__media">
+                                <img src="../images/petition-card-media.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <p>Hodor. Hodor HODOR hodor, hodor hodor hodor hodor! Hodor. Hodor hodor hodor. Hodor. Hodor hodor - hodor... Hodor hodor HODOR hodor, hodor hodor? Hodor. Hodor hodor - hodor, hodor. Hodor hodor. Hodor. Hodor hodor HODOR! Hodor hodor, hodor. Hodor hodor - hodor - hodor hodor! Hodor, hodor. Hodor. Hodor, hodor... Hodor hodor hodor - hodor?! </p>
+
+                    <p>Hodor hodor - hodor; hodor hodor - hodor; hodor hodor?! Hodor, hodor. Hodor. Hodor, hodor hodor hodor hodor hodor. Hodor. Hodor hodor - hodor; hodor hodor, hodor. Hodor hodor. Hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor hodor hodor, hodor. Hodor hodor? </p>
+
+                    <p>Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor hodor; hodor hodor... Hodor hodor hodor - hodor, hodor, hodor hodor. Hodor hodor, hodor. Hodor hodor. Hodor. Hodor hodor - hodor - hodor, hodor, hodor hodor. </p>
+                </div>
+            </div>
+            {% endblock %}
+            {% block markup %}
+            <div class="row">
+                <div class="card-wrapper col-md-7">
+                    <div class="card bg-ice-blue">
+                        <div class="card__content">
+                            <h2>Heading inside a card! just use h3 etc</h2>
+                            <p>This is a generic version of the blue card that holds petition content on the <a href="/petition.html">petition sign page.</a></p>
+                            <p>Set the width of the card using a bootstrap column class in the wrapper div, like col-md-4</p>
+                            <div class="card__media">
+                                <img src="../images/petition-card-media.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <p>Hodor. Hodor HODOR hodor, hodor hodor hodor hodor! Hodor. Hodor hodor hodor. Hodor. Hodor hodor - hodor... Hodor hodor HODOR hodor, hodor hodor? Hodor. Hodor hodor - hodor, hodor. Hodor hodor. Hodor. Hodor hodor HODOR! Hodor hodor, hodor. Hodor hodor - hodor - hodor hodor! Hodor, hodor. Hodor. Hodor, hodor... Hodor hodor hodor - hodor?! </p>
+
+                    <p>Hodor hodor - hodor; hodor hodor - hodor; hodor hodor?! Hodor, hodor. Hodor. Hodor, hodor hodor hodor hodor hodor. Hodor. Hodor hodor - hodor; hodor hodor, hodor. Hodor hodor. Hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor hodor hodor, hodor. Hodor hodor? </p>
+
+                    <p>Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor hodor; hodor hodor... Hodor hodor hodor - hodor, hodor, hodor hodor. Hodor hodor, hodor. Hodor hodor. Hodor. Hodor hodor - hodor - hodor, hodor, hodor hodor. </p>
+                </div>
+            </div>
+            {% endblock %}
+            {% endembed %}   
+
           </div>
 
         </div>
