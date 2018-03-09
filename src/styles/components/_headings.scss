@@ -2,6 +2,15 @@ h1, h2, h3, h4, h5 {
   text-transform: none;
   margin: 0;
   @include font(roboto-condensed-bold);
+
+  &.standout {
+    font-size: 48px;
+    line-height: 45px;
+    background: $azure;
+    text-transform: uppercase;
+    padding: 0 4px;
+    display: inline-block;
+  }
 }
 
 h1 {

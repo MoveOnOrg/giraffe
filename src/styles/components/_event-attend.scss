@@ -1,0 +1,129 @@
+.giraffe {
+  .event_attend { // ak-applied class
+    color: $black !important;
+
+    .mo-btn {
+      display: inline-flex;
+      margin: 28px auto;
+      padding: 0 15px;
+      width: auto;
+      margin-top: 28px;
+      @include btn--azure;
+    }
+
+    .container {
+      padding-top: 50px;
+    }
+
+    .form-heading {
+      margin-bottom: 10px;
+      width: 100%;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .blue-panel {
+      padding: 0;
+      background-color: $ice-blue;
+    }
+
+    .user-form {
+      padding: 30px;
+
+      .form-group {
+        width: 100%;
+      }
+    }
+
+    .panel {
+      margin: 10px 40px;
+      background: transparent;
+      border: none;
+
+      .panel-heading {
+        padding: 0;
+        margin-bottom: 10px;
+        border: none;
+        background: transparent;
+
+        a {
+          text-transform: uppercase;
+        }
+      }
+
+      .panel-default {
+        margin: 0;
+      }
+
+      .panel-body {
+        padding: 0;
+        background: $white;
+
+        ul {
+          li {
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+
+    .ground-rules {
+      .panel-body {
+        padding: 10px;
+      }
+    }
+
+    .register {
+      h1,
+      p,
+      .shortcontent,
+      .allcontent {
+        margin-bottom: 10px;
+      }
+
+      .event-details {
+        margin-top: 20px;
+
+        .event-details-row {
+          display: inline-flex;
+          align-items: start;
+          padding: 10px 0;
+          border-bottom: 2px solid $black;
+          width: 100%;
+
+          dt {
+            width: 100px;
+
+            h3 {
+              margin-top: 2px;
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+    }
+
+    .button-wrapper {
+      display: inline-flex;
+      margin: 30px 0;
+      width: 100%;
+      background: $white;
+
+      &.submit {
+        margin-bottom: 0;
+      }
+    }
+
+    .checkbox-input {
+      display: inline-flex !important;
+      margin: 0 !important;
+      padding: 20px 40px !important;
+      cursor: pointer;
+
+      label {
+        color: $black !important;
+        cursor: pointer;
+      }
+    }
+  }
+}

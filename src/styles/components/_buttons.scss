@@ -20,9 +20,19 @@ button,
   @include font(roboto-condensed-bold);
   @include btn--transparent;
 
+  &.big {
+    min-width: 140px;
+    height: 48px;
+    font-size: 32px;
+  }
+
   svg {
     max-width: 100%;
     max-height: 100%;
     transition: all .3s;
   }
+}
+
+a[role='button'] {
+  text-decoration: none;
 }
