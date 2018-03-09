@@ -1,0 +1,9 @@
+.card {
+  position: relative;
+  margin: 0 1.3125rem;
+  padding: 8% 10% 12%;
+
+  &__content, &__media {
+    margin-top: 1em;
+  }
+}
