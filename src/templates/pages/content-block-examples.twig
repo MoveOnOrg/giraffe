@@ -23,55 +23,23 @@
             {% embed 'styleguide/block' %}
               
               {% block content %}
-                {% embed 'components/content-block' %}
-                    {% block conent_block_content %}
-                        <p>Content</p>
-                    {% endblock %}
-                {% endembed %}
+                <div id="content-block-example">
+                  {% embed 'components/content-block' %}
+                      {% block conent_block_content %}
+                        <h2>This is a content block!</h2>
+                        <p>Use the options below to customize it, once you are done use the console to see the final HTML.</p>
+                      {% endblock %}
+                  {% endembed %}
+                </div>
+                <hr>
+                <div id="content-bolock-options">
+
+                </div>
               {% endblock %}
               
               {% block heading %}Content block{% endblock %}
                 
             {% endembed %}
-            
-            {# Section Content block with background #}
-            {% embed 'styleguide/block' %}
-              
-              {% block content %}
-                {% embed 'components/content-block' %}
-                    {% block conent_block_classes %}background{% endblock %}
-                    {% block conent_block_content %}
-                        <p>Content</p>
-                    {% endblock %}
-                {% endembed %}
-                
-              {% endblock %}
-              
-              
-            
-              {% block heading %}Content block with background{% endblock %}
-              
-              
-                
-            {% endembed %}
-            
-            {# Section Content block with background black #}
-            {% embed 'styleguide/block' %}
-              
-              {% block content %}
-                {% embed 'components/content-block' %}
-                    {% block conent_block_classes %}background background-black{% endblock %}
-                    {% block conent_block_content %}
-                        <p>Content</p>
-                    {% endblock %}
-                {% endembed %}
-              {% endblock %}
-
-              {% block heading %}Content block with background black {% endblock %}
-                
-            {% endembed %}
-            
-            
             
             
           </div>
@@ -81,5 +49,65 @@
         <script src="scripts/vendors.js"></script>
         <script src="scripts/app.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
+        
+        <script type="text/javascript" charset="utf-8">
+          (function($) {
+            var classes_options = {
+              'Background classes' : [
+               'background',
+               'background-white',
+               'background-off-white',
+               'background-gray',
+               'background-light-gray',
+               'background-slate-gray',
+               'background-dark-gray-38',
+               'background-dark-gray',
+               'background-light-gray',
+               'background-black',
+               'background-off-deep-sea-blue',
+               'background-off-cerulean',
+               'background-off-azure',
+               'background-off-light-blue',
+               'background-off-ice-blue',
+               'background-off-red'
+              ]
+            }
+            
+            //add options
+            var $content_bolock_options = $('#content-bolock-options');
+            for (var k in classes_options) {
+              let $options_tmpl = $('<div class="content_block_classes_options">\
+                <h2>'+k+'</h2>\
+                <form><div class="options"></div></form>\
+              </div>');
+              
+              
+              let classes = classes_options[k];
+              
+              for (var k2 in classes) {
+                let $option_tmpl = '\
+                  <div class="checkbox-input">\
+                    <input id="content_block_class_option_'+classes[k2]+'" type="checkbox" name="content_block_class_option" value="'+classes[k2]+'" id="some_name">\
+                    <label for="content_block_class_option_'+classes[k2]+'">'+classes[k2]+'</label>\
+                  </div>\
+                '; 
+                $options_tmpl.find('.options:first').append($option_tmpl);
+              }
+              $options_tmpl.appendTo('#content-bolock-options');
+            }
+            
+            $(document).on('change', 'input[name="content_block_class_option"]', function(e) {
+              let $content_block = $('#content-block-example .content-block:first');
+              $content_block.removeClass();
+              $content_block.addClass('content-block');
+              $('input[name="content_block_class_option"]:checked').each(function() {
+                $content_block.addClass($(this).val());
+              });
+            });
+            $('input[name="content_block_class_option"]').change();
+            
+          })(jQuery);
+        </script>
+        
     </body>
 </html>
