@@ -19,7 +19,7 @@
       color: $white,
       width: null null 300px,
       font-size: 36px null 48px,
-      line-height: 42px null .9,
+      line-height: (42px !important) null (.9 !important),
     ));
   }
 
@@ -27,7 +27,7 @@
     @include font(roboto);
     @include respond((
       width: null null 325px,
-      margin-top: 22px null 40px,
+      margin-top: (22px !important) null (40px !important),
       color: $white,
       font-size: 14px null 16px,
       line-height: 20px null 24px,
@@ -131,8 +131,8 @@
     @include respond((
       margin-top: 27px,
       margin-bottom: auto,
-      font-size: 14px null 20px,
-      line-height: 1 null 24px,
+      font-size: (14px !important) null (20px !important),
+      line-height: (1 !important) null (24px !important),
     ));
   }
 
@@ -142,8 +142,8 @@
     @include font(roboto-bold);
     @include respond((
       margin-bottom: auto,
-      top: -30px null -10px,
-      font-size: 20px null 28px,
+      top: (-30px !important) null -10px,
+      font-size: (20px !important) null (28px !important),
       line-height: 1,
     ));
   }

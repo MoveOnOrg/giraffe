@@ -1,25 +1,27 @@
 h1, h2, h3, h4, h5 {
   text-transform: none;
   @include font(roboto-condensed-bold);
-  line-height: 1.5em;
+  line-height: 1.2em;
+  margin-bottom: .3em;
 }
 
 .rp {
   h1, h2, h3, h4, h5 {
     line-height: 1em;
+    margin-bottom: 0;
   }
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 3rem;
 }
 
 h2 {
-  font-size: 36px;
+  font-size: 2.25rem;
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 h4 {

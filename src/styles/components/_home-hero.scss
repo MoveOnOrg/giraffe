@@ -226,7 +226,7 @@
   &__body {
     @include font(roboto);
     @include respond((
-      margin-top: 27px null 44px,
+      margin-top: (27px !important) null (44px !important),
       font-size: 16px,
       line-height: 24px,
     ));
