@@ -15,7 +15,7 @@
       margin: auto,
       padding: null null (0 8px),
       font-size: 36px,
-      line-height: 38px null 58px,
+      line-height: (38px !important) null (58px !important),
       background-color: $black,
       color: $azure,
     ));
@@ -30,7 +30,7 @@
     @include font(roboto);
     @include respond((
       font-size: 14px null 24px,
-      line-height: 20px null 36px,
+      line-height: (20px !important) null (36px !important),
       color: $black,
       margin-top: 22px null 40px,
       text-align: left null center,
