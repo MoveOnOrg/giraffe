@@ -204,6 +204,7 @@
   &__heading {
     @include respond((
       margin-right: null null nul 83px,
+      line-height: 1,
     ));
 
     span {
