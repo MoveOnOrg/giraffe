@@ -53,12 +53,12 @@ form {
         height:4em;
         ~ label {
           @include respond((
-            transform: (scale(.8) translateY(-4em)) null (scale(.8) translateY(-3.8em)),
+            transform: (scale(.8) translateY(-3.5em)) null (scale(.8) translateY(-3.8em)),
           ));
         }
         &:focus ~ label {
           @include respond((
-            transform: (scale(.8) translateY(-4em)) null (scale(.8) translateY(-3.8em)),
+            transform: (scale(.8) translateY(-3.5em)) null (scale(.8) translateY(-3.8em)),
           ));
         }
       }
