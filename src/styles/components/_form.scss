@@ -27,12 +27,7 @@ form {
         ));
       }
 
-      textarea ~ label {
-        @include respond((
-          transform: (scale(.8) translateX(0) translateY(-40px)) null (scale(.8) translateX(0) translateY(-40px)),
-        ));
-      }
-
+      
     }
 
     input,
@@ -128,12 +123,13 @@ form {
       border-radius: 0;
       box-shadow: none;
       border:0;
+      background-color: transparent;
       @include respond((
         border-bottom: (2px solid transparentize($black, 1-0.42)) null,
       ));
 
       & ~ label {
-        top: 13px;
+        top: 5px;
         left: 0;
         height: auto;
       }
@@ -147,7 +143,7 @@ form {
       &:focus ~ label {
         color: $azure;
         @include respond((
-          transform: (scale(.8) translateX(0) translateY(-17px)) null (scale(.8) translateX(0) translateY(-40px)),
+          transform: (scale(.8) translateY(-40px)) null (scale(.8) translateY(-30px)),
         ));
       }
     }
