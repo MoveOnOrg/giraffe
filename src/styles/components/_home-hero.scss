@@ -227,7 +227,6 @@
   &__body {
     @include font(roboto);
     @include respond((
-      margin-top: (27px !important) null (44px !important),
       font-size: 16px,
       line-height: 24px,
     ));
@@ -269,4 +268,17 @@
   }
 
 
+}
+
+/* fixes regressions introduced by design system defaults  */
+
+p.home-hero__body {
+  margin-bottom: 0;
+  @include respond((
+    margin-top: 27px null 44px,
+  ));
+}
+
+.home-illustration__body p {
+  margin-bottom: 0;
 }

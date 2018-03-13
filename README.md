@@ -11,3 +11,11 @@ To generate a new encrypted secret_access_key, install the travis command line t
 ## Uglify and minify assets
 
 Setting ENV=production in .env ensures that assets are minified in gulp tasks that run before deployment. To uglify, set ENV=LOCAL before running `gulp` or `gulp watch`.
+
+## Evolving specific comps into a design system 
+
+We ultimately want giraffe to encompass a library of base styles (a design system) that we apply to pages and tweak or build on only as necessary to make them fit any specific designs. That being said, in the interest of rebrand timing, we must implement certain comps in this repo exactly as they are before setting base styles that we can override. So we will namespace the CSS corresponding to those comps/pages with the goal of adding base styles and styleguide components as we flesh out the styleguide, checking the namespaced pages for regressions. 
+
+Ultimately we want to replace as much CSS as possible with the design system CSS, to keep main.css as lean as possible.
+
+mo-styleguide is the beginnings of a new set of style defaults.

@@ -167,3 +167,8 @@
     }
   }
 }
+
+/* Fixes regressions introduced by design system defaults */
+p.donate-form__agreement {
+  margin: 0 !important;
+}
