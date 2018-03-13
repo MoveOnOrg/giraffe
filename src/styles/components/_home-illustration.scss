@@ -56,11 +56,11 @@
     text-align: center;
     text-transform: uppercase;
     display: table;
+    font-size: 36px;
+    line-height: 42px !important;
+    margin: auto;
+    background-color: $azure;
     @include respond((
-      font-size: 36px,
-      line-height: 42px,
-      margin: auto,
-      background-color: $azure,
       padding: null null (0px 8px),
     ));
 
@@ -84,8 +84,8 @@
     text-transform: uppercase;
     @include respond((
       color: $white,
-      font-size: 36px null 48px,
-      line-height: 1 null .9,
+      font-size: (36px !important) null (48px !important),
+      line-height: (1 !important) null (.9 !important),
     ));
   }
 
@@ -94,7 +94,7 @@
     @include font(roboto);
     @include respond((
       color: $white,
-      margin-top: 20px null 40px,
+      margin-top: (20px !important) null (40px !important),
     ));
   }
 
