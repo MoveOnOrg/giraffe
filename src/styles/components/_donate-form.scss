@@ -172,10 +172,10 @@ $bouncy-easing: cubic-bezier(.43,2.9,.64,.99);
 
   &__paycheck-option {
     @include font(roboto);
+    margin-top: 10px !important;
     @include respond((
       font-size: 13px,
       line-height: 20px,
-      margin-top: 10px,
     ));
 
     a {
@@ -214,7 +214,7 @@ $bouncy-easing: cubic-bezier(.43,2.9,.64,.99);
 
 
   &__agreement {
-    margin-top: 30px;
+    margin-top: 30px !important;
     opacity: .54;
     @include font(roboto);
     @include respond((

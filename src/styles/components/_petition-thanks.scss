@@ -1,4 +1,11 @@
-.share-modal {
+.petition-thanks {
+
+  &__container {
+    @include respond((
+      margin-top: 25px null 75px,
+      margin-bottom: 25px null 40px
+    ));
+  }
 
   &__heading {
     display: block;
@@ -7,7 +14,6 @@
     @include font(roboto-condensed-bold);
     @include respond((
       font-size: 21px null 48px,
-      line-height: 22.6px null 27px,
     ));
   }
 
@@ -103,32 +109,27 @@
 
 
   &__text {
-    overflow: auto;
+    cursor: default;
     @include respond((
       background-color: $white,
       margin-top: 25px null 38px,
       padding: 15px null (26px 32px),
       height: 167px,
+      width: 100%,
       border: (1px solid $azure) null,
     ));
 
 
-    p {
-      @include font(roboto);
+    @include font(roboto);
+    @include respond((
+      font-size: 11px null 12px,
+      line-height: 15px null 18px,
+    ));
+
+    &:not(:first-child) {
       @include respond((
-        font-size: 11px null 12px,
-        line-height: 15px null 18px,
+        margin-top: 1.2em,
       ));
-
-      &:not(:first-child) {
-        @include respond((
-          margin-top: 1.2em,
-        ));
-      }
-
-      a:hover {
-        color: $cerulean;
-      }
     }
   }
 
@@ -140,7 +141,7 @@
   }
 
 
-  &__link:link,
+  &__link,
   &__link:visited,
   &__link:active {
     color: $azure;

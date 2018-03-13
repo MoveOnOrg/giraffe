@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="styles/main.css" />
         <link rel="stylesheet" href="styles/styleguide.css" />
     </head>
-    <body class="giraffe rp {% block bodyclass %}styleguide {% endblock %}">
+    <body class="giraffe {% block bodyclass %}styleguide {% endblock %}">
         <div style="display:none">{% include 'components/symbol/svg/sprite.symbol.svg' %}</div>
         <div class="wrapper">
 
@@ -18,21 +18,11 @@
 
           <div class="stylguide-content">
 
-            {# SECTIONS #}
-            {% embed 'styleguide/block' %}
-                {% block heading %}External Sections{% endblock %}
-                {% block content %}
-                <ul>
-                   <li><a href="styleguide-forms.html">Form Elements</a>
-                </ul>
-                {% endblock %}
-            {% endembed %}
-
             {# COLOR PALETTE #}
             {% embed 'styleguide/block' %}
                 {% block heading %}Color Palette{% endblock %}
                 {% block content %}
-                    <table class="styleguide-color">
+                    <table class="styleguide-color" style="width: 100%;">
                         {% set colors = [
                             ['#ffffff', '$white'],
                             ['#f3f3f3', '$off-white'],
@@ -42,6 +32,8 @@
                             ['rgba(34, 34, 34, 0.38)', '$dark-gray-38'],
                             ['#222222', '$dark-gray'],
                             ['#000000', '$black'],
+                        ] %}
+                        {% set colors2 = [
                             ['#005680', '$deep-sea-blue'],
                             ['#0080bf', '$cerulean'],
                             ['#00abff', '$azure'],
@@ -62,27 +54,18 @@
                                     <td><div class="styleguide-color__variable">{{ item[1] }}</div></td>
                                 {% endfor %}
                             </tr>
-                        </tbody>
-                    </table>
-                {% endblock %}
-            {% endembed %}
-
-
-            {# BREAKPOINTS #}
-            {% embed 'styleguide/block' %}
-                {% block heading %}Breakpoints{% endblock %}
-                {% block content %}
-                    <table class="styleguide-breakpoints">
-                        <thead>
                             <tr>
-                                <td>Width</td><td>SASS Variable</td><td>Size</td>
+                                <td>Color</td>
+                                {% for item in colors2 %}
+                                    <td><div class="styleguide-color__item" style="background-color: {{ item[0] }};"></div></td>
+                                {% endfor %}
                             </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td><strong>Small</strong></td> <td><em>$bp-sm</em></td> <td>0px</td></tr>
-                            <tr><td><strong>Medium</strong></td> <td><em>$bp-md</em></td> <td>768px</td></tr>
-                            <tr><td><strong>Large</strong></td> <td><em>$bp-lg</em></td> <td>1008px</td></tr>
-                            <tr><td><strong>Extra Large</strong></td> <td><em>$bp-xl</em></td> <td>1440px</td></tr>
+                            <tr>
+                                <td>SASS Variable</td>
+                                {% for item in colors2 %}
+                                    <td><div class="styleguide-color__variable">{{ item[1] }}</div></td>
+                                {% endfor %}
+                            </tr>
                         </tbody>
                     </table>
                 {% endblock %}
@@ -145,15 +128,14 @@
             {% embed 'styleguide/block' with markup%}
                 {% block heading %}Typography: Headings{% endblock %}
                 {% block content %}
-                    <div class="styleguide-headings">
-                        <h1>Heading 1</h1>
-                        <h2>Heading 2</h2>
-                        <h3>Heading 3</h3>
-                        <h4>Heading 4</h4>
-                        <h5>Heading 5</h5>
-                    </div>
+                    <h1>Heading 1</h1>
+                    <h2>Heading 2</h2>
+                    <h3>Heading 3</h3>
+                    <h4>Heading 4</h4>
+                    <h5>Heading 5</h5>
                 {% endblock %}
-                {% block markup %}<h1>Heading 1</h1>{% endblock %}
+                {% block markup %}<h1>Heading 1</h1><h2>Heading 2</h2><h3>Heading 3</h3><h4>Heading 4</h4><h5>Heading 5</h5>
+                {% endblock %}
             {% endembed %}
 
             {# TYPOGRAPHY: BODY #}
@@ -161,10 +143,11 @@
                 {% block heading %}Typography: Body{% endblock %}
                 {% block content %}
                     <div class="styleguide-headings">
-                        <p>Lorem ipsum dolor sit <em>amet</em>, <a href="#">consectetur</a> <strong>adipisicing elit</strong>. Repellendus tenetur pariatur, nam natus est rerum sint minus maiores voluptas, facilis optio fugit delectus eligendi officiis dolorum ratione, quo numquam deserunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil placeat repudiandae minima non tempore odio cumque sit magnam temporibus nam quasi dolores deserunt est, aliquid nesciunt, eius, beatae debitis dolore!</p>
+                        <p>Lorem ipsum dolor sit <em>amet</em>, <a href="#">consectetur</a> <strong>adipisicing elit</strong>. <small>Repellendus tenetur pariatur, nam natus est rerum sint minus maiores voluptas, facilis optio fugit delectus eligendi officiis dolorum ratione, quo numquam deserunt!</small></p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <large>Nihil placeat repudiandae minima non tempore odio cumque sit magnam temporibus nam quasi dolores deserunt est, aliquid nesciunt, eius, beatae debitis dolore!</large></p>
                     </div>
                 {% endblock %}
-                {% block markup %}<p>Lorem ipsum dolor sit <em>amet</em>, <a href="#">consectetur</a> <strong>adipisicing elit</strong>. Repellendus tenetur pariatur, nam natus est rerum sint minus maiores voluptas, facilis optio fugit delectus eligendi officiis dolorum ratione, quo numquam deserunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil placeat repudiandae minima non tempore odio cumque sit magnam temporibus nam quasi dolores deserunt est, aliquid nesciunt, eius, beatae debitis dolore!</p>{% endblock %}
+                {% block markup %}<p>Lorem ipsum dolor sit <em>amet</em>, <a href="#">consectetur</a> <strong>adipisicing elit</strong>. <small>Repellendus tenetur pariatur, nam natus est rerum sint minus maiores voluptas, facilis optio fugit delectus eligendi officiis dolorum ratione, quo numquam deserunt!</small></p><p><large>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil placeat repudiandae minima non tempore odio cumque sit magnam temporibus nam quasi dolores deserunt est, aliquid nesciunt, eius, beatae debitis dolore!</large></p>
+                {% endblock %}
             {% endembed %}
 
             {# TYPOGRAPHY: LIST #}
@@ -342,6 +325,57 @@
 </div>
 {% endblock %}
             {% endembed %}
+
+            {# CARDS #}
+            {% embed 'styleguide/block' with markup %}
+            {% block heading %}CARDS{% endblock %}
+            {% block content %}
+            <div class="row">
+                <div class="card-wrapper col-md-7">
+                    <div class="card bg-ice-blue">
+                        <div class="card__content">
+                            <h2>Heading inside a card! just use h3 etc</h2>
+                            <p>This is a generic version of the blue card that holds petition content on the <a href="/petition.html">petition sign page.</a></p>
+                            <p>Set the width of the card using a bootstrap column class in the wrapper div, like col-md-4</p>
+                            <div class="card__media">
+                                <img src="../images/petition-card-media.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <p>Hodor. Hodor HODOR hodor, hodor hodor hodor hodor! Hodor. Hodor hodor hodor. Hodor. Hodor hodor - hodor... Hodor hodor HODOR hodor, hodor hodor? Hodor. Hodor hodor - hodor, hodor. Hodor hodor. Hodor. Hodor hodor HODOR! Hodor hodor, hodor. Hodor hodor - hodor - hodor hodor! Hodor, hodor. Hodor. Hodor, hodor... Hodor hodor hodor - hodor?! </p>
+
+                    <p>Hodor hodor - hodor; hodor hodor - hodor; hodor hodor?! Hodor, hodor. Hodor. Hodor, hodor hodor hodor hodor hodor. Hodor. Hodor hodor - hodor; hodor hodor, hodor. Hodor hodor. Hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor hodor hodor, hodor. Hodor hodor? </p>
+
+                    <p>Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor hodor; hodor hodor... Hodor hodor hodor - hodor, hodor, hodor hodor. Hodor hodor, hodor. Hodor hodor. Hodor. Hodor hodor - hodor - hodor, hodor, hodor hodor. </p>
+                </div>
+            </div>
+            {% endblock %}
+            {% block markup %}
+            <div class="row">
+                <div class="card-wrapper col-md-7">
+                    <div class="card bg-ice-blue">
+                        <div class="card__content">
+                            <h2>Heading inside a card! just use h3 etc</h2>
+                            <p>This is a generic version of the blue card that holds petition content on the <a href="/petition.html">petition sign page.</a></p>
+                            <p>Set the width of the card using a bootstrap column class in the wrapper div, like col-md-4</p>
+                            <div class="card__media">
+                                <img src="../images/petition-card-media.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <p>Hodor. Hodor HODOR hodor, hodor hodor hodor hodor! Hodor. Hodor hodor hodor. Hodor. Hodor hodor - hodor... Hodor hodor HODOR hodor, hodor hodor? Hodor. Hodor hodor - hodor, hodor. Hodor hodor. Hodor. Hodor hodor HODOR! Hodor hodor, hodor. Hodor hodor - hodor - hodor hodor! Hodor, hodor. Hodor. Hodor, hodor... Hodor hodor hodor - hodor?! </p>
+
+                    <p>Hodor hodor - hodor; hodor hodor - hodor; hodor hodor?! Hodor, hodor. Hodor. Hodor, hodor hodor hodor hodor hodor. Hodor. Hodor hodor - hodor; hodor hodor, hodor. Hodor hodor. Hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor hodor hodor, hodor. Hodor hodor? </p>
+
+                    <p>Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor hodor; hodor hodor... Hodor hodor hodor - hodor, hodor, hodor hodor. Hodor hodor, hodor. Hodor hodor. Hodor. Hodor hodor - hodor - hodor, hodor, hodor hodor. </p>
+                </div>
+            </div>
+            {% endblock %}
+            {% endembed %}   
 
           </div>
 

@@ -103,7 +103,6 @@
     background-color: $azure;
     transition: background-color .3s;
     position: relative;
-    box-sizing: border-box;
     @include respond((
       overflow: hidden null visible,
       width: null null percentage(665px/$bp-xl),
@@ -205,6 +204,7 @@
   &__heading {
     @include respond((
       margin-right: null null nul 83px,
+      line-height: 1,
     ));
 
     span {
@@ -227,7 +227,6 @@
   &__body {
     @include font(roboto);
     @include respond((
-      margin-top: 27px null 44px,
       font-size: 16px,
       line-height: 24px,
     ));
@@ -269,4 +268,17 @@
   }
 
 
+}
+
+/* fixes regressions introduced by design system defaults  */
+
+p.home-hero__body {
+  margin-bottom: 0;
+  @include respond((
+    margin-top: 27px null 44px,
+  ));
+}
+
+.home-illustration__body p {
+  margin-bottom: 0;
 }

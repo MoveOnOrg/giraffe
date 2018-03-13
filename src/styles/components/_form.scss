@@ -81,16 +81,14 @@ form {
       transition: all .3s;
       transform-origin: top left;
       font-weight: normal;
-      @include respond((
-        font-size: 14px null 16px,
-        display: flex,
-        align-items: center,
-        height: 100%,
-      ));
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      height: 100%;
     }
 
     select {
-      -webkit-appearance: none;
+      appearance: none;
       width: 100%;
       background-color: transparent;
       padding-top: 0;

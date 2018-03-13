@@ -23,10 +23,15 @@ body {
   @import "bootstrap/bootstrap-grid.scss";
   @import "bootstrap/utilities/_spacing.scss"; // See https://v4-alpha.getbootstrap.com/utilities/spacing/
 
+  // UTILITY CLASSES
+  @import 'utilities/color-classes';
+
   // COMPONENTS
   @import 'components/container';
   @import 'components/content-block';
+  @import 'components/cards';
   @import 'components/headings';
+  @import 'components/content';
   @import 'components/buttons';
   @import 'components/lists';
   @import 'components/links';
@@ -43,7 +48,7 @@ body {
   @import 'components/sign-form-modal';
   @import 'components/signers';
   @import 'components/signers-modal';
-  @import 'components/share-modal';
+  @import 'components/petition-thanks';
   @import 'components/price-select';
   @import 'components/animated-underline';
 
