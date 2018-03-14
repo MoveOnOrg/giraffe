@@ -24,14 +24,14 @@ body {
   @import "bootstrap/utilities/_spacing.scss"; // See https://v4-alpha.getbootstrap.com/utilities/spacing/
 
   // UTILITY CLASSES
-  @import 'utilities/color-classes';
+  @import 'mo-utilities/color-classes';
 
   // COMPONENTS
   @import 'components/container';
   @import 'components/content-block';
-  @import 'components/cards';
+  @import 'mo-components/cards';
   @import 'components/headings';
-  @import 'components/content';
+  @import 'mo-components/content';
   @import 'components/buttons';
   @import 'components/lists';
   @import 'components/links';
