@@ -26,10 +26,13 @@ $(document).ready(function () {
   SignForm.init();
   PetitionComments.init();
   PetitionCard.init();
-  DonateReceipt.init();
-  DonateShortForm.init();
-  DonateFullForm.init();
-  DonateBoxedForm.init();
-  DonateQuickPay.init();
-  PriceSelectGroup.init();
+  /* NOTE: the donate page logic now lives in:
+    ak-template-set/template_components/donate/scripts.html
+
+    DonateReceipt.init();
+    DonateShortForm.init();
+    DonateFullForm.init();
+    DonateBoxedForm.init();
+    DonateQuickPay.init();
+    PriceSelectGroup.init(); */
 });
