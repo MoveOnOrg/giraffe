@@ -16,7 +16,7 @@
 
           {% include 'styleguide/header' %}
 
-          <div class="stylguide-content">
+          <div class="styleguide-content">
 
             
             {# Section Content block #}
@@ -25,9 +25,12 @@
               {% block content %}
                 <div id="content-block-example">
                   {% embed 'components/content-block' %}
-                      {% block conent_block_content %}
+                      {% block content_block_content %}
                         <h2>This is a content block!</h2>
                         <p>Use the options below to customize it, once you are done use the console to see the final HTML.</p>
+                        <div class="video-wrapper">
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/8Pa9x9fZBtY?rel=0&amp;controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
                       {% endblock %}
                   {% endembed %}
                 </div>
@@ -35,7 +38,7 @@
                 <pre class="styleguide-markup"><code></code></pre>
                 <h2 class="mt-3 pb-3">Options</h2>
                 <form>
-                  <div id="content-bolock-options" class="mt-3 mb-3">
+                  <div id="content-block-options" class="mt-3 mb-3">
                     <div class="input-block">
                       <input type="text" name="content_block_width" id="id_content_block_width" value="100%" style="max-width:100px">
                       <label for="id_content_block_width">Width</label>
@@ -70,22 +73,21 @@
             
             var classes_options = {
               'Background Classes' : [
-               'background',
-               'background-white',
-               'background-off-white',
-               'background-gray',
-               'background-light-gray',
-               'background-slate-gray',
-               'background-dark-gray-38',
-               'background-dark-gray',
-               'background-light-gray',
-               'background-black',
-               'background-off-deep-sea-blue',
-               'background-off-cerulean',
-               'background-off-azure',
-               'background-off-light-blue',
-               'background-off-ice-blue',
-               'background-off-red'
+               'bg-white',
+               'bg-off-white',
+               'bg-gray',
+               'bg-light-gray',
+               'bg-slate-gray',
+               'bg-dark-gray-38',
+               'bg-dark-gray',
+               'bg-light-gray',
+               'bg-black',
+               'bg-deep-sea-blue',
+               'bg-cerulean',
+               'bg-azure',
+               'bg-light-blue',
+               'bg-ice-blue',
+               'bg-red'
               ]
             }
             
@@ -186,7 +188,7 @@
            
             
             //add options
-            var $content_bolock_options = $('#content-bolock-options');
+            var $content_bolock_options = $('#content-block-options');
             for (var k in classes_options) {
               let $options_tmpl = $('<div class="content_block_classes_options mt-3 mb-3">\
                 <h3 class="mt-3">'+k+'</h3>\
@@ -205,7 +207,7 @@
                 '; 
                 $options_tmpl.find('.options:first').append($option_tmpl);
               }
-              $options_tmpl.appendTo('#content-bolock-options');
+              $options_tmpl.appendTo('#content-block-options');
             }
             
             $(document).on('change', 'input[name="content_block_class_option"]', function(e) {
@@ -231,7 +233,13 @@
               let html = $(this).val();
               if (html == '') {
                 html = '<h2>This is a content block!</h2>\
-<p>Use the options below to customize it, once you are done use the console to see the final HTML.</p>';
+<p>Use the options below to customize it, once you are done use the console to see the final HTML.</p>\
+<div class="video-wrapper">\
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/8Pa9x9fZBtY?rel=0&amp;controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>\
+</div>\
+<p>\
+<img src="https://images.pexels.com/photos/162971/potatoes-french-mourning-funny-162971.jpeg">\
+</p>';
               }
               $content_block.html(html);
               $('.styleguide-markup:first code').html($content_block.parent().html().replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'));
