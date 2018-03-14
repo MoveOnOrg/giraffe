@@ -2,10 +2,33 @@
 
 {% block bodyclass %}rp{% endblock %}
 {% block content %}
-  {% include 'components/home-hero' %}
-  {% include 'components/home-illustration' %}
-  {% include 'components/home-carousel' %}
-  {% include 'components/cta-grid' %}
-  {% include 'components/testimonial' %}
-  {% include 'components/join' %}
+<div class="container">
+
+  <h1>Complete list of Red Peak comps</h1>
+  <h2>Wordpress (front.moveon.org)</h2>
+    <ul>
+      <li><a href="front.html">front.moveon.org homepage</a></li>
+    </ul>
+  </h2>
+  <h2>Petitions (petitions.moveon.org)</h2>
+    <ul>
+      <li><a href="petition.html">petition sign page</a></li>
+      <li><a href="petition-thanks.html">petition sign thanks/share page</a>
+    </ul>
+  <h2>Action Kit (act.moveon.org)</h2>
+    <ul>
+      <li><a href="donate-v3.html">donate v3 (conservative rebrand)</a></li>
+      <li><a href="donate-v2.html">donate v2 (rebrand)</a></li>
+      <li><a href="donate-v1.html">donate (early iteration)</a></li>
+      <li><a href="donate-thanks.html">donation thanks page</a></li>
+      <li><a href="donate-quickpay-v3.html">donation quickpay v3</a></li>
+      <li><a href="donate-quickpay.html">donation quickpay</a></li>
+    </ul>
+  <h2>Styleguides</h2>
+    <ul>
+      <li><a href="styleguide.html">Red Peak styleguide</a></li>
+      <li><a href="mo-styleguide.html">MO styleguide</a></li>
+    </ul>
+
+</div>
 {% endblock %}
