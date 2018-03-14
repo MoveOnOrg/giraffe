@@ -6,6 +6,7 @@ let uglify = require('rollup-plugin-uglify');
 let notifier = require('node-notifier');
 
 let output = projectRoot('public/scripts/app.js');
+let donateOutput = projectRoot('public/scripts/donate.js');
 let isDev = isDevelopment || isLocal ? true : false;
 let isProd = isStaging || isProduction ? true : false;
 
@@ -19,12 +20,21 @@ module.exports = {
 
     try {
 
-      const bundle = await rollup.rollup(rollupConfig);
+      const bundle = await rollup.rollup(rollupConfig({ isDonate: false }));
 
       await bundle.write({
         file: output,
         format: 'iife',
         name: 'app_scripts',
+        sourcemap: isDev ? true : false,
+      });
+
+      const donateBundle = await rollup.rollup(rollupConfig({ isDonate: true }));
+
+      await donateBundle.write({
+        file: donateOutput,
+        format: 'iife',
+        name: 'donate_scripts',
         sourcemap: isDev ? true : false,
       });
 
