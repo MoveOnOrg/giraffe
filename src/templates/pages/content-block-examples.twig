@@ -34,9 +34,9 @@
                       {% endblock %}
                   {% endembed %}
                 </div>
-                <h2 class="mt-3 mb-3">Markup code, if you copy this, remove the style attribute</h2>
+                <h2 class="mt-5 mb-5">Markup code, if you copy this, remove the style attribute</h2>
                 <pre class="styleguide-markup"><code></code></pre>
-                <h2 class="mt-3 pb-3">Options</h2>
+                <h2 class="mt-5 pb-3">Options</h2>
                 <form>
                   <div id="content-block-options" class="mt-3 mb-3">
                     <div class="input-block">
@@ -209,9 +209,9 @@
             var $content_bolock_options = $('#content-block-options');
             for (var k in classes_options) {
               let classes_options_class = k.replace(/ /g, '-');
-              let $options_tmpl = $('<div class="content_block_classes_options mt-3 mb-3 '+ classes_options_class.toLowerCase() +'">\
-                <h3 class="mt-3">'+k+'</h3>\
-                <div class="options"></div>\
+              let $options_tmpl = $('<div class="content_block_classes_options mt-5 mb-5 '+ classes_options_class.toLowerCase() +'">\
+                <h3 class="mt-5">'+k+'</h3>\
+                <div class="options row"></div>\
               </div>');
               
               
@@ -219,7 +219,7 @@
               
               for (var k2 in classes) {
                 let $option_tmpl = '\
-                  <div class="checkbox-input">\
+                  <div class="checkbox-input col-4 col-sm-3 col-md-1">\
                     <input id="content_block_class_option_'+classes[k2]+'" type="checkbox" name="content_block_class_option" value="'+classes[k2]+'" id="some_name">\
                     <label for="content_block_class_option_'+classes[k2]+'">'+classes[k2]+'</label>\
                   </div>\
