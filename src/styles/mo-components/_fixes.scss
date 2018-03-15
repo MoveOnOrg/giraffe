@@ -20,10 +20,10 @@ body.donate-page {
 
     &.donate-form {
       .input-block  {
-        color: #000;
+        color: $black;
 
         label {
-          color: #a7a7a7;
+          color: $light-gray;
         }
       }
     }
@@ -31,7 +31,7 @@ body.donate-page {
     button[type=submit] {
       margin-top: 28px;
       background-color: $azure;
-      color: #fff;
+      color: $white;
     }
   }
 
@@ -71,7 +71,7 @@ body.donate-page {
 
     .moveon-amount {
       .candidate-details {
-        color: #000;
+        color: $black;
         font-weight: normal;
       }
     }
