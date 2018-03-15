@@ -1,5 +1,17 @@
 body.donate {
 
+  @media screen and (min-width: $bp-md) {
+    .header {
+      .logo {
+        left: 15% !important;
+      }
+    }
+  }
+
+  .mo-nav {
+    display: none;
+  }
+
   form {
     box-shadow: none;
   }

@@ -43,6 +43,10 @@
       cursor: pointer;
     }
 
+    button {
+      color: $white;
+    }
+
     input:checked + label,
     label:hover {
       background-color: $cerulean;

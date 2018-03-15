@@ -19,6 +19,10 @@ $bouncy-easing: cubic-bezier(.43,2.9,.64,.99);
 
   &__subheading {
     margin-top: 24px;
+    color: $black !important;
+    font-weight: bold !important;
+    text-transform: none !important;
+    letter-spacing: inherit !important;
     @include font(roboto);
     @include respond((
       font-size: 24px,
@@ -194,20 +198,26 @@ $bouncy-easing: cubic-bezier(.43,2.9,.64,.99);
 
 
   &__submit {
-    color: $white;
     display: inline-flex;
     width: 134px;
     height: 36px;
     transition: all .3s;
-    margin-top: 28px;
-    @include btn--azure;
+    margin-top: 28px !important;
+    background-color: $azure !important;
+    color: $white !important;
     @include respond((
       font-size: 18px,
     ));
 
+    &:hover {
+      color: $white !important;
+      background-color: $cerulean !important;
+    }
+
+
     &[disabled] {
-      background-color: rgba(0, 0, 0, 0.12);
-      color: rgba(0,0,0,.26);
+      background-color: rgba(0, 0, 0, 0.12) !important;
+      color: rgba(0,0,0,.26) !important;
       pointer-events: none;
     }
   }
@@ -221,6 +231,49 @@ $bouncy-easing: cubic-bezier(.43,2.9,.64,.99);
       font-size: 13px,
       line-height: 20px,
     ));
+  }
+
+  .input-block {
+    color: #000;
+
+    label {
+      color: rgba(0, 0, 0, .54);
+    }
+  }
+
+  .known-user {
+    margin: 10px 0;
+  }
+
+  .candidate-row {
+    padding: 5px;
+  }
+
+  .candidate-amount {
+    margin-top: 0 !important;
+  }
+
+  .candidate-details {
+    line-height: 36px;
+  }
+
+  .total-split {
+    background: $ice-blue;
+    font-weight: bold;
+  }
+
+  .moveon-amount {
+    .candidate-details {
+      color: #000 !important;
+      font-weight: normal !important;
+    }
+  }
+
+  .cc-placeholder {
+    height: 40px;
+    width: 100%;
+    border: none;
+    background: transparent;
   }
 }
 
@@ -304,4 +357,3 @@ $bouncy-easing: cubic-bezier(.43,2.9,.64,.99);
   }
 
 }
-
