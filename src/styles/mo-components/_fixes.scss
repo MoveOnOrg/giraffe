@@ -84,3 +84,38 @@ body.donate-page {
     }
   }
 }
+
+// donate-page v3 radios
+.giraffe {
+  .donate-v3 {
+    .donate-form {
+      .price-select {
+        max-width: 300px;
+
+        .radio-input {
+          width: 30%;
+          min-width: 90px;
+
+          &:nth-child(2),
+          &:nth-child(3),
+          &:nth-child(5),
+          &:nth-child(6) {
+            @include respond((
+              margin-left: 0 0 0,
+            ));
+          }
+        }
+
+        .radio-input-other {
+          @include respond((
+            margin-left: 0 0 0,
+          ));
+
+          @media screen and (max-width: $bp-lg) {
+            width: 157px;
+          }
+        }
+      }
+    }
+  }
+}
