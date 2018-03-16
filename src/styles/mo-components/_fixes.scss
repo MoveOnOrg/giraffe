@@ -1,0 +1,86 @@
+// moui overrides
+body.donate-page {
+  @media screen and (min-width: $bp-md) {
+    .header {
+      .logo {
+        left: 15%;
+      }
+    }
+  }
+
+  .mo-nav {
+    display: none;
+  }
+
+  form {
+    input[type=radio],
+    input[type=checkbox] {
+      margin: 0;
+    }
+
+    &.donate-form {
+      .input-block  {
+        color: $black;
+
+        label {
+          color: $light-gray;
+        }
+      }
+    }
+
+    button[type=submit] {
+      margin-top: 28px;
+      background-color: $azure;
+      color: $white;
+    }
+  }
+
+  .alt-payment-links {
+    a {
+      color: $azure;
+    }
+  }
+
+  .donate-form {
+    &__subheading {
+      color: $black;
+      font-weight: bold;
+      text-transform: none;
+      letter-spacing: inherit;
+    }
+
+    .known-user {
+      margin: 10px 0;
+    }
+
+    .candidate-row {
+      padding: 5px;
+    }
+
+    .candidate-amount {
+      margin-top: 0;
+    }
+
+    .candidate-details {
+      line-height: 36px;
+    }
+
+    .total-split {
+      font-weight: bold;
+    }
+
+    .moveon-amount {
+      .candidate-details {
+        color: $black;
+        font-weight: normal;
+      }
+    }
+
+    .cc-placeholder {
+      height: 40px;
+      width: 100%;
+      border: none;
+      background: transparent;
+    }
+  }
+}

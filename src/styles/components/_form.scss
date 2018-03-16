@@ -1,4 +1,7 @@
 form {
+  
+  box-sizing: border-box;
+  
   box-shadow: none;
 
   .input-block {
@@ -24,12 +27,7 @@ form {
         ));
       }
 
-      textarea ~ label {
-        @include respond((
-          transform: (scale(.8) translateX(-28px) translateY(-40px)) null (scale(.8) translateX(-28px) translateY(-40px)),
-        ));
-      }
-
+      
     }
 
     input,
@@ -51,7 +49,19 @@ form {
         border: 0,
         border-bottom: (2px solid transparentize($black, 1-0.42)) null,
       ));
-
+      &[multiple] {
+        height:4em;
+        ~ label {
+          @include respond((
+            transform: (scale(.8) translateY(-3.5em)) null (scale(.8) translateY(-3.8em)),
+          ));
+        }
+        &:focus ~ label {
+          @include respond((
+            transform: (scale(.8) translateY(-3.5em)) null (scale(.8) translateY(-3.8em)),
+          ));
+        }
+      }
       &:invalid:focus {
         box-shadow: none;
       }
@@ -110,10 +120,15 @@ form {
       transition: all .3s;
       border-radius: 0;
       box-shadow: none;
+      border:0;
+      background-color: transparent;
+      @include respond((
+        border-bottom: (2px solid transparentize($black, 1-0.42)) null,
+      ));
 
       & ~ label {
-        top: 13px;
-        left: 23px;
+        top: 5px;
+        left: 0;
         height: auto;
       }
 
@@ -126,7 +141,7 @@ form {
       &:focus ~ label {
         color: $azure;
         @include respond((
-          transform: (scale(.8) translateX(-28px) translateY(-40px)) null (scale(.8) translateX(-28px) translateY(-40px)),
+          transform: (scale(.8) translateY(-40px)) null (scale(.8) translateY(-30px)),
         ));
       }
     }
@@ -156,6 +171,41 @@ form {
       font-size: 13px,
       line-height: 20px,
     ));
+  }
+  
+  // RADIO AND CHECKBOX
+  .checkbox-input, .radio-input {
+    label {
+      font-weight:inherit;
+      color: rgba(0,0,0,0.54);
+      @include font(roboto);
+      @include respond((
+        margin-left: 10px,
+        font-size: 16px,
+        line-height: 24px,
+      ));
+    }
+    &.title-label { 
+      display:block;
+      color: rgba(0,0,0,0.54);
+      label {
+        display:block;
+        margin:0 0 0.5em 0;
+        position:relative;
+        width:100%;
+      }
+    }
+    &.border {
+      margin:0;
+      padding:10px 0;
+      @include respond((
+        width: 100%,
+        border-bottom: (2px solid transparentize($black, 1-0.42)) null,
+      ));
+    }
+    &.margin {
+      margin:30px 0;
+    }
   }
 
 
@@ -187,16 +237,14 @@ form {
         box-shadow: inset 0 0 0 3px $white;
       }
     }
-
+    
     label {
-      @include font(roboto);
+      color:inherit;
       @include respond((
-        margin-left: 10px,
-        font-size: 16px,
         line-height: 1,
       ));
     }
-
+    
     & input[type="text"],
     & input[type="number"] {
       appearance: none;
@@ -221,6 +269,15 @@ form {
     align-items: top;
     margin-right: 20px;
     margin-top: 28px;
+    
+    &.border {
+      margin-right:0;
+      @include respond((
+        width: 100%,
+        border-bottom: (2px solid transparentize($black, 1-0.42)) null,
+      ));
+      padding-bottom:5px;
+    }
 
     input[type=checkbox] {
       appearance: none;
@@ -266,16 +323,6 @@ form {
       }
     }
 
-    label {
-      color: rgba(0,0,0,0.54);
-      @include font(roboto);
-      @include respond((
-        margin-left: 10px,
-        font-size: 16px,
-        line-height: 24px,
-      ));
-    }
-
     & input[type="text"],
     & input[type="number"] {
       appearance: none;
@@ -292,6 +339,8 @@ form {
       ));
     }
   }
+  
+  
 
 
   // DISABLED FIELDS
@@ -309,7 +358,62 @@ form {
     display: inline-table;
     text-align: center;
   }
+  
+  button {
+    &.btn {
+      font-size: 18px;
+      @include btn--azure;
+      padding: 5px 10px;
+      min-width: 100px;
 
+      svg {
+        width: 14px;
+        height: 14px;
+        color: inherit;
+        fill: currentcolor;
+        margin-left: 10px;
+      }
+
+      &.azure {
+        @include btn--azure;
+
+        &:hover {
+
+          svg {
+            fill: $white;
+          }
+        }
+      }
+
+      &.transparent {
+        @include btn--transparent;
+
+        &:hover {
+          color: $white;
+        }
+      }
+
+      &.transparent-dark {
+        @include btn--transparent-dark;
+
+        &:hover {
+          color: $white;
+        }
+      }
+
+      &.transparent-light {
+        @include btn--transparent-light;
+
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .buttons {
+    margin:1.4em 0;
+  }
 
 }
 

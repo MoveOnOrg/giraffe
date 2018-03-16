@@ -79,5 +79,8 @@ body {
 @import "pages/donate-quickpay-v3";
 @import "pages/donate-confirm";
 
+// MO OVERRIDES
+@import "mo-components/fixes";
+
 // VENDOR OVERRIDES
 @import "trumps/flickity";
