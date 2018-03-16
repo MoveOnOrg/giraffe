@@ -17,47 +17,51 @@
           {% include 'styleguide/header' %}
 
           <div class="styleguide-content">
-
             
-            {# Section Content block #}
-            {% embed 'styleguide/block' %}
-              
-              {% block content %}
+            <section class="styleguide-block">
+              <h2 class="styleguide-block__heading">Content block</h2>
+              <div class="content-block m-4">
+                <h3>Help:</h3>
+                <p>Scroll down to "<a href="#options">Options</a>" and:</p>
+                <ul>
+                  <li>Use the checkbox fields bellow to apply color, background color and spacing classes to the .content-block example.</li>
+                  <li>Use the width field to set the width of the .content-block example.</li>
+                  <li>Use the HTML field to set the HTML of the .content-block example.</li>
+                </ul>
+                <p>The resultant HTML will be shown on the Markup section, you can copy that just remember to to remove the style attribute.</p>
+                
+              </div>
+              <div class="styleguide-block__content">
+                <div class="example-delimiter start"></div>
                 <div id="content-block-example">
                   {% embed 'components/content-block' %}
-                      {% block content_block_content %}
-                        <h2>This is a content block!</h2>
-                        <p>Use the options below to customize it, once you are done use the console to see the final HTML.</p>
-                        <div class="video-wrapper">
-                          <iframe width="560" height="315" src="https://www.youtube.com/embed/8Pa9x9fZBtY?rel=0&amp;controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                        </div>
-                      {% endblock %}
+                      {% block content_block_content %}{% endblock %}
                   {% endembed %}
                 </div>
+                <div class="example-delimiter end"></div>
                 <h2 class="mt-5 mb-5">Markup code, if you copy this, remove the style attribute</h2>
                 <pre class="styleguide-markup"><code></code></pre>
-                <h2 class="mt-5 pb-3">Options</h2>
+                <h2 class="mt-5 pb-3" id="options">Options</h2>
                 <form>
                   <div id="content-block-options" class="mt-3 mb-3">
                     <div class="input-block">
                       <input type="text" name="content_block_width" id="id_content_block_width" value="100%" style="max-width:100px">
                       <label for="id_content_block_width">Width</label>
-                      <botton class="button">Set width</botton>
+                      <button class="btn">Set width</button>
                     </div>
                     <div class="input-block">
                       <textarea type="text" name="content_block_html" id="id_content_block_html" value="100%" style="min-height:300px;"></textarea>
                       <label for="id_content_block_html">HTML</label>
-                      <botton class="button">Set the content block HTML</botton>
+                      <div class="buttons">
+                        <button class="btn">Set HTML</button>
+                        <button id="reset_content_block_html_textarea_button" class="btn">Reset conent to default</button>
+                      </div>
                     </div>
                   </div>
                 </form>
-                  
-              {% endblock %}
+              </div>
               
-              {% block heading %}Content block{% endblock %}
-                
-            {% endembed %}
-            
+            </section>
             
           </div>
 
@@ -248,34 +252,74 @@
             });
             $('input[name="content_block_width"]').change();
             
+            
             $(document).on('change', 'textarea[name="content_block_html"]', function(e) {
               let html = $(this).val();
-              if (html == '') {
-                html = '<h2>This is a content block!</h2>\
+              $content_block.html(html);
+              $('.styleguide-markup:first code').html($content_block.parent().html().replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'));
+            });
+            
+            function reset_content_block_html_textarea() {
+              let content_block_original_html = '<h2>This is a content block!</h2>\
 <p>Use the options below to customize it, once you are done use the console to see the final HTML.</p>\
 <div class="video-wrapper">\
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/8Pa9x9fZBtY?rel=0&amp;controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>\
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8Pa9x9fZBtY?rel=0&amp;controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>\
 </div>\
 <p>\
 <img src="https://images.pexels.com/photos/162971/potatoes-french-mourning-funny-162971.jpeg">\
 </p>';
-              }
-              $content_block.html(html);
-              $('.styleguide-markup:first code').html($content_block.parent().html().replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'));
+              $('textarea[name="content_block_html"]').val(content_block_original_html);
+              $('textarea[name="content_block_html"]').change();
+            }
+            
+            reset_content_block_html_textarea();
+            
+            $('#reset_content_block_html_textarea_button').on('click', function(e) {
+              e.preventDefault();
+              reset_content_block_html_textarea();
             });
-            $('textarea[name="content_block_html"]').change();
             
             $('.spacing-margin-classes h3, .spacing-padding-classes h3').append(' <a class="help_link" href="https://v4-alpha.getbootstrap.com/utilities/spacing/" target="_blank">(Bootstrap spacing documentation.)</a>');
+            
+            $('button').on('click', function(e) {
+              e.preventDefault();
+            });
             
           })(jQuery);
         </script>
         
         <style type="text/css" media="screen">
-          .giraffe form .checkbox-input {
+          .giraffe form #content-block-options .checkbox-input {
             display:inline-flex;
           }
           .help_link {
             font-size:1rem;
+          }
+          .example-delimiter.end::after,
+          .example-delimiter.start::before {
+            font-weight:blod;
+            display:inline-block;
+            padding:1em;
+            margin:0 auto;
+            background-color:white;
+            font-weight:bold;
+            color:red;
+          }
+          .example-delimiter.start::before {
+            content: "START EXAMPLE";
+          }
+          .example-delimiter.end::AFTER {
+            content: "END EXAMPLE";
+          }
+          .example-delimiter {
+            position:relative;
+            border-top:2px dashed red;
+            text-align:center;
+            margin:0;
+          }
+          .example-delimiter.start {
+            border-top-width:0;
+            border-bottom:2px dashed red;
           }
         </style>
         
