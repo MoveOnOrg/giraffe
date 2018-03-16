@@ -222,12 +222,31 @@
               let classes = classes_options[k];
               
               for (var k2 in classes) {
-                let $option_tmpl = '\
-                  <div class="checkbox-input col-4 col-sm-3 col-md-1">\
+                let $option_tmpl = $('\
+                  <div class="checkbox-input col-4 col-sm-3 col-md-1 pt-4 pb-4">\
                     <input id="content_block_class_option_'+classes[k2]+'" type="checkbox" name="content_block_class_option" value="'+classes[k2]+'" id="some_name">\
                     <label for="content_block_class_option_'+classes[k2]+'">'+classes[k2]+'</label>\
                   </div>\
-                '; 
+                ');
+                if (k == 'Background Classes') {
+                  console.log('Background Classes');
+                  $option_tmpl.addClass(classes[k2]); //background preview
+                  let dark_backgrounds = [
+                   'bg-gray',
+                   'bg-slate-gray',
+                   'bg-dark-gray-38',
+                   'bg-dark-gray',
+                   'bg-light-gray',
+                   'bg-black',
+                   'bg-deep-sea-blue',
+                   'bg-cerulean',
+                   'bg-azure',
+                   'bg-red'
+                  ]
+                  if (dark_backgrounds.indexOf(classes[k2]) > -1) {
+                    $option_tmpl.find('label').css('color', 'white')
+                  }
+                }
                 $options_tmpl.find('.options:first').append($option_tmpl);
               }
               $options_tmpl.appendTo('#content-block-options');
