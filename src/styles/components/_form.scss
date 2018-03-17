@@ -18,18 +18,6 @@ form {
       ));
     }
 
-    // Active state
-    &.active {
-
-      label {
-        @include respond((
-          transform: (scale(.8) translateY(-40px)) null (scale(.8) translateY(-30px)),
-        ));
-      }
-
-      
-    }
-
     input,
     select {
       padding: 5px;
@@ -51,16 +39,6 @@ form {
       ));
       &[multiple] {
         height:4em;
-        ~ label {
-          @include respond((
-            transform: (scale(.8) translateY(-3.5em)) null (scale(.8) translateY(-3.8em)),
-          ));
-        }
-        &:focus ~ label {
-          @include respond((
-            transform: (scale(.8) translateY(-3.5em)) null (scale(.8) translateY(-3.8em)),
-          ));
-        }
       }
       &:invalid:focus {
         box-shadow: none;
@@ -76,20 +54,12 @@ form {
         background-color: transparent;
       }
 
-      &:focus ~ label {
-        color: $azure;
-        @include respond((
-          transform: (scale(.8) translateY(-40px)) null (scale(.8) translateY(-30px)),
-        ));
-      }
     }
 
     label {
       position: absolute;
-      top: 0;
+      top: -30px;
       left: 0;
-      transition: all .3s;
-      transform-origin: top left;
       font-weight: normal;
       font-size: 1rem;
       display: flex;
@@ -138,12 +108,6 @@ form {
         box-shadow: none;
       }
 
-      &:focus ~ label {
-        color: $azure;
-        @include respond((
-          transform: (scale(.8) translateY(-40px)) null (scale(.8) translateY(-30px)),
-        ));
-      }
     }
 
     .select-caret {
