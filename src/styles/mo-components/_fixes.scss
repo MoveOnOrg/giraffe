@@ -1,0 +1,31 @@
+/* Fixes to regressions in Red Peak comp'ed pages introduced by changse to giraffe */
+
+p.donate-form__agreement {
+  margin: 0 !important;
+}
+
+p.home-hero__body {
+  margin-bottom: 0;
+  @include respond((
+    margin-top: 27px null 44px,
+  ));
+}
+
+.home-illustration__body p {
+  margin-bottom: 0;
+}
+
+h3.home_illustration__content-heading {
+  @include respond((
+    color: $white,
+    font-size: (36px !important) null (48px !important),
+    line-height: (1 !important) null (.9 !important),
+  ));
+}
+
+/* Fixes form input vertical alignment after substituting 
+static labels for animated labels */
+
+form .input-block:first-child {
+  margin-top: 2rem;
+}
