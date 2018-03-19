@@ -1,4 +1,4 @@
-/* Fixes to regressions in Red Peak comp'ed pages introduced by changse to giraffe */
+/* Fixes to regressions in Red Peak comp'ed pages introduced by changes to giraffe base styles */
 
 p.donate-form__agreement {
   margin: 0 !important;
@@ -24,8 +24,134 @@ h3.home_illustration__content-heading {
 }
 
 /* Fixes form input vertical alignment after substituting 
-static labels for animated labels */
+static labels for animated labels https://github.com/MoveOnOrg/giraffe/issues/88 
+*/
 
 form .input-block:first-child {
   margin-top: 2rem;
+}
+
+/* moui overrides 
+*/
+
+body.donate-page {
+  @media screen and (min-width: $bp-md) {
+    .header {
+      .logo {
+        left: 15%;
+      }
+    }
+  }
+
+  .mo-nav {
+    display: none;
+  }
+
+  form {
+    input[type=radio],
+    input[type=checkbox] {
+      margin: 0;
+    }
+
+    &.donate-form {
+      .input-block  {
+        color: $black;
+
+        label {
+          color: $light-gray;
+        }
+      }
+    }
+
+    button[type=submit] {
+      margin-top: 28px;
+      background-color: $azure;
+      color: $white;
+    }
+  }
+
+  .alt-payment-links {
+    a {
+      color: $azure;
+    }
+  }
+
+  .donate-form {
+    &__subheading {
+      color: $black;
+      font-weight: bold;
+      text-transform: none;
+      letter-spacing: inherit;
+    }
+
+    .known-user {
+      margin: 10px 0;
+    }
+
+    .candidate-row {
+      padding: 5px;
+    }
+
+    .candidate-amount {
+      margin-top: 0;
+    }
+
+    .candidate-details {
+      line-height: 36px;
+    }
+
+    .total-split {
+      font-weight: bold;
+    }
+
+    .moveon-amount {
+      .candidate-details {
+        color: $black;
+        font-weight: normal;
+      }
+    }
+
+    .cc-placeholder {
+      height: 40px;
+      width: 100%;
+      border: none;
+      background: transparent;
+    }
+  }
+}
+
+/* donate-page v3 radios
+*/
+.giraffe {
+  .donate-v3 {
+    .donate-form {
+      .price-select {
+        max-width: 300px;
+
+        .radio-input {
+          width: 30%;
+          min-width: 90px;
+
+          &:nth-child(2),
+          &:nth-child(3),
+          &:nth-child(5),
+          &:nth-child(6) {
+            @include respond((
+              margin-left: 0 0 0,
+            ));
+          }
+        }
+
+        .radio-input-other {
+          @include respond((
+            margin-left: 0 0 0,
+          ));
+
+          @media screen and (max-width: $bp-lg) {
+            width: 157px;
+          }
+        }
+      }
+    }
+  }
 }
