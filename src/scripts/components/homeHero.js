@@ -11,13 +11,22 @@ class HomeHero {
 
   bindCarousels() {
     let _this = this;
+    this.$contentCarousel.on('ready.flickity', function() {
+        if (_this.$contentCarousel.find('.home-hero__text').first().hasClass('home-hero-bg-red')) {
+
+            _this.$contentCarousel.parent().addClass('home-hero-bg-red');
+        }
+    });
     this.$contentCarousel.flickity({
       adaptiveHeight: true,
       wrapAround: true,
     })
     .on('select.flickity', function () {
       let _flickityData = _this.$contentCarousel.data('flickity');
-      _this.$contentCarousel.parent().toggleClass('even', (_flickityData.selectedIndex + 1) % 2 == 0);
+      _this.$contentCarousel.parent().removeClass('home-hero-bg-red');
+       if ($(_flickityData.selectedElement).hasClass('home-hero-bg-red')) {
+           _this.$contentCarousel.parent().addClass('home-hero-bg-red');
+        }
     });
     this.$imageCarousel.flickity({
       sync: this.$contentCarousel[0],
