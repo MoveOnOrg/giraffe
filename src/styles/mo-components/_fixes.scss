@@ -31,6 +31,10 @@ form .input-block:first-child {
   margin-top: 2rem;
 }
 
+form .input-block:not(:first-of-type) {
+    margin-top: 2.25rem;
+}
+
 /* moui overrides 
 */
 
