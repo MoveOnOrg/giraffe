@@ -21,12 +21,14 @@ body {
 .giraffe {
   @import "settings/reset";
   @import "bootstrap/bootstrap-grid.scss";
+  @import "bootstrap/utilities/_spacing.scss"; // See https://v4-alpha.getbootstrap.com/utilities/spacing/
 
   // UTILITY CLASSES
   @import 'mo-utilities/color-classes';
 
   // COMPONENTS
   @import 'components/container';
+  @import 'mo-components/content-block';
   @import 'mo-components/cards';
   @import 'components/headings';
   @import 'mo-components/content';
