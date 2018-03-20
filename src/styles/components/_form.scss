@@ -50,15 +50,15 @@ form {
         border-bottom: (2px solid transparentize($black, 1-0.42)) null,
       ));
       &[multiple] {
-        height:4em;
+        height:4.5em;
         ~ label {
           @include respond((
-            transform: (scale(.8) translateY(-3.5em)) null (scale(.8) translateY(-3.8em)),
+            transform: (scale(.8) translateY(-3.1em)) null (scale(.8) translateY(-3.3em)),
           ));
         }
         &:focus ~ label {
           @include respond((
-            transform: (scale(.8) translateY(-3.5em)) null (scale(.8) translateY(-3.8em)),
+            transform: (scale(.8) translateY(-3.1em)) null (scale(.8) translateY(-3.3em)),
           ));
         }
       }
@@ -81,6 +81,9 @@ form {
         @include respond((
           transform: (scale(.8) translateY(-40px)) null (scale(.8) translateY(-30px)),
         ));
+      }
+      option {
+        padding:0.1em;
       }
     }
 
@@ -158,6 +161,47 @@ form {
         height: 14px,
       ));
     }
+    
+    
+    // TEXTAREA
+    &.textarea-input {
+      margin-top:50px;
+      textarea {
+        padding:0.5em;
+        @include respond((
+          border: (2px solid transparentize($black, 1-0.42)) null,
+        ));
+
+        & ~ label {
+          top: -22px;
+          left: 0;
+          height: auto;
+        }
+
+        &:focus {
+          color: $azure;
+          border-color: $azure;
+          box-shadow: none;
+        }
+
+        &:focus ~ label {
+          color: $azure;
+          @include respond((
+            transform: (scale(1) translateY(0)) null (scale(1) translateY(0)),
+          ));
+        }
+      }
+      &.active {
+
+        label {
+          @include respond((
+            transform: (scale(1) translateY(0)) null (scale(1) translateY(0)),
+          ));
+        } 
+      }
+    }
+    
+    
   }
 
 
@@ -172,6 +216,9 @@ form {
       line-height: 20px,
     ));
   }
+  
+  
+  
   
   // RADIO AND CHECKBOX
   .checkbox-input, .radio-input {
