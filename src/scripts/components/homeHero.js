@@ -17,9 +17,19 @@ class HomeHero {
             _this.$contentCarousel.parent().addClass('home-hero-bg-red');
         }
     });
+
+    let showCarouselChrome = true;
+
+    if (this.$contentCarousel.find('.home-hero__text').length < 2) {
+
+        showCarouselChrome = false;
+
+    }
+    
     this.$contentCarousel.flickity({
       adaptiveHeight: true,
       wrapAround: true,
+        pageDots: showCarouselChrome
     })
     .on('select.flickity', function () {
       let _flickityData = _this.$contentCarousel.data('flickity');
