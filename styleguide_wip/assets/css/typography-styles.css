@@ -1,0 +1,293 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  line-height: 30px;
+}
+
+/** 
+*** All styles default to XS screen sizes. Media queries
+*** must be set to override the default styles on larger screens
+**/
+
+
+/*TYPOGRAPHY */
+a {
+  color: #00abff; /*azure*/
+  font-weight: 500;
+  padding-bottom: 1px;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #00abff; /*azure*/
+}
+
+a:hover {
+  text-decoration: none;
+  color: #00abff; /*azure*/
+  border-bottom: 2px solid #00abff; /*azure*/
+}
+
+
+/*headers*/
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 700; 
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+h1 {
+font-size: 40px;
+line-height: 40px;
+}
+h2 {
+font-size: 30px;
+}
+h3 {
+font-size: 25px;
+}
+h4 {
+font-size: 22px;
+}
+h5 {
+font-size: 18px;
+text-transform: uppercase;
+}
+
+
+/*page title*/
+h1.page-title,
+h1.petition-home-title {
+  font-size: 50px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 50px;
+  margin-bottom: 30px;
+}
+h1.page-title span,
+h1.petition-home-title span {
+  background-color: #00abff; /*azure*/
+  padding-left: 10px;
+  padding-right: 10px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+
+/*blockquote*/
+blockquote {
+  margin: 0 0 30px;
+  border-left: 8px solid #e5f5ff; /*slate gray*/
+  padding-left: 20px;
+  color: #696a6a;
+  font-weight: 100;
+}
+
+
+/*byline*/
+.by-line {
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 100;
+}
+.by-line a {
+  font-weight: 100;
+}
+
+
+
+/*subheader*/
+.sub-header {
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: 1px;
+}
+
+
+
+/*categories*/
+.article-categories {
+  font-size: 14px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #00abff;
+}
+ .article-categories a {
+  font-weight: 700;
+}
+
+
+
+/*categories page label*/
+h5.category-pg-label {
+  padding: 10px;
+  background-color: #e5f5ff;
+}
+
+
+
+/*column header side bar*/
+h5.column-header{
+  text-transform: uppercase;
+  border-bottom: 3px solid #000;
+  margin-bottom: 0;
+  font-size: 15px;
+}
+
+
+/*top posts: post title*/
+h4.top-post-title a {
+  font-size: 17px;
+  font-weight: 700;
+  border-bottom: none;
+}
+
+
+/*top posts: meta*/
+.top-post-meta {
+  font-style: italic;
+  font-size: 11px;
+  font-weight: 100;
+}
+
+
+/*action posts: title*/
+.action-post-title {
+  font-size: 20px;
+}
+
+
+/*action posts: body */
+.sidebar-post-body {
+  font-size: 14px;
+  line-height: 23px;
+}
+
+/***********************/
+/** RESPONSIVE STYLES **/
+/***********************/
+
+/* Small. Above 34em (544px) */
+@media screen and (min-width: 34em) {
+  
+  /****TYPOGRAPHY***/
+
+  /*page title*/
+  h1.page-title {
+    font-size: 60px;
+    line-height: 62px;
+  }
+
+  /*headers*/
+  h1 {
+  font-size: 45px;
+  line-height: 45px;
+  }
+  h2 {
+  font-size: 35px;
+  }
+  h5 {
+  font-size: 20px;
+  }
+
+
+}
+
+/* Medium. Above 48em (768px) */
+@media screen and (min-width: 48em) {
+
+  body {
+    font-size: 18px;
+  }
+
+  /*headers*/
+  h3 {
+  font-size: 28px;
+  }
+  h4 {
+  font-size: 24px;
+  }
+  
+
+  /**************************/
+  /**** FRONT.MOVEON.ORG ****/
+  /**************************/
+  
+  /*by-line*/
+  .by-line {
+    font-size: 15px;
+  }
+
+  /*categories*/
+  .article-categories {
+  font-size: 16px;
+  line-height: 26px;
+  }
+
+  /*column header side bar*/
+  h5.column-header{
+    font-size: 17px;
+  }
+
+  /*top posts: post title*/
+  h4.top-post-title a {
+    font-size: 20px;
+  }
+
+  /*top posts: meta*/
+  .top-post-meta {
+    font-size: 13px;
+  }
+
+  /*action posts: title*/
+  .action-post-title {
+    font-size: 22px;
+  }
+
+  /*action posts: body */
+  .sidebar-post-body {
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  /***************************/
+  /*** PETITION.MOVEON.ORG ***/
+  /***************************/
+
+  /* petition-page-title*/
+  h1.petition-home-title {
+    font-size: 55px;
+    line-height: 60px;
+  }
+
+}
+
+/* Large. Above 62em (992px) */
+@media screen and (min-width: 62em) {
+
+  /* page-title*/
+  h1.page-title {
+    font-size: 75px;
+    line-height: 70px;
+  }
+
+  /*headers*/
+  h1 {
+    font-size: 55px;
+    line-height: 52px;
+  }
+  h2 {
+    font-size: 42px;
+  }
+
+  /*sub-header*/ 
+  .sub-header {
+    font-size: 23px;
+  }
+
+}
