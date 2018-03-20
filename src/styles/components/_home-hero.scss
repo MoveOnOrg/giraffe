@@ -193,11 +193,6 @@
       opacity: 0;
     }
 
-    &:nth-child(even) {
-      .home-hero__heading span {
-        color: $red;
-      }
-    }
   }
 
 
@@ -258,13 +253,6 @@
         padding: (6px 8px) null,
       ));
     }
-  }
-
-
-
-  // EVEN-CHILD STATE
-  .home-hero__content.even {
-    background-color: $red;
   }
 
 
