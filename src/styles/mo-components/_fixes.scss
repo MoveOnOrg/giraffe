@@ -119,29 +119,3 @@ body.donate-page {
     }
   }
 }
-
-button {
-  &.btn {
-    &.azure {
-      @include btn--azure;
-
-      &:hover {
-        svg {
-          fill: $white;
-        }
-      }
-    }
-
-    &.transparent {
-      @include btn--transparent;
-    }
-
-    &.transparent-dark {
-      @include btn--transparent-dark;
-    }
-
-    &.transparent-light {
-      @include btn--transparent-light;
-    }
-  }
-}
