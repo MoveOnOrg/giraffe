@@ -109,6 +109,22 @@
       padding: (24px 16px) null (0 percentage(230px/1440px) 0 percentage(55px/1440px)),
     ));
 
+    &.home-hero-bg-red {
+
+        background-color: $red;
+
+        .home-hero__heading {
+
+            span {
+
+                color: $red;
+
+            }
+
+        }
+
+    }
+
     &__carousel {
       position: relative;
       width: 100%;
