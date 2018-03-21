@@ -243,8 +243,8 @@ form {
       }
     }
     &.border {
-      margin:0;
-      padding:10px 0;
+      margin:1em 0;
+      padding:0 0 1em;
       @include respond((
         width: 100%,
         border-bottom: (2px solid transparentize($black, 1-0.42)) null,
@@ -323,7 +323,6 @@ form {
         width: 100%,
         border-bottom: (2px solid transparentize($black, 1-0.42)) null,
       ));
-      padding-bottom:5px;
     }
 
     input[type=checkbox] {
