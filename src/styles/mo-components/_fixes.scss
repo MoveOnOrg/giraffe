@@ -23,8 +23,8 @@ h3.home_illustration__content-heading {
   ));
 }
 
-/* Fixes form input vertical alignment after substituting 
-static labels for animated labels https://github.com/MoveOnOrg/giraffe/issues/88 
+/* Fixes form input vertical alignment after substituting
+static labels for animated labels https://github.com/MoveOnOrg/giraffe/issues/88
 */
 
 form .input-block:first-child {
@@ -35,7 +35,7 @@ form .input-block:not(:first-of-type) {
     margin-top: 2.25rem;
 }
 
-/* moui overrides 
+/* moui overrides
 */
 
 body.donate-page {
@@ -75,8 +75,34 @@ body.donate-page {
   }
 
   .alt-payment-links {
+    float: right;
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 20px;
+
+    @media (min-width: $screen-md-min) {
+      margin-top: 8px;
+    }
+
     a {
       color: $azure;
+    }
+
+    .paypal-link-container {
+      display: inline-block;
+    }
+
+    .check-link,
+    .paypal-link-or {
+      display: none;
+
+      @media (min-width: $screen-md-min) {
+        display: inline-block;
+      }
+    }
+
+    .check-link {
+      margin-top: 0;
     }
   }
 
