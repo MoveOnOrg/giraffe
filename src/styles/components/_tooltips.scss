@@ -1,0 +1,119 @@
+// Modified version of https://github.com/primer/primer/tree/master/modules/primer-tooltips
+$tooltip-text-color: #fff;
+$tooltip-background-color: #000;
+$border-radius: 0;
+$tooltip-font-family: 'Roboto Condensed Bold';
+$tooltip-text-transform: uppercase;
+$bubble-padding: 15px 20px;
+$arrow-width: 24px;
+$arrow-height: 20px;
+$tooltip-duration: 0.5s;
+$tooltip-delay: 0.1s;
+$arrow-spacer: 15px;
+
+.tooltipped {
+  position: relative;
+}
+
+// This is the tooltip bubble
+.tooltipped::after {
+  position: absolute;
+  z-index: 1000000;
+  display: none;
+  padding: $bubble-padding;
+  font-family: $tooltip-font-family;
+  -webkit-font-smoothing: subpixel-antialiased;
+  color: $tooltip-text-color;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: $tooltip-text-transform;
+  letter-spacing: normal;
+  word-wrap: break-word;
+  white-space: pre;
+  pointer-events: none;
+  content: attr(aria-label);
+  background: $tooltip-background-color;
+  border-radius: $border-radius;
+  opacity: 0;
+}
+
+//This is the tooltip arrow
+.tooltipped::before {
+  position: absolute;
+  z-index: 1000001;
+  display: none;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  content: "";
+  border-style: solid;
+  opacity: 0;
+}
+
+// delay animation for tooltip
+@keyframes tooltip-appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+// This will indicate when we'll activate the tooltip
+.tooltipped:hover,
+.tooltipped:active,
+.tooltipped:focus {
+  &::before,
+  &::after {
+    display: inline-block;
+    text-decoration: none;
+    animation-name: tooltip-appear;
+    animation-duration: $tooltip-duration;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    animation-delay: $tooltip-delay;
+  }
+}
+
+
+// Tooltips above the object
+.tooltipped-up {
+  &::after {
+    bottom: 100%;
+    margin-bottom: $arrow-height - 3px;
+    left: -10px;
+  }
+
+  &::before {
+    top: -($arrow-height - 3px);
+    left: $arrow-spacer - 10px;
+    border-width: $arrow-height $arrow-width/2 0 $arrow-width/2;
+    border-color: $tooltip-background-color transparent transparent transparent;
+  }
+}
+
+// Tooltipped below the object
+.tooltipped-down {
+  &::after {
+    top: 100%;
+    right: -10px;
+    margin-top: $arrow-height - 3px;
+  }
+
+  &::before {
+    right: $arrow-spacer - 10px;
+    bottom: -($arrow-height - 3px);
+    border-width: 0 $arrow-width/2 $arrow-height $arrow-width/2;
+    border-color: transparent transparent $tooltip-background-color transparent;
+  }
+}
+
+@media screen and (min-width: 0\0) {
+  // IE11
+  .tooltipped-multiline::after {
+    width: $tooltip-max-width;
+  }
+}
