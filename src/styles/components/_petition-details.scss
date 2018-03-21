@@ -57,13 +57,13 @@
       @include font(roboto-condensed-bold);
 
       button {
-        color: $azure;
+        color: $azure !important;
         @include respond((
           font-size: 14px null 20px
         ));
 
         &:hover {
-          color: $black;
+          color: $black !important;
         }
 
         &.hidden {
