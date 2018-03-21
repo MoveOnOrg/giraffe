@@ -1,10 +1,7 @@
 .sign-form {
 
   h4 {
-    @include respond((
-      display: none null block,
-      margin-bottom: 40px,
-    ));
+    margin-bottom: 40px;
   }
 
   &__agreement {
@@ -63,5 +60,14 @@
     @include respond((
       font-size: 21px,
     ));
+  }
+
+  textarea {
+    height: 100px;
+  }
+
+  &__mobile {
+    @include respond((display: block null none));
+    padding: 64px percentage(43/320) 32px;
   }
 }

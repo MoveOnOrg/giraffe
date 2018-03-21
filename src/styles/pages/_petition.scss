@@ -5,15 +5,7 @@
     ));
 
     .sign-form {
-      @include respond((
-        padding-top: 79px null 30px,
-      ));
-
-      textarea {
-        @include respond((
-          height: null null 100px,
-        ));
-      }
+      padding-top: 30px;
     }
   }
 }
