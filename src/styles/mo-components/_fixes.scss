@@ -1,4 +1,43 @@
-// moui overrides
+/* Fixes to regressions in Red Peak comp'ed pages introduced by changes to giraffe base styles */
+
+p.donate-form__agreement {
+  margin: 0 !important;
+}
+
+p.home-hero__body {
+  margin-bottom: 0;
+  @include respond((
+    margin-top: 27px null 44px,
+  ));
+}
+
+.home-illustration__body p {
+  margin-bottom: 0;
+}
+
+h3.home_illustration__content-heading {
+  @include respond((
+    color: $white,
+    font-size: (36px !important) null (48px !important),
+    line-height: (1 !important) null (.9 !important),
+  ));
+}
+
+/* Fixes form input vertical alignment after substituting
+static labels for animated labels https://github.com/MoveOnOrg/giraffe/issues/88
+*/
+
+form .input-block:first-child {
+  margin-top: 2rem;
+}
+
+form .input-block:not(:first-of-type) {
+    margin-top: 2.25rem;
+}
+
+/* moui overrides
+*/
+
 body.donate-page {
   @media screen and (min-width: $bp-md) {
     .header {
@@ -36,8 +75,34 @@ body.donate-page {
   }
 
   .alt-payment-links {
+    float: right;
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 20px;
+
+    @media (min-width: $screen-md-min) {
+      margin-top: 8px;
+    }
+
     a {
       color: $azure;
+    }
+
+    .paypal-link-container {
+      display: inline-block;
+    }
+
+    .check-link,
+    .paypal-link-or {
+      display: none;
+
+      @media (min-width: $screen-md-min) {
+        display: inline-block;
+      }
+    }
+
+    .check-link {
+      margin-top: 0;
     }
   }
 
@@ -92,7 +157,8 @@ body.donate-page {
   }
 }
 
-// donate-page v3 radios
+/* donate-page v3 radios
+*/
 .giraffe {
   .donate-v3 {
     .donate-form {
