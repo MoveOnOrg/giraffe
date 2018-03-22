@@ -3,14 +3,16 @@
 {% block bodyclass %}petition rp{% endblock %}
 
 {% block content %}
-  <div class="mo-container">
-    <div class="petition-info-column">
-      {% include 'components/petition-card' %}
-      {% include 'components/petition-details' %}
-    </div>
-    <div class="petition-sign-column">
-      <div>
-        {% include 'components/sign-form' %}
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-8 petition-info-column">
+        {% include 'components/petition-card' %}
+        {% include 'components/petition-details' %}
+      </div>
+      <div class="col-lg-3 offset-lg-1 petition-sign-column">
+        <div>
+          {% include 'components/sign-form' %}
+        </div>
       </div>
     </div>
   </div>
