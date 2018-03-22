@@ -4,17 +4,18 @@
 
 {% block content %}
   <div class="container">
-    <div class="row mt-5">
-      <div class="col-12 col-lg-8 petition-info-column justify-content-center row">
+    <div class="row mt-4 mt-md-5 ml-1 mr-1">
+      <div class="col-12 col-lg-8 petition-info-column">
+        <div class="justify-content-center row">
 
-        {% include 'components/petition-card' %}
+          {% include 'components/petition-card' %}
 
-        <div class='petition-sign-inline col-10 mt-5'>
-          {% include 'components/sign-form' %}
+          <div class='petition-sign-inline col-10 mt-5'>
+            {% include 'components/sign-form' %}
+          </div>
+
+          {% include 'components/petition-details' %}
         </div>
-
-        {% include 'components/petition-details' %}
-
       </div>
       <div class="col-lg-3 offset-lg-1 petition-sign-column mt-4">
         <div>
