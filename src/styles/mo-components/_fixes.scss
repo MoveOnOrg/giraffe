@@ -80,7 +80,7 @@ body.donate-page {
     font-size: 14px;
     line-height: 20px;
 
-    @media (min-width: $screen-md-min) {
+    @media (min-width: $bp-lg) {
       margin-top: 8px;
     }
 
@@ -96,7 +96,7 @@ body.donate-page {
     .paypal-link-or {
       display: none;
 
-      @media (min-width: $screen-md-min) {
+      @media (min-width: $bp-lg) {
         display: inline-block;
       }
     }
