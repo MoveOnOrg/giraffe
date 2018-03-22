@@ -183,6 +183,17 @@
         ));
       }
     }
+
+    // Make tooltip positioning look better
+    .tooltipped-up {
+      &::before {
+        left: 0;
+        top: -23px;
+      }
+      &::after {
+        margin-bottom: 23px;
+      }
+    }
   }
 
 
