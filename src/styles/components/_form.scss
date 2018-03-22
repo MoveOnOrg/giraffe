@@ -39,7 +39,14 @@ form {
       ));
       &[multiple] {
         height:4em;
+        & ~ label {
+          height: auto;
+        }
       }
+      &:focus ~ label {
+        color: $azure;
+      }
+      
       &:invalid:focus {
         box-shadow: none;
       }
@@ -100,8 +107,6 @@ form {
       ));
 
       & ~ label {
-        top: 5px;
-        left: 0;
         height: auto;
       }
 
@@ -110,6 +115,11 @@ form {
         border-color: $azure;
         box-shadow: none;
       }
+      
+      &:focus ~ label {
+        color: $azure;
+      }
+      
 
     }
 
@@ -148,24 +158,8 @@ form {
           box-shadow: none;
         }
 
-        &:focus ~ label {
-          color: $azure;
-          @include respond((
-            transform: (scale(1) translateY(0)) null (scale(1) translateY(0)),
-          ));
-        }
-      }
-      &.active {
-
-        label {
-          @include respond((
-            transform: (scale(1) translateY(0)) null (scale(1) translateY(0)),
-          ));
-        } 
       }
     }
-    
-    
   }
 
 
