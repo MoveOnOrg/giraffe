@@ -1,11 +1,4 @@
 .petition {
-
-  #content {
-    @include respond((
-      padding-top: 30px null,
-    ));
-  }
-
   &-sign-column {
     @include respond((
       display: none null block
