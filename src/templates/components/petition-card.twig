@@ -58,11 +58,9 @@
         <a href="#" class="petition-card__share-icon--mail">{% include 'components/svg' with {id: 'mail'} only %}</a>
         <a href="#" class="petition-card__share-icon">{% include 'components/svg' with {id: 'facebook'} only %}</a>
         <a href="#" class="petition-card__share-icon">{% include 'components/svg' with {id: 'instagram'} only %}</a>
-        <a href="#" class="petition-card__share-icon">{% include 'components/svg' with {id: 'link'} only %}</a>
+        <a href="#" class="petition-card__share-icon tooltipped tooltipped-down" aria-label="Click to copy">{% include 'components/svg' with {id: 'link'} only %}</a>
       </div>
     </div>
 
   </div>
-
-  {% include 'components/signers-modal' %}
 </div>

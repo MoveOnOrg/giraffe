@@ -1,0 +1,45 @@
+.message {
+font-family: 'Roboto Condensed', sans-serif;
+width: 100%;
+padding: 15px;
+background-color: #696a6a;
+color: #ffffff;
+margin-bottom: 30px;
+}
+.message a {
+	color: #ffffff;
+	border-bottom: 3px solid #ffffff;
+}
+.message a:hover{
+	color: #ffffff;
+}
+
+.warning {
+	background-color: #d25c58;
+}
+.caution {
+	background-color: #e4ac3f;
+}
+
+/***********************/
+/** RESPONSIVE STYLES **/
+/***********************/
+
+/* Small. Above 34em (544px) */
+@media screen and (min-width: 34em) {
+
+
+}
+
+/* Medium. Above 48em (768px) */
+@media screen and (min-width: 48em) {
+
+
+}
+
+/* Large. Above 62em (992px) */
+@media screen and (min-width: 62em) {
+
+
+
+}

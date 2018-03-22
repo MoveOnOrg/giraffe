@@ -1,26 +1,7 @@
 .petition {
-
-  #content .mo-container {
-    @include respond((
-      display: null null flex,
-      padding-top: 30px null,
-      padding-left: null null percentage(130px/$bp-xl),
-      padding-right: null null percentage(130px/$bp-xl),
-    ));
-  }
-
-  &-info-column {
-    flex-shrink: 0;
-    @include respond((
-      width: null null percentage(780/1180),
-    ));
-  }
-
   &-sign-column {
-    position: relative;
     @include respond((
-      display: none null block,
-      margin-left: null null percentage(121/1180),
+      display: none null block
     ));
 
     .sign-form {

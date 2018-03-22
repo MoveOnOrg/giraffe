@@ -142,12 +142,12 @@
 
 
   &__link,
+  &__link:link,
   &__link:visited,
   &__link:active {
     color: $azure;
     justify-content: flex-start;
     text-transform: none;
-    color: $azure;
     @include font(roboto);
     @include respond((
       display: flex null inline-flex,

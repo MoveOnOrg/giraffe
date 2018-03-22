@@ -219,6 +219,11 @@
         }
       }
     }
+
+    // Make tooltip positioning look better
+    .tooltipped-down::before {
+      right: 1px;
+    }
   }
 
 

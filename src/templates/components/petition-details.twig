@@ -15,10 +15,10 @@
       <div class="petition-details__comments__entries">
         {% include 'components/signers' %}
       </div>
-      <button class="mo-btn petition-details__comments__toggle">
-        More Reasons for Signing
-        {% include 'components/svg' with {id: 'caret-down'} only %}
-      </button>
+      <div class="petition-details__comments__pagination">
+        <button class="mo-btn">Previous</button>
+        <button class="mo-btn">Next</button>
+      </div>
     </div>
 
     <div class="petition-details__author">
@@ -45,7 +45,7 @@
           {% include 'components/svg' with {id: 'twitter'} only %}
           Twitter
         </a>
-        <a href="#" class="petition-details__share__item">
+        <a href="#" class="petition-details__share__item tooltipped tooltipped-up" aria-label="Click to copy">
           {% include 'components/svg' with {id: 'link'} only %}
           Copy Link
         </a>
