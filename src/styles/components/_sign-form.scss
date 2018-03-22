@@ -65,9 +65,4 @@
   textarea {
     height: 100px;
   }
-
-  &__mobile {
-    @include respond((display: block null none));
-    padding: 64px percentage(43/320) 32px;
-  }
 }

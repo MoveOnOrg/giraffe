@@ -1,4 +1,5 @@
 .petition {
+  // Hide petition sign column on mobile
   &-sign-column {
     @include respond((
       display: none null block
@@ -7,5 +8,11 @@
     .sign-form {
       padding-top: 30px;
     }
+  }
+
+  // Show the inline form on mobile
+  &-sign-inline {
+    @include respond((display: block null none));
+    padding: 0 percentage(43/320); // matches the padding of petition-content
   }
 }
