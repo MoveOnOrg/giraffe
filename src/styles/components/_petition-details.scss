@@ -1,14 +1,4 @@
 .petition-details {
-
-
-  &__content {
-    @include respond((
-      padding: (0 percentage(43/320)) null 0,
-    ));
-  }
-
-
-
   &__narrative {
     display: block;
 
