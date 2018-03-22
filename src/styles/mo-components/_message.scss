@@ -1,0 +1,24 @@
+.message {
+  @include font(roboto-condensed-bold);
+  color: white;
+
+  &--orange {
+    background-color: $orange;
+  }
+
+  &--red {
+    background-color: $muted-red;
+  }
+
+  a,
+  a:visited,
+  a:active {
+    text-decoration: underline;
+    color: $white;
+
+    &:hover {
+      color: $light-blue;
+    }
+  }
+
+}
