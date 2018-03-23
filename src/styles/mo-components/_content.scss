@@ -9,6 +9,7 @@ p {
 small, .small {
   font-size: .8em;
   font-weight: normal;
+  line-height: 1em;
 }
 
 large, .large {
@@ -27,4 +28,9 @@ img {
 }
 .text-align-right {
   text-align:right;
+}
+.fine-print {
+  font-size: .8em !important;
+  line-height: 1.5em !important;
+  font-weight: normal !important;
 }
