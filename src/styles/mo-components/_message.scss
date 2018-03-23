@@ -1,6 +1,6 @@
 .message {
   @include font(roboto-condensed-bold);
-  color: white;
+  color: $white;
 
   &--orange {
     background-color: $orange;
@@ -8,6 +8,14 @@
 
   &--red {
     background-color: $muted-red;
+  }
+
+  &--gray {
+    background-color: $gray;
+  }
+
+  &--azure {
+    background-color: $azure;
   }
 
   a,
