@@ -10,7 +10,7 @@
 
     form {
       @include respond((
-        padding: (50px 14px 14px) null (70px 24px 40px),
+        padding: (50px 14px 60px) null (70px 24px 80px),
       ))
     }
   }
@@ -36,6 +36,7 @@
       text-transform: uppercase,
       background-color: $azure,
       padding: (0 10px) null,
+      margin-bottom: 50px null 100px,
     ));
   }
 
