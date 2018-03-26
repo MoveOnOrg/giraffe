@@ -1,12 +1,5 @@
 .petition-thanks {
 
-  &__container {
-    @include respond((
-      margin-top: 25px null 75px,
-      margin-bottom: 25px null 40px
-    ));
-  }
-
   &__heading {
     display: block;
     text-transform: uppercase;
@@ -19,7 +12,6 @@
 
 
   &__content {
-    max-width: 580px;
     @include respond((
       margin-top: 25px null 75px,
     ));
