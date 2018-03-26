@@ -1,19 +1,11 @@
 .petition {
+  // Hide petition sign column on mobile
   &-sign-column {
-    @include respond((
-      display: none null block
-    ));
+    @include respond((display: none null block));
+  }
 
-    .sign-form {
-      @include respond((
-        padding-top: 79px null 30px,
-      ));
-
-      textarea {
-        @include respond((
-          height: null null 100px,
-        ));
-      }
-    }
+  // Show the inline form on mobile
+  &-sign-inline {
+    @include respond((display: block null none));
   }
 }

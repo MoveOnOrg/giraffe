@@ -4,20 +4,25 @@
 
 {% block content %}
   <div class="container">
-    <div class="row mt-5">
+    <div class="row mt-4 mt-md-5 mx-1">
       <div class="col-12 col-lg-8 petition-info-column">
-        {% include 'components/petition-card' %}
-        {% include 'components/petition-details' %}
+        <div class="justify-content-center row">
+
+          {% include 'components/petition-card' %}
+
+          <div class='petition-sign-inline col-10 mt-5'>
+            {% include 'components/sign-form' %}
+          </div>
+
+          {% include 'components/petition-details' %}
+        </div>
       </div>
-      <div class="col-lg-3 offset-lg-1 petition-sign-column">
+      <div class="col-lg-3 offset-lg-1 petition-sign-column mt-4">
         <div>
           {% include 'components/sign-form' %}
         </div>
       </div>
     </div>
   </div>
-
-  {% include 'components/sign-form-modal' %}
-
-  <button class="sign-form__modal-toggle">Sign Now</button>
+  <button class="sign-form__fixed-button">Sign Now</button>
 {% endblock %}
