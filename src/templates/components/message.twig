@@ -1,5 +1,5 @@
 {% macro message(text, color, rightText, hidden) %}
-<div class="message message--{{ color }} col-12 mb-4 mb-md-5 p-3" style="{{ hidden ? 'display: none' : ''}}">
+<div class="message bg-{{ color }} col-12 mb-4 mb-md-5 p-3" style="{{ hidden ? 'display: none' : ''}}">
   <div class="row">
     <div class="col">
       {{ text }}

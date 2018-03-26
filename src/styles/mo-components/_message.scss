@@ -2,21 +2,7 @@
   @include font(roboto-condensed-bold);
   color: $white;
 
-  &--orange {
-    background-color: $orange;
-  }
-
-  &--red {
-    background-color: $muted-red;
-  }
-
-  &--gray {
-    background-color: $gray;
-  }
-
-  &--azure {
-    background-color: $azure;
-  }
+  // Background color comes from utility classes https://github.com/MoveOnOrg/giraffe/blob/main/src/styles/mo-utilities/_color-classes.scss
 
   a,
   a:visited,
