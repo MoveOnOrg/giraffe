@@ -1,0 +1,18 @@
+.blurb {
+  border: 0 solid $slate-gray;
+  border-bottom-width: 1px;
+
+  &__byline {
+    font-style: italic;
+  }
+
+  a,
+  a:visited,
+  a:active {
+    h4 {
+      @include font(roboto-condensed-bold);
+      color: $black;
+      font-size: 1.1em;
+    }
+  }
+}
