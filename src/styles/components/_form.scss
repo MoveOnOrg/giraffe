@@ -207,6 +207,7 @@ form {
         width: 100%,
         border-bottom: (2px solid transparentize($black, 1-0.42)) null,
       ));
+      border-width:0 0 2px 0;
     }
     &.margin {
       margin:30px 0;
