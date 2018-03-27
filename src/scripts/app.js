@@ -7,7 +7,7 @@ import HomeHero from './components/homeHero';
 import SignForm from './components/signForm';
 import PetitionComments from './components/petitionComments';
 import PetitionCard from './components/petitionCard';
-import './components/formsInputBlock';
+import FormsInputBlock from './components/formsInputBlock';
 
 $(document).ready(function () {
   Nav.init();
@@ -19,4 +19,5 @@ $(document).ready(function () {
   SignForm.init();
   PetitionComments.init();
   PetitionCard.init();
+  FormsInputBlock.init();
 });
