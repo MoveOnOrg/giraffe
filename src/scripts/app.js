@@ -7,6 +7,7 @@ import HomeHero from './components/homeHero';
 import SignForm from './components/signForm';
 import PetitionComments from './components/petitionComments';
 import PetitionCard from './components/petitionCard';
+import './components/formsInputBlock';
 
 $(document).ready(function () {
   Nav.init();
