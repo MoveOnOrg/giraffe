@@ -200,31 +200,3 @@ body.donate-page {
     }
   }
 }
-
-/* ActionKit Errors */
-
-label.ak-err {
-  max-height: 30px;
-}
-
-input.ak-err {
-  border-bottom-color: $muted-red;
-}
-
-
-ul#ak-errors > li,
-ul.errorlist > li,
-ul.ak-err > li {
-  margin: 5px 0;
-  padding: 10px;
-  border-radius: 0;
-  background-color: $muted-red;
-  border-color: $muted-red;
-  line-height: 1em;
-  color: $white;
-  font-weight: bold;
-
-  &::before {
-    display: none;
-  }
-}
