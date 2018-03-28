@@ -161,7 +161,7 @@ body.donate-page {
   }
 
   ul.ak-err > li {
-    padding: 8px;
+    padding: 10px;
   }
 }
 
@@ -208,16 +208,23 @@ label.ak-err {
 }
 
 input.ak-err {
-  border-bottom-color: $red;
+  border-bottom-color: $muted-red;
 }
 
-ul.ak-err {
-  li {
-    border-radius: 0;
-    line-height: 1em;
 
-    &::before {
-      display: none;
-    }
+ul#ak-errors > li,
+ul.errorlist > li,
+ul.ak-err > li {
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 0;
+  background-color: $muted-red;
+  border-color: $muted-red;
+  line-height: 1em;
+  color: $white;
+  font-weight: bold;
+
+  &::before {
+    display: none;
   }
 }
