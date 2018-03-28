@@ -159,6 +159,10 @@ body.donate-page {
     margin-bottom: -32px;
     font-size: 18px;
   }
+
+  ul.ak-err > li {
+    padding: 8px;
+  }
 }
 
 /* donate-page v3 radios
@@ -193,6 +197,27 @@ body.donate-page {
           }
         }
       }
+    }
+  }
+}
+
+/* ActionKit Errors */
+
+label.ak-err {
+  max-height: 30px;
+}
+
+input.ak-err {
+  border-bottom-color: $red;
+}
+
+ul.ak-err {
+  li {
+    border-radius: 0;
+    line-height: 1em;
+
+    &::before {
+      display: none;
     }
   }
 }
