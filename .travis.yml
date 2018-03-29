@@ -10,26 +10,27 @@ before_deploy:
 - cp -r public/styles deploy/
 - cp -r public/*.html deploy/
 deploy:
-- provider: s3
-  on:
-    branch: main
-  access_key_id: AKIAITZUUGIJNKLB4PHA
-  bucket: static.moveon.org
-  skip_cleanup: true
-  region: us-east-2
-  acl: public_read
-  local_dir: deploy
-  upload-dir: giraffe
-- provider: s3
-  on:
-    branch: main
-  access_key_id: AKIAITZUUGIJNKLB4PHA
-  bucket: mop-static-stage
-  skip_cleanup: true
-  region: us-west-1
-  acl: public_read
-  local_dir: deploy
-  upload-dir: giraffe
-env:
-  global:
-    secure: kg5eOg30VP0k1YcAe77ha4ZC+m/o2mTPzS9J2GnnPKEKxw03fSu7fSbq81jA9AUhPV8mGzxHP2H2ZxYsgfLk0qt5ZYCQkD2koPHi+r9fQYzNzR+c5vTLj7Sm2zldmWrhik8nqSkMfeg2dl2jy5hM+qVpBapZNFKpaaPFCIUYCSn283r4AwfoXysmD5EZXpWyAsZB6q5KB5gCgm254hKI1k8i9R9dclBRfGieeOfh/j6k+0tRDXCI+5pIomjoChRWPGFrXevhhtB5gIESofvZtpWKCCqdhe+wZlKbF9vBedmSnKD2DfwHsCKnDeLmWEWv34J/0+hMjFNSVffv++xLjk03V7QDdKGqutLuNV9SOmoYeTDPrB/oz59IMorjSQbqGFruAn43vgJseGDQ+B28rWVlBpU/KNdc/NpqIrOJHv+0B5NdE9O52Y9Keu+/OzO0L8VeJaDgWdppGH0MlpjTyHJv+OiuUGVTDJa0EOcp6uw1RtiAGbmHIdwMjXNX4M+qrvo21vS/X/4nJ0VDRlWSLimybem0C/vQ57MXM12UmLgBGMvG2qW8EdCIaZ/VQoSP3vZOjl5mQj1zKNJn35I7+5PuVRTLiOLT22gFzuY36OQhqsSdGJDKCG/bBl6+CjffbW8XJos7v2e06kE9EBzNa4wEAcMBSvD7DMJDh0lsL7A=
+  - provider: s3
+    on:
+      branch: main
+    access_key_id: AKIAITZUUGIJNKLB4PHA
+    bucket: static.moveon.org
+    skip_cleanup: true
+    region: us-east-2
+    acl: public_read
+    local_dir: deploy
+    upload-dir: giraffe
+    secret_access_key:
+      secure: Vzby/QYXO/MNSlUrbUMH3yacqdPouge9+CvU5Vnc/xYPL0Bdw7WT3grrY14AoBfTrxUGbdGl/PnTWtwskUiTHYeVpUzUmtOTvImdsqvtF7bzLyn+Gsn3Mq9Kt/Y3DfSmqItWYJFAzM68Cg1hB2nKNUuApmCmsm68A/2Vj0gFY0MZFkZtraKImBI2l3LDhwykMdFQpMzwtx+et11RMGIFpqvy9czLOIRCaW/q+Lyk6FLQlBylIb//QScm2ghEpO5ukf4DHinCc0qEB35tqHJzI9hwUEI61uy4Edry8Vivo8zcHsECV1nI0KoA+gvLCBxHm0EAM6spJ4/K3sI12o25pYhXeubTaDXQqyUCNJAxIM/LIRjXXF/9DMy+7hzJAPOuevfy/0UnJ+GwRDjz8ZHVdsW9jwUEddf8KZ67LbF2YhDobnL1GOjS9+aQk3g9J0zEU7uLtvIXpVtKQLQf1Ma1grJ4oZjlRzspbkM+J74a92XIHz0B/KTWO8H0c4Rftuxkay81O5CWdUsCZBnFsfZEqrLeLt4DeE27sHnEBbz9hhWlBjofvRunj7FjVJd6kQyxJXRl0NULr1vKRtt1FS2zzg453tyAWhNu+4M+LWItwblO3NPneb20Q7IOeeySztOPNDwFraoup6Ix83nK7FkTvkzZz+iTaUagzRDFOB8otf8=
+  - provider: s3
+    on:
+      branch: main
+    access_key_id: AKIAITZUUGIJNKLB4PHA
+    bucket: mop-static-stage
+    skip_cleanup: true
+    region: us-west-1
+    acl: public_read
+    local_dir: deploy
+    upload-dir: giraffe
+    secret_access_key:
+      secure: Vzby/QYXO/MNSlUrbUMH3yacqdPouge9+CvU5Vnc/xYPL0Bdw7WT3grrY14AoBfTrxUGbdGl/PnTWtwskUiTHYeVpUzUmtOTvImdsqvtF7bzLyn+Gsn3Mq9Kt/Y3DfSmqItWYJFAzM68Cg1hB2nKNUuApmCmsm68A/2Vj0gFY0MZFkZtraKImBI2l3LDhwykMdFQpMzwtx+et11RMGIFpqvy9czLOIRCaW/q+Lyk6FLQlBylIb//QScm2ghEpO5ukf4DHinCc0qEB35tqHJzI9hwUEI61uy4Edry8Vivo8zcHsECV1nI0KoA+gvLCBxHm0EAM6spJ4/K3sI12o25pYhXeubTaDXQqyUCNJAxIM/LIRjXXF/9DMy+7hzJAPOuevfy/0UnJ+GwRDjz8ZHVdsW9jwUEddf8KZ67LbF2YhDobnL1GOjS9+aQk3g9J0zEU7uLtvIXpVtKQLQf1Ma1grJ4oZjlRzspbkM+J74a92XIHz0B/KTWO8H0c4Rftuxkay81O5CWdUsCZBnFsfZEqrLeLt4DeE27sHnEBbz9hhWlBjofvRunj7FjVJd6kQyxJXRl0NULr1vKRtt1FS2zzg453tyAWhNu+4M+LWItwblO3NPneb20Q7IOeeySztOPNDwFraoup6Ix83nK7FkTvkzZz+iTaUagzRDFOB8otf8=
