@@ -4,6 +4,7 @@ import Sticky from './components/sticky';
 
 import HomeCarousel from './components/homeCarousel';
 import HomeHero from './components/homeHero';
+import JoinForm from './components/joinForm';
 import SignForm from './components/signForm';
 import PetitionComments from './components/petitionComments';
 import PetitionCard from './components/petitionCard';
@@ -12,6 +13,7 @@ $(document).ready(function () {
   Nav.init();
   HomeCarousel.init();
   HomeHero.init();
+  JoinForm.init();
   Modal.init();
   Sticky.init();
 

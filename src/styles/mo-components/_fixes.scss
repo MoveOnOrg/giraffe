@@ -196,3 +196,11 @@ body.donate-page {
     }
   }
 }
+
+/* Homepage join form fixes */
+.subscribe-sms-conditions {
+  display: none !important;
+}
+.subscribe-sms-conditions.unhide {
+  display: block !important;
+}
