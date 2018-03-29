@@ -1,56 +1,4 @@
 .petition-card {
-  background-color: $ice-blue;
-  position: relative;
-  @include respond((
-    padding: (21px 22px 28px) null (107px percentage(80/780) 66px),
-  ));
-
-  &__heading {
-
-    span {
-      display: inline-block;
-      padding: 2px 5px;
-      @include font(roboto-condensed-bold);
-      @include respond((
-        font-size: 21px null 48px,
-        line-height: .9 null 48px,
-        letter-spacing: -.6px null normal,
-        background-color: $azure,
-      ));
-    }
-  }
-
-  &__body {
-    @include respond((
-      margin-top: 13px null 24px,
-    ));
-
-    p {
-      @include respond((
-        font-size: 16px null 18px,
-        line-height: 24px null 24px,
-      ));
-      @include font(roboto);
-
-      &:not(:first-child) {
-        @include respond((
-          margin-top: 20px null 32.5px,
-        ));
-      }
-    }
-
-    strong {
-      @include font(roboto-bold);
-    }
-
-  }
-
-  &__media {
-    @include respond((
-      margin-top: 15px null 29px,
-    ));
-  }
-
   &__description {
     @include respond((
       margin-top: 20px null 32.5px
@@ -224,7 +172,7 @@
     .tooltipped-down::before {
       right: 1px;
     }
-  }
+}
 
 
   // EXPANDED DESCRIPTION STATE
