@@ -22,6 +22,14 @@
         background-color: $azure,
       ));
     }
+    h1 {
+      line-height: 1em;
+      span {
+        @include respond((
+          font-size: 2.5rem 3rem,
+        ));
+      }
+    }
   }
 
   &__body {
@@ -40,6 +48,10 @@
         @include respond((
           margin-top: 20px null 32.5px,
         ));
+      }
+
+      &.large {
+        font-size: 1.5rem;
       }
     }
 
