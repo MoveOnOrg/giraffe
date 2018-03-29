@@ -2,6 +2,13 @@ button {
   &.btn {
     font-size: 1em;
     padding: .375rem .75rem;
+
+    &--large {
+      padding: .5rem 1rem;
+      font-size: 1.5em;
+      height: auto;
+    }
+
     &.azure {
       @include btn--azure;
       color: $white;
