@@ -1,0 +1,18 @@
+form.searchbar {
+  select, input, button {
+    width: 100%;
+    @include respond((
+      font-size: 1.1rem null 1rem,
+      height: 40px null 40px
+    ));
+  }
+
+  input {
+    border: 1px solid $light-gray;
+    @include font(roboto);
+  }
+
+  .input-block {
+    margin-top: 0;
+  }
+}
