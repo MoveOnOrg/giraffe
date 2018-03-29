@@ -20,3 +20,4 @@ deploy:
   acl: public_read
   on:
     branch: main
+  skip_cleanup: true
