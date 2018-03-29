@@ -20,7 +20,6 @@ deploy:
   acl: public_read
   local_dir: deploy
   upload-dir: giraffe
-  secret_access_key:
 - provider: s3
   on:
     branch: main
@@ -31,7 +30,6 @@ deploy:
   acl: public_read
   local_dir: deploy
   upload-dir: giraffe
-  secret_access_key:
 env:
   global:
     secure: kg5eOg30VP0k1YcAe77ha4ZC+m/o2mTPzS9J2GnnPKEKxw03fSu7fSbq81jA9AUhPV8mGzxHP2H2ZxYsgfLk0qt5ZYCQkD2koPHi+r9fQYzNzR+c5vTLj7Sm2zldmWrhik8nqSkMfeg2dl2jy5hM+qVpBapZNFKpaaPFCIUYCSn283r4AwfoXysmD5EZXpWyAsZB6q5KB5gCgm254hKI1k8i9R9dclBRfGieeOfh/j6k+0tRDXCI+5pIomjoChRWPGFrXevhhtB5gIESofvZtpWKCCqdhe+wZlKbF9vBedmSnKD2DfwHsCKnDeLmWEWv34J/0+hMjFNSVffv++xLjk03V7QDdKGqutLuNV9SOmoYeTDPrB/oz59IMorjSQbqGFruAn43vgJseGDQ+B28rWVlBpU/KNdc/NpqIrOJHv+0B5NdE9O52Y9Keu+/OzO0L8VeJaDgWdppGH0MlpjTyHJv+OiuUGVTDJa0EOcp6uw1RtiAGbmHIdwMjXNX4M+qrvo21vS/X/4nJ0VDRlWSLimybem0C/vQ57MXM12UmLgBGMvG2qW8EdCIaZ/VQoSP3vZOjl5mQj1zKNJn35I7+5PuVRTLiOLT22gFzuY36OQhqsSdGJDKCG/bBl6+CjffbW8XJos7v2e06kE9EBzNa4wEAcMBSvD7DMJDh0lsL7A=
