@@ -11,14 +11,13 @@ before_deploy:
 - cp -r public/*.html deploy/
 deploy:
   provider: s3
-  on:
-    branch: main
   access_key_id: AKIAITZUUGIJNKLB4PHA
-  bucket: static.moveon.org
-  skip_cleanup: true
-  region: us-east-2
-  acl: public_read
-  local_dir: deploy
-  upload-dir: giraffe
   secret_access_key:
-    secure: OA27ZyMZGkiRe0zoi1/hH0vaR4cBA69PCU0g3RtNJmP1JdCS4tzf5whD7dynsvr+ccugjOncAOTmlP19bTwqB/hOGAyqbCPNoSQnS9kEPrtfFSQinx62ugiglbSQ7lHWmIsGT4TuMyIP0P+GJhLOAJJDNYrX2b8crNQm2hWBtRk6R+CLuBmhpQQlyVf5qfYKwj7dEJkABU+/omdh0emnbE/ghBYTijJI6qi7ARLKGrECh4MHP4pAetb2Cih9OK+lOUf74MOEmdspvQGzgC+XxNByXexW8aKtGwhEWHmQo20xnLHoUkrZtB5JIGJFkDjJHYnidKtGEs4IgnmQpkDZsJeuBEXlFGvbJYbud9WuKbGAGmydWBi7lkAVBcR8gAfUm5mr2273+xR3pixB9SjFsVlZHJKTEV+aRKbNTx6drbYvChQl6XtaoKEfvqzixBVIpDQ3WV/gQZV+pUu2O1zOkbCb459w3gJ6TQ9M9dNScmHQIehSxuBpOHPw3RyeTL93p0cD8vm0u6ar4VuliP2X9kGu66k7lVcz/NQBcLTyuktLuIxrwB2HO+MsoGoukbh12bx20gK4ooGUVv2RQMQf832+LnnQ0HYKDZEJ+O8T3XQaEnLMs5T55aWXn8Lh7m9QRvtwealzMWfSaNn3eQE2xhHZN5PJ3GOQJcEPOpNRUhA=
+    secure: TLMRNHU1yagmQRdm+54kg6Zcl2+0RlCmYX0oX2F1dmoiued35Uf9X4iG145RO/rDnZZpmUk/qiZACZKUFMCQWwZka8u0r/R4gwMRWu/4JVueTBtyqX/tuX75sUkwyhIQubHJpuYa6oBmCElGuZcl7FhbBB3mX+izH8hKhOt93UzXyxh1C/JzVFT9nFCBirpRbk1Nmwjsc82vCVIgAUV8NrlThlMzDEd00GmvXP0zr37r0mJLcCwx1de/de7SIRrkmbzuw5fI9oCOI8689AXlJcX8rPymOqWHttMgxzDXgN3TS8uqDsMXfsOizsM8apGXDF3ohQZlbD6McEnjI7tcmrPSAqfYeFTeXhPPWIhzJ0FFxfqmBxah9mEl/QPdL5rG/NBcHJVsxfO/7xCviAtU2/8BVj74SQ1yYOHOU1lpA1PFx3px0IBYrwDG4sDEISAN5I9NW16HPjhbOk43Cz4T3KeLYVcnE2Gxxjvmo6F9UZ2xgO5yBpvXn9/BJxZgbRCXQQqBkyeQfEERPJL5f0IUKFuU3XBwf1XD2w1WjFZGLVr+2hsDKU0f9b4G8nhNOItYGJOtcYfEv/a6pVWzUUkOMvB32GEWUTgsVPCX2wFVNovR1z6wN6sqiMnkroNDUR6z9eVI5hAZpp6rXfCV5E8rgmaKPc/A9BzSCoTxp3hryIE=
+  bucket: static.moveon.org
+  local-dir: deploy
+  upload-dir: giraffe
+  acl: public_read
+  on:
+    repo: MoveOnOrg/giraffe
+    branch: fix-travis
