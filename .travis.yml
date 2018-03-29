@@ -19,5 +19,4 @@ deploy:
   upload-dir: giraffe
   acl: public_read
   on:
-    repo: MoveOnOrg/giraffe
-    branch: fix-travis
+    branch: main
