@@ -55,33 +55,47 @@ class JoinForm {
 
   bindform() {
     let _this = this;
-    console.log("check field before ", _this.$userSmsSubscribe);
-    console.log(_this.$userSmsSubscribe[0]);
     this.$form.on('change keyup', function () {
-      let currentFormData = new FormData(_this.$form[0]);
-      let entries = [];
-      let formData = {};
+      // let currentFormData = new FormData(_this.$form[0]);
+      // let entries = [];
+      // let formData = {};
 
-      // Safari doesnt support FormData.prototype.values
-      if ( currentFormData.entries ) {
-        entries = Array.from(currentFormData.entries());
-      } else {
-        entries = getFormEntries(_this.$form[0]);
-      }
+      // // Safari doesnt support FormData.prototype.values
+      // if ( currentFormData.entries ) {
+      //   entries = Array.from(currentFormData.entries());
+      // } else {
+      //   entries = getFormEntries(_this.$form[0]);
+      // }
 
-      entries.map( entry => formData[entry[0]] = entry[1]);
-      console.log("formData ", formData);
-      if (formData.mobile_phone.replace(/\D/g,'').length >= 10) {
+      // entries.map( entry => formData[entry[0]] = entry[1]);
+      if (_this.$mobile[0].value.replace(/\D/g,'').length >= 10) {
         _this.$userSmsSubscribe[0].checked = true;
         if (_this.$subscribeSMSConditions[0].className.search("unhide") == -1) {
           _this.$subscribeSMSConditions[0].className += " unhide";
         }
-        console.log(_this.$subscribeSMSConditions[0]);
       }
     });
-    this.$form.on('submit', function () {
-      console.log("submit!");
-      
+    this.$form.on('submit', function (e) {
+      const mobile = _this.$mobile[0].value.replace(/\D/g, '');
+      const email = _this.$email[0].value;
+      const name = _this.$name[0].value;
+      const zip = _this.$zip[0].value;
+
+      if (email === '' && mobile === '' || name === '' || zip === '') {
+        e.preventDefault();
+        alert("something's missing"); // TODO: Show informative error message
+        return !1
+      }
+
+      if (mobile && mobile.length >= 10) {
+        if (email === '') {
+          _this.$suppressEmailSubscribe.value = 1;
+          _this.$email[0].value = mobile+'-smssubscriber@example.com';
+        }
+        _this.$smsTerms[0].value = 'sms_termsandconditions';
+        _this.$smsSubscribe[0].value = 'mobilesubscribe';
+        _this.$robodialTerms.value = 'yes';
+      }
     });
   }
 }
