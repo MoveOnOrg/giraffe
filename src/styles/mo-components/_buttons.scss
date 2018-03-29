@@ -1,7 +1,10 @@
 button {
   &.btn {
+    font-size: 1em;
+    padding: .375rem .75rem;
     &.azure {
       @include btn--azure;
+      color: $white;
 
       &:hover {
         svg {
