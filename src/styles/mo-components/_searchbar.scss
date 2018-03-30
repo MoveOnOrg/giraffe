@@ -1,10 +1,8 @@
 form.searchbar {
   select, input, button {
+    font-size: 18px;
     width: 100%;
-    @include respond((
-      font-size: 1.1rem null 1rem,
-      height: 40px null 40px
-    ));
+    height: 40px;
   }
 
   input {
