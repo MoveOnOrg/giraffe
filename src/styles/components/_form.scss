@@ -470,6 +470,10 @@ form {
         width:100%;
         top:0;
       }
+      .select-caret {
+        top:auto;
+        bottom:0.2em;
+      }
     }
     &.active {
       color: $azure;
