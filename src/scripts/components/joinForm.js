@@ -1,24 +1,3 @@
-
-
-  // $('form#formSelection').submit(function (e) {
-  //   var mobile = $('#mobile_phone').val().replace(/\D/g, '');
-  //   if (mobile && mobile.length >= 10) {
-  //     if ($('#email').val() === '') {
-  //       $('#id_suppress_subscribe').val('1');
-  //       $('#email').val(mobile+'-smssubscriber@example.com');
-  //     }
-  //     //$('#id_sms_subscribed').val('sms_subscribed');
-  //     $('#id_sms_termsandconditions').val('sms_termsandconditions');
-  //     $('#id_action_mobilesubscribe').val('mobilesubscribe');
-  //     $('#id_robodial_termsandconditions').val('yes');
-  //   } 
-  //   if (($('#email').val() === '' && $('#mobile_phone').val() === '')
-  //       || $('#user_name').val() === '' || $('#signup-zip').val() === '') {
-  //     e.preventDefault();
-  //     $('span#please-fill-out').removeClass('hide');
-  //     return !1
-  //   }
-  // });
 import { entries as getFormEntries } from '../utilities/formData';
 
 class JoinForm {
@@ -46,8 +25,9 @@ class JoinForm {
     this.$robodialTerms = this.$form.find('[name="user_robodial_termsandconditions"]');
     this.$userSmsSubscribe = this.$form.find('[name="user_sms_subscribed"]');
 
-
     this.$submit = this.$form.find('[type="submit"]');
+
+    this.$errors = this.$form.find('.errorlist');
 
     this.formData = {};
     this.bindform();
@@ -55,19 +35,8 @@ class JoinForm {
 
   bindform() {
     let _this = this;
+
     this.$form.on('change keyup', function () {
-      // let currentFormData = new FormData(_this.$form[0]);
-      // let entries = [];
-      // let formData = {};
-
-      // // Safari doesnt support FormData.prototype.values
-      // if ( currentFormData.entries ) {
-      //   entries = Array.from(currentFormData.entries());
-      // } else {
-      //   entries = getFormEntries(_this.$form[0]);
-      // }
-
-      // entries.map( entry => formData[entry[0]] = entry[1]);
       if (_this.$mobile[0].value.replace(/\D/g,'').length >= 10) {
         _this.$userSmsSubscribe[0].checked = true;
         if (_this.$subscribeSMSConditions[0].className.search("unhide") == -1) {
@@ -75,30 +44,48 @@ class JoinForm {
         }
       }
     });
-    this.$form.on('submit', function (e) {
-      const mobile = _this.$mobile[0].value.replace(/\D/g, '');
-      const email = _this.$email[0].value;
-      const name = _this.$name[0].value;
-      const zip = _this.$zip[0].value;
 
-      if (email === '' && mobile === '' || name === '' || zip === '') {
+    this.$form.on('submit', function (e) {
+      const Mobile = _this.$mobile[0].value.replace(/\D/g, '');
+      const Email = _this.$email[0].value;
+      const Name = _this.$name[0].value;
+      const Zip = _this.$zip[0].value;
+      const fields = {Mobile, Email, Name, Zip};
+
+      if (Email === '' && Mobile === '' || Name === '' || Zip === '') {
         e.preventDefault();
-        alert("something's missing"); // TODO: Show informative error message
-        return !1
+        Object.keys(fields).forEach(function(key) { 
+          if (fields[key] === '' && key !== "Email") {
+            _this.addErrorToList(key);
+          }
+        });
+        return !1;
       }
 
-      if (mobile && mobile.length >= 10) {
-        if (email === '') {
+      if (Mobile && Mobile.length >= 10) {
+        if (Email === '') {
           _this.$suppressEmailSubscribe.value = 1;
-          _this.$email[0].value = mobile+'-smssubscriber@example.com';
+          _this.$email[0].value = Mobile+'-smssubscriber@example.com';
         }
         _this.$smsTerms[0].value = 'sms_termsandconditions';
         _this.$smsSubscribe[0].value = 'mobilesubscribe';
-        _this.$robodialTerms.value = 'yes';
+        _this.$robodialTerms[0].value = 'yes';
       }
     });
+
+  }
+
+  addErrorToList(error) {
+    let listItem = document.createElement('li');
+    let text = error + " is required";
+    if (error === "Email" || error === "Mobile") {
+      text = "Email OR mobile opt-in is required";
+    }
+    listItem.appendChild(document.createTextNode(text));
+    this.$errors[0].appendChild(listItem);
   }
 }
+
 
 
 export default {
