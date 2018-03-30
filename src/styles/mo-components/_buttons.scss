@@ -1,18 +1,24 @@
 button {
-  &.btn {
-    appearance: none;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    border: 0;
-    border-radius: 0;
-    cursor: pointer;
-    text-transform: uppercase;
-    background-image: none;
-    box-shadow: none;
+  appearance: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-image: none;
+  box-shadow: none;
 
+  transition: all .3s;
+
+  svg {
+    max-width: 100%;
+    max-height: 100%;
     transition: all .3s;
+  }
 
+  &.btn {
     @include font(roboto-condensed-bold);
     font-size: 18px;
     padding: 5px 10px;
@@ -30,7 +36,6 @@ button {
       color: inherit;
       fill: currentcolor !important;
       margin-left: 10px;
-      transition: all .3s;
     }
 
     &.azure {
