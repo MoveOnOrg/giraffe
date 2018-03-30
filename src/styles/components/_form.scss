@@ -193,12 +193,18 @@ form {
     }
     &.label-above { 
       display:block;
-      color: rgba(0,0,0,0.54);
+      color: $light-gray;
+      font-size: .95rem;
       label {
+        color: $light-gray;
         display:block;
         margin:0 0 0.5em 0;
         position:relative;
         width:100%;
+        font-size: inherit;
+      }
+      div {
+        font-size: inherit;
       }
     }
     &.border {
