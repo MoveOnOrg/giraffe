@@ -38,6 +38,7 @@ form {
         border-bottom: (2px solid transparentize($black, 1-0.42)) null,
       ));
       &[multiple] {
+        border-bottom:0;
         height:4em;
         & ~ label {
           height: auto;
