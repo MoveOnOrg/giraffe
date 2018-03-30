@@ -49,3 +49,8 @@ tasks = isLocal || isDevelopment ? devOnlyTasks.concat(tasks) : tasks;
 tasks = isStaging || isProduction ? prodOnlyTasks.concat(tasks) : tasks;
 
 registerTasks(tasks);
+
+/**
+ * A watch task that proxies another local server
+ */
+require('./gulp/watch-proxy');
