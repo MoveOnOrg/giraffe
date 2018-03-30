@@ -46,19 +46,25 @@ class JoinForm {
     });
 
     this.$form.on('submit', function (e) {
-      const Mobile = _this.$mobile[0].value.replace(/\D/g, '');
-      const Email = _this.$email[0].value;
-      const Name = _this.$name[0].value;
-      const Zip = _this.$zip[0].value;
+      const Mobile = _this.$mobile[0];
+      const Email = _this.$email[0];
+      const Name = _this.$name[0];
+      const Zip = _this.$zip[0];
       const fields = {Mobile, Email, Name, Zip};
 
-      _this.clearErrorList();
+      _this.$errors[0].innerHTML = '';
+      Object.keys(fields).forEach(key =>
+        fields[key].parentNode.classList.remove("giraffe-has-errors")
+      );
 
-      if (Email === '' && Mobile === '' || Name === '' || Zip === '') {
+      if (Email.value.replace(/\D/g, '') === '' && Mobile.value === '' || Name.value === '' || Zip.value === '') {
         e.preventDefault();
         Object.keys(fields).forEach(function(key) { 
-          if (fields[key] === '' && key !== "Email") {
-            _this.addErrorToList(key);
+          if (fields[key].value === '') {
+            fields[key].parentNode.classList.add("giraffe-has-errors");
+            if (key !== "Email") {
+              _this.addErrorToList(key);
+            }
           }
         });
         return !1;
@@ -87,9 +93,6 @@ class JoinForm {
     this.$errors[0].appendChild(listItem);
   }
 
-  clearErrorList() {
-    this.$errors[0].innerHTML = '';
-  }
 }
 
 
