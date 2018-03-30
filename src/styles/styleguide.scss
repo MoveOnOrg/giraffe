@@ -1,5 +1,9 @@
 @import "main";
 
+* {
+  box-sizing: border-box;
+}
+
 body.styleguide {
   padding-top: 0;
 
@@ -63,7 +67,6 @@ body.styleguide {
 @import "styleguide/color";
 @import "styleguide/breakpoints";
 @import "styleguide/headings";
-@import "styleguide/buttons";
 @import "styleguide/icons";
 @import "styleguide/blockquote";
 @import "styleguide/animated-underline";
