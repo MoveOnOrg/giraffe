@@ -9,6 +9,7 @@ button {
   text-transform: uppercase;
   background-image: none;
   box-shadow: none;
+  @include font(roboto-condensed-bold);
 
   transition: all .3s;
 
@@ -19,7 +20,6 @@ button {
   }
 
   &.btn {
-    @include font(roboto-condensed-bold);
     font-size: 18px;
     padding: 5px 10px;
     min-width: 100px;
