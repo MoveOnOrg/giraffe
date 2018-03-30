@@ -1,0 +1,53 @@
+/* ActionKit Errors */
+
+label.ak-error {
+  max-height: 30px;
+}
+
+input.ak-error {
+  border-bottom-color: $muted-red !important;
+}
+form {
+  .input-block,
+  .checkbox-input,
+  .radio-input {
+    &.giraffe-has-errors,
+    &.giraffe-has-errors.border {
+      border-color: $muted-red;
+      color: $muted-red;
+      label {
+        color: $muted-red;
+      }
+      input,
+      textarea,
+      select {
+        color: $muted-red;
+        border-color: $muted-red;
+      }
+      select {
+        option,
+        option:focus {
+          color: $muted-red;
+        }
+      }
+    }
+  }
+}
+
+ul.giraffe-errors-list > li,
+ul#ak-errors > li,
+ul.errorlist > li,
+ul.ak-err > li {
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 0;
+  background-color: $muted-red;
+  border-color: $muted-red;
+  line-height: 1em;
+  color: $white;
+  font-weight: bold;
+
+  &::before {
+    display: none;
+  }
+}

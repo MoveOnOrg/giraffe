@@ -207,6 +207,7 @@ form {
         width: 100%,
         border-bottom: (2px solid transparentize($black, 1-0.42)) null,
       ));
+      border-width:0 0 2px 0;
     }
     &.margin {
       margin:30px 0;
@@ -448,4 +449,23 @@ input,
 select,
 textarea {
   outline: none;
+}
+
+// labels before input
+form {
+  .input-block {
+    &.label-before-input {
+      margin-top:28px;
+      label {
+        display:block;
+        margin:0 0 0.5em 0;
+        position:relative;
+        width:100%;
+        top:0;
+      }
+    }
+    &.active {
+      color: $azure;
+    }
+  }
 }

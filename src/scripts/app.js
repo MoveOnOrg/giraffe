@@ -8,6 +8,7 @@ import JoinForm from './components/joinForm';
 import SignForm from './components/signForm';
 import PetitionComments from './components/petitionComments';
 import PetitionCard from './components/petitionCard';
+import FormsInputBlock from './components/formsInputBlock';
 
 $(document).ready(function () {
   Nav.init();
@@ -20,4 +21,5 @@ $(document).ready(function () {
   SignForm.init();
   PetitionComments.init();
   PetitionCard.init();
+  FormsInputBlock.init();
 });

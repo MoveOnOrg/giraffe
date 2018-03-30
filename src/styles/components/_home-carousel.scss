@@ -143,6 +143,9 @@
     margin-bottom: auto;
     top: -30px !important;
     line-height: 1;
+    white-space: pre-line;
+    text-align: center;
+    padding: 10px;
     @include respond((
       font-size: (20px !important) null (28px !important),
     ));

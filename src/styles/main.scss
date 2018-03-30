@@ -48,12 +48,13 @@ body {
   @import 'components/nav';
   @import 'components/footer';
   @import 'components/sign-form';
-  @import 'components/sign-form-modal';
   @import 'components/signers';
   @import 'components/petition-thanks';
   @import 'components/price-select';
   @import 'components/animated-underline';
   @import 'mo-components/tooltips';
+  @import 'mo-components/message';
+  @import 'mo-components/errors';
 
   // PER PAGE COMPONENTS
   @import "components/home-hero";
