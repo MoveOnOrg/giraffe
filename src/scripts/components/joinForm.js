@@ -52,6 +52,8 @@ class JoinForm {
       const Zip = _this.$zip[0].value;
       const fields = {Mobile, Email, Name, Zip};
 
+      _this.clearErrorList();
+
       if (Email === '' && Mobile === '' || Name === '' || Zip === '') {
         e.preventDefault();
         Object.keys(fields).forEach(function(key) { 
@@ -83,6 +85,10 @@ class JoinForm {
     }
     listItem.appendChild(document.createTextNode(text));
     this.$errors[0].appendChild(listItem);
+  }
+
+  clearErrorList() {
+    this.$errors[0].innerHTML = '';
   }
 }
 
