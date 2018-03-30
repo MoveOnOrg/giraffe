@@ -41,7 +41,7 @@ module.exports = {
 function onStylesDone() {
   notifier.notify({ title: 'Gulp', message: 'Styles Task Finished!' });
   // Manually inject css to ensure compiled css will reflect
-  if ( isWatching && browserSync.initialized ) {
+  if ( browserSync.initialized ) {
     gulp.src(`${dest}/main.css`)
       .pipe(browserSync.stream());
   }
