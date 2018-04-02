@@ -7,26 +7,65 @@
     <div class="mo-container">
       <h2 class="join__heading">Join the Movement</h2>
 
-      <form action="" class="join__form">
+      <div class="row mt-5">
+        <div class="col-1"></div>
 
-        <div class="input-block">
-          <input type="text" id="name">
-          <label for="name">Name</label>
+        <div class="col-md-4 bg-white">
+          <form method="post" accept-charset="UTF-8" class="join-form">
+
+                <input name="page" type="hidden" value="signup"/>
+                <input name="posted" type="hidden" value="1"/>
+                <input type="hidden" name="form_name" value="act"/>
+
+                <input type="hidden" name="source" value="giraffe" />
+                <input type="hidden" name="action_referrer" value="giraffe.moveon.org" />
+                <input type="hidden" name="country" value="United States">
+
+            <div class="input-block">
+              <input type="text" id="name" name="name">
+              <label for="name">Name*</label>
+            </div>
+
+            <div class="input-block">
+              <input type="text" id="zip" name="zip">
+              <label for="zip">Zip Code*</label>
+            </div>
+
+            <div class="content-block border border-azure p-3 mt-3">
+
+              <div class="input-block">
+                <input type="email" id="email" name="email">
+                <label for="email">Email*</label>
+              </div>
+
+              <div class="text-align-center bg-light-gray mt-3"><strong>&mdash; OR &mdash;</strong></div>
+
+              <div class="input-block">
+                <input type="text" id="mobile_phone" name="mobile_phone">
+                <label for="mobile_phone">Mobile opt-in*</label>
+                <input id="id_suppress_subscribe" type="hidden" name="suppress_subscribe" value="" />
+                <input id="id_sms_termsandconditions" type="hidden" name="user_sms_termsandconditions" value="" />
+                <input id="id_action_mobilesubscribe" type="hidden" name="action_mobilesubscribe" value="" />
+                <input id="id_robodial_termsandconditions" type="hidden" name="user_robodial_termsandconditions" value="" />
+              </div>
+
+              <div class="checkbox-input subscribe-sms-conditions">
+                <input id="id_sms_subscribed" type="checkbox" name="user_sms_subscribed" value="sms_subscribed" />
+                  <label for="id_sms_subscribed" class="fine-print">Receive mobile alerts from MoveOn. Msg &amp; data rates may apply. Text STOP to 668366 to stop receiving messages. Text HELP to 668366 for more information. <a href="http://front.moveon.org/moveon-sms-terms-conditions">Terms &amp; Conditions</a></label>
+              </div>
+
+            </div>
+
+            <button type="submit">Join MoveOn</button>
+
+            <ul class="errorlist mt-4">
+            </ul>
+
+          </form>
+
         </div>
-
-        <div class="input-block">
-          <input type="email" id="email">
-          <label for="email">Email</label>
-        </div>
-
-        <div class="input-block">
-          <input type="text" id="zip">
-          <label for="zip">Zip Code</label>
-        </div>
-
-        <button type="submit">Join MoveOn</button>
-
-      </form>
+        <div class="col-7"></div>
+      </div>
     </div>
 
   </div>
