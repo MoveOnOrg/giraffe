@@ -1,5 +1,43 @@
 button {
+  appearance: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-image: none;
+  box-shadow: none;
+  @include font(roboto-condensed-bold);
+
+  transition: all .3s;
+
+  svg {
+    max-width: 100%;
+    max-height: 100%;
+    transition: all .3s;
+  }
+
   &.btn {
+    font-size: 18px;
+    padding: 5px 10px;
+    min-width: 100px;
+
+    &--large {
+      font-size: 1.5rem;
+      padding: 12px;
+      height: 100%;
+    }
+
+    svg {
+      width: 14px;
+      height: 14px;
+      color: inherit;
+      fill: currentcolor !important;
+      margin-left: 10px;
+    }
+
     &.azure {
       @include btn--azure;
 
