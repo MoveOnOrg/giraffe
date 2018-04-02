@@ -47,19 +47,25 @@
     height: 50px;
     position: fixed;
     z-index: 500;
+    bottom: 0;
+    left: 0;
 
-    &,
-    &:hover {
-      top: auto;
-      right: auto;
-      bottom: 0;
-      left: 0;
+    button {
+      transition: bottom 0.25s;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      bottom: 0%;
+      @include btn--azure;
+      @include respond((
+        font-size: 21px,
+      ));
     }
 
-    @include btn--azure;
-    @include respond((
-      font-size: 21px,
-    ));
+
+    &--hidden button {
+      bottom: -100%;
+    }
   }
 
   textarea {

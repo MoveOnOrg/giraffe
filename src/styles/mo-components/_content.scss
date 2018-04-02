@@ -17,18 +17,27 @@ large, .large {
   font-weight: normal;
 }
 
+b, .bold {
+  font-weight: bold;
+  @include font(roboto-bold);
+}
+
 img {
   max-width: 100%;
 }
+
 .text-align-center {
   text-align:center;
 }
+
 .text-align-left {
   text-align:left;
 }
+
 .text-align-right {
   text-align:right;
 }
+
 .fine-print {
   font-size: .8em !important;
   line-height: 1.5em !important;
