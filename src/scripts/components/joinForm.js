@@ -67,17 +67,17 @@ class JoinForm {
             }
           }
         });
-        return !1;
+        return false;
       }
 
       if (Mobile.value && Mobile.value.length >= 10) {
         if (Email.value === '') {
-          _this.$suppressEmailSubscribe[0].value = 1;
-          _this.$email[0].value = Mobile.value +'-smssubscriber@example.com';
+          _this.$suppressEmailSubscribe.val('1');
+          _this.$email.val(Mobile.value +'-smssubscriber@example.com');
         }
-        _this.$smsTerms[0].value = 'sms_termsandconditions';
-        _this.$smsSubscribe[0].value = 'mobilesubscribe';
-        _this.$robodialTerms[0].value = 'yes';
+        _this.$smsTerms.val('sms_termsandconditions');
+        _this.$smsSubscribe.val('mobilesubscribe');
+        _this.$robodialTerms.val('yes');
       }
     });
 
