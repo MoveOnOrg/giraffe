@@ -70,10 +70,10 @@ class JoinForm {
         return !1;
       }
 
-      if (Mobile && Mobile.length >= 10) {
-        if (Email === '') {
-          _this.$suppressEmailSubscribe.value = 1;
-          _this.$email[0].value = Mobile+'-smssubscriber@example.com';
+      if (Mobile.value && Mobile.value.length >= 10) {
+        if (Email.value === '') {
+          _this.$suppressEmailSubscribe[0].value = 1;
+          _this.$email[0].value = Mobile.value +'-smssubscriber@example.com';
         }
         _this.$smsTerms[0].value = 'sms_termsandconditions';
         _this.$smsSubscribe[0].value = 'mobilesubscribe';
