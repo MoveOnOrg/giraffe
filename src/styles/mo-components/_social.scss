@@ -1,0 +1,19 @@
+.share_item, .share_item:active, .share_item:visited {
+  display: inline-flex;
+  font-size: 1rem;
+  line-height: 20px;
+  padding: .5em;
+  margin-right: 2em;
+  color: $azure;
+  svg {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin-right: 1em;
+    fill: $azure;
+  }
+  &.flex {
+    display: flex;
+  }
+}
+
