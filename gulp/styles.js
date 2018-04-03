@@ -21,7 +21,7 @@ module.exports = {
             .pipe(gulpif( isDev, sourcemaps.init() ))
             .pipe(sass().on('error', sass.logError))
               .pipe( gulpif( isProduction, combineMq()) )
-              .pipe( gulpif( isProduction, autoprefixer()) )
+              .pipe( gulpif( isProduction, autoprefixer({ browsers: ['last 10 versions'] })) )
               .pipe( gulpif( isProduction, cleanCSS()) )
             .pipe(gulpif( isDev, sourcemaps.write('.') ))
             .pipe(gulp.dest(dest).on('end', onStylesDone));
