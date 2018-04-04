@@ -50,6 +50,38 @@
 
             {% endembed %}
 
+            {% embed 'styleguide/block' with markup %}
+              {% block heading %}Social share links - stacked buttons{% endblock %}
+
+              {% block content %}
+                <a href="https://facebook.com/sharer/sharer.php?u=http%3A%2F%2Ffront.moveon.org" target="_blank" aria-label="Share on Facebook" class="share_item__btn flex"><svg><use xlink:href="#facebook"></use></svg>Share on Facebook</a>
+                <a href="https://twitter.com/intent/tweet/?via=MoveOnOrg" target="_blank" aria-label="Share on Twitter" class="share_item__btn flex"><svg><svg><use xlink:href="#twitter"></use></svg></svg>Tweet this</a>
+                <a href="mailto:?subject=An%20article%20from%20MoveOn%20&amp;body=http%3A%2F%2Ffront.moveon.org" class="share_item__btn flex"><svg><svg><use xlink:href="#mail"></use></svg></svg>Email a friend</a>
+              {% endblock %}
+
+              {% block markup %}
+              <a href="https://facebook.com/sharer/sharer.php?u=http%3A%2F%2Ffront.moveon.org" target="_blank" aria-label="Share on Facebook" class="share_item__btn flex"><svg><use xlink:href="#facebook"></use></svg>Share on Facebook</a>
+              <a href="https://twitter.com/intent/tweet/?via=MoveOnOrg" target="_blank" aria-label="Share on Twitter" class="share_item__btn flex"><svg><svg><use xlink:href="#twitter"></use></svg></svg>Tweet this</a>
+              <a href="mailto:?subject=An%20article%20from%20MoveOn%20&amp;body=http%3A%2F%2Ffront.moveon.org" class="share_item__btn flex"><svg><svg><use xlink:href="#mail"></use></svg></svg>Email a friend</a>{% endblock %}
+
+            {% endembed %}
+
+            {% embed 'styleguide/block' with markup %}
+              {% block heading %}Social share links - inline buttons{% endblock %}
+
+              {% block content %}
+                <a href="https://facebook.com/sharer/sharer.php?u=http%3A%2F%2Ffront.moveon.org" target="_blank" aria-label="Share on Facebook" class="share_item__btn"><svg><use xlink:href="#facebook"></use></svg>Share on Facebook</a>
+                <a href="https://twitter.com/intent/tweet/?via=MoveOnOrg" target="_blank" aria-label="Share on Twitter" class="share_item__btn"><svg><svg><use xlink:href="#twitter"></use></svg></svg>Tweet this</a>
+                <a href="mailto:?subject=An%20article%20from%20MoveOn%20&amp;body=http%3A%2F%2Ffront.moveon.org" class="share_item__btn"><svg><svg><use xlink:href="#mail"></use></svg></svg>Email a friend</a>
+              {% endblock %}
+
+              {% block markup %}
+              <a href="https://facebook.com/sharer/sharer.php?u=http%3A%2F%2Ffront.moveon.org" target="_blank" aria-label="Share on Facebook" class="share_item__btn"><svg><use xlink:href="#facebook"></use></svg>Share on Facebook</a>
+              <a href="https://twitter.com/intent/tweet/?via=MoveOnOrg" target="_blank" aria-label="Share on Twitter" class="share_item__btn"><svg><svg><use xlink:href="#twitter"></use></svg></svg>Tweet this</a>
+              <a href="mailto:?subject=An%20article%20from%20MoveOn%20&amp;body=http%3A%2F%2Ffront.moveon.org" class="share_item__btn"><svg><svg><use xlink:href="#mail"></use></svg></svg>Email a friend</a>{% endblock %}
+
+            {% endembed %}
+
 
         </div>
 
@@ -58,5 +90,3 @@
         <script>hljs.initHighlightingOnLoad();</script>
     </body>
 </html>
-
-
