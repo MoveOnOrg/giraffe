@@ -92,6 +92,7 @@ form {
 
     textarea {
       width: 100%;
+      max-width:100%;
       resize: vertical;
       border: 1px solid $gray;
       font-size: inherit;
