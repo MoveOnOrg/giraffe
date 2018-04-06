@@ -18,4 +18,6 @@ We ultimately want giraffe to encompass a library of base styles (a design syste
 
 Ultimately we want to replace as much CSS as possible with the design system CSS, to keep main.css as lean as possible.
 
-mo-styleguide is the beginnings of a new set of style defaults.
+## External documentation
+
+[MoveOn's custom WordPress theme](https://github.com/MoveOnOrg/front-wordpress) implements giraffe and has [documentation on how to manually configure key content on a site running the theme](https://github.com/MoveOnOrg/front-wordpress/blob/main-giraffe/wp-content/themes/moveon2018/CONTENT-MANAGEMENT.md).
