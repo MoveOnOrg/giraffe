@@ -506,3 +506,63 @@ form {
     }
   }
 }
+
+// variations depending parent's bg color
+.bg-off-white.relative-font-color-for-bg {
+  .input-block {
+    color: $dark-gray;
+  }
+  .checkbox-input, .radio-input {
+    color: $dark-gray;
+    label {
+      color: $dark-gray;
+    }
+    &.label-above { 
+      color: $dark-gray;
+      label {
+        color: $dark-gray;
+      }
+    }
+  }
+  .radio-input {
+    & input[type="text"],
+    & input[type="number"] {
+      color: $dark-gray;
+    }
+  }
+  .checkbox-input {
+    & input[type="text"],
+    & input[type="number"] {
+      color: $dark-gray;
+    }
+  }
+}
+.bg-ice-blue.relative-font-color-for-bg {
+  .input-block {
+    color: $light-gray;
+  }
+  .checkbox-input, .radio-input {
+    color: $light-gray;
+    label {
+      color: $light-gray;
+    }
+    &.label-above { 
+      color: $light-gray;
+      label {
+        color: $light-gray;
+      }
+    }
+  }
+  .radio-input {
+    & input[type="text"],
+    & input[type="number"] {
+      color: $light-gray;
+    }
+  }
+  .checkbox-input {
+    & input[type="text"],
+    & input[type="number"] {
+      color: $light-gray;
+    }
+  }
+}
