@@ -100,6 +100,7 @@
                         <button class="btn azure">Simple Button</button>
                         <button class="btn azure">Button With Icon <svg><use xlink:href="#caret-right" /></svg></button>
                         <button class="btn" disabled >Disabled Button</button>
+                        <a class="btn white azure" href="#">Link button</a>
                         <br><br>
                         <h3>Available Buttons:</h3>
                         <br>
@@ -109,7 +110,8 @@
                         <p><div style="background-color: #ddd"><button class="btn transparent-light">Transparent-Light</button> <code>.btn .transparent-light</code></div></p><br>
                     </div>
                 {% endblock %}
-                {% block markup %}<button class="btn azure">Azure</button>{% endblock %}
+                {% block markup %}<button class="btn azure">Azure</button>
+<a class="btn white azure" href="#">Link button</a>{% endblock %}
             {% endembed %}
 
             {# ICONS #}
