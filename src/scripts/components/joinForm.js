@@ -85,6 +85,7 @@ class JoinForm {
 
   addErrorToList(error) {
     let listItem = document.createElement('li');
+    listItem.classList.add("text-align-center");
     let text = error + " is required";
     if (error === "Email" || error === "Mobile") {
       text = "Email OR mobile opt-in is required";

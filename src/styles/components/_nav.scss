@@ -84,6 +84,7 @@
       padding-bottom: 8px null 0,
       text-transform: null null uppercase,
     ));
+    cursor: pointer;
     @include font(roboto);
 
     @include breakpoint(lg) {

@@ -92,6 +92,7 @@ form {
 
     textarea {
       width: 100%;
+      max-width:100%;
       resize: vertical;
       border: 1px solid $gray;
       font-size: inherit;
@@ -290,7 +291,7 @@ form {
         border-bottom: (2px solid transparentize($black, 1-0.42)) null,
       ));
     }
-
+    
     input[type=checkbox] {
       appearance: none;
       -webkit-appearance: none;
@@ -304,6 +305,7 @@ form {
       position: relative;
       background-color: $white;
       flex-shrink: 0;
+      
 
       &:checked {
         border-color: $azure;
@@ -334,6 +336,7 @@ form {
         transition: all .3s;
       }
     }
+    
 
     & input[type="text"],
     & input[type="number"] {
@@ -352,7 +355,30 @@ form {
     }
   }
   
-  
+  .checkbox-size-s {
+    input[type=checkbox] {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .checkbox-size-m {
+    input[type=checkbox] {
+      width: 25px;
+      height: 25px;
+    }
+  }
+  .checkbox-size-l {
+    input[type=checkbox] {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  .checkbox-size-xl {
+    input[type=checkbox] {
+      width: 35px;
+      height: 35px;
+    }
+  }
 
 
   // DISABLED FIELDS
