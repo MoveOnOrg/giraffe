@@ -39,9 +39,7 @@ class JoinForm {
     this.$form.on('change keyup', function () {
       if (_this.$mobile[0].value.replace(/\D/g,'').length >= 10) {
         _this.$userSmsSubscribe[0].checked = true;
-        if (_this.$subscribeSMSConditions[0].className.search("unhide") == -1) {
-          _this.$subscribeSMSConditions[0].className += " unhide";
-        }
+        _this.$subscribeSMSConditions[0].classList.remove("dimmed");
       }
     });
 
