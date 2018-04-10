@@ -31,7 +31,6 @@
     display: table;
     margin-left: auto;
     margin-right: auto;
-    width: 92px;
     @include btn--azure;
     @include respond((
       margin-top: 32px,
