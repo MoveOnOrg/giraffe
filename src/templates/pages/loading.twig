@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html class="giraffe">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="utf-8">
+        <title>{% block title %}Move On{% endblock %}</title>
+    </head>
+    <body>
+      <!--
+          This is not allowed to depend on any css from the css file.
+          It must only depend on inline css included in this file
+          This data should be absolutely minimal
+          For preloading:
+          * It must use all fonts used e.g. in petition sign page,
+          but should be ok to render before the font is loaded
+          * It must include the logo.svg file
+        -->
+      <div id="root">
+        <img src="images/logo.svg" alt="MoveOn Logo" />
+        <span style="font-family:'Roboto Condensed Bold'">Loading</span>
+        <span style="font-family:'Roboto Bold">.</span>
+        <span style="font-family:'Roboto Regular'">.</span>
+        <span style="font-family:'Roboto Medium">.</span>
+      </div>
+    </body>
+</html>
