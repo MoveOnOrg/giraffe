@@ -61,8 +61,11 @@
     }
 
 
-    &--hidden button {
-      bottom: -100%;
+    &--hidden {
+      pointer-events: none;
+      button {
+        bottom: -100%;
+      }
     }
   }
 
