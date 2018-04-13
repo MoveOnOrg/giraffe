@@ -21,7 +21,6 @@
     }
 
     &__author {
-      font-family: Roboto, sans-serif;
       font-weight: 400;
       @include respond((
         font-size: 14px null 18px,
@@ -33,7 +32,6 @@
     }
 
     &__date {
-      font-family: Roboto, sans-serif;
       font-weight: 400;
       @include respond((
         color: #696a6a,
@@ -45,7 +43,6 @@
     &__quote {
       display: flex;
       font-style: italic;
-      font-family: Roboto, sans-serif;
       font-weight: 500;
       @include respond((
         margin-top: 10px null,

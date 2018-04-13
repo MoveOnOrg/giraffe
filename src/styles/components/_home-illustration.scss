@@ -92,7 +92,6 @@
 
 
   &__body {
-    font-family: Roboto, sans-serif;
     font-weight: 400;
     @include respond((
       color: $white,

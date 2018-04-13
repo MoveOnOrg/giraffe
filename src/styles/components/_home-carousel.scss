@@ -25,7 +25,6 @@
   }
 
   &__subheading {
-    font-family: Roboto, sans-serif;
     font-weight: 400;
     @include respond((
       width: null null 325px,
@@ -142,7 +141,6 @@
 
   &__title {
     position: relative;
-    font-family: Roboto, sans-serif;
     font-weight: 700;
     margin-bottom: auto;
     top: -30px !important;

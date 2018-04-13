@@ -49,7 +49,6 @@
 
     &__current,
     &__max {
-      font-family: Roboto, sans-serif;
       font-weight: 500;
       @include respond((
         font-size: 11px null 13px,
@@ -121,7 +120,6 @@
     ));
 
     &-heading {
-      font-family: Roboto, sans-serif;
       font-weight: 700;
       @include respond((
         display: block null none,

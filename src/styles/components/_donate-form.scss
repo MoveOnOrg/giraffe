@@ -20,7 +20,6 @@ $bouncy-easing: cubic-bezier(.43,2.9,.64,.99);
 
   &__subheading {
     margin-top: 24px;
-    font-family: Roboto, sans-serif;
     font-weight: 700;
     @include respond((
       font-size: 24px,
@@ -66,7 +65,6 @@ $bouncy-easing: cubic-bezier(.43,2.9,.64,.99);
       border-radius: 100%;
       overflow: hidden;
       transition: all .3s;
-      font-family: Roboto, sans-serif;
       font-weight: 400;
       @include respond((
         position: relative null absolute,
@@ -104,7 +102,6 @@ $bouncy-easing: cubic-bezier(.43,2.9,.64,.99);
 
     &__heading {
       position: relative;
-      font-family: Roboto, sans-serif;
       font-weight: 500;
       @include respond((
         font-size: 24px,
@@ -135,7 +132,6 @@ $bouncy-easing: cubic-bezier(.43,2.9,.64,.99);
 
     &__subheading {
       margin-top: 18px;
-      font-family: Roboto, sans-serif;
       font-weight: 400;
       @include respond((
         font-size: 16px,
@@ -176,7 +172,6 @@ $bouncy-easing: cubic-bezier(.43,2.9,.64,.99);
 
 
   &__paycheck-option {
-    font-family: Roboto, sans-serif;
     font-weight: 400;
     margin-top: 10px !important;
     @include respond((
@@ -222,7 +217,6 @@ $bouncy-easing: cubic-bezier(.43,2.9,.64,.99);
   &__agreement {
     margin-top: 30px !important;
     opacity: .54;
-    font-family: Roboto, sans-serif;
     font-weight: 400;
     @include respond((
       font-size: 13px,
@@ -254,28 +248,6 @@ $bouncy-easing: cubic-bezier(.43,2.9,.64,.99);
     }
   }
 
-
-  // // CURRENT STATE, NOT YET COMPLETED
-  // &.current:not(.completed) {
-
-  //   .donate-form__step__numeral {
-  //     background-color: $cerulean;
-  //     &-icon--edit {
-  //       transform: translate(-50%, -50%) scale(1);
-  //     }
-
-  //     span {
-  //       transform: scale(0);
-  //     }
-  //   }
-
-  //   .donate-form__step__heading {
-  //     font-family: Roboto, sans-serif;
-      font-weight: 700;
-  //   }
-  // }
-
-
   // COMPLETED STEP STATE
   &.completed {
 
@@ -305,7 +277,6 @@ $bouncy-easing: cubic-bezier(.43,2.9,.64,.99);
       }
 
       .donate-form__step__heading {
-        font-family: Roboto, sans-serif;
         font-weight: 700;
       }
     }

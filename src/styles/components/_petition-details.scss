@@ -3,7 +3,6 @@
     display: block;
 
     p {
-      font-family: Roboto, sans-serif;
       font-weight: 400;
       @include respond((
         font-size: 14px null 18px,
@@ -18,7 +17,6 @@
     }
 
     strong {
-      font-family: Roboto, sans-serif;
       font-weight: 700;
     }
   }
@@ -30,7 +28,6 @@
     ));
 
     &__heading {
-      font-family: Roboto, sans-serif;
       font-weight: 700;
       @include respond((
         font-size: 14px null 18px,
@@ -88,12 +85,11 @@
     ));
 
     &__heading {
-      font-family: Roboto, sans-serif;
       font-weight: 700;
     }
 
     &__name {
-      font-family: Roboto, sans-serif;
+      
       font-weight: 400;
       @include respond((
         margin-top: 1.5em,
@@ -103,7 +99,7 @@
     &__cta {
       display: inline-block;
       font-family: 'Roboto Condensed', sans-serif;
-  font-weight: bolder;
+      font-weight: bolder;
       @include respond((
         color: $black,
         margin-top: 15px,
@@ -131,7 +127,7 @@
 
     &__heading {
       font-family: 'Roboto Condensed', sans-serif;
-  font-weight: bolder;
+      font-weight: bolder;
       @include respond((
         font-size: 14px null 18px,
         line-height: 21px null 27px,
@@ -196,7 +192,7 @@
 
 
   &__disclaimer {
-    font-family: Roboto, sans-serif;
+    
     font-weight: 400;
     @include respond((
       margin-top: 40px null 30px,

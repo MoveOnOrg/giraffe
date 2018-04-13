@@ -9,7 +9,6 @@
       .mo-btn {
         color: $azure;
         text-transform: none;
-        font-family: Roboto, sans-serif;
         font-weight: 400;
         @include respond((
           font-size: 16px,
@@ -63,7 +62,7 @@
       color: $black;
       opacity: .54;
       text-transform: uppercase;
-      font-family: Roboto, sans-serif;
+      
       font-weight: 700;
       @include respond((
         font-size: 16px,
@@ -90,7 +89,7 @@
       margin-right: 20px;
       color: $black;
       opacity: .54;
-      font-family: Roboto, sans-serif;
+      
       font-weight: 400;
       @include respond((
         font-size: 16px,
@@ -106,7 +105,6 @@
 
 
     &__label {
-      font-family: Roboto, sans-serif;
       font-weight: 400;
       display: inline-flex;
       align-items: center;
@@ -138,7 +136,6 @@
 
 
     &__subheading {
-      font-family: Roboto, sans-serif;
       font-weight: 400;
       @include respond((
         margin-top: 24px,

@@ -237,7 +237,6 @@
 
 
   &__body {
-    font-family: Roboto, sans-serif;
     font-weight: 400;
     @include respond((
       font-size: 16px,
@@ -245,7 +244,6 @@
     ));
 
     strong {
-      font-family: Roboto, sans-serif;
       font-weight: 700;
     }
   }
