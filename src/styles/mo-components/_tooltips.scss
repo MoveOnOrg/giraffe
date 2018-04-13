@@ -2,7 +2,7 @@
 $tooltip-text-color: #fff;
 $tooltip-background-color: #000;
 $border-radius: 0;
-$tooltip-font-family: 'Roboto Condensed Bold';
+$tooltip-font-family: 'Roboto Condensed', sans-serif;
 $tooltip-text-transform: uppercase;
 $bubble-padding: 15px 20px;
 $arrow-width: 24px;
@@ -22,6 +22,7 @@ $arrow-spacer: 15px;
   display: none;
   padding: $bubble-padding;
   font-family: $tooltip-font-family;
+  font-weight: bolder;
   -webkit-font-smoothing: subpixel-antialiased;
   color: $tooltip-text-color;
   text-align: center;
