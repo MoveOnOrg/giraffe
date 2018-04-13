@@ -20,6 +20,7 @@ $bouncy-easing: cubic-bezier(.43,2.9,.64,.99);
 
   &__subheading {
     margin-top: 24px;
+    font-family: Roboto, sans-serif;
     font-weight: 700;
     @include respond((
       font-size: 24px,
