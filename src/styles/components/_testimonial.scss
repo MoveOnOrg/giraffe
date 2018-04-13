@@ -22,8 +22,6 @@
 
 
   &__text {
-    @include font('roboto-medium');
-    font-style: italic;
     @include respond((
       margin-top: 36px null auto,
       margin-bottom: auto,
@@ -32,6 +30,8 @@
 
     p {
         color: $black;
+        font-weight: 500;
+        font-style: italic;
         @include respond((
             font-size: 16px null 24px,
             line-height: 24px null 36px,

@@ -1,7 +1,8 @@
 .giraffe.donate-quickpay-v3 {
 
     .donate-form__subheading {
-      @include font(roboto-bold);
+      font-family: Roboto, sans-serif;
+      font-weight: 700;
     }
 
     .donate-form__fields {

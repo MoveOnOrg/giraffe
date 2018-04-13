@@ -22,7 +22,8 @@
     }
 
     p {
-      @include font(roboto);
+      font-family: Roboto, sans-serif;
+      font-weight: 400;
       @include respond((
         font-size: 13px,
         line-height: 20px,
@@ -34,7 +35,8 @@
     }
 
     strong {
-      @include font(roboto-bold);
+      font-family: Roboto, sans-serif;
+      font-weight: 700;
     }
   }
 }

@@ -66,7 +66,8 @@
       }
 
       &-heading {
-        @include font(roboto-bold);
+        font-family: Roboto, sans-serif;
+        font-weight: 700;
         @include respond((
           color: $white,
           font-size: 16px,
@@ -82,8 +83,8 @@
 
         a {
           display: block;
-          font-weight: normal;
-          @include font(roboto);
+          font-family: Roboto, sans-serif;
+          font-weight: 400;
           @include respond((
             font-size: 16px,
             line-height: 36px,
@@ -119,7 +120,8 @@
         justify-content: center;
         text-transform: uppercase;
         white-space: nowrap;
-        @include font(roboto-condensed-bold);
+        font-family: 'Roboto Condensed', sans-serif;
+        font-weight: bolder;
         @include respond((
           width: 100% null auto,
           height: 36px,
@@ -178,7 +180,7 @@
     }
 
     &__item {
-      @include font(roboto-regular);
+      font-weight: 400;
       @include respond((
         font-size: 13px,
         line-height: 19px,
@@ -202,7 +204,8 @@
       &:active {
         display: flex;
         align-items: center;
-        @include font(roboto-bold);
+        font-family: Roboto, sans-serif;
+        font-weight: 700;
         @include respond((
           height: 48px null 1em,
           font-size: 16px null inherit,
@@ -266,7 +269,8 @@
 
 
   &__fineprint {
-    @include font(roboto);
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
     @include respond((
       width: null null percentage(580/1180),
       border: (1px solid #979797) null,
@@ -291,7 +295,8 @@
     strong {
       font-weight: bolder;
       color: inherit;
-      @include font(roboto-medium);
+      font-family: Roboto, sans-serif;
+      font-weight: 500;
     }
   }
 }

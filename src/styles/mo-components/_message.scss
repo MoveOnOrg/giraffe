@@ -1,5 +1,6 @@
 .message {
-  @include font(roboto-condensed-bold);
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
   color: $white;
 
   // Background color comes from utility classes https://github.com/MoveOnOrg/giraffe/blob/main/src/styles/mo-utilities/_color-classes.scss

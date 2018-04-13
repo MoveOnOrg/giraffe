@@ -166,7 +166,8 @@ form {
     display: block;
     margin-top: 7px;
     opacity: .54;
-    @include font(roboto);
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
     @include respond((
       font-size: 13px,
       line-height: 20px,
@@ -181,7 +182,8 @@ form {
     label {
       font-weight:inherit;
       color: rgba(0,0,0,0.54);
-      @include font(roboto);
+      font-family: Roboto, sans-serif;
+      font-weight: 400;
       @include respond((
         margin-left: 10px,
         font-size: 16px,

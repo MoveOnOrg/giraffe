@@ -10,7 +10,8 @@
   a:visited,
   a:active {
     h4 {
-      @include font(roboto-condensed-bold);
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: bolder;
       color: $black;
       font-size: 1.1em;
     }

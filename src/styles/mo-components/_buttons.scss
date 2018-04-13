@@ -9,7 +9,8 @@ button, a.btn {
   text-transform: uppercase;
   background-image: none;
   box-shadow: none;
-  @include font(roboto-condensed-bold);
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bolder;
 
   transition: all .3s;
 

@@ -3,7 +3,8 @@
     display: block;
 
     p {
-      @include font(roboto);
+      font-family: Roboto, sans-serif;
+      font-weight: 400;
       @include respond((
         font-size: 14px null 18px,
         line-height: 21px null 24px,
@@ -17,7 +18,8 @@
     }
 
     strong {
-      @include font(roboto-bold);
+      font-family: Roboto, sans-serif;
+      font-weight: 700;
     }
   }
 
@@ -28,7 +30,8 @@
     ));
 
     &__heading {
-      @include font(roboto-bold);
+      font-family: Roboto, sans-serif;
+      font-weight: 700;
       @include respond((
         font-size: 14px null 18px,
         line-height: 21px null 27px,
@@ -44,7 +47,8 @@
     &__pagination {
       display: flex;
       justify-content: space-between;
-      @include font(roboto-condensed-bold);
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: bolder;
 
       button {
         color: $azure !important;
@@ -84,11 +88,13 @@
     ));
 
     &__heading {
-      @include font(roboto-bold);
+      font-family: Roboto, sans-serif;
+      font-weight: 700;
     }
 
     &__name {
-      @include font(roboto);
+      font-family: Roboto, sans-serif;
+      font-weight: 400;
       @include respond((
         margin-top: 1.5em,
       ));
@@ -96,7 +102,8 @@
 
     &__cta {
       display: inline-block;
-      @include font(roboto-condensed-bold);
+      font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bolder;
       @include respond((
         color: $black,
         margin-top: 15px,
@@ -123,7 +130,8 @@
     ));
 
     &__heading {
-      @include font(roboto-condensed-bold);
+      font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bolder;
       @include respond((
         font-size: 14px null 18px,
         line-height: 21px null 27px,
@@ -188,7 +196,8 @@
 
 
   &__disclaimer {
-    @include font(roboto);
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
     @include respond((
       margin-top: 40px null 30px,
       font-size: 11px null 13px,

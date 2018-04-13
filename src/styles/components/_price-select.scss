@@ -30,7 +30,8 @@
     }
 
     label {
-      @include font(roboto-condensed-bold);
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: bolder;
       display: flex;
       align-items: center;
       justify-content: center;

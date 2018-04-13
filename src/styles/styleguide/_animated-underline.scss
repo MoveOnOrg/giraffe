@@ -9,7 +9,8 @@
     display: table;
     text-transform: uppercase;
     cursor: pointer;
-    @include font(roboto-condensed-bold);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
 
     &:not(:first-child) {
       margin-top: 10px;

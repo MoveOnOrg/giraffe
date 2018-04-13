@@ -29,7 +29,8 @@
     display: table;
     margin: auto;
     position: relative;
-    @include font(roboto-condensed-bold);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bolder;
     @include respond((
       font-size: 22px null 36px,
       line-height: 30px null 42px,
