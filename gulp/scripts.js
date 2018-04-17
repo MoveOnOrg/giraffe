@@ -40,7 +40,7 @@ module.exports = {
         sourcemap: isDev ? true : false,
       });
       
-      const actionkitBundle = await rollup.rollup(rollupConfig({ entry: projectRoot('src/scripts/giraffe-actionkit.js') }));
+      const actionkitBundle = await rollup.rollup(rollupConfig({ entry: projectRoot('src/scripts/actionkit.js') }));
 
       await actionkitBundle.write({
         file: actionkitOutput,
