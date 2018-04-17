@@ -8,15 +8,14 @@ let uglify = require('rollup-plugin-uglify');
 
 let isDev = isDevelopment || isLocal ? true : false;
 let isProd = isStaging || isProduction ? true : false;
-let entry = projectRoot('src/scripts/app.js');
-let donateEntry = projectRoot('src/scripts/donate.js');
+
 let rollupPlugins = isProd ? [ uglify() ] : [];
 rollupPlugins = rollupPlugins.concat([
   babel(),
   node(),
 ]);
 
-module.exports = ({ isDonate }) => ({
-  input: isDonate ? donateEntry : entry,
+module.exports = ({ entry }) => ({
+  input: entry,
   plugins: rollupPlugins,
 })

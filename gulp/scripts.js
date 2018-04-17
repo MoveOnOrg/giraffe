@@ -7,6 +7,8 @@ let notifier = require('node-notifier');
 
 let output = projectRoot('public/scripts/app.js');
 let donateOutput = projectRoot('public/scripts/donate.js');
+let actionkitOutput = projectRoot('public/scripts/giraffe-actionkit.js');
+
 let isDev = isDevelopment || isLocal ? true : false;
 let isProd = isStaging || isProduction ? true : false;
 
@@ -20,7 +22,7 @@ module.exports = {
 
     try {
 
-      const bundle = await rollup.rollup(rollupConfig({ isDonate: false }));
+      const bundle = await rollup.rollup(rollupConfig({ entry: projectRoot('src/scripts/app.js') }));
 
       await bundle.write({
         file: output,
@@ -29,12 +31,21 @@ module.exports = {
         sourcemap: isDev ? true : false,
       });
 
-      const donateBundle = await rollup.rollup(rollupConfig({ isDonate: true }));
+      const donateBundle = await rollup.rollup(rollupConfig({ entry: projectRoot('src/scripts/donate.js') }));
 
       await donateBundle.write({
         file: donateOutput,
         format: 'iife',
         name: 'donate_scripts',
+        sourcemap: isDev ? true : false,
+      });
+      
+      const actionkitBundle = await rollup.rollup(rollupConfig({ entry: projectRoot('src/scripts/giraffe-actionkit.js') }));
+
+      await actionkitBundle.write({
+        file: actionkitOutput,
+        format: 'iife',
+        name: 'actionkit_scripts',
         sourcemap: isDev ? true : false,
       });
 
