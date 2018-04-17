@@ -146,6 +146,7 @@
     white-space: pre-line;
     text-align: center;
     padding: 10px;
+    max-width: 100%;
     @include respond((
       font-size: (20px !important) null (28px !important),
     ));
