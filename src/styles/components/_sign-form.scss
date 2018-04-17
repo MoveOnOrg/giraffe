@@ -31,6 +31,10 @@
     display: table;
     width: 100%;
     @include btn--azure;
+    background-color: $red;
+    &:hover {
+      background-color: darken($red, 10);
+    }
     @include respond((
       margin-top: 32px,
       font-size: 20px,
