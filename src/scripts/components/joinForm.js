@@ -86,7 +86,7 @@ class JoinForm {
       // mobile is valid and email is blank - fill in email and submit
       // mobile is valid and email is valid - submit
       // mobile is valid and email is invalid - error
-      // mobile is invalid and email is valid - submit
+      // mobile is invalid and email is valid - error
       // mobile is invalid and email is blank or invalid - error
 
       // if mobile is blank and email exists
@@ -111,13 +111,17 @@ class JoinForm {
           }
         } else /* mobile is invalid */ {
           if (Email.value === '' || !_this.checkEmail(Email.value)) {
-
             e.preventDefault();
             Mobile.parentNode.classList.add("giraffe-has-errors");
             Email.parentNode.classList.add("giraffe-has-errors");
             _this.addErrorToList('Valid email OR mobile opt-in is required');
             return false;
-          } 
+          } else /* and email is valid */ {
+            e.preventDefault();
+            Mobile.parentNode.classList.add("giraffe-has-errors");
+            _this.addErrorToList('Invalid mobile; please correct or remove');
+            return false;
+          }
         }
       } else if (Email.value) /* mobile is blank and email exists */ {
         if (!_this.checkEmail(Email.value)) {
