@@ -54,7 +54,6 @@ class JoinForm {
       Object.keys(fields).forEach(key =>
         fields[key].parentNode.classList.remove("giraffe-has-errors")
       );
-      let pass = true;
 
       // check for blank required fields
       if (Email.value === '' && Mobile.value.replace(/\D/g, '') === '' || Name.value === '' || Zip.value === '') {
