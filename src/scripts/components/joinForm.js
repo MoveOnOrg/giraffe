@@ -147,7 +147,7 @@ class JoinForm {
   }
 
   checkEmail(value) {
-    const reg = new RegExp('[^\\.\\s@:][^\\s@:]*(?!\\.)@[^\\.\\s@]+(?:\\.[^\\.\\s@]+)*');
+    const re = new RegExp('^\\.\\s@:][^\\s@:]*(?!\\.)@[^\\.\\s@]+(?:\\.[^\\.\\s@]+)*$');
     return re.test(value);
   }
 
