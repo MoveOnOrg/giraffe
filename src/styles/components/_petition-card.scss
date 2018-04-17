@@ -1,4 +1,7 @@
 .petition-card {
+  .card {
+    background-color: transparent;
+  }
   &__description {
     @include respond((
       margin-top: 20px null 32.5px
@@ -113,7 +116,7 @@
   &__share {
     @include respond((
       margin-top: 26px null 0,
-      position: null null absolute,
+      position: null null null,
       top: null null 39px,
       right: null null 28px,
     ));
@@ -133,6 +136,7 @@
       height: 24px;
       @include respond((
         margin-top: 14px null 0,
+        margin-right: null null 10px,
       ));
     }
 
