@@ -1,7 +1,10 @@
 .sign-form {
 
-  h4 {
+  h2 {
     margin-bottom: 40px;
+    @include respond((
+      font-size: 25px null,
+    ))
   }
 
   &__agreement {
