@@ -126,6 +126,7 @@ class JoinForm {
       } else if (Email.value) /* mobile is blank and email exists */ {
         if (!_this.checkEmail(Email.value)) {
           e.preventDefault();
+          Mobile.parentNode.classList.add("giraffe-has-errors");
           Email.parentNode.classList.add("giraffe-has-errors");
           _this.addErrorToList('Valid email OR mobile opt-in is required');
           return false;
