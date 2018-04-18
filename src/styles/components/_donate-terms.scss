@@ -2,6 +2,7 @@
 
 
   &__content {
+    font-family: Roboto, sans-serif;
     justify-content: space-between;
     max-width: 1180px;
     margin: auto;
@@ -22,7 +23,7 @@
     }
 
     p {
-      @include font(roboto);
+      font-weight: 400;
       @include respond((
         font-size: 13px,
         line-height: 20px,
@@ -34,7 +35,7 @@
     }
 
     strong {
-      @include font(roboto-bold);
+      font-weight: 700;
     }
   }
 }

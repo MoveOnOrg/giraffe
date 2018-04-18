@@ -26,7 +26,8 @@
     white-space: nowrap;
     color: inherit;
     text-transform: uppercase;
-    @include font(roboto-condensed-bold);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bolder;
     @include respond((
       display: inline-flex null none,
       font-size: 14px,
@@ -51,7 +52,7 @@
 
     &__current,
     &__max {
-      @include font(roboto-medium);
+      font-weight: 500;
       @include respond((
         font-size: 11px null 13px,
         line-height: 20px,
@@ -122,7 +123,7 @@
     ));
 
     &-heading {
-      @include font(roboto-bold);
+      font-weight: 700;
       @include respond((
         display: block null none,
         font-size: 14px,

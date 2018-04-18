@@ -7,7 +7,7 @@ form.searchbar {
 
   input {
     border: 1px solid $light-gray;
-    @include font(roboto);
+    font-weight: 400;
   }
 
   .input-block {

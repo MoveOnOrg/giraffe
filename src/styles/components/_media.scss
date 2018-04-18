@@ -59,7 +59,7 @@
     bottom: 0;
     left: 0;
     color: $white;
-    @include font(roboto);
+    font-weight: 400;
     @include respond((
       padding-left: 13px,
       padding-bottom: 14.5px,

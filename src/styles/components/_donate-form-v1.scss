@@ -94,7 +94,8 @@
           height: 36px;
           transition: all .3s;
           text-transform: uppercase;
-          @include font(roboto-condensed-bold);
+          font-family: 'Roboto Condensed', sans-serif;
+          font-weight: bolder;
           @include respond((
             font-size: 18px,
           ));
@@ -124,7 +125,7 @@
       &__completed-summary {
         display: none;
         margin-top: 18px;
-        @include font(roboto);
+        font-weight: 400;
         @include respond((
           font-size: 16px,
         ));

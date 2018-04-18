@@ -18,8 +18,7 @@ large, .large {
 }
 
 b, .bold {
-  font-weight: bold;
-  @include font(roboto-bold);
+  font-weight: 700;
 }
 
 img {

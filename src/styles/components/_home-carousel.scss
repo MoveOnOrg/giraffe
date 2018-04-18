@@ -14,7 +14,8 @@
   }
 
   &__heading {
-    @include font(roboto-condensed-bold);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bolder;
     @include respond((
       color: $white,
       width: null null 300px,
@@ -24,7 +25,7 @@
   }
 
   &__subheading {
-    @include font(roboto);
+    font-weight: 400;
     @include respond((
       width: null null 325px,
       margin-top: (22px !important) null (40px !important),
@@ -127,7 +128,8 @@
 
   &__eyebrow {
     text-transform: uppercase;
-    @include font(roboto-condensed-bold);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bolder;
     margin-top: 27px;
     @include respond((
       font-size: (14px !important) null (20px !important),
@@ -139,7 +141,7 @@
 
   &__title {
     position: relative;
-    @include font(roboto-bold);
+    font-weight: 700;
     margin-bottom: auto;
     top: -30px !important;
     line-height: 1;

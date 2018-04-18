@@ -4,7 +4,8 @@
     display: block;
     text-transform: uppercase;
     text-align: left;
-    @include font(roboto-condensed-bold);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bolder;
     @include respond((
       font-size: 21px null 48px,
     ));
@@ -17,7 +18,7 @@
     ));
 
     p {
-      @include font(roboto);
+      font-weight: 400;
       @include respond((
         font-size: 14px null 18px,
         line-height: 21px null 27px,
@@ -31,7 +32,8 @@
     }
 
     strong {
-      @include font(roboto-bold);
+      
+      font-weight: 700;
     }
 
   }
@@ -55,7 +57,8 @@
     align-items: center;
     background-color: $azure;
     color: $white;
-    @include font(roboto);
+    
+    font-weight: 400;
     @include respond((
       justify-content: flex-start null center,
       width: 100% null percentage(280/580),
@@ -113,7 +116,8 @@
     ));
 
 
-    @include font(roboto);
+    
+    font-weight: 400;
     @include respond((
       font-size: 11px null 12px,
       line-height: 15px null 18px,
@@ -141,7 +145,8 @@
     color: $azure;
     justify-content: flex-start;
     text-transform: none;
-    @include font(roboto);
+    
+    font-weight: 400;
     @include respond((
       display: flex null inline-flex,
       font-size: 12px null 14px,

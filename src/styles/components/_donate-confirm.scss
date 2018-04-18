@@ -9,7 +9,7 @@
       .mo-btn {
         color: $azure;
         text-transform: none;
-        @include font(roboto);
+        font-weight: 400;
         @include respond((
           font-size: 16px,
           line-height: 36px,
@@ -62,7 +62,8 @@
       color: $black;
       opacity: .54;
       text-transform: uppercase;
-      @include font(roboto-bold);
+      
+      font-weight: 700;
       @include respond((
         font-size: 16px,
         line-height: 24px,
@@ -88,7 +89,8 @@
       margin-right: 20px;
       color: $black;
       opacity: .54;
-      @include font(roboto);
+      
+      font-weight: 400;
       @include respond((
         font-size: 16px,
         line-height: 24px,
@@ -103,7 +105,7 @@
 
 
     &__label {
-      @include font(roboto);
+      font-weight: 400;
       display: inline-flex;
       align-items: center;
       border-radius: 2px;
@@ -124,7 +126,8 @@
 
 
     &__heading {
-      @include font(roboto-condensed-bold);
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: bolder;
       @include respond((
         font-size: 24px,
         line-height: 36px,
@@ -133,7 +136,7 @@
 
 
     &__subheading {
-      @include font(roboto);
+      font-weight: 400;
       @include respond((
         margin-top: 24px,
         font-size: 16px,
@@ -155,7 +158,8 @@
         width: 45%;
         height: 36px;
         text-transform: uppercase;
-        @include font(roboto-condensed-bold);
+        font-family: 'Roboto Condensed', sans-serif;
+        font-weight: bolder;
         @include respond((
           display: inline-block,
           font-size: 18px,

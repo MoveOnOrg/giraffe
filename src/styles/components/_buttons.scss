@@ -16,7 +16,8 @@
   box-shadow: none;
   padding: 0;
   border-radius: 0;
-  @include font(roboto-condensed-bold);
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bolder;
   @include btn--transparent;
 
   svg {

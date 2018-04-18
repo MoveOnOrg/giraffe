@@ -21,7 +21,7 @@
     }
 
     &__author {
-      @include font(roboto);
+      font-weight: 400;
       @include respond((
         font-size: 14px null 18px,
         line-height: 21px nul 27px,
@@ -32,7 +32,7 @@
     }
 
     &__date {
-      @include font(roboto);
+      font-weight: 400;
       @include respond((
         color: #696a6a,
         font-size: 14px null 18px,
@@ -43,7 +43,7 @@
     &__quote {
       display: flex;
       font-style: italic;
-      @include font(roboto-medium);
+      font-weight: 500;
       @include respond((
         margin-top: 10px null,
         font-size: 14px null 18px,

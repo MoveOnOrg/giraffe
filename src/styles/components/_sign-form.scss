@@ -12,7 +12,8 @@
 
   &__agreement {
     color: #3c434c;
-    @include font(roboto);
+    
+    font-weight: 400;
     @include respond((
       margin-top: 20px,
       font-size: 13px,
@@ -25,7 +26,7 @@
   &__link:active {
     display: block;
     color: $dark-gray;
-    @include font(roboto-bold);
+    font-weight: 700;
     @include respond((
       margin-top: 10px,
       font-size: 13px,
