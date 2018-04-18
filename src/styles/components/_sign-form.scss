@@ -67,6 +67,10 @@
       position: relative;
       bottom: 0%;
       @include btn--azure;
+      background-color: $red;
+      &:hover {
+        background-color: darken($red, 10);
+      }
       @include respond((
         font-size: 21px,
       ));
