@@ -214,6 +214,7 @@
 
   &__heading {
     @include respond((
+      max-width: 100%,
       margin-right: null null nul 83px,
       line-height: 1,
     ));
@@ -240,6 +241,7 @@
     @include respond((
       font-size: 16px,
       line-height: 24px,
+      max-width: 100%
     ));
 
     strong {
