@@ -8,6 +8,7 @@ let notifier = require('node-notifier');
 let output = projectRoot('public/scripts/app.js');
 let donateOutput = projectRoot('public/scripts/donate.js');
 let actionkitOutput = projectRoot('public/scripts/giraffe-actionkit.js');
+let frontOutput = projectRoot('public/scripts/front.js');
 
 let isDev = isDevelopment || isLocal ? true : false;
 let isProd = isStaging || isProduction ? true : false;
@@ -46,6 +47,15 @@ module.exports = {
         file: actionkitOutput,
         format: 'iife',
         name: 'actionkit_scripts',
+        sourcemap: isDev ? true : false,
+      });
+
+      const frontBundle = await rollup.rollup(rollupConfig({ entry: projectRoot('src/scripts/front.js') }));
+
+      await frontBundle.write({
+        file: frontOutput,
+        format: 'iife',
+        name: 'front_scripts',
         sourcemap: isDev ? true : false,
       });
 
