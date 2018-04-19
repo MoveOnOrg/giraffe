@@ -278,10 +278,10 @@
 
 /* fixes regressions introduced by design system defaults  */
 
-p.home-hero__body {
+div.home-hero__body {
   margin-bottom: 0;
   @include respond((
-    margin-top: 27px null 44px,
+    margin-top: 27px null 27px,
   ));
 }
 
