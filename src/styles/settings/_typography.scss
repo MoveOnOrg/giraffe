@@ -1,41 +1,24 @@
-@font-face {
-  font-family: 'Roboto Condensed';
-  src: url('../fonts/RobotoCondensed-Regular.ttf');
-}
-
-@font-face {
-  font-family: 'Roboto Condensed Bold';
-  src: url('../fonts/RobotoCondensed-Bold.ttf');
-  font-weight: bolder;
-}
-
-@font-face {
-  font-family: 'Roboto Regular';
-  src: url('../fonts/Roboto-Regular.ttf');
-}
-
-@font-face {
-  font-family: 'Roboto Medium';
-  src: url('../fonts/Roboto-Medium.ttf');
-}
-
-@font-face {
-  font-family: 'Roboto Bold';
-  src: url('../fonts/Roboto-Bold.ttf');
-}
-
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:400,500,700'); 
 
 $fonts: (
-  roboto: ('Roboto Regular', sans-serif),
-  roboto-medium: ('Roboto Medium', sans-serif),
-  roboto-bold: ('Roboto Bold', sans-serif),
+  roboto: ('Roboto', sans-serif),
+  roboto-medium: ('Roboto', sans-serif),
+  roboto-bold: ('Roboto', sans-serif),
   roboto-condensed: ('Roboto Condensed', sans-serif),
-  roboto-condensed-bold: ('Roboto Condensed Bold', sans-serif),
+  roboto-condensed-bold: ('Roboto Condensed', sans-serif),
 );
 
+$weights: (
+  roboto: normal,
+  roboto-medium: 500,
+  roboto-bold: 700,
+  roboto-condensed: normal,
+  roboto-condensed-bold: bolder,
+);
 
-@mixin font( $name ) {
-  @if ( map-has-key($fonts, $name) ) {
+@mixin font( $name) {
+  @if ( map-has-key($fonts, $name) && map-has-key($weights, $name)) {
     font-family: map-get($fonts, $name);
+    font-weight: map-get($weights, $name);
   }
 }

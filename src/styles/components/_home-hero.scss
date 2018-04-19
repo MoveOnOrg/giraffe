@@ -214,6 +214,7 @@
 
   &__heading {
     @include respond((
+      max-width: 100%,
       margin-right: null null nul 83px,
       line-height: 1,
     ));
@@ -240,6 +241,7 @@
     @include respond((
       font-size: 16px,
       line-height: 24px,
+      max-width: 100%
     ));
 
     strong {
@@ -276,10 +278,10 @@
 
 /* fixes regressions introduced by design system defaults  */
 
-p.home-hero__body {
+div.home-hero__body {
   margin-bottom: 0;
   @include respond((
-    margin-top: 27px null 44px,
+    margin-top: 27px null 27px,
   ));
 }
 

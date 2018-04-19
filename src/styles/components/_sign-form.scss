@@ -1,7 +1,13 @@
 .sign-form {
+  .input-block label {
+    color: $black;
+  }
 
-  h4 {
+  h2 {
     margin-bottom: 40px;
+    @include respond((
+      font-size: 25px null,
+    ))
   }
 
   &__agreement {
@@ -31,6 +37,10 @@
     display: table;
     width: 100%;
     @include btn--azure;
+    background-color: $red;
+    &:hover {
+      background-color: darken($red, 10);
+    }
     @include respond((
       margin-top: 32px,
       font-size: 20px,
@@ -39,7 +49,9 @@
   }
 
   &__fixed-button {
-    display: block;
+    @include respond((
+      display: block none null
+    ));
     text-align: center;
     width: 100%;
     height: 50px;
@@ -55,14 +67,21 @@
       position: relative;
       bottom: 0%;
       @include btn--azure;
+      background-color: $red;
+      &:hover {
+        background-color: darken($red, 10);
+      }
       @include respond((
         font-size: 21px,
       ));
     }
 
 
-    &--hidden button {
-      bottom: -100%;
+    &--hidden {
+      pointer-events: none;
+      button {
+        bottom: -100%;
+      }
     }
   }
 
