@@ -3,6 +3,7 @@ import HomeCarousel from './components/homeCarousel';
 import HomeHero from './components/homeHero';
 import JoinForm from './components/joinForm';
 import FormsInputBlock from './components/formsInputBlock';
+import ObjectFit from './components/objectFit';
 
 $(document).ready(function () {
   Nav.init();
@@ -10,4 +11,5 @@ $(document).ready(function () {
   HomeHero.init();
   JoinForm.init();
   FormsInputBlock.init();
+  ObjectFit.init();
 });
