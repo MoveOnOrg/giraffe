@@ -151,6 +151,68 @@ body.donate-page {
       border: none;
       background: transparent;
     }
+
+    
+    .productslist {
+      h3 {
+        padding-bottom: 10px;
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+    }
+
+    .productheader {
+      th {
+        padding: 5px 0 10px;
+      }
+    }
+
+    .amountother {
+      position: relative;
+    }
+
+    .otherlabel {
+      position: absolute;
+      top: 14px;
+      left: 10px;
+    }
+
+    .productquantity input[type="number"],
+    .amount_other_field {
+      appearance: none;
+      background: transparent;
+      height: 50px;
+      border: 1px solid rgba(0, 0, 0, .54);
+      margin-right: 20px;
+      padding: 0 8px;
+      width: 70px;
+      color: rgba(0, 0, 0, .54);
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    .amount_other_field {
+      width: 100%;
+      padding-left: 20px;
+    }
+
+    .productquantity {
+      .checkboxinput {
+        margin: auto;
+        width: 20px;
+      }
+    }
+
+    .productdetails {
+      padding: 10px 0;
+
+      .inputhelper {
+        margin: 0;
+      }
+    }
+
   }
 
   #donation-link-onetime {
