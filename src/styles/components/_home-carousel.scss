@@ -121,21 +121,12 @@
       &:hover {
         color: $white;
       }
+
+      h3 {
+        padding-top: 10%;
+      }
     }
   }
-
-
-  &__eyebrow {
-    text-transform: uppercase;
-    @include font(roboto-condensed-bold);
-    margin-top: 27px;
-    @include respond((
-      font-size: (14px !important) null (20px !important),
-      line-height: (1 !important) null (24px !important),
-      margin-bottom: 86px null 34px,
-    ));
-  }
-
 
   &__title {
     position: relative;
