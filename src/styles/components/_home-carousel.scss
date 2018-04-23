@@ -124,28 +124,13 @@
     }
   }
 
-
-  &__eyebrow {
-    text-transform: uppercase;
-    @include font(roboto-condensed-bold);
-    margin-top: 27px;
-    @include respond((
-      font-size: (14px !important) null (20px !important),
-      line-height: (1 !important) null (24px !important),
-      margin-bottom: 86px null 34px,
-    ));
-  }
-
-
   &__title {
-    position: relative;
     @include font(roboto-bold);
     margin-bottom: auto;
-    top: -30px !important;
     line-height: 1;
     white-space: pre-line;
     text-align: center;
-    padding: 10px;
+    padding: 20px 10px;
     max-width: 100%;
     @include respond((
       font-size: (20px !important) null (23px !important),
