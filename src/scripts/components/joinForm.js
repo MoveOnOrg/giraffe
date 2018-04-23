@@ -84,13 +84,11 @@ class JoinForm {
       // if mobile exists
       // mobile is valid and email is blank - fill in email and submit
       // mobile is valid and email is valid - submit
-      // mobile is valid and email is invalid - error
       // mobile is invalid and email is valid - error
-      // mobile is invalid and email is blank or invalid - error
+      // mobile is invalid and email is blank - error
 
       // if mobile is blank and email exists
       // email is valid - submit
-      // email is invalid - error
 
       if (Mobile.value) {
         if (_this.checkMobile(Mobile.value)) {
@@ -102,37 +100,22 @@ class JoinForm {
           _this.$smsSubscribe.val('mobilesubscribe');
           _this.$robodialTerms.val('yes');
           
-          if (!_this.checkEmail(Email.value)) {
-            e.preventDefault();
-            Email.parentNode.classList.add("giraffe-has-errors");
-            _this.addErrorToList('Invalid email; please correct or remove');
-            return false;
-          }
         } else /* mobile is invalid */ {
-          if (Email.value === '' || !_this.checkEmail(Email.value)) {
+          if (Email.value === '') {
             e.preventDefault();
             Mobile.parentNode.classList.add("giraffe-has-errors");
             Email.parentNode.classList.add("giraffe-has-errors");
             _this.addErrorToList('Valid email OR mobile opt-in is required');
             return false;
-          } else /* and email is valid */ {
+          } else /* and email exists */ {
             e.preventDefault();
             Mobile.parentNode.classList.add("giraffe-has-errors");
             _this.addErrorToList('Invalid mobile; please correct or remove');
             return false;
           }
         }
-      } else if (Email.value) /* mobile is blank and email exists */ {
-        if (!_this.checkEmail(Email.value)) {
-          e.preventDefault();
-          Mobile.parentNode.classList.add("giraffe-has-errors");
-          Email.parentNode.classList.add("giraffe-has-errors");
-          _this.addErrorToList('Valid email OR mobile opt-in is required');
-          return false;
-        }
       }
     });
-
   }
 
   addErrorToList(errorText) {
@@ -144,11 +127,6 @@ class JoinForm {
 
   checkZip(value) {
     return (/(^\d{5}$)|(^\d{5}-\d{4}$)/).test(value);
-  }
-
-  checkEmail(value) {
-    const re = new RegExp('^\\.\\s@:][^\\s@:]*(?!\\.)@[^\\.\\s@]+(?:\\.[^\\.\\s@]+)*$');
-    return re.test(value);
   }
 
   checkMobile(value) {
