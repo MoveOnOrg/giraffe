@@ -121,22 +121,16 @@
       &:hover {
         color: $white;
       }
-
-      h3 {
-        padding-top: 10%;
-      }
     }
   }
 
   &__title {
-    position: relative;
     @include font(roboto-bold);
     margin-bottom: auto;
-    top: -30px !important;
     line-height: 1;
     white-space: pre-line;
     text-align: center;
-    padding: 10px;
+    padding: 20px 10px;
     max-width: 100%;
     @include respond((
       font-size: (20px !important) null (23px !important),
