@@ -312,7 +312,7 @@
       pointer-events: none;
     }
 
-    .mo-nav__dropdown--expanded {
+    .nav__dropdown--expanded {
 
       & > a:link,
       & > a:active,
@@ -327,9 +327,10 @@
           fill: $azure;
         }
       }
+
     }
 
-    .mo-nav__dropdown:not(.mo-nav__dropdown--expanded) {
+    .mo-nav__dropdown:not(.nav__dropdown--expanded) {
       ul {
         display: none;
       }
