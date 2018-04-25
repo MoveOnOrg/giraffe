@@ -35,6 +35,12 @@
     }
   }
 
+  svg.header-logo {
+     position: relative;
+     width:180px;
+     height: 86px;
+  }
+
   li {
     &::before {
       content: '';
