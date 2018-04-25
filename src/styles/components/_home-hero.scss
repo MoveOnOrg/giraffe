@@ -2,6 +2,7 @@
   background-color: $black;
 
   .mo-container {
+    overflow: hidden;
     @include respond((
       display: block null flex,
     ));
