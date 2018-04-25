@@ -18,7 +18,8 @@
     ));
   }
 
-  .logo {
+  .logo, {
+    fill: inherit;
     display: block;
     position: absolute;
     @include respond((
@@ -33,12 +34,15 @@
     img {
       width: 100%;
     }
-  }
 
-  svg.header-logo {
-     position: relative;
-     width:180px;
-     height: 86px;
+    svg,svg:active,svg:hover {
+      fill: inherit;
+      @include respond((
+        width: 85px null 180px,
+        height: 41px null 86px
+      ));
+
+    }
   }
 
   li {
