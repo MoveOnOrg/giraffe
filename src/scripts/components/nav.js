@@ -5,6 +5,7 @@ class Navigation {
     this.$navToggle = $('.mo-nav__toggle');
     this.$navClose = $('.mo-nav__close');
     this.$dropdown = this.$nav.find('.mo-nav__dropdown');
+    this.$secondaryLinks = $('.mo-nav__secondary a');
   }
 
   init() {
@@ -23,6 +24,15 @@ class Navigation {
         e.preventDefault();
         $dropdown.toggleClass('nav__dropdown--expanded')
       });
+    });
+    this.$secondaryLinks.each(function () {
+        let $secondaryLink = $(this);
+        $secondaryLink.click(function (e) {
+            e.preventDefault();
+            _this.$nav.toggleClass('nav--visible');
+            window.location.href = $secondaryLink.attr('href');
+        });
+
     });
   }
 }
