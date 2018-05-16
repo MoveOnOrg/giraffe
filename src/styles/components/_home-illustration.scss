@@ -96,6 +96,24 @@
       color: $white,
       margin-top: (20px !important) null (40px !important),
     ));
+  
+    ul,ol {
+      display: block;
+      margin: 0;
+
+      li {
+        display: block;
+        list-style-type: none;
+        position: relative;
+
+        &::before {
+          content: '•';
+          margin-right: .3em;
+          font-size: .7em;
+        }
+      }
+    }
+
   }
 
 
