@@ -36,9 +36,12 @@ class JoinForm {
   bindform() {
     let _this = this;
 
+    let mobileOptIn = false;
+
     this.$form.on('change keyup', function () {
-      if (_this.$mobile[0].value.replace(/\D/g,'').length >= 10) {
+      if (_this.$mobile[0].value.replace(/\D/g,'').length >= 10 && !mobileOptIn) {
         _this.$userSmsSubscribe[0].checked = true;
+        mobileOptIn = true;
         _this.$subscribeSMSConditions[0].classList.remove("dimmed");
       }
     });
