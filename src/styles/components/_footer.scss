@@ -248,11 +248,9 @@
 
 
   &__social {
-    @include respond((
-      display: none null flex,
-      align-items: center,
-      flex-shrink: 1,
-    ));
+    display: flex;
+    align-items: center;
+    flex-shrink: 1;
 
     a {
       display: flex;
