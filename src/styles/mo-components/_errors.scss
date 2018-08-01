@@ -17,6 +17,9 @@ form {
       color: $muted-red;
       label {
         color: $muted-red;
+        &.ak-error {
+          max-height: 9999999999px;
+        }
       }
       input,
       textarea,
