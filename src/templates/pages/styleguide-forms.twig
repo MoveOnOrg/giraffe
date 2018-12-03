@@ -24,10 +24,40 @@
                 {% block heading %}Form fields{% endblock %}
                 {% block content %}
                 <div class="container">
+                  <form>
                   <div class="row">
                     <div class="col-md-6">
-                      
-                      <form>
+                      <div class="content-block bg-ice-blue p-4">
+                        <h2>CONTACT INFORMATION</h2>
+                        <div class="fine-print fine-print-message incontentblock">U.S. and U.S. territories only</div>
+                          <div id="unknown_user" class="user-form">
+                            <div id="id_email_box" class="mt-4 mr-0 override-collapse fieldtype-user fieldinput-text
+                                                          required
+                                                          input-block
+                                                          text-input
+                                                          label-before-input
+                                                          ">
+                              <label for="id_email">
+                                Email address<span class="required-flag">*</span>
+                              </label>
+                              <input id="id_email" type="email" name="email" required="" />
+                            </div>
+                            <div id="id_phone_box" class="mt-4 mr-0 override-collapse fieldtype-user fieldinput-text
+                                                          input-block
+                                                          text-input
+                                                          label-before-input
+                                                          ">
+                              <label for="id_phone">
+                                Phone
+                              </label>
+                              <input id="id_phone" type="text" name="phone" />
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
                         <div class="input-block m-0 mt-4 pl-0 pr-0">
                           <input type="text" name="some_name" value="" id="some_name">
                           <label>Label - Text field</label>
@@ -177,11 +207,9 @@
                           </ul>
                         </div>
                         
-                      </form>
-                      
-                      
                     </div>
                   </div>
+                  </form>
                 </div>
                 {% endblock %}
             {% endembed %}

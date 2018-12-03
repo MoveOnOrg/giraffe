@@ -43,4 +43,25 @@ img {
   font-size: .8em !important;
   line-height: 1.5em !important;
   font-weight: normal !important;
+
+  &.fine-print-message {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-style: italic;
+    font-size: .8em !important;
+    line-height: 1.5em !important;
+    font-weight: normal !important;
+  }
+
+  &.incontentblock {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: black;
+    padding-right: 1.5rem !important /* matches p-4 padding */
+  }
+
+  &.underbutton {
+    text-align: center;
+  }
 }
+
