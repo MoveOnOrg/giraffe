@@ -49,6 +49,7 @@ ul.ak-err > li {
   line-height: 1em;
   color: $white;
   font-weight: bold;
+  list-style: none;
 
   &::before {
     display: none;
