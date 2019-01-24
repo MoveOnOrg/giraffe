@@ -1,4 +1,5 @@
 .content-block {
+  position: relative; /* helps content inside a block to position:absolute to be in the upper-right corner, e.g. fine-print-message incontentblock for U.S. territory-only message */
   box-sizing: border-box;
   .video-wrapper {
     position: relative;
