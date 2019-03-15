@@ -19,7 +19,7 @@
     p {
       @include font(roboto);
       @include respond((
-        font-size: 14px null 18px,
+        font-size: 12px null 18px,
         line-height: 21px null 27px,
       ));
 
@@ -46,6 +46,9 @@
     ));
   }
 
+  &__cta {
+    margin: 0 2px;
+  }
 
   &__cta,
   &__cta:visited,
@@ -61,7 +64,7 @@
       width: 100% null percentage(280/580),
       height: 41px,
       padding-left: 23px null 0,
-      font-size: 12px null 14px,
+      font-size: 13px,
       line-height: 20px,
     ));
 
