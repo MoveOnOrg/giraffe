@@ -1,5 +1,8 @@
-<section class="styleguide-block">
+<section class="styleguide-block"   {% block id %}{% endblock %}>
   <h2 class="styleguide-block__heading">{% block heading %}{% endblock %}</h2>
+  <div class="styleguide-block__content">
+    {% block guidance %}{% endblock %}
+  </div>
   <div class="styleguide-block__content">
     {% block content %}{% endblock %}
   </div>

@@ -1,0 +1,118 @@
+{% set markup = { blocks: ['markup']} %}
+{% set path = '../' %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">                <meta charset="utf-8">
+        <title>{% block title %}Move On Styleguide{% endblock %}</title>
+        <link rel="stylesheet" href="../styles/vendors.css" />
+        <link rel="stylesheet" href="../styles/main.css" />
+        <link rel="stylesheet" href="../styles/styleguide.css" />
+    </head>
+    <body class="giraffe {% block bodyclass %}styleguide {% endblock %}">
+        <div style="display:none">{% include 'components/symbol/svg/sprite.symbol.svg' %}</div>
+        <div class="wrapper">
+
+          {% include 'styleguide/header' %}
+
+          <div class="stylguide-content">
+
+            <h2 class="styleguide-block__heading">General header guidance</h2>
+            <div class="styleguide-block__content">
+              <p>The full header should be used whenever possible since it
+                provides the important links we expect members to navigate to
+                opportunistically from everywhere.
+              </p>
+              <p>There are some cases where we do NOT use the full header:</p>
+              <ul>
+                <li>When we want to focus the user on a particular action: Completing donation,
+                  many 'thanks' pages have specific asks.
+                <li>When the MoveOn logo itself won't be included due to partner inclusion
+              </ul>
+            </div>
+
+            {# FULL HEADER #}
+            {% embed 'styleguide/block' with markup%}
+                {% block heading %}Full Header{% endblock %}
+                {% block id %}id="full"{% endblock %}
+                {% block content %}
+                   <div style="position: relative; margin-bottom: 50px">
+                   {% include 'components/header' %}
+                   </div>
+                {% endblock %}
+                {% block markup %}{% include 'components/header' %}
+                {% endblock %}
+            {% endembed %}
+
+            {# MINIMAL HEADER #}
+            {% embed 'styleguide/block' with markup%}
+                {% block heading %}Minimal Header{% endblock %}
+                {% block id %}id="minimal"{% endblock %}
+                {% block guidance %}
+                   <p>Use the minimal header when we want to avoid distraction and focus the visitor
+                      on the content -- often to complete an action.
+                {% endblock %}
+                {% block content %}
+                   <div class="header">
+                     <div class="mo-container">
+                       <a href="/" class="logo">
+                         <img src="../images/logo.svg" alt="Move On Logo">
+                       </a>
+                     </div>
+                   </div>
+                {% endblock %}
+                {% block markup %}
+<div class="header">
+  <div class="mo-container">
+    <a href="/" class="logo">
+      <img src="../images/logo.svg" alt="Move On Logo">
+    </a>
+  </div>
+</div>
+                {% endblock %}
+            {% endembed %}
+
+
+            {# PARTNER HEADER #}
+            {% embed 'styleguide/block' with markup%}
+                {% block heading %}Partner Headers{% endblock %}
+                {% block id %}id="partners"{% endblock %}
+                {% block guidance %}
+                   <p>When collaborating with partners we often need to step back with MoveOn-central
+                     branding. We can still work within this style-guide, but the MoveOn logo will not
+                     be on top and often another event or campaign-specific brand will be in its place
+                {% endblock %}
+                {% block content %}
+                     TKTK
+                {% endblock %}
+                {% block markup %}{% endblock %}
+            {% endembed %}
+
+            {# CAMPAIGN HEADER #}
+            {% embed 'styleguide/block' with markup%}
+                {% block heading %}Campaign Headers{% endblock %}
+                {% block id %}id="banner"{% endblock %}
+                {% block guidance %}
+                   <p>Some campaigns have special banners to emphasize the work.
+                     When we use these, it should generally only be on the 'landing' page
+                     since we will want content central and visible above-the-fold.
+                {% endblock %}
+                {% block content %}
+                     TKTK
+                {% endblock %}
+                {% block markup %}{% endblock %}
+            {% endembed %}
+
+
+
+          </div>
+
+        </div>
+
+        <script src="{{path}}scripts/vendors.js"></script>
+        <script src="{{path}}scripts/app.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</html>

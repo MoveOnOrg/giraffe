@@ -3,3 +3,6 @@
 /package
 /package-lock.json
 deploy
+*~
+.#*
+*#
