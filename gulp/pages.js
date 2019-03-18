@@ -30,7 +30,7 @@ module.exports = {
     let files = klawSync(templateRoot, klawSyncConfig);
 
     Twig.cache();
-    files = files.map( file => {
+    files = files.filter(f => !/\#/.test(f.path) ).map( file => {
       file.templateId = file.path.replace( templateRoot+'/', '' ).replace(/\.twig$/i, '');
       file.templateContent = fs.readFileSync(file.path, 'utf-8');
       let templateData = {
