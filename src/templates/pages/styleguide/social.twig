@@ -1,6 +1,3 @@
-
-{% set markup = { blocks: ['markup']} %}
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,7 +15,7 @@
           {% include 'styleguide/header' %}
 
             {# SOCIAL SHARE LINKS #}
-            {% embed 'styleguide/block' with markup %}
+            {% embed 'styleguide/block' %}
               {% block heading %}Social share links - stacked{% endblock %}
 
               {% block content %}

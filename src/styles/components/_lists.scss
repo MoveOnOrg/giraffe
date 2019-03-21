@@ -1,3 +1,16 @@
 ul, ol {
   margin-left: .625em;
 }
+
+ul.list-striped {
+  li {
+    list-style-type: none;
+    display:block;
+    max-width: 100%;
+    word-wrap: normal;
+  }
+  li:nth-child(odd){
+    background-color: $off-white;
+  }
+
+}

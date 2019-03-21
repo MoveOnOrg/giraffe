@@ -1,5 +1,3 @@
-{% set markup = { blocks: ['markup']} %}
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,12 +13,23 @@
         <div class="wrapper">
 
           {% include 'styleguide/header' %}
-
+          <!-- FIXME: guidance around 'top' of header content -->
           <div class="stylguide-content">
+            <div class="container">
+              <div class="row">
+                <div class="md-col-6">
+                  <h1>Grid and Layout</h1>
+                </div>
+              </div>
+            </div>
 
+            <p>TKTK: guidance around what divs/classes to embed e.g. a header in (clearly not just at the top).
+              Also about columns and how they connect to mobile (feel free to link to related bootstrap docs).
+              Also about when to purposefully use/consider using the special components listed here.
+            </p>
 
             {# Section Center columns #}
-            {% embed 'styleguide/block' with markup%}
+            {% embed 'styleguide/block' with {'id': 'centercolumns'} %}
                 {% block heading %}Center columns{% endblock %}
                 {% block content %}
                     <div class="styleguide-centered-columns">
@@ -45,12 +54,68 @@
                 {% endblock %}
             {% endembed %}
 
+            {% embed 'styleguide/block' with {'id': 'expandingtoggle'} %}
+                {% block heading %}Expanding Toggles{% endblock %}
+                {% block guidance %}{% endblock %}
+                {% block content %}
+            <h3>minimalist example</h3>
+            <div>
+              <a role="button" class="accordion-toggle collapsed" data-toggle="collapse" href="#test" aria-expanded="false" >open</a>
+              <div id="test" class="collapse" role="tabpanel" style="overflow: hidden; height: 0px">
+                <p>HAPPY </p>
+              </div>
+            </div>
+
+<!-- FULL default open example -->
+TKTK (full default open example): probably from event attendee page?
+                {% endblock %}
+                {% block markup %}
+<!-- make sure you have included this script in your template -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<!-- minimal default collapsed -->
+<div>
+  <a role="button" class="accordion-toggle collapsed" data-toggle="collapse" href="#test" aria-expanded="false" >open</a>
+  <div id="test" class="collapse" role="tabpanel" style="overflow: hidden; height: 0px">
+    <p>HAPPY </p>
+  </div>
+</div>
+
+<!-- minimal default open -->
+<div>
+  <a role="button" class="accordion-toggle collapsed" data-toggle="collapse" href="#test" aria-expanded="true" >open</a>
+  <div id="test" class="collapse" role="tabpanel" style="overflow: hidden; ">
+    <p>HAPPY </p>
+  </div>
+</div>
+
+<!-- FULL default open example -->
+TKTK
+                {% endblock %}
+            {% endembed %}
+
+
+
+            {% embed 'styleguide/block' with {'id': 'popups'} %}
+                {% block heading %}Popups{% endblock %}
+                {% block guidance %}{% endblock %}
+                {% block content %}
+                   TKTK
+                {% endblock %}
+                {% block markup %}TKTK{% endblock %}
+            {% endembed %}
+
+
           </div>
 
         </div>
-
+        <script
+	   src="http://code.jquery.com/jquery-1.12.4.min.js"
+	   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+	   crossorigin="anonymous"></script>
         <script src="scripts/vendors.js"></script>
         <script src="scripts/app.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
     </body>
 </html>

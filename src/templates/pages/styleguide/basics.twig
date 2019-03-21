@@ -1,4 +1,4 @@
-{% set markup = { blocks: ['markup']} %}
+{% set path = '../' %}
 
 <!DOCTYPE html>
 <html>
@@ -72,7 +72,7 @@
             {% endembed %}
 
             {# BUTTONS #}
-            {% embed 'styleguide/block' with markup%}
+            {% embed 'styleguide/block' %}
                 {% block heading %}Buttons{% endblock %}
                 {% block guidance %}Using A elements is better for hyperlinks, since browsers will work in predictable ways. Use buttons for form elements.{% endblock %}
                 {% block content %}
@@ -136,7 +136,7 @@ BETTER:
 
 
             {# TYPOGRAPHY #}
-            {% embed 'styleguide/block' with markup%}
+            {% embed 'styleguide/block' %}
                 {% block heading %}Typography: Headings{% endblock %}
                 {% block content %}
                     <h1>Heading 1</h1>
@@ -144,13 +144,27 @@ BETTER:
                     <h3>Heading 3</h3>
                     <h4>Heading 4</h4>
                     <h5>Heading 5</h5>
+                    <h3>Heading with Anchor
+                      <a href="#foooooo" class="anchor-link">
+                        <span id="foooooo" class="anchor-id"></span>
+                        <svg width="14px" height="14px"><use xlink:href="#link"/></svg>
+                      </a>
+                    </h3>
                 {% endblock %}
-                {% block markup %}<h1>Heading 1</h1><h2>Heading 2</h2><h3>Heading 3</h3><h4>Heading 4</h4><h5>Heading 5</h5>
+                {% block markup %}
+<h1>Heading 1</h1><h2>Heading 2</h2><h3>Heading 3</h3><h4>Heading 4</h4><h5>Heading 5</h5>
+
+<h3>Heading with Anchor
+  <a href="#foooooo" class="anchor-link">
+    <span id="foooooo" class="anchor-id"></span>
+    <svg width="14px" height="14px"><use xlink:href="#link"/></svg>
+  </a>
+</h3>
                 {% endblock %}
             {% endembed %}
 
             {# TYPOGRAPHY: BODY #}
-            {% embed 'styleguide/block' with markup%}
+            {% embed 'styleguide/block' %}
                 {% block heading %}Typography: Body{% endblock %}
                 {% block content %}
                     <div class="styleguide-headings">
@@ -162,7 +176,7 @@ BETTER:
             {% endembed %}
 
             {# TYPOGRAPHY: LIST #}
-            {% embed 'styleguide/block' with markup%}
+            {% embed 'styleguide/block' %}
                 {% block heading %}Typography: List{% endblock %}
                 {% block content %}
                     <div class="styleguide-list">
@@ -182,8 +196,29 @@ BETTER:
 </ul>{% endblock %}
             {% endembed %}
 
+            {# TYPOGRAPHY: STRIPED LIST #}
+            {% embed 'styleguide/block' with {'id':'striped'} %}
+                {% block heading %}Typography: Striped List{% endblock %}
+                {% block content %}
+                    <div>
+                        <ul class="list-striped">
+                            <li class="p-2">2018 Elections</li>
+                            <li class="p-2">Tax Reform</li>
+                            <li class="p-2">Immigration</li>
+                            <li class="p-2">Healthcare</li>
+                        </ul>
+                    </div>
+                {% endblock %}
+                {% block markup %}<ul class="list-striped">
+  <li class="p-2">2018 Elections</li>
+  <li class="p-2">Tax Reform</li>
+  <li class="p-2">Immigration</li>
+  <li class="p-2">Healthcare</li>
+</ul>{% endblock %}
+            {% endembed %}
+
             {# TYPOGRAPHY: BLOCKQUOTE #}
-            {% embed 'styleguide/block' with markup%}
+            {% embed 'styleguide/block' %}
                 {% block heading %}Typography: Blockquote{% endblock %}
                 {% block content %}
                     <div class="styleguide-description">
@@ -207,7 +242,7 @@ BETTER:
             {% endembed %}
 
             {# CTA LINKS #}
-            {% embed 'styleguide/block' with markup %}
+            {% embed 'styleguide/block'  %}
                 {% block heading %}Typography: CTA Links{% endblock %}
                 {% block content %}
                     <div class="styleguide-description">
@@ -267,7 +302,7 @@ BETTER:
             {% endembed %}
 
             {# TYPOGRAPHY: ANIMATED UNDERLINE #}
-            {% embed 'styleguide/block' with markup %}
+            {% embed 'styleguide/block'  %}
                 {% block heading %}Typography: Animated Underline{% endblock %}
                 {% block content %}
                     <div class="styleguide-description">
@@ -291,7 +326,7 @@ BETTER:
             {% endembed %}
 
             {# ROUND IMAGE #}
-            {% embed 'styleguide/block' with markup %}
+            {% embed 'styleguide/block'  %}
                 {% block heading %}Round Image{% endblock %}
                 {% block content %}
                     <div class="styleguide-description">
@@ -299,19 +334,19 @@ BETTER:
                     </div>
                     <div class="styleguide-round-image">
                         <div class="round-image">
-                            <img src="images/testimonial-image.jpg" alt="">
+                            <img src="{{path}}images/testimonial-image.jpg" alt="">
                         </div>
                     </div>
                 {% endblock %}
 {% block markup %}
 <div class="round-image">
-    <img src="images/testimonial-image.jpg" alt="">
+    <img src="{{path}}images/testimonial-image.jpg" alt="">
 </div>
 {% endblock %}
             {% endembed %}
 
             {# MEDIA #}
-            {% embed 'styleguide/block' with markup %}
+            {% embed 'styleguide/block' %}
                 {% block heading %}Media{% endblock %}
                 {% block content %}
                     <div class="styleguide-media">
@@ -338,7 +373,7 @@ BETTER:
             {% endembed %}
 
             {# CARDS #}
-            {% embed 'styleguide/block' with markup %}
+            {% embed 'styleguide/block' with {'id':'cards'} %}
             {% block heading %}CARDS{% endblock %}
             {% block content %}
             <div class="row">
