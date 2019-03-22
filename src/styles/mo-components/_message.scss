@@ -14,5 +14,15 @@
       color: $light-blue;
     }
   }
+  
+  &-alert {
+    background-color: $gold;
+  }
+  &-success {
+    background-color: $azure;
+  }
+  &-error {
+    background-color: $muted-red;
+  }
 
 }
