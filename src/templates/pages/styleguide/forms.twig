@@ -245,6 +245,39 @@
                 {% endblock %}
             {% endembed %}
 
+            {% embed 'styleguide/block' with {'id': 'messages'} %}
+                {% block heading %}Messages{% endblock %}
+                {% block content %}
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p class="message message-error">I'm an error p</p>
+                      <p class="message message-success">I'm a success p with multiple lines of text because we like to be wordy here at MoveOn.<sup>1</sup></p>
+                      <div class="message message-alert">I'm an alert div</div>
+                      <div class="message message-success">I'm a success message div</div>
+                      <ul>
+                      <li class="message message-error">I'm an error li</li>
+                      <li class="message message-success">I'm a success li</li>
+                      </ul>
+                    
+                    </div>
+                  </div>
+                </div>
+
+                {% endblock %}
+                {% block markup %}
+                  <p class="message message-error">I'm an error p</p>
+                  <p class="message message-success">I'm a success p with multiple lines of text because we like to be wordy here at MoveOn.<sup>1</sup></p>
+                  <div class="message message-alert">I'm an alert div</div>
+                  <div class="message message-success">I'm a success message div</div>
+                  <ul>
+                  <li class="message message-error">I'm an error li</li>
+                  <li class="message message-success">I'm a success li</li>
+                  </ul>
+                {% endblock %}
+
+            {% endembed %}
+
 
 
 

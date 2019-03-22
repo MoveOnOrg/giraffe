@@ -1,6 +1,10 @@
 .message {
-  @include font(roboto-condensed-bold);
+  @include font(roboto);
   color: $white;
+  font-weight: 700;
+  line-height: 1.3em;
+  padding: 0.625em;
+  margin: 0.312em;
 
   // Background color comes from utility classes https://github.com/MoveOnOrg/giraffe/blob/main/src/styles/mo-utilities/_color-classes.scss
 
@@ -13,6 +17,16 @@
     &:hover {
       color: $light-blue;
     }
+  }
+  
+  &-alert {
+    background-color: $gold;
+  }
+  &-success {
+    background-color: $azure;
+  }
+  &-error {
+    background-color: $muted-red;
   }
 
 }
