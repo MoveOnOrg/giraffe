@@ -30,3 +30,43 @@ h4 {
 h5 {
   font-size: .8rem;
 }
+
+h1,h2,h3,h4,h5 {
+    /* browsers won't navigate to a display:none element
+       so we use visibility
+     */
+    & a.anchor-link {
+      visibility: hidden;
+      float: left;
+      margin-left: -20px;
+      width: 20px;
+    }
+    &:hover a.anchor-link, a.anchor-link:hover {
+      visibility: visible;
+    }
+}
+
+.anchor-link {
+  /* This is for navigation links so e.g.
+     <div class="anchor-link-section">
+       <div id="foo" class="anchor-id"></div>
+     </div>
+     and then #foo will go to where .toc-section is -- with proper offset from the header.
+     You can ALSO have a hover link like so:
+     <h2>Section Name
+       <a href="#foo" class="anchor-link">
+         <span id="foo" class="anchor-id"></span>
+         <svg width="14px" height="14px"><use xlink:href="#link"/></svg>
+       </a>
+     </h2>
+   */
+  position: relative;
+  .anchor-id {
+    margin-top: -130px;
+    position: absolute;
+
+    @media only screen and (max-width: $bp-md) {
+      margin-top: -60px;
+    }
+  }
+}

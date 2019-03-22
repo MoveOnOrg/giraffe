@@ -71,6 +71,12 @@
     ));
   }
 
+  li > span {
+    @include respond((
+      color: $black null $white
+    ));
+  }
+
   li > a {
     transition: all .3s;
     @include respond((
@@ -335,5 +341,48 @@
         display: none;
       }
     }
+  }
+}
+
+.mobile-pagemenu {
+  display:none;
+  text-align: center;
+}
+.mobile-pagemenu, .pagemenu {
+  /* TODO: specify what it should look like for desktop */
+
+  @media only screen and (max-width: $bp-md) {
+    display: block;
+    text-align: center;
+  }
+  &.force {
+    display: block
+  }
+
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style-type: none;
+    text-transform:capitalize;
+    a {
+      color:#00abff;
+      font-weight:600;
+    }
+  }
+}
+
+.breadcrumb-link {
+  margin-top: .5rem;
+  text-align: right;
+  font-size: .85rem;
+  display: block;
+  height: 24px;
+
+  a {
+    color: $azure;
+    font-weight: 600;
   }
 }

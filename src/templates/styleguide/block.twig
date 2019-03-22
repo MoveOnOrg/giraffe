@@ -1,12 +1,19 @@
-<section class="styleguide-block"   {% block id %}{% endblock %}>
-  <h2 class="styleguide-block__heading">{% block heading %}{% endblock %}</h2>
+<section class="styleguide-block">
+  <h2 class="styleguide-block__heading">{% block heading %}{% endblock %}
+    {% if id %}
+      <a href="#{{ id }}" class="anchor-link">
+        <span id="{{ id }}" class="anchor-id"></span>
+        <svg width="14px" height="14px"><use xlink:href="#link"/></svg>
+      </a>
+    {% endif %}
+  </h2>
   <div class="styleguide-block__content">
     {% block guidance %}{% endblock %}
   </div>
   <div class="styleguide-block__content">
     {% block content %}{% endblock %}
   </div>
-  {% if 'markup' in blocks %}
+  {% if block('markup') %}
     <pre class="styleguide-markup"><code>{{ block('markup')|escape }}</code></pre>
   {% endif %}
 </section>

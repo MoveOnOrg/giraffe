@@ -503,7 +503,7 @@ form {
   }
 }
 
-// variations depending parent's bg color
+/* variations depending bg color of parent */
 .bg-off-white.relative-font-color-for-bg {
   .input-block {
     color: $dark-gray;
@@ -560,5 +560,39 @@ form {
     & input[type="number"] {
       color: $light-gray;
     }
+  }
+}
+
+
+/** Panther Form style **/
+.panther {
+  input.form-control,
+  select,
+  textarea {
+    border:0;
+    border-radius:0;
+    width:100%;
+    /* from bootstrap */
+    line-height: 1.5;
+    padding: .374rem .75rem;
+    background-color: white;
+  }
+
+  /* TODO: what to do in white background?  border or bg change? */
+
+  label {
+    margin-bottom: .5rem;
+    line-height: 1.5;
+    display: inline-block;
+  }
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  .btn[type="submit"] {
+    font-size: 18px;
+    background-color: $azure;
+    color: #fff;
+    padding: 5px 10px;
+    min-width: 100px;
   }
 }
