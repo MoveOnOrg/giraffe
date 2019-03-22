@@ -13,6 +13,14 @@ a:active {
     }
   }
 
+  &.black {
+    color: black;
+    border-bottom: 2px solid $dark-gray-38;
+    &:hover {
+      color: $azure;
+    }
+  }
+
   svg {
     transition: all .3s;
   }
