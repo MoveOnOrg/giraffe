@@ -50,6 +50,18 @@
     margin: 0 2px;
   }
 
+  @include media-breakpoint-up(lg) {
+    &__cta.wamobile {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &__link.wadesktop {
+      display: none;
+    }
+  }
+
   &__cta,
   &__cta:visited,
   &__cta:active {
