@@ -8,6 +8,7 @@ before_deploy:
 - cp -r public/images deploy/
 - cp -r public/scripts deploy/
 - cp -r public/styles deploy/
+- cp -r public/styleguide deploy/
 - cp -r public/*.html deploy/
 deploy:
   - provider: s3
