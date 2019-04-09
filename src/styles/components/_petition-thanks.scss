@@ -166,7 +166,7 @@
     &:not(:first-child) {
       @include respond((
         margin-top: 15px null 0,
-        margin-left: null null 98px,
+        margin-left: null null 20%,
       ));
     }
 
