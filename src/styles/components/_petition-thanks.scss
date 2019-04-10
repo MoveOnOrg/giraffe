@@ -19,7 +19,7 @@
     p {
       @include font(roboto);
       @include respond((
-        font-size: 14px null 18px,
+        font-size: 12px null 18px,
         line-height: 21px null 27px,
       ));
 
@@ -46,6 +46,21 @@
     ));
   }
 
+  &__cta {
+    margin: 0 2px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    &__cta.wamobile {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &__link.wadesktop {
+      display: none;
+    }
+  }
 
   &__cta,
   &__cta:visited,
@@ -61,7 +76,7 @@
       width: 100% null percentage(280/580),
       height: 41px,
       padding-left: 23px null 0,
-      font-size: 12px null 14px,
+      font-size: 13px,
       line-height: 20px,
     ));
 
@@ -87,8 +102,8 @@
     svg {
       fill: $white;
       @include respond((
-        width: 14px null 30px,
-        height: 14px null 30px,
+        width: 18px null 30px,
+        height: 18px null 30px,
         padding: null null 5px,
         margin-right: 18px null 10px,
       ));
@@ -151,7 +166,7 @@
     &:not(:first-child) {
       @include respond((
         margin-top: 15px null 0,
-        margin-left: null null 98px,
+        margin-left: null null 20%,
       ));
     }
 
