@@ -50,6 +50,31 @@
     margin: 0 2px;
   }
 
+  &__cta.messenger-branded {
+    background-color: #0084FF;
+    &:hover {
+      background-color: #0076E5;
+    }
+  }
+
+  &__cta.facebook-branded {
+    background-color: #3B5998;
+    &:hover {
+      background-color: #355088;
+    }
+  }
+
+  &__cta.whatsapp-branded, &__link.whatsapp-branded {
+    background-color: #25D366;
+    &:hover {
+      background-color: #21BD5B;
+    }
+  }
+
+  &__link.whatsapp-branded {
+    color: #25D366;
+  }
+
   @include media-breakpoint-up(lg) {
     &__cta.wamobile {
       display: none;
