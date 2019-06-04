@@ -64,29 +64,6 @@
     }
   }
 
-  &__cta.whatsapp-branded {
-    background-color: #25D366;
-    &:hover {
-      background-color: #21BD5B;
-    }
-  }
-
-  &__link.whatsapp-branded {
-    color: #25D366;
-  }
-
-  @include media-breakpoint-up(lg) {
-    &__cta.wamobile {
-      display: none;
-    }
-  }
-
-  @include media-breakpoint-down(md) {
-    &__link.wadesktop {
-      display: none;
-    }
-  }
-
   &__cta,
   &__cta:visited,
   &__cta:active {
