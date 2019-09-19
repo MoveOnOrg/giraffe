@@ -74,7 +74,8 @@ body {
   @import 'components/donate-terms-v3';
   @import 'components/donate-terms-nocolumn';
   @import 'components/donate-confirm';
-
+  //master for donations override
+  @import 'donate-master';
 }
 
 // PAGE STYLES

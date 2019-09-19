@@ -1,0 +1,91 @@
+.donate-master {
+
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.42857;
+    color: #555555;
+
+  p {
+    margin: 0 0 12.5px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1;
+    font-family: inherit;
+    font-weight: 500;
+    color: inherit;
+  }
+
+  h1 {
+    // font-size: 2em;
+    font-weight: bold;
+    margin: 0.67em 0;
+  }
+
+  h1 {
+    // font-size: 46px;
+  }
+
+  h1, h4 {
+    font-weight: 700;
+  }
+  border: 5px solid green;
+
+  .ask-text {
+    font-size: 28px;
+    color: #000;
+  }
+
+  form {
+    box-shadow: none;
+  }
+
+  .donation-container {
+    background-color: #F3F3F3;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 30px -30px;
+    padding: 0;
+}
+
+  @media screen and (min-width: 768px){
+  .form-section:first-child .form-section--wrapper {
+      border-top: 0;
+      margin-top: 0;
+  }}
+
+    @media screen and (min-width: 768px){
+  .form-section .form-section--wrapper {
+      border-top: 1px solid #CCCCCC;
+  }}
+
+  .form-section .form-section--wrapper {
+    padding-bottom: 30px;
+    padding-top: 30px;
+  }
+
+  @media screen and (min-width: 992px){
+  .form-section .form-section--donation {
+      float: left;
+      width: 50%;
+  }}
+
+  .form-section--wrapper {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  #content {
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+    color: purple;
+  }
+
+  .donate-terms {
+    border-top: 1px solid $light-gray;
+  }
+
+
+}
