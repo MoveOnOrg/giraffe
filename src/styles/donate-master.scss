@@ -1,91 +1,298 @@
-.donate-master {
-
-    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-    font-size: 18px;
-    line-height: 1.42857;
-    color: #555555;
-
-  p {
-    margin: 0 0 12.5px;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    line-height: 1.1;
-    font-family: inherit;
-    font-weight: 500;
-    color: inherit;
-  }
-
-  h1 {
-    // font-size: 2em;
-    font-weight: bold;
-    margin: 0.67em 0;
-  }
-
-  h1 {
-    // font-size: 46px;
-  }
-
-  h1, h4 {
-    font-weight: 700;
-  }
-  border: 5px solid green;
-
-  .ask-text {
-    font-size: 28px;
-    color: #000;
-  }
-
-  form {
-    box-shadow: none;
-  }
-
-  .donation-container {
-    background-color: #F3F3F3;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-    margin: 30px -30px;
-    padding: 0;
+h1 > p {
+  -webkit-tap-highlight-color: transparent;
+  font-family: inherit;
+  line-height: 1.1;
+  font-weight: 700;
+  color: #000000;
+  box-sizing: border-box;
+  margin: 0 0 12.5px;
+  margin-bottom: 0;
+  font-size: 1.25em;
 }
 
-  @media screen and (min-width: 768px){
-  .form-section:first-child .form-section--wrapper {
-      border-top: 0;
-      margin-top: 0;
-  }}
+.ak-label-above {
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  color: #555555;
+  box-sizing: border-box;
+  display: inline-block;
+  max-width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 1.5em;
+  font-size: 16px;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
 
-    @media screen and (min-width: 768px){
-  .form-section .form-section--wrapper {
-      border-top: 1px solid #CCCCCC;
-  }}
+.amount_radio_button{
+  -webkit-tap-highlight-color: transparent;
+  list-style: none;
+  font: inherit;
+  font-family: inherit;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  font-size: 18px;
+  border-radius: 4px;
+  user-select: none;
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 4px 0 0;
+  line-height: normal;
+  display: none;
+}
+#other_amount_container > label > span {
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  text-shadow: none;
+  text-size-adjust: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+  list-style: none;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  color: #296ecb;
+  font-size: 18px;
+  line-height: 30px;
+  box-sizing: border-box;
+  width: 30px;
+}
+.donation-container {
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.42857;
+  color: #555555;
+  box-sizing: border-box;
+  background-color: #F3F3F3;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 30px -30px;
+  padding: 0;
+}
 
-  .form-section .form-section--wrapper {
-    padding-bottom: 30px;
-    padding-top: 30px;
-  }
+.donate-master {
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.42857;
+  color: #555555;
+}
 
-  @media screen and (min-width: 992px){
-  .form-section .form-section--donation {
-      float: left;
-      width: 50%;
-  }}
+.form-section {
+  width: 100%;
+}
 
-  .form-section--wrapper {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
+.make-monthly {
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.42857;
+  color: #555555;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
 
-  #content {
-    max-width: 1180px;
-    margin-left: auto;
-    margin-right: auto;
-    color: purple;
-  }
+#act {
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.42857;
+  color: #555555;
+  box-sizing: border-box;
+  display: block;
+}
 
-  .donate-terms {
-    border-top: 1px solid $light-gray;
-  }
+#act h3 {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  font-family: inherit;
+  line-height: 1.1;
+  color: inherit;
+  margin-bottom: 12.5px;
+  font-weight: 400;
+  font-size: 24px;
+  margin-top: 0;
 
+}
 
+#amount_list {
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.42857;
+  color: #555555;
+  box-sizing: border-box;
+}
+
+#amount_list > ul {
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.42857;
+  color: #555555;
+  box-sizing: border-box;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #FFFFFF;
+  border: 1px solid #E3E3E3;
+  border-top-width: 0;
+  border-left-width: 0;
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#amount_list > ul > li {
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.42857;
+  color: #555555;
+  list-style: none;
+  box-sizing: border-box;
+  display: inline-block;
+  border-left: 1px solid #E3E3E3;
+  border-top: 1px solid #E3E3E3;
+  flex-grow: 1;
+  width: 33%;
+}
+
+#amount_list > ul > li:nth-last-child(2) {
+  width: 33%;
+}
+
+#amount_list > ul > li > label {
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  list-style: none;
+  box-sizing: border-box;
+  max-width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+  background: #296ecb;
+  text-align: center;
+  background-color: transparent;
+  border-radius: 8px;
+  border: 5px solid #FFFFFF;
+  box-shadow: none;
+  color: #296ECB;
+  display: block;
+  font-size: 18px;
+  line-height: 40px;
+  margin: 0;
+  transition: all .15s linear;
+  width: 100%;
+}
+
+#amount_list > ul > li > label > span {
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  list-style: none;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  color: #296ECB;
+  font-size: 18px;
+  line-height: 40px;
+  box-sizing: border-box;
+}
+
+#amount_other_field {
+  -webkit-tap-highlight-color: transparent;
+  list-style: none;
+  box-sizing: border-box;
+  font: inherit;
+  font-family: inherit;
+  background-color: #fff;
+  background-image: none;
+  border-radius: 3px;
+  border: 1px solid #CCCCCC;
+  border-left-color: #a9a9a9;
+  border-top-color: #a9a9a9;
+  box-shadow: 0 0 0 0 rgba(41, 110, 203, 0.25);
+  color: #555555;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  padding: 6px 12px;
+  max-width: 100%;
+  transition: all .15s linear;
+  -webkit-appearance: none;
+  display: block;
+  line-height: 26px;
+  padding-bottom: 1px;
+  padding-top: 1px;
+  padding-left: 30px;
+  width: 100%;
+  text-align: start;
+}
+
+#id_donation_type_recurring {
+  -webkit-tap-highlight-color: transparent;
+  color: inherit;
+  font: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 4px 0 0;
+  line-height: normal;
+  position: absolute;
+  margin-left: -20px;
+}
+
+#other_amount_container {
+  width: 66% !important;
+}
+
+#other_amount_container > .other-label {
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  list-style: none;
+  box-sizing: border-box;
+  max-width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 8px;
+  display: block;
+  font-size: 18px;
+  line-height: 40px;
+  margin: 0;
+  transition: all .15s linear;
+  width: 100%;
+  background: none;
+  color: #296ecb;
+  box-shadow: none;
+  background-color: transparent;
+  padding: 5px;
+  position: relative;
+  text-shadow: none;
 }
