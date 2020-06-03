@@ -14,10 +14,10 @@ class FormsInputBlock {
       
       $inputs.each(function() {
         let $input = $(this);
-         $input.focus(function() {
+         $input.on("focus", function() {
           $(this).parents('.input-block:first').addClass('active');
         });
-        $input.blur(function() {
+        $input.on("blur", function() {
           $(this).parents('.input-block:first').removeClass('active');
         });
         
