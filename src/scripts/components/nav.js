@@ -10,24 +10,24 @@ class Navigation {
 
   init() {
     let _this = this;
-    this.$navToggle.click(function (e) {
+    this.$navToggle.on("click", function (e) {
       e.preventDefault();
       _this.$nav.toggleClass('nav--visible');
     });
-    this.$navClose.click(function (e) {
+    this.$navClose.on("click", function (e) {
       e.preventDefault();
       _this.$nav.removeClass('nav--visible');
     });
     this.$dropdown.each(function () {
       let $dropdown = $(this);
-      $dropdown.children('a').click(function (e) {
+      $dropdown.children('a').on("click", function (e) {
         e.preventDefault();
         $dropdown.toggleClass('nav__dropdown--expanded')
       });
     });
     this.$secondaryLinks.each(function () {
         let $secondaryLink = $(this);
-        $secondaryLink.click(function (e) {
+        $secondaryLink.on("click", function (e) {
             e.preventDefault();
             _this.$nav.toggleClass('nav--visible');
             window.location.href = $secondaryLink.attr('href');
