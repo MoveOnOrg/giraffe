@@ -51,7 +51,7 @@ export default {
 
       if ( $visibleForm.length ) {
         let $inputToFocus = $visibleForm.find('input').first();
-        $inputToFocus.focus();
+        $inputToFocus.trigger("focus");
       } else {
         _this.showSignFormModal();
       }
