@@ -1,18 +1,1404 @@
-body.donate {
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+html {
+  max-width: 100%;
+}
 
+body.donate-page {
+  a {
+    color: #00abff;
+    text-decoration: underline;
+    display: block;
+  }
+
+  button[type="submit"] {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: bold;
+    font-size: 6vw;
+    background: #00acff;
+    color: #fff;
+    padding: 2px;
+    width: 100%;
+    text-transform: uppercase;
+    border-radius: 0;
+    border: none;
+    @media (min-width: 414px) {
+      font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+      padding: 0;
+    }
+  }
+
+  button.ak-styled-submit-button {
+    display: block;
+  }
+
+  div[role="main"] {
+    padding-top: 60px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  h3 {
+    font-size: 27px;
+    font-weight: 700;
+  }
+
+  input[type=text] {
+    cursor: text;
+  }
+
+  label {
+    margin-bottom: 5px;
+    color: #555555;
+    font-weight: 700;
+    font-size: 18px;
+  }
+  .form-section--wrapper .form-group label {
+    margin-bottom: 0 !important;
+  }
   form {
-    box-shadow: none;
+    padding: 10px 22px;
+    @media (min-width: 418) {
+      padding: 10px 35px;
+    }
+
+    h2 {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: 1.5em;
+      font-weight: 200;
+      color: $moriginal-gray-medium;;
+      text-transform: uppercase;
+      letter-spacing: -0.05em;
+    }
+
+    h3 {
+      font-family: "Roboto Condensed", sans-serif;
+    }
+    input {
+      font-size: 18px;
+      line-height: 1.428571429;
+      color: #878787;
+      background-color: #fff;
+      background-image: none;
+      height: 39px;
+    }
+
+    button[type="submit"] {
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+  }
+  [type="radio"]:checked + label,
+  [type="radio"]:not(:checked) + label {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
   }
 
-  #content {
-    max-width: 1180px;
-    margin-left: auto;
-    margin-right: auto;
+  .alt-payment-links {
+    float: right;
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 20px;
+
+    @media (min-width: 414px) {
+      margin-top: 8px;
+    }
+
+    a {
+      color: $moriginal-blue-medium;
+      cursor: pointer;
+    }
+
+    .alert,
+    ul#ak-errors > li,
+    ul.errorlist > li,
+    ul.ak-err > li {
+      padding: 0;
+    }
+
+    .paypal-link-container {
+      display: inline-block;
+    }
+  }
+  .alt-payment-links + h3 {
+    font-family: "Roboto Condensed", sans-serif;
+    margin-top: 0;
+  }
+  .apple-pay-button {
+    padding-top: 5px;
+    display: inline-block;
+    width: 2px;
+    -webkit-appearance: -apple-pay-button;
+    -apple-pay-button-type: check-out; /* also: check-out, book, or subscribe */
+  }
+  .apple-pay-button-black {
+    padding-top: 5px;
+    -apple-pay-button-style: black;
+  }
+  .apple-pay-button-white {
+    padding-top: 5px;
+    -apple-pay-button-style: white;
+  }
+  .apple-pay-button-white-with-line {
+    padding-top: 5px;
+    -apple-pay-button-style: white-outline;
+  }
+  .ask-sub-text {
+    font-family: "Roboto Condensed", sans-serif;
+    background-color: #00acff;
+    color: black;
+    font-size: 1.8em;
+    font-weight: 600;
+    text-align: center;
+    padding: 15px;
+    margin: 0 auto;
+    p[style*="font-size: 80%"] {
+      font-family: "Roboto", sans-serif;
+      color: black;
+      font-weight: 600;
+      text-align: center;
+      background: white;
+    }
   }
 
-  .donate-terms {
-    border-top: 1px solid $light-gray;
+  .ask-sub-text-quickpay {
+    background-color: white;
+    width: 73%;
+    margin: 0 auto;
+  }
+  h1.ask-text {
+    color: black;
+    margin: 0 0 1em 0;
+    font-size: 1.25em;
+    margin: 1em 0.5em 1em 0.5em !important;
+
+    p {
+      font-size: 1.25em;
+    }
+  }
+
+  .big-checkbox-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: 50px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    transition: all 0.15s linear;
+    font-size: 16px;
+    .checkbox-label {
+      @media (min-width: 414px) {
+        // font-size: 16px !important;
+      }
+    }
+
+    /* NOTE: :checked / :not() acts as a fallback for < ie8
+      as they're ignored and the native checkbox should display */
+    #id_donation_type_recurring:checked,
+    #id_donation_type_recurring:not(:checked),
+    #save_payment_information_checkbox:checked,
+    #save_payment_information_checkbox:not(:checked),
+    #retired_checkbox:checked,
+    #retired_checkbox:not(:checked) {
+      display: none;
+    }
+    #id_donation_type_recurring:checked + .checkbox-overlay,
+    #id_donation_type_recurring:not(:checked) + .checkbox-overlay,
+    #save_payment_information_checkbox:checked + .checkbox-overlay,
+    #save_payment_information_checkbox:not(:checked) + .checkbox-overlay,
+    #retired_checkbox:checked + .checkbox-overlay,
+    #retired_checkbox:not(:checked) + .checkbox-overlay {
+      position: relative;
+      width: 25px;
+      height: 25px;
+      border: 2px solid black;
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+      transition: background 0.1s ease;
+      cursor: pointer;
+      &:after {
+        content: "";
+        position: absolute;
+        width: 11px;
+        height: 19px;
+        top: 0;
+        left: 6px;
+        opacity: 0;
+        transform: rotate(45deg) scale(0);
+        border-right: 4px solid #fff;
+        border-bottom: 4px solid #fff;
+        transition: opacity 0.2s ease, transform 0.4s ease;
+      }
+    }
+
+    #id_donation_type_recurring:checked + .checkbox-overlay-quickpay,
+    #id_donation_type_recurring:not(:checked) + .checkbox-overlay-quickpay,
+    #save_payment_information_checkbox:checked + .checkbox-overlay-quickpay,
+    #save_payment_information_checkbox:not(:checked)
+      + .checkbox-overlay-quickpay,
+    #retired_checkbox:checked + .checkbox-overlay-quickpay,
+    #retired_checkbox:not(:checked) + .checkbox-overlay-quickpay {
+      position: relative;
+      background-color: white;
+      margin-right: 20px;
+      width: 44px;
+      height: 44px;
+      border: none;
+      box-shadow: none;
+      transition: background 0.1s ease;
+      cursor: pointer;
+      &:after {
+        content: "";
+        position: absolute;
+        width: 23px;
+        height: 38px;
+        top: 0;
+        left: 11px;
+        opacity: 0;
+        transform: rotate(45deg) scale(0);
+        border-right: 4px solid white;
+        border-bottom: 4px solid white;
+        transition: opacity 0.2s ease, transform 0.4s ease;
+      }
+    }
+    .checkbox-label {
+      flex: 1;
+      padding-left: 10px;
+      color: black;
+      font-weight: 700;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      width: 85%;
+      @media screen and (min-width: 414px) {
+        font-size: 19px;
+        width: 91%;
+        // padding-left: 20px;
+        display: inline-block;
+      }
+    }
+
+    .checkbox-label-quickpay {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 26px;
+    }
+
+    #id_donation_type_recurring:checked ~ .checkbox-overlay,
+    #retired_checkbox:checked ~ .checkbox-overlay,
+    #save_payment_information_checkbox:checked ~ .checkbox-overlay {
+      background: #00acff;
+      &:after {
+        opacity: 1;
+        transform: rotate(45deg) scale(1);
+      }
+    }
+  }
+  .big-checkbox-row-quickpay {
+    margin-top: 20px;
   }
 
 
+  .check-link {
+    margin-top: 0;
+    display: inline-block;
+    text-align: right;
+    font-weight: 400;
+    a {
+      width: 100%;
+    }
+  }
+  .credit-card-icons-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  .check-link, .paypal-link-or {
+    display: none;
+
+    @media (min-width: 414px) {
+      display: inline-block;
+    }
+  }
+
+
+  .container {
+    @media (min-width: $bp-md) {
+      padding-top: 0;
+    }
+  }
+
+  .donation-container {
+    display: flex;
+    flex-flow: column nowrap;
+    @media screen and (min-width: $bp-md) {
+      flex-flow: row wrap;
+    }
+  }
+
+
+
+
+  .custom-radio-payment {
+    font-weight: normal !important;
+    font-size: 16px !important;
+  }
+
+  ul.donation-amount-choices {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    input {
+      display: none;
+    }
+
+    li {
+      display: inline-block;
+      width: 49%;
+      @media screen and (min-width: $bp-md) {
+        width: 32%;
+      }
+      label {
+        background: $moriginal-gray-light;
+        color: black;
+        display: inline-block;
+        font-family: "Roboto Condensed", sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        margin: 2px 1px;
+        width: 100%;
+        text-align: center;
+        line-height: 2.25em;
+      }
+      label:hover {
+        background: #00acff;
+        color: white;
+      }
+      label.ak-radio-checked {
+        background-color: #00acff;
+      }
+    }
+
+    li#other_amount_container {
+      box-shadow: inset 0px 0px 0px 2px black;
+      margin-right: 2px;
+      padding: 0 10px;
+      label {
+        background: none;
+        color: black;
+        box-shadow: none;
+        text-align: left;
+        top: 2px;
+      }
+
+      @media screen and (min-width: $bp-md) {
+        width: 65%;
+      }
+
+      input.amount_other_field {
+        border: none;
+        display: inherit;
+        width: 70%;
+        padding: 0;
+        @media screen and (min-width: 410px) {
+          border: none;
+          display: inherit;
+          width: 75%;
+        }
+      }
+      input.amount_other_field::-webkit-input-placeholder,
+      input.amount_other_field:-ms-input-placeholder,
+      input.amount_other_field::placeholder {
+        /* Edge */
+        font-weight: 100;
+        font-style: italic;
+        white-space: pre-line;
+        font-size: 2.75vw;
+        @media screen and (min-width: 414px) {
+          font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1600 - 300)));
+        }
+      }
+
+      input.amount_other_field:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        font-weight: 100;
+        font-style: italic;
+        white-space: pre-line;
+        font-size: 2.75vw;
+        @media screen and (min-width: 414px) {
+          font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1600 - 300)));
+        }
+      }
+
+      input.amount_other_field::placeholder {
+        font-weight: 100;
+        font-style: italic;
+        white-space: pre-line;
+        font-size: 2.75vw;
+        @media screen and (min-width: 414px) {
+          font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1600 - 300)));
+        }
+      }
+    }
+
+    /* ---product templateset specific styles--- */
+    li#other-amount-container-product {
+      width: auto;
+      label {
+        background: none;
+        color: $moriginal-blue-medium;
+        box-shadow: none;
+        float: left;
+        text-align: left;
+        width: auto;
+      }
+      span.currency_sym {
+        float: left;
+        // line-height: 2.2em;
+        margin-right: 0.5em;
+      }
+      input.amount_other_field {
+        float: left;
+        margin-bottom: 1em;
+        display: block;
+        width: 5em;
+      }
+    }
+    /* ---end product templateset specific styles ---*/
+  }
+
+
+  .donation-container .checkbox input[type="checkbox"] {
+    height: 25px;
+    width: 25px;
+  }
+
+  .donation-legal > div {
+    background: $moriginal-gray-light;
+  }
+  .faded {
+    color: $moriginal-gray-medium;
+  }
+
+  .form-control {
+    border: 2px solid black;
+    border-radius: 0;
+  }
+
+  .form-section {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    @media screen and (min-width: $bp-md) {
+      width: 50%;
+    }
+    .form-section--wrapper.form-section--billing {
+      margin-top: 30px;
+
+      h3 {
+        font-family: "Roboto Condensed", sans-serif;
+        color: black;
+        font-weight: 600;
+        margin-bottom: 30px;
+      }
+      label {
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #555555;
+      }
+
+      label[for="retired_checkbox"] {
+        text-transform: none;
+        color: #000;
+    }
+        input {
+          background-color: #fff;
+          background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==);
+          background-repeat: no-repeat;
+          background-attachment: scroll;
+          background-size: 16px 18px;
+          background-position: 98% 50%;
+          border: 2px solid black;
+          border-radius: 0;
+          color: #878787;
+          font-size: 18px;
+          height: 39px;
+          line-height: 1.428571429;
+          padding: 6px 12px;
+          transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+          width: 100%;
+          cursor: text;
+        }
+        select {
+          display: block;
+          width: 100%;
+          height: 39px;
+          padding: 6px 12px;
+          font-size: 18px;
+          line-height: 1.428571429;
+          color: #878787;
+          background-color: #fff;
+          background-image: none;
+          border: 2px solid black;
+          border-radius: 0;
+        }
+    }
+    .form-section--quickpay {
+      background-color: #caf4ff;
+      color: #000000;
+      font-style: normal;
+      margin: 0 auto 67px;
+      padding: 35px 12px;
+      text-align: center;
+      width: 100%;
+      h3 {
+        font-family: "Roboto Condensed";
+        font-size: 32px;
+        font-weight: bold;
+      }
+      p {
+        font-family: "Roboto", "Roboto Condensed";
+        font-size: 22px;
+        font-weight: normal;
+      }
+      .help-block {
+        font-size: 0.65em;
+      }
+      .faded-quickpay {
+        color: #000000;
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        letter-spacing: -0.02em;
+        margin: 35px 0;
+      }
+      @media screen and (min-width: 414px) and (max-width: 800px) {
+        padding: 35px 40px;
+        width: 100%;
+        text-align: left;
+      }
+      @media screen and (min-width: 800px) {
+        padding: 35px 40px;
+        width: 53%;
+        text-align: left;
+      }
+    }
+    @media screen and (min-width: 414px) {
+      .form-section--wrapper.form-section--donation {
+
+      }
+      .form-section--wrapper.form-section--billing {
+        border-left: 1px solid $moriginal-gray-lighter;
+        border-top: 0 !important;
+        margin-top: 0;
+      }
+
+      .billing-desktop {
+        display: none;
+        @media screen and (min-width: 414px) {
+          display: flex;
+          flex-flow: column nowrap;
+        }
+      }
+      .billing-mobile {
+        display: flex;
+        @media screen and (min-width: 414px) {
+          display: none;
+        }
+      }
+    }
+
+    // #retired {
+    //   padding: 0 15px;
+    //   display: flex;
+    //   @media screen and (min-width: 414px) {
+    //     padding: 0;
+    //     width: 100%;
+    //   }
+    // }
+    //
+    // #retired label {
+    //   font-weight: 600;
+    //   text-transform: none;
+    //   width: 80%;
+    // }
+    //
+    // #retired label > span {
+    //   display: inline-block;
+    //   position: relative;
+    //   padding-left: 0;
+    //   @media (min-width: 414px) {
+    //     padding-left: 15px;
+    //   }
+    // }
+  }
+
+  .form-section--donation {
+    h3 {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: 27px;
+      color: black;
+      font-weight: 600;
+      padding-bottom: 20px;
+    }
+  }
+
+  .form-section--payment {
+    @media screen and (min-width: 414px) {
+      padding-top: 40px;
+    }
+    // border-top: 1px solid $moriginal-gray-lighter;
+    h3 {
+      font-family: "Roboto Condensed", sans-serif;
+      color: black;
+      font-weight: 600;
+      padding-bottom: 10px;
+      display: inline-block;
+    }
+  }
+  .form-section--quickpay {
+      background-color: #caf4ff;
+      color: #000000;
+      font-style: normal;
+      margin: 0 auto 67px;
+      padding: 35px 12px;
+      text-align: center;
+      width: 100%;
+      h3 {
+        font-family: "Roboto Condensed";
+        font-size: 32px;
+        font-weight: bold;
+      }
+      p {
+        font-family: "Roboto", "Roboto Condensed";
+        font-size: 22px;
+        font-weight: normal;
+      }
+      .help-block {
+        font-size: 0.65em;
+      }
+      .faded-quickpay {
+        color: #000000;
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        letter-spacing: -0.02em;
+        margin: 35px 0;
+      }
+      @media screen and (min-width: 414px) and (max-width: 800px) {
+        padding: 35px 40px;
+        width: 100%;
+        text-align: left;
+      }
+      @media screen and (min-width: 800px) {
+        padding: 35px 40px;
+        width: 53%;
+        text-align: left;
+      }
+    }
+  .form-section--submit {
+    text-align: center;
+  }
+
+  .form-section--wrapper {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .help-block {
+    font-size: 0.75em;
+  }
+  .hidden {
+    display: none;
+  }
+  .legal {
+    padding: 40px;
+    @media screen and (min-width: 414px) and (max-width: 800px) {
+      padding: 40px 100px;
+    }
+    @media screen and (min-width: 800px) {
+      padding: 40px 250px;
+    }
+  }
+
+  .legal .small {
+    border: none;
+    text-align: left;
+    padding: 0;
+  }
+  .logo {
+    top: 20px;
+    img {
+      max-width: 140px;
+      display: block;
+      margin: auto;
+    }
+  }
+
+
+  .modal {
+    display: none;
+  }
+  .moveon-amount {
+    .candidate-details {
+      font-weight: bold;
+      color: $moriginal-blue-medium;
+    }
+  }
+
+  .payment-border {
+    border-top: 1px solid gray;
+  }
+  .payment-checkbox {
+    display: inline-block;
+    width: 50px;
+    height: 100%;
+  }
+
+  .payment-icons {
+    img {
+      height: 13px;
+      @media screen and (min-width: 414px) {
+        height: 1.15em;
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  .payment-options-header {
+    padding-top: 20px;
+  }
+  .payment-select {
+    margin: 9px 0;
+    label {
+      border-radius: 0;
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 25px;
+      height: 50px;
+      text-align: center;
+      align-items: center;
+      display: flex;
+      flex-flow: row nowrap;
+      width: 100%;
+      @media (min-width: 414px) {
+        font-size: 30px;
+        height: 50px;
+      }
+      span {
+        width: calc(100% - 50px);
+        img {
+          height: 35px;
+        }
+        @media (min-width: 414px) {
+          width: calc(100% - 50px);
+          img {
+            height: 35px;
+          }
+        }
+      }
+    }
+    label[for="credit-card"] {
+      color: #fff;
+      background: #0080bf;
+      font-size: 18px;
+      input {
+        background: #0080bf;
+      }
+      span {
+        padding-left: 23px;
+      }
+    }
+    label[for="paypal"] {
+      color: #fff;
+      background: #fed059;
+      input {
+        background: #0080bf;
+      }
+    }
+    label[for="apple"] {
+      background: black;
+    }
+
+    [type="radio"]:not(:checked),
+    [type="radio"]:checked {
+      position: absolute;
+      left: 0;
+      opacity: 0.01;
+    }
+    [type="radio"]:not(:checked) + label,
+    [type="radio"]:checked + label {
+      position: relative;
+      padding-left: 2.3em;
+      line-height: 1.7;
+      cursor: pointer;
+    }
+    [type="radio"]:not(:checked) + label:before,
+    [type="radio"]:checked + label:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 50px;
+      height: 50px;
+      background: inherit;
+      -webkit-transition: all 0.275s;
+      transition: all 0.275s;
+      @media (min-width: 414px) {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    /* checked mark aspect */
+    [type="radio"]:not(:checked) + label:after,
+    [type="radio"]:checked + label:after {
+      content: url("https://s3.amazonaws.com/s3.moveon.org/images/checkmark.svg");
+      position: absolute;
+      left: 3px;
+      font-size: 55px;
+      color: white;
+      line-height: 0;
+      -webkit-transition: all 0.2s;
+      transition: all 0.2s;
+      @media (min-width: 414px) {
+        font-size: 55px;
+      }
+    }
+
+    [type="radio"]:checked + label:before {
+      background: #00abff;
+      height: 47px;
+      width: 47px;
+    }
+
+    [type="radio"]:checked + label {
+      border: 3px solid #00abff;
+    }
+
+    /* checked mark aspect changes */
+    [type="radio"]:not(:checked) + label:after {
+      opacity: 0;
+      -webkit-transform: scale(0) rotate(45deg);
+      transform: scale(0) rotate(45deg);
+    }
+
+    [type="radio"]:checked + label:after {
+      opacity: 1;
+      -webkit-transform: scale(1) rotate(0);
+      transform: scale(1) rotate(0);
+    }
+
+    /* Disabled radio */
+    [type="radio"]:disabled:not(:checked) + label:before,
+    [type="radio"]:disabled:checked + label:before {
+      box-shadow: none;
+      border-color: #bbb;
+      background-color: #e9e9e9;
+    }
+
+    [type="radio"]:disabled:checked + label:after {
+      color: #777;
+    }
+
+    [type="radio"]:disabled + label {
+      color: #aaa;
+    }
+
+    /* Accessibility */
+    [type="checkbox"]:checked:focus + label:before,
+    [type="checkbox"]:not(:checked):focus + label:before {
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1),
+        0 0 0 6px rgba(203, 34, 237, 0.2);
+    }
+  }
+
+  .row {
+    display: block;
+    flex-wrap: wrap;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .security-icons {
+    text-align: center;
+    color: #838383;
+    text-transform: uppercase;
+    padding-top: 6px;
+    div {
+      display: block;
+      @media screen and (min-width: 414px) {
+        display: inline-block;
+      }
+    }
+    img {
+      height: 20px;
+    }
+    span {
+      padding-top: 4px;
+      padding-right: 10px;
+      padding-left: 2px;
+    }
+  }
+  .select-payment-header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  .sr-only {
+    display: none;
+  }
+  #ak-exp_date-hosted {
+    width: 100%;
+    @media (min-width: $bp-md) {
+      width: 50%;
+    }
+  }
+  #amount_list .donation-header {
+    font-weight: bold;
+  }
+
+  div#amount_list ul.ak-unstyled li, label.ak-btn {
+    width: 95px;
+  }
+  #amount_other_field {
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  #apple-pay {
+    @media screen and (min-width: 414px) {
+      display: none;
+    }
+  }
+
+
+  #candidate_list {
+    .candidate-details {
+      width: 80%;
+    }
+    .candidate-portrait {
+      float: left;
+      margin: 0 1em 1em 0;
+    }
+  }
+
+  #card_num_box {
+    .wf-icon {
+      font-size: 1.5em;
+      line-height: 1em;
+    }
+    .icon-lock {
+      color: $moriginal-gray-medium;
+      font-size: 1em;
+    }
+    label {
+      display: block;
+    }
+    .col-md-8,
+    .col-md-4 {
+      padding: 0;
+      margin-bottom: 5px;
+    }
+    .cc-icons {
+      float: right;
+    }
+
+    .wf-icon.matched {
+      color: $moriginal-green-medium;
+    }
+    .wf-icon:before {
+      margin: 0;
+    }
+  }
+
+  #custom-donate-split {
+    max-width: 500px;
+    .amount-with-currency {
+      min-height: 42px;
+      padding-right: 50%;
+
+      input,
+      span.currency_sym {
+        font-size: 1.4em;
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+      input {
+        float: left;
+      }
+      @media screen and (min-width: 414px) {
+        //tk
+        input {
+          float: none;
+        }
+      }
+    }
+
+    span.currency_sym {
+      position: absolute;
+      left: 1em;
+    }
+  }
+
+  #default-donate-split {
+    ul.donation-amount-choices {
+      margin-bottom: 0.5em;
+    }
+  }
+
+  #name {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 16px 18px;
+    background-position: 98% 50%;
+    cursor: auto;
+  }
+
+  #other-amount-container-label {
+      margin-top: 30px;
+      margin-bottom: 7px;
+    }
+    #other-amount-container-quickpay {
+      background-color: white;
+      width: 100%;
+      height: 111px;
+
+      label {
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+      span {
+        color: black;
+        font-family: "Roboto Condensed";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 48px;
+        padding: 25px 20px;
+        text-align: center;
+        letter-spacing: -0.02em;
+        @media screen and (min-width: 414px) {
+          font-size: 48px;
+          line-height: 56px;
+
+        }
+      }
+      input {
+        border: none;
+        box-shadow: none;
+        display: block;
+        width: 100%;
+        height: 39px;
+        padding: 6px 12px;
+        font-size: 18px;
+        line-height: 1.428571429;
+        color: #878787;
+        background-color: #fff;
+        background-image: none;
+      }
+      input:focus {
+        box-shadow: none;
+      }
+    }
+
+  #paypal-button-desktop {
+    background-color: #ffc538;
+    border-radius: 5px;
+    box-shadow: 1px 1px #f5ae27;
+    //  display: none;
+    padding: 10px;
+    margin-top: 15px;
+    @media screen and (min-width: 414px) {
+      display: inline-block;
+    }
+  }
+
+  #paypal-div {
+    display: inline-block;
+    width: 75%;
+  }
+  #product_list {
+    .mobile-quantity-label {
+      display: none;
+    }
+    .product-amount {
+      white-space: nowrap;
+    }
+    .product-header {
+      text-align: center;
+    }
+
+    .product-description {
+      width: 100%;
+    }
+
+    .product-description img {
+      height: auto;
+      width: 100%;
+    }
+    .product-name {
+      font-weight: 600;
+    }
+
+    .product-row {
+      text-align: center;
+      margin: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+    }
+
+    .ak_product_inputs {
+      margin-bottom: 5px;
+    }
+
+    #product-table-headers {
+      background: white;
+      margin: 15px;
+    }
+    @media (max-width: 768px) {
+      //smallest breakpoint in bootstrap 3.5.
+      .product-row {
+        flex-direction: column;
+      }
+      .mobile-quantity-label {
+        display: block;
+      }
+      .product-description img {
+        height: auto;
+        width: 50%;
+        margin: 0 auto;
+      }
+      #product-table-headers {
+        display: none;
+      }
+    }
+  }
+
+  #quickpay-amounts {
+    p {
+      margin-bottom: 0;
+    }
+    button.btn {
+      background-color: white;
+      border: none;
+      border-radius: 0;
+      color: #000000;
+      font-family: "Roboto Condensed";
+      font-size: 30px;
+      font-style: normal;
+      font-weight: bold;
+      text-align: center;
+      @media screen and (min-width: 414px) {
+        font-size: .7em;
+        font-size: 48px;
+        letter-spacing: -0.02em;
+      }
+
+    }
+    button.btn:hover {
+      background-color: #00abff;
+      color: white;
+    }
+    #quickpay-amount-buttons {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      width: 100%;
+      @media screen and (min-width: 414px) {
+        justify-content: flex-start;
+      }
+      .btn-group {
+        width: 95px;
+        height: 95px;
+        @media screen and (min-width: 414px) {
+          height: 111px;
+          width: 111px;
+          margin: 0 10px;
+          &:first-of-type {
+            margin-left: 0;
+          }
+        }
+        button {
+          background: #00ABFF;
+          color: #fff;
+          font-size: 38px;
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+    #other-amount-container-label {
+      margin-top: 30px;
+      margin-bottom: 7px;
+    }
+    #other_amount_submit {
+      width: 75%;
+      background-color: #00abff;
+      display: block;
+      font-family: "Roboto Condensed";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 42px;
+      margin: 35px auto;
+      padding: 10px 20px;
+      position: relative;
+      text-align: center;
+
+      color: #ffffff;
+      @media screen and (min-width: 414px) {
+        font-size: 42px;
+        width: auto;
+      }
+    }
+
+    .form-group label {
+      display: block;
+    }
+  }
+
+
+
+  #product_list {
+    th.product-amount {
+      white-space: nowrap;
+    }
+    th#product-details-header {
+      text-align: center;
+    }
+  }
+
+  /* --Specific to product pages using the product templateset --*/
+  div#product_list_product {
+    td.product-details,
+    td.product-quantity,
+    td.product-amount,
+    th#product-quantity-header,
+    th#product-details-header,
+    th#product-amount-header {
+      padding: 0.5em;
+    }
+    table {
+      margin-bottom: 1em;
+    }
+    th#product-details-header {
+      text-align: left;
+    }
+  }
+  /* --end product templateset specific styles -- */
+  #total_div {
+    clear: both;
+  }
+  #total-span {
+    color: #178545;
+  }
+}
+
+.donation-legal {
+  /*out of body.donation-page*/
+  margin-top: 50px;
+  // width: 100vw;
+  // position: relative;
+  // left: 50%;
+  // right: 50%;
+  // margin-left: -50vw;
+  // margin-right: -50vw;
+
+  a {
+    color: #00acff;
+    text-decoration: underline;
+  }
+}
+
+
+
+body.donation-pagetype.thanks-page {
+  .container {
+    padding: 56px 0 !important;
+  }
+
+  h2 {
+    font-weight: 200;
+    font-size: 64px;
+    margin-left: -3px;
+    text-transform: none;
+  }
+
+  // old make-it-monthly styles remaining for testing
+  .donationthanks-makeitmonthly {
+    margin: 0;
+    box-shadow: 0 0 20px $moriginal-gray-medium;
+
+    h3 {
+      width: 100%;
+      font-weight: 600;
+      background-color: #F3F3F3;
+      font-size: 20px;
+      padding: 10px 15px;
+    }
+
+    form#mimother_link {
+      /*get them all on the same line*/
+      .mo-label {
+        float:right;
+        border:none;
+        width:auto;
+        box-shadow: unset;
+        margin-right: 5px;
+        padding: 6px;
+        font-weight: bold;
+        font-size: .7em;
+
+        @media screen and (min-width: 414px) {
+          font-size: .8em;
+        }
+      }
+
+      .currency_sym {
+        position: absolute;
+        top: 5px;
+        right: 146px;
+        left: auto;
+        z-index: 3;
+        color: $moriginal-blue-medium;
+      }
+
+      input[type=text] {
+       width:5em;
+       float:right;
+       border-top-left-radius: 3px;
+       border-bottom-left-radius: 3px;
+      }
+    }
+
+    @media screen and (min-width: 414px) {
+      margin-top: -50px;
+    }
+  }
+}
+.test-class {
+  background: white;
+  margin-bottom: -10px;
+  width: 105%;
+  font-size: 25px !important;
+  a {
+    display: inline !important;
+  }
+  @media screen and (min-width: 414px) {
+    width: 150%;
+    margin-left: -25%;
+  }
 }

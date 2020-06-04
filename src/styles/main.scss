@@ -69,9 +69,7 @@ body {
   @import 'components/petition-card';
   @import 'components/petition-details';
   @import 'components/donate-form';
-  @import 'components/donate-form-v3';
   @import 'components/donate-terms';
-  @import 'components/donate-terms-v3';
   @import 'components/donate-terms-nocolumn';
   @import 'components/donate-confirm';
 
@@ -80,9 +78,7 @@ body {
 // PAGE STYLES
 @import 'pages/petition';
 @import 'pages/donate';
-@import 'pages/donate-v3';
-@import 'pages/donate-quickpay-v3';
-@import 'pages/donate-confirm';
+@import 'pages/recurring_update';
 
 // MO OVERRIDES and REGRESSION FIXES
 @import 'mo-components/fixes';
