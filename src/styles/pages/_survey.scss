@@ -1,7 +1,38 @@
 
 body.survey-page {
-  //autocomplete
   #address-autocomplete {
-    border: solid 3px yellow;
+    border: 1px solid $light-blue;
+    color: $azure;
+    list-style-type: none;
+    margin-left: 0px;
+  }
+
+  #smartystreets-address-input-div {
+    display: none;
+  }
+
+  #unknown-address {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    display: none; /* Hidden by default */
+    height: 100%; /* Full height */
+    left: 0;
+    overflow: auto; /* Enable scroll if needed */
+    position: fixed; /* Stay in place */
+    top: 0;
+    width: 100%; /* Full width */
+    z-index: 1; /* Sit on top */
+    div {
+      background-color: #fefefe;
+      border: 1px solid #888;
+      display: block;
+      margin: 15% auto; /* 15% from the top and centered */
+      padding: 20px;
+      text-align: center;
+      width: 60%; /* Could be more or less, depending on screen size */
+    }
+  }
+  #user-name-input-div {
+    display: none;
   }
 }
