@@ -11,7 +11,6 @@ body.survey-page {
     display: none;
   }
 
-
   #unknown-address {
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
@@ -28,6 +27,7 @@ body.survey-page {
       border: 1px solid #888;
       display: block;
       margin: 15% auto; /* 15% from the top and centered */
+      opacity: 1;
       padding: 20px;
       text-align: center;
       width: 60%; /* Could be more or less, depending on screen size */
