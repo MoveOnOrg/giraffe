@@ -21,6 +21,7 @@ body {
 .giraffe {
   @import 'settings/reset';
   @import 'bootstrap/bootstrap-grid';
+  @import 'bootstrap/utilities/position';
   @import 'bootstrap/utilities/sizing';
   @import 'bootstrap/utilities/spacing';
 
