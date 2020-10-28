@@ -18,6 +18,10 @@ form {
       ));
     }
 
+    .input-white:hover {
+        background-color: $white;
+    }
+
     input,
     select {
       padding: 5px;
@@ -483,6 +487,10 @@ textarea {
 // labels before input
 form {
   .input-block {
+    .input-white {
+      background: $white;
+      border: none;
+    }
     &.label-before-input {
       margin-top:28px;
       label {
@@ -491,6 +499,9 @@ form {
         position:relative;
         width:100%;
         top:0;
+      }
+      .bold-label {
+        font-weight: bold;
       }
       .select-caret {
         top:auto;
