@@ -129,6 +129,7 @@ form {
       position: absolute;
       display: block;
       fill: $light-gray;
+      z-index: 9;
       @include respond((
         top: 50%,
         transform: translateY(-50%),
