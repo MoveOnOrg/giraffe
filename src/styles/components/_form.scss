@@ -491,6 +491,9 @@ form {
     .input-white {
       background: $white;
       border: none;
+      .select-caret {
+        top:50%;
+      }
     }
     &.label-before-input {
       margin-top:28px;
@@ -511,6 +514,12 @@ form {
     }
     &.active {
       color: $azure;
+    }
+  }
+  .input-white {
+    select, select:hover {
+      background-color: $white;
+      border-bottom: none;
     }
   }
 }
