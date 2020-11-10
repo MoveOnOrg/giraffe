@@ -13,6 +13,10 @@
 // CONFIGS
 @include define-breakpoints($breakpoints);
 
+html {
+  width: 100vw;
+}
+
 body {
   // All styles here must be compatible with moui.css
   margin: 0;
