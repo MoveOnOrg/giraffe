@@ -491,8 +491,9 @@ form {
     .input-white {
       background: $white;
       border: none;
-      .select-caret {
-        top:50%;
+      &.form-control {
+        background: $white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="39" height="13" fill="gray" viewBox="0 0 24 24"><path d="M12 21l-12-18h24z"/></svg>') no-repeat;
+        background-position: right;
       }
     }
     &.label-before-input {
@@ -507,10 +508,6 @@ form {
       .bold-label {
         font-weight: bold;
       }
-      .select-caret {
-        top:auto;
-        bottom:0.2em;
-      }
     }
     &.active {
       color: $azure;
@@ -520,6 +517,11 @@ form {
     select, select:hover {
       background-color: $white;
       border-bottom: none;
+      background: $white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="39" height="13" fill="gray" viewBox="0 0 24 24"><path d="M12 21l-12-18h24z"/></svg>') no-repeat;
+      background-position: right;
+    }
+    .select-caret {
+      display: none;
     }
   }
 }
