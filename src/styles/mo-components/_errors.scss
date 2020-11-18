@@ -37,6 +37,10 @@ form {
   }
 }
 
+ul.giraffe-errors-list.hide-errors {
+  display: none;
+}
+
 ul.giraffe-errors-list > li,
 ul#ak-errors > li,
 ul.errorlist > li,
