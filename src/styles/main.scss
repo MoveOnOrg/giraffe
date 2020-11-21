@@ -4,6 +4,10 @@
 @import 'settings/typography';
 
 // MIXINS
+@import 'bootstrap/mixins/hover';
+@import 'bootstrap/mixins/text-emphasis';
+@import 'bootstrap/mixins/text-hide';
+@import 'bootstrap/mixins/text-truncate';
 @import 'mixins/breakpoint';
 @import 'mixins/respond';
 @import 'mixins/aspect-ratio';
@@ -28,6 +32,7 @@ body {
   @import 'bootstrap/utilities/position';
   @import 'bootstrap/utilities/sizing';
   @import 'bootstrap/utilities/spacing';
+  @import 'bootstrap/utilities/text';
 
   // UTILITY CLASSES
   @import 'mo-utilities/color-classes';
