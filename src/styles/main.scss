@@ -4,6 +4,7 @@
 @import 'settings/typography';
 
 // MIXINS
+@import 'bootstrap/mixins/float';
 @import 'bootstrap/mixins/hover';
 @import 'bootstrap/mixins/text-emphasis';
 @import 'bootstrap/mixins/text-hide';
@@ -29,6 +30,7 @@ body {
 .giraffe {
   @import 'settings/reset';
   @import 'bootstrap/bootstrap-grid';
+  @import 'bootstrap/utilities/float';
   @import 'bootstrap/utilities/position';
   @import 'bootstrap/utilities/sizing';
   @import 'bootstrap/utilities/spacing';
