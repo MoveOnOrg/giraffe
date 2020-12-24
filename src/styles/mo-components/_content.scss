@@ -39,6 +39,14 @@ img {
   text-align:right;
 }
 
+.text-align-center-desktop-left-mobile {
+  text-align:center;
+
+  @media only screen and (max-width: 650px) {
+		text-align:left;
+	}
+}
+
 .fine-print {
   font-size: .8em !important;
   line-height: 1.5em !important;
