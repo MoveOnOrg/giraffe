@@ -3,13 +3,14 @@ a:visited,
 a:active {
   text-decoration: none;
   transition: all .3s;
-  color: $azure;
+  color: $cerulean;
+  font-weight: bold;
 
   &:hover {
-    color: $azure;
+    color: $cerulean;
 
     svg {
-      fill: $azure;
+      fill: $cerulean;
     }
   }
 
@@ -17,7 +18,7 @@ a:active {
     color: black;
     border-bottom: 2px solid $dark-gray-38;
     &:hover {
-      color: $azure;
+      color: $cerulean;
     }
   }
 
