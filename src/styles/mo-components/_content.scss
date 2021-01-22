@@ -67,7 +67,11 @@ img {
     top: 0;
     color: black;
     padding-right: 1.5rem !important; /* matches p-4 padding for contact info block */
+  }
 
+  &.lost-pages-incontentblock {
+    position: relative;
+    text-align: right;
   }
 
   &.underbutton {
