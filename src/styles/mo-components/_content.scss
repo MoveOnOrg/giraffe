@@ -72,6 +72,10 @@ img {
   &.lost-pages-incontentblock {
     position: relative;
     text-align: right;
+
+    @media only screen and (max-width: 768px) {
+      text-align: left;
+    }
   }
 
   &.underbutton {
