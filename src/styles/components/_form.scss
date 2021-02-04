@@ -1,5 +1,14 @@
 form {
 
+  .ak-attachment-area {
+    display: none;
+    pointer-events: none;
+  }
+
+  .ak-attachment-area input {
+    background: none!important;
+  }
+
   .ak-attachment-backend {
     display: none;
   }
@@ -402,7 +411,7 @@ form {
     text-align: center;
   }
 
-  button {
+  a, button {
     &.btn {
       font-size: 18px;
       @include btn--azure;
