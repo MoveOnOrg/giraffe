@@ -500,6 +500,14 @@ textarea {
 
 // labels before input
 form {
+  .delete-file {
+    svg:hover {
+      path {
+        cursor: pointer;
+        fill: $red;
+      }
+    }
+  }
   .input-block {
     .input-white {
       background: $white;
