@@ -26,6 +26,9 @@ body, &#giraffe-wrapper {
 @import "mixins/breakpoints";
 @import "mixins/grid-framework";
 @import "mixins/grid";
+@import 'bootstrap/mixins/utilities';
+
+@import "vendor/rfs";
 
 @import "grid";
 @import "utilities/display";
