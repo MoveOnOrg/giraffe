@@ -30,6 +30,7 @@ body {
 .giraffe {
   @import 'settings/reset';
   @import 'bootstrap/bootstrap-grid';
+  @import 'bootstrap/utilities';
   @import 'bootstrap/utilities/clearfix';
   @import 'bootstrap/utilities/float';
   @import 'bootstrap/utilities/position';
