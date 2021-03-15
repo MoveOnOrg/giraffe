@@ -1,0 +1,125 @@
+body.user_view {
+  color: #000000;
+  font-family: Roboto Condensed;
+  font-style: normal;
+  text-align: left;
+  a {
+    font-weight: 700;
+    color: #00ABFF;
+  }
+  button {
+    background: #00ABFF;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 6px 17px;
+    text-align: center;
+    text-transform: uppercase;
+    a {
+      color: #fff;
+    }
+  }
+  h1 {
+    font-size: 42px;
+    font-weight: bold;
+  }
+  h2 {
+    font-size: 32px;
+    font-weight: bold;
+  }
+  h3 {
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  p {
+    font-family: Roboto;
+    font-weight: normal;
+    font-size: 22px;
+  }
+  .call-to-action {
+    img {
+      display: block;
+      width: 100%;
+    }
+    .caption {
+      background: #000000;
+      font-size: 30px;
+      font-weight: bold;
+      a {
+        color: #FFFFFF;
+        display: block;
+        padding: 8px 12px 11px;
+      }
+      img {
+        display: inline;
+        height: 25px;
+        padding-left: 10px;
+        width: auto;
+      }
+    }
+  }
+  .gray-block {
+    background-color: #EFEFEF;
+    padding: 20px 20px 24px 20px;
+    h3 {
+      padding-bottom: 23px;
+    }
+    > div {
+      padding-bottom: 23px;
+    }
+  }
+  .how-you-help {
+    p {
+      margin-bottom: 60px;
+    }
+  }
+  .member-donations {
+    margin-bottom: 60px;
+  }
+  .med-font {
+    font-size: 20px;
+  }
+  .small {
+    font-family: Roboto;
+    font-weight: normal;
+    font-size: 18px;
+  }
+  .subscription-status {
+    margin-top: 75px;
+    h3 {
+      margin-bottom: 0;
+    }
+    hr {
+      border: 5px solid #C4C4C4;
+      margin-bottom: 20px;
+    }
+  }
+  .x-small {
+    font-family: Roboto;
+    font-weight: normal;
+    font-size: 16px;
+  }
+  ul#donation-box {
+      list-style: none;
+      font-family: Roboto;
+      font-weight: bold;
+      font-size: 17px;
+    li.nav-item {
+      padding: 6px 35px;
+    }
+    .nav-item.active {
+      background: #CAF4FF;
+      a {
+        color: #000000;
+      }
+    }
+  }
+  #donations-content {
+    background: #CAF4FF;
+    .tab-pane {
+      background: white;
+      padding: 34px 27px;
+    }
+  }
+}
