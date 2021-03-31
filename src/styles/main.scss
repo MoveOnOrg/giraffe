@@ -85,18 +85,13 @@ body {
 }
 
 // PAGE STYLES
-<<<<<<< HEAD
 @import "pages/petition";
 @import "pages/donate";
 @import "pages/recurring-update";
-=======
-@import 'pages/petition';
-@import 'pages/donate';
-@import 'pages/donate-v3';
-@import 'pages/donate-quickpay-v3';
-@import 'pages/donate-confirm';
 @import 'pages/survey';
->>>>>>> 8d05d1e1882bc04ef11f51ed9dc330f81f64a274
+=======
+@import 'pages/recurring-update';
+>>>>>>> efc7fb8bc45a8abb64052b6e1c99784d34326b56
 
 // MO OVERRIDES and REGRESSION FIXES
 @import "mo-components/fixes";
