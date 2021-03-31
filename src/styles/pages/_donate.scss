@@ -1,18 +1,1251 @@
-body.donate {
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+@include define-breakpoints(
+  (
+    small: null,
+    medium: 768,
+    large: 1280 1920,
+  )
+);
+
+$gray-lighter: #cccccc;
+$moveon-light-gray: #f3f3f3;
+$moveon-medium-gray: #878787;
+$moveon-medium-green: #37b34a;
+$moveon-medium-blue: #296ecb;
+
+body.donate-page {
+  font-size: 18px;
+  a {
+    color: #00abff;
+    text-decoration: underline;
+    display: block;
+  }
+  .form-section--wrapper .form-group .ak-err-below {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    label {
+      color: rgb(85, 85, 85);
+      font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 0;
+    }
+    input,
+    select {
+      background-attachment: scroll;
+      background-color: #fff;
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==);
+      background-position: 98% 50%;
+      background-repeat: no-repeat;
+      background-size: 16px 18px;
+      color: #878787;
+      cursor: auto;
+      border: 2px solid black;
+      border-radius: 0;
+      display: block;
+      font-size: 18px;
+      height: 39px;
+      line-height: 1.428571429;
+      padding: 6px 12px;
+      transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+      width: 100%;
+      // box-shadow: inset 0 1px 1px rgb(0 0 0 8%);
+    }
+  }
+  // .form-section--wrapper .form-group label {
+  //   margin-bottom: 0 !important;
+  // }
+
+  button[type="submit"] {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: bold;
+    background: #00acff;
+    color: #fff;
+    width: 100%;
+    text-transform: uppercase;
+    border-radius: 0;
+    border: none;
+    font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+    padding: 0;
+    // font-size: 6vw;
+    @include breakpoint(medium down) {
+      padding: 2px;
+      font-size: 23px;
+      // Styles here
+    }
+  }
+
+  button.ak-styled-submit-button {
+    display: block;
+  }
+
+  div[role="main"] {
+    padding-top: 60px;
+    padding-left: 0;
+    padding-right: 0;
+  }
 
   form {
-    box-shadow: none;
+    padding: 10px 10px;
+    @include breakpoint(medium down) {
+      padding: 10px 35px;
+    }
+
+    h2 {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: 1.5em;
+      font-weight: 200;
+      color: $moveon-medium-gray;
+      text-transform: uppercase;
+      letter-spacing: -0.05em;
+    }
+
+    h3 {
+      color: black;
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: 27px;
+      font-weight: 600;
+      padding-bottom: 20px;
+    }
+
+    button[type="submit"] {
+      margin: 0 auto;
+    }
   }
 
-  #content {
-    max-width: 1180px;
-    margin-left: auto;
-    margin-right: auto;
+  .payment-checkbox {
+    display: inline-block;
+    width: 50px;
+    height: 100%;
   }
 
-  .donate-terms {
-    border-top: 1px solid $light-gray;
+  body.donate-page [type="radio"]:checked + label,
+  body.donate-page [type="radio"]:not(:checked) + label {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
   }
 
+  .payment-select {
+    margin: 9px 0;
+    label {
+      border-radius: 0;
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 25px;
+      height: 50px;
+      text-align: center;
+      align-items: center;
+      display: flex;
+      flex-flow: row nowrap;
+      width: 100%;
+      @include breakpoint(medium down) {
+        font-size: 30px;
+        height: 50px;
+      }
+      span {
+        width: calc(100% - 50px);
+        img {
+          height: 35px;
+        }
+        @include breakpoint(medium down) {
+          width: calc(100% - 50px);
+          img {
+            height: 35px;
+          }
+        }
+      }
+    }
+    label[for="credit-card"] {
+      color: #fff;
+      background: #0080bf;
+      font-size: 18px;
+      input {
+        background: #0080bf;
+      }
+      span {
+        padding-left: 23px;
+      }
+    }
+    label[for="paypal"] {
+      color: #fff;
+      background: #fed059;
+      input {
+        background: #0080bf;
+      }
+    }
+    label[for="apple"] {
+      background: black;
+    }
 
+    [type="radio"]:not(:checked),
+    [type="radio"]:checked {
+      position: absolute;
+      left: 0;
+      opacity: 0.01;
+    }
+    [type="radio"]:not(:checked) + label,
+    [type="radio"]:checked + label {
+      position: relative;
+      padding-left: 2.3em;
+      line-height: 1.7;
+      cursor: pointer;
+    }
+    [type="radio"]:not(:checked) + label:before,
+    [type="radio"]:checked + label:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 50px;
+      height: 50px;
+      background: inherit;
+      -webkit-transition: all 0.275s;
+      transition: all 0.275s;
+      @include breakpoint(medium down) {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    /* checked mark aspect */
+    [type="radio"]:not(:checked) + label:after,
+    [type="radio"]:checked + label:after {
+      content: url("https://s3.amazonaws.com/s3.moveon.org/images/checkmark.svg");
+      position: absolute;
+      left: 3px;
+      font-size: 55px;
+      color: white;
+      line-height: 0;
+      -webkit-transition: all 0.2s;
+      transition: all 0.2s;
+      @include breakpoint(medium down) {
+        font-size: 55px;
+      }
+    }
+
+    [type="radio"]:checked + label:before {
+      background: #00abff;
+      height: 47px;
+      width: 47px;
+    }
+
+    [type="radio"]:checked + label {
+      border: 3px solid #00abff;
+    }
+
+    /* checked mark aspect changes */
+    [type="radio"]:not(:checked) + label:after {
+      opacity: 0;
+      -webkit-transform: scale(0) rotate(45deg);
+      transform: scale(0) rotate(45deg);
+    }
+
+    [type="radio"]:checked + label:after {
+      opacity: 1;
+      -webkit-transform: scale(1) rotate(0);
+      transform: scale(1) rotate(0);
+    }
+
+    /* Disabled radio */
+    [type="radio"]:disabled:not(:checked) + label:before,
+    [type="radio"]:disabled:checked + label:before {
+      box-shadow: none;
+      border-color: #bbb;
+      background-color: #e9e9e9;
+    }
+
+    [type="radio"]:disabled:checked + label:after {
+      color: #777;
+    }
+
+    [type="radio"]:disabled + label {
+      color: #aaa;
+    }
+
+    /* Accessibility */
+    [type="checkbox"]:checked:focus + label:before,
+    [type="checkbox"]:not(:checked):focus + label:before {
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1),
+        0 0 0 6px rgba(203, 34, 237, 0.2);
+    }
+  }
+
+  .alt-payment-links {
+    float: right;
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 20px;
+
+    @include breakpoint(medium down) {
+      margin-top: 8px;
+    }
+
+    a {
+      color: $moveon-medium-blue;
+      cursor: pointer;
+    }
+
+    .alert,
+    ul#ak-errors > li,
+    ul.errorlist > li,
+    ul.ak-err > li {
+      padding: 0;
+    }
+
+    .paypal-link-container {
+      display: inline-block;
+    }
+  }
+
+  .credit-card-icons-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+  //alt payement links
+  .check-link {
+    display: inline-block;
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    margin-top: 0;
+    text-align: right;
+  }
+
+  .check-link,
+  .paypal-link-or {
+    display: inline-block;
+    @include breakpoint(medium down) {
+      display: none;
+    }
+  }
+  .alt-payment-links + h3 {
+    font-family: "Roboto Condensed", sans-serif;
+    margin-top: 0;
+  }
+
+  .apple-pay-button {
+    padding-top: 5px;
+    display: inline-block;
+    width: 2px;
+    -webkit-appearance: -apple-pay-button;
+    -apple-pay-button-type: check-out; /* also: check-out, book, or subscribe */
+  }
+  .apple-pay-button-black {
+    padding-top: 5px;
+    -apple-pay-button-style: black;
+  }
+  .apple-pay-button-white {
+    padding-top: 5px;
+    -apple-pay-button-style: white;
+  }
+  .apple-pay-button-white-with-line {
+    padding-top: 5px;
+    -apple-pay-button-style: white-outline;
+  }
+  .ask-sub-text {
+    font-family: "Roboto Condensed", sans-serif;
+    background-color: #00acff;
+    color: black;
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 auto;
+    padding: 15px 15px 5px;
+  }
+
+  .ask-sub-text p[style*="font-size: 80%"] {
+    font-family: "Roboto", sans-serif;
+    color: black;
+    font-weight: 600;
+    text-align: center;
+    background: white;
+  }
+
+  .ask-sub-text-quickpay {
+    background-color: white;
+    width: 73%;
+    margin: 0 auto;
+  }
+
+  .big-checkbox-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: 50px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    transition: all 0.15s linear;
+    font-size: 14px;
+    .checkbox-label {
+      font-size: 16px !important;
+      @include breakpoint(medium down) {
+      }
+    }
+
+    /* NOTE: :checked / :not() acts as a fallback for < ie8
+      as they're ignored and the native checkbox should display */
+    #id_donation_type_recurring:checked,
+    #id_donation_type_recurring:not(:checked),
+    #save_payment_information_checkbox:checked,
+    #save_payment_information_checkbox:not(:checked),
+    #retired_checkbox:checked,
+    #retired_checkbox:not(:checked) {
+      display: none;
+    }
+    #id_donation_type_recurring:checked + .checkbox-overlay,
+    #id_donation_type_recurring:not(:checked) + .checkbox-overlay,
+    #save_payment_information_checkbox:checked + .checkbox-overlay,
+    #save_payment_information_checkbox:not(:checked) + .checkbox-overlay,
+    #retired_checkbox:checked + .checkbox-overlay,
+    #retired_checkbox:not(:checked) + .checkbox-overlay {
+      position: relative;
+      width: 25px;
+      height: 25px;
+      border: 2px solid black;
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+      transition: background 0.1s ease;
+      cursor: pointer;
+      &:after {
+        content: "";
+        position: absolute;
+        width: 11px;
+        height: 19px;
+        top: 0;
+        left: 6px;
+        opacity: 0;
+        transform: rotate(45deg) scale(0);
+        border-right: 4px solid #fff;
+        border-bottom: 4px solid #fff;
+        transition: opacity 0.2s ease, transform 0.4s ease;
+      }
+    }
+
+    #id_donation_type_recurring:checked + .checkbox-overlay-quickpay,
+    #id_donation_type_recurring:not(:checked) + .checkbox-overlay-quickpay,
+    #save_payment_information_checkbox:checked + .checkbox-overlay-quickpay,
+    #save_payment_information_checkbox:not(:checked)
+      + .checkbox-overlay-quickpay,
+    #retired_checkbox:checked + .checkbox-overlay-quickpay,
+    #retired_checkbox:not(:checked) + .checkbox-overlay-quickpay {
+      position: relative;
+      background-color: white;
+      margin-right: 20px;
+      width: 44px;
+      height: 44px;
+      border: none;
+      box-shadow: none;
+      transition: background 0.1s ease;
+      cursor: pointer;
+      &:after {
+        content: "";
+        position: absolute;
+        width: 23px;
+        height: 38px;
+        top: 0;
+        left: 11px;
+        opacity: 0;
+        transform: rotate(45deg) scale(0);
+        border-right: 4px solid white;
+        border-bottom: 4px solid white;
+        transition: opacity 0.2s ease, transform 0.4s ease;
+      }
+    }
+    .checkbox-label {
+      flex: 1;
+      padding-left: 10px;
+      color: black;
+      font-weight: 700;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      width: 85%;
+      @include breakpoint(medium down) {
+        font-size: 19px;
+        width: 91%;
+        padding-left: 20px;
+        display: inline-block;
+      }
+    }
+
+    .checkbox-label-quickpay {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 26px;
+    }
+
+    #id_donation_type_recurring:checked ~ .checkbox-overlay,
+    #retired_checkbox:checked ~ .checkbox-overlay,
+    #save_payment_information_checkbox:checked ~ .checkbox-overlay {
+      background: #00acff;
+      &:after {
+        opacity: 1;
+        transform: rotate(45deg) scale(1);
+      }
+    }
+  }
+  .big-checkbox-row-quickpay {
+    margin-top: 20px;
+  }
+
+  .donation-container {
+    margin: 30px -30px;
+    display: flex;
+    flex-flow: row wrap;
+    @include breakpoint(medium down) {
+      flex-flow: column nowrap;
+    }
+  }
+
+  .check-link a {
+    width: 100%;
+  }
+
+  .custom-radio-payment {
+    font-weight: normal !important;
+    font-size: 16px !important;
+  }
+
+  ul.donation-amount-choices {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+
+    input {
+      display: none;
+    }
+
+    li {
+      display: inline-block;
+      width: 32%;
+      @include breakpoint(medium down) {
+        width: 49%;
+      }
+      label {
+        background: $moveon-light-gray;
+        color: black;
+        display: inline-block;
+        font-family: "Roboto Condensed", sans-serif;
+        font-weight: bold;
+        line-height: 2.25em;
+        margin: 2px 1px;
+        max-width: 100%;
+        text-align: center;
+        width: 100%;
+      }
+      label:hover {
+        background: #00acff;
+        color: white;
+      }
+      label.ak-radio-checked {
+        background-color: #00acff;
+      }
+    }
+
+    li#other_amount_container {
+      box-shadow: inset 0px 0px 0px 2px black;
+      margin-right: 2px;
+      padding: 0 10px;
+      width: 65%;
+      label {
+        background: none;
+        color: black;
+        box-shadow: none;
+        text-align: left;
+        top: 2px;
+      }
+      @include breakpoint(medium down) {
+        width: 48%;
+      }
+
+      input.amount_other_field {
+        border: none;
+        display: inherit;
+        width: 70%;
+        padding: 0;
+        @include breakpoint(medium down) {
+          border: none;
+          display: inherit;
+          width: 75%;
+        }
+      }
+      input.amount_other_field::-webkit-input-placeholder,
+      input.amount_other_field:-ms-input-placeholder,
+      input.amount_other_field::placeholder {
+        /* Edge */
+        font-weight: 100;
+        font-style: italic;
+        white-space: pre-line;
+        font-size: 2.75vw;
+        @include breakpoint(medium down) {
+          font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1600 - 300)));
+        }
+      }
+
+      input.amount_other_field:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        font-weight: 100;
+        font-style: italic;
+        white-space: pre-line;
+        font-size: 2.75vw;
+        @include breakpoint(medium down) {
+          font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1600 - 300)));
+        }
+      }
+
+      input.amount_other_field::placeholder {
+        font-weight: 100;
+        font-style: italic;
+        white-space: pre-line;
+        font-size: 2.75vw;
+        @include breakpoint(medium down) {
+          font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1600 - 300)));
+        }
+      }
+    }
+
+    /* ---product templateset specific styles--- */
+    li#other_amount_container_product {
+      width: auto;
+      label {
+        background: none;
+        color: $moveon-medium-blue;
+        box-shadow: none;
+        float: left;
+        text-align: left;
+        width: auto;
+      }
+      span.currency_sym {
+        float: left;
+        // line-height: 2.2em;
+        margin-right: 0.5em;
+      }
+      input.amount_other_field {
+        float: left;
+        margin-bottom: 1em;
+        display: block;
+        width: 5em;
+      }
+    }
+    /* ---end product templateset specific styles ---*/
+  }
+
+  h1.ask-text {
+    color: black;
+    margin: 0 0 1em 0;
+    font-size: 1.25em;
+    margin: 1em 0.5em 1em 0.5em !important;
+
+    p {
+      font-size: 1.25em;
+    }
+  }
+
+  .donation-container .checkbox input[type="checkbox"] {
+    height: 25px;
+    width: 25px;
+  }
+
+  .donation-legal > div {
+    background: $moveon-light-gray;
+  }
+  .faded {
+    color: $moveon-medium-gray;
+  }
+
+  .form-control {
+    border: 2px solid black;
+    border-radius: 0;
+  }
+
+  .form-section {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 50%;
+    @include breakpoint(medium down) {
+      width: 100%;
+    }
+    .form-section--billing {
+      // margin-top: 30px;
+      label {
+        text-transform: uppercase;
+      }
+
+      label[for="retired_checkbox"] {
+        text-transform: none;
+      }
+    }
+    .billing-mobile {
+      display: none;
+      @include breakpoint(medium down) {
+        display: block;
+      }
+    }
+    .billing-desktop {
+      display: block;
+      @include breakpoint(medium down) {
+        display: none;
+      }
+    }
+    .form-section--quickpay {
+      background-color: #caf4ff;
+      color: #000000;
+      font-style: normal;
+      margin: 0 auto;
+      padding: 35px 35px;
+      width: 100%;
+      h3 {
+        font-family: "Roboto Condensed";
+        font-size: 32px;
+        font-weight: bold;
+      }
+      p {
+        font-family: "Roboto", "Roboto Condensed";
+        font-size: 22px;
+        font-weight: normal;
+      }
+      .help-block {
+        font-size: 0.65em;
+      }
+      .faded-quickpay {
+        color: #000000;
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        letter-spacing: -0.02em;
+        margin: 35px 0;
+      }
+      @include breakpoint(medium down) {
+        padding: 35px 40px;
+        width: 53%;
+      }
+    }
+    // @include breakpoint(medium down) {
+    //   .form-section--billing {
+    //     border-left: 1px solid $gray-lighter;
+    //     border-top: 0 !important;
+    //     margin-top: 0;
+    //   }
+    // }
+
+    .form-section--donation {
+      h3 {
+        font-family: "Roboto Condensed", sans-serif;
+        color: black;
+        font-weight: 600;
+        padding-bottom: 20px;
+      }
+    }
+
+    .form-section--payment {
+      @include breakpoint(medium down) {
+        padding-top: 40px;
+      }
+      h3 {
+        padding-bottom: 10px;
+      }
+      // border-top: 1px solid $gray-lighter;
+    }
+
+    .form-section--submit {
+      text-align: center;
+    }
+
+    .form-section--wrapper {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    .help-block {
+      font-size: 14px;
+      display: block;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      color: #959595;
+    }
+
+    .legal {
+      padding: 40px;
+      @include breakpoint(medium down) {
+        padding: 40px 250px;
+      }
+    }
+
+    .legal .small {
+      border: none;
+      text-align: left;
+      padding: 0;
+    }
+    #main-header .logo {
+      display: block;
+      fill: inherit;
+      height: 80px;
+      left: 50%;
+      position: absolute;
+      -ms-transform: translateX(-50%);
+      top: 56px;
+      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      width: 180px;
+      z-index: 1000;
+      top: 20px;
+      img {
+        max-width: 140px;
+        display: block;
+        margin: auto;
+      }
+    }
+
+    .moveon-amount {
+      .candidate-details {
+        font-weight: bold;
+        color: $moveon-medium-blue;
+      }
+    }
+
+    .payment-border {
+      border-top: 1px solid gray;
+    }
+
+    .payment-icons {
+      img {
+        height: 13px;
+        @include breakpoint(medium down) {
+          height: 1.15em;
+          margin-bottom: 5px;
+        }
+      }
+    }
+
+    .payment-options-header {
+      padding-top: 20px;
+    }
+
+    .select-payment-header {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+    }
+
+    #product_list {
+      .mobile-quantity-label {
+        display: none;
+      }
+      .product-amount {
+        white-space: nowrap;
+      }
+      .product-header {
+        text-align: center;
+      }
+
+      .product-description {
+        width: 100%;
+      }
+
+      .product-description img {
+        height: auto;
+        width: 100%;
+      }
+      .product-name {
+        font-weight: 600;
+      }
+
+      .product-row {
+        text-align: center;
+        margin: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+      }
+
+      .ak_product_inputs {
+        margin-bottom: 5px;
+      }
+
+      #product-table-headers {
+        background: white;
+        margin: 15px;
+      }
+      @include breakpoint(medium down) {
+        //smallest breakpoint in bootstrap 3.5.
+        .product-row {
+          flex-direction: column;
+        }
+        .mobile-quantity-label {
+          display: block;
+        }
+        .product-description img {
+          height: auto;
+          width: 50%;
+          margin: 0 auto;
+        }
+        #product-table-headers {
+          display: none;
+        }
+      }
+    }
+
+    #amount_list .donation-header {
+      font-weight: bold;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+
+    div#amount_list ul.ak-unstyled li,
+    label.ak-btn {
+      width: 95px;
+    }
+
+    @include breakpoint(medium down) {
+      div#amount_list ul.ak-unstyled li,
+      label.ak-btn {
+        width: 132px;
+      }
+    }
+    #apple-pay {
+      @include breakpoint(medium down) {
+        display: none;
+      }
+    }
+
+    #candidate_list {
+      .candidate-details {
+        width: 80%;
+      }
+      .candidate-portrait {
+        float: left;
+        margin: 0 1em 1em 0;
+      }
+    }
+
+    #card_num_box {
+      .wf-icon {
+        font-size: 1.5em;
+        line-height: 1em;
+      }
+      .icon-lock {
+        color: $moveon-medium-gray;
+        font-size: 1em;
+      }
+      label {
+        display: block;
+      }
+      .col-md-8,
+      .col-md-4 {
+        padding: 0;
+        margin-bottom: 5px;
+      }
+      .cc-icons {
+        float: right;
+      }
+
+      .wf-icon.matched {
+        color: $moveon-medium-green;
+      }
+      .wf-icon:before {
+        margin: 0;
+      }
+    }
+
+    #custom-donate-split {
+      max-width: 500px;
+      .amount-with-currency {
+        min-height: 42px;
+        padding-right: 50%;
+
+        input,
+        span.currency_sym {
+          font-size: 1.4em;
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
+        input {
+          float: left;
+        }
+        @include breakpoint(medium down) {
+          //tk
+          input {
+            float: none;
+          }
+        }
+      }
+
+      span.currency_sym {
+        position: absolute;
+        left: 1em;
+      }
+    }
+
+    #default-donate-split {
+      ul.donation-amount-choices {
+        margin-bottom: 0.5em;
+      }
+    }
+
+    #paypal-button-desktop {
+      background-color: #ffc538;
+      border-radius: 5px;
+      box-shadow: 1px 1px #f5ae27;
+      //  display: none;
+      padding: 10px;
+      margin-top: 15px;
+      @include breakpoint(medium down) {
+        display: inline-block;
+      }
+    }
+
+    #paypal-div {
+      display: inline-block;
+      width: 75%;
+    }
+
+    #quickpay-amounts {
+      p {
+        margin-bottom: 0;
+      }
+      button.btn {
+        background-color: white;
+        border: none;
+        border-radius: 0;
+        color: #000000;
+        font-family: "Roboto Condensed";
+        font-size: 30px;
+        font-style: normal;
+        font-weight: bold;
+        text-align: center;
+        @include breakpoint(medium down) {
+          font-size: 0.7em;
+          font-size: 48px;
+          letter-spacing: -0.02em;
+          padding: 28px 20px;
+        }
+      }
+      button.btn:hover {
+        background-color: #00abff;
+        color: white;
+      }
+      #quickpay-amount-buttons {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        width: 86%;
+      }
+      #other_amount_submit {
+        width: 75%;
+        background-color: #00abff;
+        display: block;
+        font-family: "Roboto Condensed";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 42px;
+        margin: 35px auto;
+        padding: 10px 20px;
+        position: relative;
+        text-align: center;
+
+        color: #ffffff;
+        @include breakpoint(medium down) {
+          font-size: 42px;
+          width: 35%;
+        }
+      }
+
+      .form-group label {
+        display: block;
+      }
+    }
+
+    #other-amount-container-quickpay {
+      background-color: white;
+      width: 86%;
+      @include breakpoint(medium down) {
+        height: 111px;
+      }
+      label {
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+      span {
+        color: black;
+        font-family: "Roboto Condensed";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 30px;
+        padding: 8px 20px;
+        text-align: center;
+        letter-spacing: -0.02em;
+        @include breakpoint(medium down) {
+          font-size: 48px;
+          line-height: 56px;
+          padding: 25px 20px;
+        }
+      }
+      input {
+        border: none;
+        box-shadow: none;
+      }
+      input:focus {
+        box-shadow: none;
+      }
+    }
+
+    #amount_other_field {
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    #product_list {
+      th.product-amount {
+        white-space: nowrap;
+      }
+      th#product-details-header {
+        text-align: center;
+      }
+    }
+
+    /* --Specific to product pages using the product templateset --*/
+    div#product_list_product {
+      td.product-details,
+      td.product-quantity,
+      td.product-amount,
+      th#product-quantity-header,
+      th#product-details-header,
+      th#product-amount-header {
+        padding: 0.5em;
+      }
+      table {
+        margin-bottom: 1em;
+      }
+      th#product-details-header {
+        text-align: left;
+      }
+    }
+    /* --end product templateset specific styles -- */
+    #total_div {
+      clear: both;
+    }
+
+    // TKTKTK
+    /* Desktop Styling*/
+  }
+  .security-icons {
+    text-align: center;
+    color: #838383;
+    text-transform: uppercase;
+    padding-top: 6px;
+    div {
+      display: inline-block;
+      @include breakpoint(medium down) {
+        display: block;
+      }
+    }
+    img {
+      height: 20px;
+    }
+    span {
+      padding-top: 4px;
+      padding-right: 10px;
+      padding-left: 2px;
+    }
+  }
+}
+#confirm-big-donation {
+  display: none;
+}
+.donation-legal {
+  /*out of body.donation-page*/
+  margin-top: 50px;
+
+  a {
+    color: #00acff;
+    text-decoration: underline;
+  }
+}
+
+#total-span {
+  color: #178545;
+}
+
+body.donation-pagetype.thanks-page {
+  .container {
+    padding: 56px 0 !important;
+  }
+
+  h2 {
+    font-weight: 200;
+    font-size: 64px;
+    margin-left: -3px;
+    text-transform: none;
+  }
+
+  // old make-it-monthly styles remaining for testing
+  .donationthanks-makeitmonthly {
+    margin: 0;
+    box-shadow: 0 0 20px $moveon-medium-gray;
+
+    h3 {
+      width: 100%;
+      font-weight: 600;
+      background-color: #f3f3f3;
+      font-size: 20px;
+      padding: 10px 15px;
+    }
+
+    form#mimother_link {
+      /*get them all on the same line*/
+      .mo-label {
+        float: right;
+        border: none;
+        width: auto;
+        box-shadow: unset;
+        margin-right: 5px;
+        padding: 6px;
+        font-size: 0.8em;
+        font-weight: bold;
+
+        @include breakpoint(medium down) {
+          font-size: 0.7em;
+        }
+      }
+
+      .currency_sym {
+        position: absolute;
+        top: 5px;
+        right: 146px;
+        left: auto;
+        z-index: 3;
+        color: $moveon-medium-blue;
+      }
+
+      input[type="text"] {
+        width: 5em;
+        float: right;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+      }
+    }
+
+    @include breakpoint(medium down) {
+      margin-top: -50px;
+    }
+  }
 }
