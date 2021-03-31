@@ -39,6 +39,14 @@ img {
   text-align:right;
 }
 
+.text-align-center-desktop-left-mobile {
+  text-align:center;
+
+  @media only screen and (max-width: 650px) {
+		text-align:left;
+	}
+}
+
 .fine-print {
   font-size: .8em !important;
   line-height: 1.5em !important;
@@ -59,7 +67,17 @@ img {
     top: 0;
     color: black;
     padding-right: 1.5rem !important; /* matches p-4 padding for contact info block */
+  }
 
+  &.lost-pages-incontentblock {
+    position: relative;
+    text-align: right;
+    margin-top: -20px;
+    padding-top: 0px;
+
+    @media only screen and (max-width: 768px) {
+      text-align: left;
+    }
   }
 
   &.underbutton {

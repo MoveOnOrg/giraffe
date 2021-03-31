@@ -4,6 +4,11 @@
 @import 'settings/typography';
 
 // MIXINS
+@import 'bootstrap/mixins/float';
+@import 'bootstrap/mixins/hover';
+@import 'bootstrap/mixins/text-emphasis';
+@import 'bootstrap/mixins/text-hide';
+@import 'bootstrap/mixins/text-truncate';
 @import 'mixins/breakpoint';
 @import 'mixins/respond';
 @import 'mixins/aspect-ratio';
@@ -13,6 +18,10 @@
 // CONFIGS
 @include define-breakpoints($breakpoints);
 
+html {
+  width: 100vw;
+}
+
 body {
   // All styles here must be compatible with moui.css
   margin: 0;
@@ -21,7 +30,12 @@ body {
 .giraffe {
   @import 'settings/reset';
   @import 'bootstrap/bootstrap-grid';
+  @import 'bootstrap/utilities/clearfix';
+  @import 'bootstrap/utilities/float';
+  @import 'bootstrap/utilities/position';
+  @import 'bootstrap/utilities/sizing';
   @import 'bootstrap/utilities/spacing';
+  @import 'bootstrap/utilities/text';
 
   // UTILITY CLASSES
   @import 'mo-utilities/color-classes';
@@ -84,6 +98,7 @@ body {
 @import 'pages/donate-quickpay-v3';
 @import 'pages/donate-confirm';
 @import 'pages/survey';
+@import 'pages/recurring-update';
 
 // MO OVERRIDES and REGRESSION FIXES
 @import 'mo-components/fixes';

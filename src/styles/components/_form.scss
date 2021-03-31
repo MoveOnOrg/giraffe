@@ -1,5 +1,18 @@
 form {
 
+  .ak-attachment-area {
+    flex-grow: 1;
+    pointer-events: none;
+  }
+
+  .ak-attachment-area input {
+    background: none!important;
+  }
+
+  .ak-attachment-backend {
+    display: none;
+  }
+
   box-sizing: border-box;
 
   box-shadow: none;
@@ -16,6 +29,10 @@ form {
       @include respond((
         margin-top: 30px,
       ));
+    }
+
+    .input-white:hover {
+        background-color: $white;
     }
 
     input,
@@ -109,7 +126,6 @@ form {
       }
 
       &:focus {
-        color: $azure;
         border-color: $azure;
         box-shadow: none;
       }
@@ -125,6 +141,7 @@ form {
       position: absolute;
       display: block;
       fill: $light-gray;
+      z-index: 9;
       @include respond((
         top: 50%,
         transform: translateY(-50%),
@@ -324,7 +341,7 @@ form {
         color: $white;
         width: 100%;
         height: 100%;
-        background-image: url("../images/check-white.svg");
+        background-image: url("https://static.moveon.org/giraffe/images/check-white.svg");
         background-repeat: no-repeat;
         background-size: 80%;
         background-position: center;
@@ -393,7 +410,7 @@ form {
     text-align: center;
   }
 
-  button {
+  a, button {
     &.btn {
       font-size: 18px;
       @include btn--azure;
@@ -482,7 +499,23 @@ textarea {
 
 // labels before input
 form {
+  .delete-file {
+    svg:hover {
+      path {
+        cursor: pointer;
+        fill: $red;
+      }
+    }
+  }
   .input-block {
+    .input-white {
+      background: $white;
+      border: none;
+      &.form-control {
+        background: $white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="39" height="13" fill="gray" viewBox="0 0 24 24"><path d="M12 21l-12-18h24z"/></svg>') no-repeat;
+        background-position: right;
+      }
+    }
     &.label-before-input {
       margin-top:28px;
       label {
@@ -492,13 +525,23 @@ form {
         width:100%;
         top:0;
       }
-      .select-caret {
-        top:auto;
-        bottom:0.2em;
+      .bold-label {
+        font-weight: bold;
       }
     }
     &.active {
       color: $azure;
+    }
+  }
+  .input-white {
+    select, select:hover {
+      background-color: $white;
+      border-bottom: none;
+      background: $white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="39" height="13" fill="gray" viewBox="0 0 24 24"><path d="M12 21l-12-18h24z"/></svg>') no-repeat;
+      background-position: right;
+    }
+    .select-caret {
+      display: none;
     }
   }
 }
