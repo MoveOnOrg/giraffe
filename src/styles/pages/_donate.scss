@@ -7,7 +7,7 @@ html {
 body.donate-page {
 
   a {
-    color: #00abff;
+    color: $azure;
     text-decoration: underline;
     display: block;
   }
@@ -17,15 +17,15 @@ body.donate-page {
     font-weight: bold;
 
     font-size: 6vw;
-    background: #00acff;
-    color: #fff;
+    background: $azure;
+    color: $white;
     padding: 2px;
     width: 100%;
     text-transform: uppercase;
     border-radius: 0;
     border: none;
 
-    @media (min-width: 414px) {
+    @media (min-width: $bp-md) {
       font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
       padding: 0;
     }
@@ -53,7 +53,7 @@ body.donate-page {
 
   label {
     margin-bottom: 5px;
-    color: #555555;
+    color: $moriginal-gray-dark;
     font-weight: 700;
     font-size: 18px;
   }
@@ -61,8 +61,8 @@ body.donate-page {
     margin-bottom: 0 !important;
   }
   form {
-padding: 10px 22px;
-    @media (min-width: 418) {
+    padding: 10px 22px;
+    @media (min-width: $bp-md) {
       padding: 10px 35px;
     }
 
@@ -82,8 +82,8 @@ padding: 10px 22px;
     input {
       font-size: 18px;
       line-height: 1.428571429;
-      color: #878787;
-      background-color: #fff;
+      color: $moriginal-gray-medium;
+      background-color: $white;
       background-image: none;
       height: 39px;
     }
@@ -111,13 +111,13 @@ padding: 10px 22px;
     font-size: 14px;
     line-height: 20px;
 
- @media (min-width: 414px) {
+     @media (min-width: $bp-md) {
 
-      margin-top: 8px;
-    }
+          margin-top: 8px;
+        }
 
-    a {
- color: $moriginal-blue-medium;
+        a {
+     color: $moriginal-blue-medium;
 
       cursor: pointer;
     }
@@ -160,7 +160,7 @@ padding: 10px 22px;
   }
   .ask-sub-text {
     font-family: "Roboto Condensed", sans-serif;
-    background-color: #00acff;
+    background-color: $azure;
     color: black;
  font-size: 1.8em;
     font-weight: 600;
@@ -202,12 +202,9 @@ h1.ask-text {
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
     transition: all 0.15s linear;
- font-size: 16px;
+    font-size: 16px;
     .checkbox-label {
-      @media (min-width: 414px) {
-        // font-size: 16px !important;
 
-      }
     }
 
     /* NOTE: :checked / :not() acts as a fallback for < ie8
@@ -242,8 +239,8 @@ h1.ask-text {
         left: 6px;
         opacity: 0;
         transform: rotate(45deg) scale(0);
-        border-right: 4px solid #fff;
-        border-bottom: 4px solid #fff;
+        border-right: 4px solid $white;
+        border-bottom: 4px solid $white;
         transition: opacity 0.2s ease, transform 0.4s ease;
       }
     }
@@ -286,11 +283,9 @@ h1.ask-text {
       text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
       cursor: pointer;
       width: 85%;
-@media screen and (min-width: 414px) {
+@media screen and (min-width: $bp-md) {
         font-size: 19px;
         width: 91%;
-        // padding-left: 20px;
-
         display: inline-block;
       }
     }
@@ -306,7 +301,7 @@ h1.ask-text {
     #id_donation_type_recurring:checked ~ .checkbox-overlay,
     #retired_checkbox:checked ~ .checkbox-overlay,
     #save_payment_information_checkbox:checked ~ .checkbox-overlay {
-      background: #00acff;
+      background: $azure;
       &:after {
         opacity: 1;
         transform: rotate(45deg) scale(1);
@@ -335,7 +330,7 @@ h1.ask-text {
   .check-link, .paypal-link-or {
     display: none;
 
-    @media (min-width: 414px) {
+    @media (min-width: $bp-md) {
       display: inline-block;
     }
   }
@@ -393,11 +388,11 @@ h1.ask-text {
 
       }
       label:hover {
-        background: #00acff;
+        background: $azure;
         color: white;
       }
       label.ak-radio-checked {
-        background-color: #00acff;
+        background-color: $azure;
       }
     }
 
@@ -423,7 +418,7 @@ h1.ask-text {
         display: inherit;
         width: 70%;
         padding: 0;
-      @media screen and (min-width: 410px) {
+      @media screen and (min-width: $bp-md) {
 
           border: none;
           display: inherit;
@@ -438,7 +433,7 @@ h1.ask-text {
         font-style: italic;
         white-space: pre-line;
         font-size: 2.75vw;
-    @media screen and (min-width: 414px) {
+    @media screen and (min-width: $bp-md) {
 
           font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1600 - 300)));
         }
@@ -450,7 +445,7 @@ h1.ask-text {
         font-style: italic;
         white-space: pre-line;
         font-size: 2.75vw;
- @media screen and (min-width: 414px) {
+ @media screen and (min-width: $bp-md) {
 
           font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1600 - 300)));
         }
@@ -461,7 +456,7 @@ h1.ask-text {
         font-style: italic;
         white-space: pre-line;
         font-size: 2.75vw;
-       @media screen and (min-width: 414px) {
+       @media screen and (min-width: $bp-md) {
 
           font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1600 - 300)));
         }
@@ -482,7 +477,6 @@ h1.ask-text {
       }
       span.currency_sym {
         float: left;
-        // line-height: 2.2em;
         margin-right: 0.5em;
       }
       input.amount_other_field {
@@ -531,15 +525,15 @@ h1.ask-text {
       label {
         text-transform: uppercase;
         font-weight: 700;
-        color: #555555;
+        color: $moriginal-gray-dark;
       }
 
       label[for="retired_checkbox"] {
         text-transform: none;
-        color: #000;
+        color: $black;
     }
         input {
-          background-color: #fff;
+          background-color: $white;
           background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==);
           background-repeat: no-repeat;
           background-attachment: scroll;
@@ -547,7 +541,7 @@ h1.ask-text {
           background-position: 98% 50%;
           border: 2px solid black;
           border-radius: 0;
-          color: #878787;
+          color: $moriginal-gray-medium;
           font-size: 18px;
           height: 39px;
           line-height: 1.428571429;
@@ -563,16 +557,16 @@ h1.ask-text {
           padding: 6px 12px;
           font-size: 18px;
           line-height: 1.428571429;
-          color: #878787;
-          background-color: #fff;
+          color: $moriginal-gray-medium;
+          background-color: $white;
           background-image: none;
           border: 2px solid black;
           border-radius: 0;
         }
     }
     .form-section--quickpay {
-      background-color: #caf4ff;
-      color: #000000;
+      background-color: $thin-air;
+      color: $black;
       font-style: normal;
       margin: 0 auto 67px;
       padding: 35px 12px;
@@ -592,7 +586,7 @@ h1.ask-text {
         font-size: 0.65em;
       }
       .faded-quickpay {
-        color: #000000;
+        color: $black;
         font-family: "Roboto";
         font-style: normal;
         font-weight: normal;
@@ -600,7 +594,7 @@ h1.ask-text {
         letter-spacing: -0.02em;
         margin: 35px 0;
       }
-      @media screen and (min-width: 414px) and (max-width: 800px) {
+      @media screen and (min-width: $bp-md) and (max-width: 800px) {
         padding: 35px 40px;
         width: 100%;
         text-align: left;
@@ -611,7 +605,7 @@ h1.ask-text {
         text-align: left;
       }
     }
-    @media screen and (min-width: 414px) {
+    @media screen and (min-width: $bp-md) {
       .form-section--wrapper.form-section--donation {
 
       }
@@ -623,42 +617,19 @@ h1.ask-text {
 
       .billing-desktop {
         display: none;
-        @media screen and (min-width: 414px) {
+        @media screen and (min-width: $bp-md) {
           display: flex;
           flex-flow: column nowrap;
         }
       }
       .billing-mobile {
         display: flex;
-        @media screen and (min-width: 414px) {
+        @media screen and (min-width: $bp-md) {
           display: none;
         }
       }
     }
 
-    // #retired {
-    //   padding: 0 15px;
-    //   display: flex;
-    //   @media screen and (min-width: 414px) {
-    //     padding: 0;
-    //     width: 100%;
-    //   }
-    // }
-    //
-    // #retired label {
-    //   font-weight: 600;
-    //   text-transform: none;
-    //   width: 80%;
-    // }
-    //
-    // #retired label > span {
-    //   display: inline-block;
-    //   position: relative;
-    //   padding-left: 0;
-    //   @media (min-width: 414px) {
-    //     padding-left: 15px;
-    //   }
-    // }
   }
 
   .form-section--donation {
@@ -672,10 +643,9 @@ h1.ask-text {
   }
 
   .form-section--payment {
-    @media screen and (min-width: 414px) {
+    @media screen and (min-width: $bp-md) {
       padding-top: 40px;
     }
-    // border-top: 1px solid $moriginal-gray-lighter;
     h3 {
       font-family: "Roboto Condensed", sans-serif;
       color: black;
@@ -685,8 +655,8 @@ h1.ask-text {
     }
   }
   .form-section--quickpay {
-      background-color: #caf4ff;
-      color: #000000;
+      background-color: $thin-air;
+      color: $black;
       font-style: normal;
       margin: 0 auto 67px;
       padding: 35px 12px;
@@ -706,7 +676,7 @@ h1.ask-text {
         font-size: 0.65em;
       }
       .faded-quickpay {
-        color: #000000;
+        color: $black;
         font-family: "Roboto";
         font-style: normal;
         font-weight: normal;
@@ -714,7 +684,7 @@ h1.ask-text {
         letter-spacing: -0.02em;
         margin: 35px 0;
       }
-      @media screen and (min-width: 414px) and (max-width: 800px) {
+      @media screen and (min-width: $bp-md) and (max-width: 800px) {
         padding: 35px 40px;
         width: 100%;
         text-align: left;
@@ -741,7 +711,7 @@ h1.ask-text {
   }
   .legal {
     padding: 40px;
-    @media screen and (min-width: 414px) and (max-width: 800px) {
+    @media screen and (min-width: $bp-md) and (max-width: 800px) {
       padding: 40px 100px;
     }
     @media screen and (min-width: 800px) {
@@ -787,7 +757,7 @@ h1.ask-text {
   .payment-icons {
     img {
       height: 13px;
-      @media screen and (min-width: 414px) {
+      @media screen and (min-width: $bp-md) {
         height: 1.15em;
         margin-bottom: 5px;
       }
@@ -811,7 +781,7 @@ h1.ask-text {
       display: flex;
       flex-flow: row nowrap;
       width: 100%;
-      @media (min-width: 414px) {
+      @media (min-width: $bp-md) {
         font-size: 30px;
         height: 50px;
       }
@@ -820,7 +790,7 @@ h1.ask-text {
         img {
           height: 35px;
         }
-        @media (min-width: 414px) {
+        @media (min-width: $bp-md) {
           width: calc(100% - 50px);
           img {
             height: 35px;
@@ -829,21 +799,21 @@ h1.ask-text {
       }
     }
     label[for="credit-card"] {
-      color: #fff;
-      background: #0080bf;
+      color: $white;
+      background: $cerulean;
       font-size: 18px;
       input {
-        background: #0080bf;
+        background: $cerulean;
       }
       span {
         padding-left: 23px;
       }
     }
     label[for="paypal"] {
-      color: #fff;
-      background: #fed059;
+      color: $white;
+      background: $light-gold;
       input {
-        background: #0080bf;
+        background: $cerulean;
       }
     }
     label[for="apple"] {
@@ -874,7 +844,7 @@ h1.ask-text {
       background: inherit;
       -webkit-transition: all 0.275s;
       transition: all 0.275s;
-      @media (min-width: 414px) {
+      @media (min-width: $bp-md) {
         width: 50px;
         height: 50px;
       }
@@ -891,19 +861,19 @@ h1.ask-text {
       line-height: 0;
       -webkit-transition: all 0.2s;
       transition: all 0.2s;
-      @media (min-width: 414px) {
+      @media (min-width: $bp-md) {
         font-size: 55px;
       }
     }
 
     [type="radio"]:checked + label:before {
-      background: #00abff;
+      background: $azure;
       height: 47px;
       width: 47px;
     }
 
     [type="radio"]:checked + label {
-      border: 3px solid #00abff;
+      border: 3px solid $azure;
     }
 
     /* checked mark aspect changes */
@@ -923,16 +893,16 @@ h1.ask-text {
     [type="radio"]:disabled:not(:checked) + label:before,
     [type="radio"]:disabled:checked + label:before {
       box-shadow: none;
-      border-color: #bbb;
-      background-color: #e9e9e9;
+      border-color: $medium-light-gray;
+      background-color: $light-gray;
     }
 
     [type="radio"]:disabled:checked + label:after {
-      color: #777;
+      color: $medium-dark-gray;
     }
 
     [type="radio"]:disabled + label {
-      color: #aaa;
+      color: $medium-light-gray;
     }
 
     /* Accessibility */
@@ -951,12 +921,12 @@ h1.ask-text {
   }
   .security-icons {
     text-align: center;
-    color: #838383;
+    color: $medium-dark-gray;
     text-transform: uppercase;
     padding-top: 6px;
     div {
       display: block;
-      @media screen and (min-width: 414px) {
+      @media screen and (min-width: $bp-md) {
         display: inline-block;
       }
     }
@@ -998,7 +968,7 @@ h1.ask-text {
   }
 
   #apple-pay {
-    @media screen and (min-width: 414px) {
+    @media screen and (min-width: $bp-md) {
       display: none;
     }
   }
@@ -1058,8 +1028,7 @@ h1.ask-text {
       input {
         float: left;
       }
-      @media screen and (min-width: 414px) {
-        //tk
+      @media screen and (min-width: $bp-md) {
         input {
           float: none;
         }
@@ -1112,7 +1081,7 @@ h1.ask-text {
         padding: 25px 20px;
         text-align: center;
         letter-spacing: -0.02em;
-        @media screen and (min-width: 414px) {
+        @media screen and (min-width: $bp-md) {
           font-size: 48px;
           line-height: 56px;
 
@@ -1127,8 +1096,8 @@ h1.ask-text {
         padding: 6px 12px;
         font-size: 18px;
         line-height: 1.428571429;
-        color: #878787;
-        background-color: #fff;
+        color: $moriginal-gray-medium;
+        background-color: $white;
         background-image: none;
       }
       input:focus {
@@ -1137,13 +1106,12 @@ h1.ask-text {
     }
 
   #paypal-button-desktop {
-    background-color: #ffc538;
+    background-color: $paypal-blue;
     border-radius: 5px;
-    box-shadow: 1px 1px #f5ae27;
-    //  display: none;
+    box-shadow: 1px 1px $paypal-blue-dark;
     padding: 10px;
     margin-top: 15px;
-    @media screen and (min-width: 414px) {
+    @media screen and (min-width: $bp-md) {
       display: inline-block;
     }
   }
@@ -1192,7 +1160,6 @@ h1.ask-text {
       margin: 15px;
     }
     @media (max-width: 768px) {
-      //smallest breakpoint in bootstrap 3.5.
       .product-row {
         flex-direction: column;
       }
@@ -1218,13 +1185,13 @@ h1.ask-text {
       background-color: white;
       border: none;
       border-radius: 0;
-      color: #000000;
+      color: $black;
       font-family: "Roboto Condensed";
       font-size: 30px;
       font-style: normal;
       font-weight: bold;
       text-align: center;
-      @media screen and (min-width: 414px) {
+      @media screen and (min-width: $bp-md) {
         font-size: .7em;
         font-size: 48px;
         letter-spacing: -0.02em;
@@ -1232,7 +1199,7 @@ h1.ask-text {
 
     }
     button.btn:hover {
-      background-color: #00abff;
+      background-color: $azure;
       color: white;
     }
     #quickpay-amount-buttons {
@@ -1240,13 +1207,13 @@ h1.ask-text {
       flex-flow: row nowrap;
       justify-content: space-between;
       width: 100%;
-      @media screen and (min-width: 414px) {
+      @media screen and (min-width: $bp-md) {
         justify-content: flex-start;
       }
       .btn-group {
         width: 95px;
         height: 95px;
-        @media screen and (min-width: 414px) {
+        @media screen and (min-width: $bp-md) {
           height: 111px;
           width: 111px;
           margin: 0 10px;
@@ -1255,8 +1222,8 @@ h1.ask-text {
           }
         }
         button {
-          background: #00ABFF;
-          color: #fff;
+          background: $azure;
+          color: $white;
           font-size: 38px;
           height: 100%;
           width: 100%;
@@ -1269,7 +1236,7 @@ h1.ask-text {
     }
     #other_amount_submit {
       width: 75%;
-      background-color: #00abff;
+      background-color: $azure;
       display: block;
       font-family: "Roboto Condensed";
       font-style: normal;
@@ -1280,8 +1247,8 @@ h1.ask-text {
       position: relative;
       text-align: center;
 
-      color: #ffffff;
-      @media screen and (min-width: 414px) {
+      color: $white;
+      @media screen and (min-width: $bp-md) {
         font-size: 42px;
         width: auto;
       }
@@ -1301,7 +1268,6 @@ h1.ask-text {
       width: 100%;
     }
     .form-section--billing {
-      // margin-top: 30px;
       label {
         text-transform: uppercase;
       }
@@ -1310,21 +1276,9 @@ h1.ask-text {
         text-transform: none;
       }
     }
-    .billing-mobile {
-      display: none;
-      @include breakpoint(medium down) {
-        display: block;
-      }
-    }
-    .billing-desktop {
-      display: block;
-      @include breakpoint(medium down) {
-        display: none;
-      }
-    }
     .form-section--quickpay {
-      background-color: #caf4ff;
-      color: #000000;
+      background-color: $thin-air;
+      color: $black;
       font-style: normal;
       margin: 0 auto;
       padding: 35px 35px;
@@ -1343,7 +1297,7 @@ h1.ask-text {
         font-size: 0.65em;
       }
       .faded-quickpay {
-        color: #000000;
+        color: $black;
         font-family: "Roboto";
         font-style: normal;
         font-weight: normal;
@@ -1356,13 +1310,6 @@ h1.ask-text {
         width: 53%;
       }
     }
-    // @include breakpoint(medium down) {
-    //   .form-section--billing {
-    //     border-left: 1px solid $gray-lighter;
-    //     border-top: 0 !important;
-    //     margin-top: 0;
-    //   }
-    // }
 
     .form-section--donation {
       h3 {
@@ -1380,7 +1327,6 @@ h1.ask-text {
       h3 {
         padding-bottom: 10px;
       }
-      // border-top: 1px solid $gray-lighter;
     }
 
     .form-section--submit {
@@ -1396,7 +1342,7 @@ h1.ask-text {
       display: block;
       margin-top: 5px;
       margin-bottom: 10px;
-      color: #959595;
+      color: $medium-dark-gray;
     }
 
     .legal {
@@ -1501,8 +1447,7 @@ h1.ask-text {
         background: white;
         margin: 15px;
       }
-      @include breakpoint(medium down) {
-        //smallest breakpoint in bootstrap 3.5.
+      @media (max-width: $bp-md) {
         .product-row {
           flex-direction: column;
         }
@@ -1622,28 +1567,18 @@ h1.ask-text {
     clear: both;
   }
   #total-span {
-    color: #178545;
+    color: $moriginal-green-medium;
   }
 }
-
+}
 .donation-legal {
   /*out of body.donation-page*/
   margin-top: 50px;
-  // width: 100vw;
-  // position: relative;
-  // left: 50%;
-  // right: 50%;
-  // margin-left: -50vw;
-  // margin-right: -50vw;
-
-
   a {
-    color: #00acff;
+    color: $azure;
     text-decoration: underline;
   }
 }
-
-
 
 body.donation-pagetype.thanks-page {
   .container {
@@ -1657,7 +1592,6 @@ body.donation-pagetype.thanks-page {
     text-transform: none;
   }
 
-  // old make-it-monthly styles remaining for testing
   .donationthanks-makeitmonthly {
     margin: 0;
 box-shadow: 0 0 20px $moriginal-gray-medium;
@@ -1666,7 +1600,7 @@ box-shadow: 0 0 20px $moriginal-gray-medium;
     h3 {
       width: 100%;
       font-weight: 600;
-  background-color: #F3F3F3;
+  background-color: $off-white;
 
       font-size: 20px;
       padding: 10px 15px;
@@ -1684,7 +1618,7 @@ box-shadow: 0 0 20px $moriginal-gray-medium;
         font-weight: bold;
         font-size: .7em;
 
-        @media screen and (min-width: 414px) {
+        @media screen and (min-width: $bp-md) {
           font-size: .8em;
 
         }
@@ -1707,11 +1641,12 @@ box-shadow: 0 0 20px $moriginal-gray-medium;
       }
     }
 
-    @media screen and (min-width: 414px) {
+    @media screen and (min-width: $bp-md) {
       margin-top: -50px;
     }
   }
 }
+
 .test-class {
   background: white;
   margin-bottom: -10px;
@@ -1720,7 +1655,7 @@ box-shadow: 0 0 20px $moriginal-gray-medium;
   a {
     display: inline !important;
   }
-  @media screen and (min-width: 414px) {
+  @media screen and (min-width: $bp-md) {
     width: 150%;
     margin-left: -25%;
   }

@@ -82,11 +82,11 @@ body.donate-page {
       }
     }
 
-    // button[type=submit] {
-    //   margin-top: 28px;
-    //   background-color: $azure;
-    //   color: $white;
-    // }
+    button[type=submit] {
+      margin-top: 28px;
+      background-color: $azure;
+      color: $white;
+    }
   }
 
   .alt-payment-links {
@@ -163,7 +163,7 @@ body.donate-page {
       background: transparent;
     }
 
-
+    
     .productslist {
       h3 {
         padding-bottom: 10px;
@@ -282,17 +282,17 @@ body.donate-page {
 }
 
 .subscribe-sms-conditions.dimmed {
-  opacity: 0.5;
+  opacity: 0.5;  
 }
 
 /* object-fit fix for IE11 */
 
 .img-container {
-
+  
     &.compat-object-fit {
         background-size: cover;
         background-position: center center;
-
+   
         img { // hide image if object fit is not supported
             opacity: 0;
         }
