@@ -30,6 +30,13 @@ button, a.btn {
       height: 100%;
     }
 
+    &-font-28 {
+      @include btn--azure;
+      font-size: 28px;
+      padding: 5px 10px;
+      min-width: 100px;
+    }
+
     svg {
       width: 14px;
       height: 14px;
