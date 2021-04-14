@@ -224,8 +224,6 @@ padding-top: 1px;
     font-weight: normal;
     font-size: 16px;
   }
-
-
   ul#donation-nav {
       display:flex;
       font-family: Roboto;
@@ -319,6 +317,7 @@ padding-top: 1px;
     text-align: center;
     a {
       font-weight: bold;
+      text-decoration: underline;
     }
     h2 {
       margin: 34px 0;
@@ -367,6 +366,7 @@ padding-top: 1px;
     text-align: center;
     text-transform: uppercase;
     width: 100%;
+    z-index: 100;
     a {
       color: #FFFFFF;
       &:visited {
@@ -385,6 +385,7 @@ body.user_update {
     text-align: center;
     a {
       font-weight: bold;
+      text-decoration: underline;
     }
     form {
       margin: 0 auto;
@@ -397,6 +398,9 @@ body.user_update {
     }
     p {
       margin-bottom: 6px;
+    }
+    .account-update {
+        text-align: left;
     }
 }
 
