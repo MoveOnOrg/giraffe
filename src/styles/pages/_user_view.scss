@@ -23,13 +23,17 @@ body.user_view {
     text-transform: uppercase;
     a {
       color: #fff;
+      text-decoration: none;
       &:hover {
         color: #fff;
+        text-decoration: none;
       }
       &:visited {
         color: #fff;
+        text-decoration: none;
         &:hover {
           color: #fff;
+          text-decoration: none;
         }
       }
     }
@@ -85,6 +89,7 @@ padding-top: 1px;
         color: #FFFFFF;
         display: block;
         padding: 8px 12px 11px;
+        text-decoration: none;
       }
       img {
         display: inline;
@@ -127,7 +132,7 @@ padding-top: 1px;
     .contact-info {
       display: flex;
       flex-flow: column nowrap;
-      @media (min-width: 600px) {
+      @media (min-width: 1050px) {
         flex-flow: row nowrap;
       }
     }
@@ -332,7 +337,9 @@ padding-top: 1px;
   }
 
   #donation-pagination-nav {
-    padding-top: 8px
+    height: 34px;
+    margin-bottom: -34px;
+    align-items: center;
   }
   #how-you-help {
     p {
