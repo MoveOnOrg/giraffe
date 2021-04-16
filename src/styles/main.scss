@@ -74,6 +74,7 @@ body {
   @import "mo-components/social";
 
   // PER PAGE COMPONENTS
+
   @import "components/home-hero";
   @import "components/home-illustration";
   @import "components/home-carousel";
@@ -89,9 +90,6 @@ body {
 @import "pages/donate";
 @import "pages/recurring-update";
 @import 'pages/survey';
-=======
-@import 'pages/recurring-update';
->>>>>>> efc7fb8bc45a8abb64052b6e1c99784d34326b56
 
 // MO OVERRIDES and REGRESSION FIXES
 @import "mo-components/fixes";
