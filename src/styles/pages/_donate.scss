@@ -24,7 +24,6 @@ body.donate-page {
     border: none;
     @media (min-width: $bp-md) {
       font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
-      padding: 0;
     }
   }
 
@@ -156,6 +155,9 @@ body.donate-page {
     text-align: center;
     padding: 15px;
     margin: 0 auto;
+    p {
+      margin-bottom: 0;
+    }
     p[style*="font-size: 80%"] {
       font-family: "Roboto", sans-serif;
       color: $black;
@@ -497,6 +499,7 @@ body.donate-page {
     width: 100%;
     @media screen and (min-width: $bp-md) {
       width: 50%;
+      flex: 1 1 0;
     }
     .form-section--wrapper.form-section--billing {
       margin-top: 30px;
@@ -665,8 +668,18 @@ body.donate-page {
     text-align: left;
     padding: 0;
   }
-  .logo {
-    top: 20px;
+  #main-header .logo {
+    display: block;
+    fill: inherit;
+    height: 80px;
+    left: 50%;
+    position: absolute;
+    -ms-transform: translateX(-50%);
+    top: 56px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    width: 180px;
+    z-index: 1000;
     img {
       max-width: 140px;
       display: block;
@@ -727,6 +740,9 @@ body.donate-page {
       }
       span {
         width: calc(100% - 50px);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         img {
           height: 35px;
         }
@@ -754,6 +770,9 @@ body.donate-page {
       background: $light-gold;
       input {
         background: $cerulean;
+      }
+      span {
+        padding-left: 23px;
       }
     }
     label[for="apple"] {
@@ -887,6 +906,10 @@ body.donate-page {
 
   .sr-only {
     display: none;
+  }
+
+  #act-form-container {
+    margin: 0 auto;
   }
   #ak-exp_date-hosted {
     width: 100%;
@@ -1257,6 +1280,10 @@ body.donate-page {
 
 
 body.donation-pagetype.thanks-page {
+  color: #555555;
+  p {
+    font-size: 18px;
+  }
   .container {
     padding: 56px 0 !important;
   }
@@ -1268,11 +1295,32 @@ body.donation-pagetype.thanks-page {
     text-transform: none;
   }
 
+  table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 25px;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+    td {
+      padding: 8px;
+    line-height: 1.4;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+    }
+  }
+
+  #thankyou {
+
+    text-transform: none;
+    font-weight: bold;
+    font-size: 3em;
+  }
+
   // old make-it-monthly styles remaining for testing
   .donationthanks-makeitmonthly {
     margin: 0;
     box-shadow: 0 0 20px $moriginal-gray-medium;
-
     h3 {
       width: 100%;
       font-weight: 600;
@@ -1280,38 +1328,96 @@ body.donation-pagetype.thanks-page {
       font-size: 20px;
       padding: 10px 15px;
     }
+    #upsell-amount-choices {
+      a.btn {
+        background-color: #1055dc;
+        display: inline-block;
+        margin-bottom: 0;
+        font-weight: normal;
+        text-align: center;
+        text-transform: none;
+        vertical-align: middle;
+        touch-action: manipulation;
+        cursor: pointer;
+        border: 1px solid transparent;
+        white-space: nowrap;
+        padding: 6px 12px;
+        font-size: 18px;
+        line-height: 1.428571429;
+        border-radius: 4px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        color: #fff;
+        border-color: #15367c;
+      }
+    }
 
     form#mimother_link {
       /*get them all on the same line*/
+      .input-group {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .input-group-btn {
+        font-size: 0;
+        white-space: nowrap;
+      }
       .mo-label {
-        float:right;
-        border:none;
-        width:auto;
+        border: none;
+        width: auto;
         box-shadow: unset;
         margin-right: 5px;
         padding: 6px;
+        font-size: .8em;
         font-weight: bold;
-        font-size: .7em;
-
-        @media screen and (min-width: $bp-md) {
-          font-size: .8em;
-        }
       }
 
       .currency_sym {
-        position: absolute;
-        top: 5px;
-        right: 146px;
-        left: auto;
         z-index: 3;
         color: $moriginal-blue-medium;
+        padding-top: 7px;
+        margin-right: -17px;
       }
-
+      [type=submit] {
+        background-color: #1055dc;
+        border-color: #15367c;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.428571429;
+        margin-bottom: 0;
+        padding: 6px 12px;
+        text-align: center;
+        text-transform: none;
+        touch-action: manipulation;
+        vertical-align: middle;
+        white-space: nowrap;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
       input[type=text] {
-       width:5em;
-       float:right;
-       border-top-left-radius: 3px;
-       border-bottom-left-radius: 3px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+        color: #878787;
+        font-size: 18px;
+        height: 39px;
+        line-height: 1.428571429;
+        padding: 6px 12px;
+        width: 5em;
+        z-index: 2;
       }
     }
 
