@@ -346,6 +346,11 @@ padding-top: 1px;
       margin-bottom: 60px;
     }
   }
+  #no-recurring-donations {
+    button {
+      margin: 15px 0 0;
+    }
+  }
   #one-time-donation-cta {
     display: none;
     @media (min-width: 600px) {
