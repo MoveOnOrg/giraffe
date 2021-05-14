@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+
 html {
   max-width: 100%;
 }
@@ -30,6 +31,12 @@ body.donate-page {
 
   button.ak-styled-submit-button {
     display: block;
+  }
+
+  checkbox {
+    label {
+      font-size: 15px;
+    }
   }
 
   div[role="main"] {
@@ -193,16 +200,12 @@ body.donate-page {
       as they're ignored and the native checkbox should display */
     #id_donation_type_recurring:checked,
     #id_donation_type_recurring:not(:checked),
-    #save_payment_information_checkbox:checked,
-    #save_payment_information_checkbox:not(:checked),
     #retired_checkbox:checked,
     #retired_checkbox:not(:checked) {
       display: none;
     }
     #id_donation_type_recurring:checked + .checkbox-overlay,
     #id_donation_type_recurring:not(:checked) + .checkbox-overlay,
-    #save_payment_information_checkbox:checked + .checkbox-overlay,
-    #save_payment_information_checkbox:not(:checked) + .checkbox-overlay,
     #retired_checkbox:checked + .checkbox-overlay,
     #retired_checkbox:not(:checked) + .checkbox-overlay {
       position: relative;
@@ -226,12 +229,8 @@ body.donate-page {
         transition: opacity 0.2s ease, transform 0.4s ease;
       }
     }
-
     #id_donation_type_recurring:checked + .checkbox-overlay-quickpay,
     #id_donation_type_recurring:not(:checked) + .checkbox-overlay-quickpay,
-    #save_payment_information_checkbox:checked + .checkbox-overlay-quickpay,
-    #save_payment_information_checkbox:not(:checked)
-      + .checkbox-overlay-quickpay,
     #retired_checkbox:checked + .checkbox-overlay-quickpay,
     #retired_checkbox:not(:checked) + .checkbox-overlay-quickpay {
       position: relative;
@@ -273,8 +272,7 @@ body.donate-page {
     }
 
     #id_donation_type_recurring:checked ~ .checkbox-overlay,
-    #retired_checkbox:checked ~ .checkbox-overlay,
-    #save_payment_information_checkbox:checked ~ .checkbox-overlay {
+    #retired_checkbox:checked ~ .checkbox-overlay {
       background: $azure;
       &:after {
         opacity: 1;
@@ -337,8 +335,7 @@ body.donate-page {
       }
 
       #id_donation_type_recurring:checked ~ .checkbox-overlay,
-      #retired_checkbox:checked ~ .checkbox-overlay,
-      #save_payment_information_checkbox:checked ~ .checkbox-overlay {
+      #retired_checkbox:checked ~ .checkbox-overlay {
         background: #37b34a;
         &:after {
           opacity: 1;
@@ -1295,6 +1292,16 @@ width: 30px;
     }
   }
   /* --end product templateset specific styles -- */
+  #save_payment_information {
+    span {
+      font-size: 15px;
+      font-weight: 400;
+    }
+  }
+  #save_payment_information_checkbox {
+    height: 15px;
+    width: 15px;
+  }
   #total_div {
     clear: both;
   }
@@ -1325,11 +1332,12 @@ width: 30px;
 
 body.donation-pagetype.thanks-page {
   color: #555555;
+  padding-top: 0px;
   p {
     font-size: 18px;
   }
   .container {
-    padding: 56px 0 !important;
+    padding: 0 !important;
   }
 
   h2 {
@@ -1351,6 +1359,206 @@ body.donation-pagetype.thanks-page {
     line-height: 1.4;
     vertical-align: top;
     border-top: 1px solid #ddd;
+    }
+  }
+
+  .mo-logo-new {
+    max-width: 170px;
+    position: relative;
+    top: 2px;
+  }
+  // Kill the scroll on the body
+.modal-open {
+  overflow: hidden;
+}
+
+// Container that the modal scrolls within
+.modal {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  -webkit-overflow-scrolling: touch;
+
+  // Prevent Chrome on Windows from adding a focus outline. For details, see
+  // https://github.com/twbs/bootstrap/pull/10951.
+  outline: 0;
+
+  // When fading in the modal, animate it to slide down
+  &.fade .modal-dialog {
+    transform: translate(0, -25%);
+  transition-transform: (0.3s ease-out);
+  }
+  &.in .modal-dialog { transform: translate(0, 0) }
+}
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+// Shell div to position the modal with bottom padding
+.modal-dialog {
+  position: relative;
+  width: 600px;
+    margin: 30px auto;
+}
+
+// Actual modal
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2); //old browsers fallback (ie8 etc)
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  box-shadow: 0 3px 9px rgba(0,0,0,.5);
+  background-clip: padding-box;
+  // Remove focus outline from opened modal
+  outline: 0;
+}
+
+// Modal background
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  background-color: #000;
+  // Fade for backdrop
+  &.fade { opacity: 0; }
+  &.in { opacity: 0.5; }
+}
+
+// Modal header
+
+// Close icon
+.modal-header .close {
+  margin-top: -2px;
+}
+
+// Modal body
+// Where all modal content resides (sibling of .modal-header and .modal-footer)
+.modal-body {
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  position: relative;
+  color: rgb(85, 85, 85);
+  padding: 15px;
+  input[type="submit"].btn-block {
+    width: 100%;
+    -webkit-appearance: button;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    background-color: #193f92;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 18px;
+    line-height: 1.428571429;
+    border-radius: 4px;
+  }
+  .close {
+
+    float: right;
+    font-size: 27px;
+    font-weight: bold;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: 0.2;
+    button {
+      padding: 0;
+cursor: pointer;
+background: transparent;
+border: 0;
+-webkit-appearance: none;
+    }
+  }
+  .form-group {
+    margin-bottom: 15px;
+    label {
+      text-align: right;
+    margin-bottom: 0;
+    padding-top: 7px;
+    width: 25%;
+    font-size: 18px;
+    display: inline-block;
+    font-weight: bold;
+    }
+    > div {
+      display: inline-block;
+      width: 72%;
+      padding: 0;
+    }
+    input {
+
+      border: 1px solid #CCCCCC;
+    border-left-color: #a9a9a9;
+    border-top-color: #a9a9a9;
+    border-radius: 3px;
+    box-shadow: 0 0 0 rgba(41, 110, 203, 25%);
+    color: #555555;
+    font-size: 16px;
+    height: auto;
+    line-height: 25px;
+    margin: 0;
+    padding: 6px 12px;
+    max-width: 100%;
+    width: 100%;
+    transition: all .15s linear;
+    -webkit-appearance: none;
+    }
+  }
+  .hide {
+    display: none !important;
+  }
+}
+
+  .navbar {
+    max-height: 65px;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.25);
+    background: none;
+    border: none;
+    min-height: 60px;
+    top: 0;
+    background-color: #fff;
+    width: 100%;
+    z-index: 100;
+    margin-bottom: 30px;
+    position: relative;
+    @media screen and (min-width: bp-md) {
+    max-height: 79px;
+  }
+  }
+  .navbar-header {
+    display: block;
+    fill: inherit;
+    height: 45px;
+    left: 50%;
+    position: absolute;
+    -ms-transform: translateX(-50%);
+    top: 27px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    width: 180px;
+    z-index: 1000;
+    @media screen and (min-width: $bp-md) {
+        // top: 56px;
+        height: 80px;
+    }
+    img {
+      max-width: 140px;
+      display: block;
+      margin: auto;
     }
   }
 
