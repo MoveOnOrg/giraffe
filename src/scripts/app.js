@@ -1,14 +1,14 @@
-import Nav from './components/nav';
-import Modal from './components/modal';
-import Sticky from './components/sticky';
+import Nav from "./components/nav";
+import Modal from "./components/modal";
+import Sticky from "./components/sticky";
 
-import HomeCarousel from './components/homeCarousel';
-import HomeHero from './components/homeHero';
-import JoinForm from './components/joinForm';
-import SignForm from './components/signForm';
-import PetitionComments from './components/petitionComments';
-import PetitionCard from './components/petitionCard';
-import FormsInputBlock from './components/formsInputBlock';
+import HomeCarousel from "./components/homeCarousel";
+import HomeHero from "./components/homeHero";
+import JoinForm from "./components/joinForm";
+import SignForm from "./components/signForm";
+import PetitionComments from "./components/petitionComments";
+import PetitionCard from "./components/petitionCard";
+import FormsInputBlock from "./components/formsInputBlock";
 
 $(document).ready(function () {
   Nav.init();

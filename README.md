@@ -10,7 +10,7 @@ To generate a new encrypted secret_access_key, install the travis command line t
 
 ## Uglify and minify assets
 
-Setting ENV=production in .env ensures that assets are minified in gulp tasks that run before deployment. To uglify, set ENV=LOCAL before running `gulp` or `gulp watch`.
+Setting ENV=production in .env ensures that assets are minified in tktktkgulp tasks that run before deployment. To uglify, set ENV=LOCAL before running `gulp` or `gulp watch`.
 
 ## Evolving specific comps into a design system 
 

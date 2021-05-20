@@ -20,7 +20,8 @@
                           If a list item is null, it will skip the rule for that corresponding breakpoint
                 - (single value) rule for the first breakpoint, or base.
  */
-$_breakpoints-names: map-get-key($breakpoints);
+
+$_breakpoints-names: map-keys($breakpoints);
 @mixin respond( $styles-map ) {
   @if not (type-of($styles-map) == map) { @error "$styles-map needs to be a map of properties and rules."; }
   $breakpoints: $_breakpoints-names;

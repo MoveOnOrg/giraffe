@@ -11,17 +11,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-font": "^1.0.4",
-    "gulp-imagemin": "^4.1.0",
-    "gulp-svg-sprite": "^1.3.7",
-    "gulp-tasks-preset": "^0.3.4",
-    "gulp-twig": "^1.1.1",
-    "klaw-sync": "^3.0.2",
-    "twig": "^1.10.5"
+    "grunt": "^1.4.0",
+    "klaw-sync": "^6.0.0",
+    "twig": "^1.15.4"
   },
   "dependencies": {
-    "flickity": "^2.0.10",
+    "flickity": "^2.2.2",
     "flickity-sync": "^2.0.0"
   }
 }

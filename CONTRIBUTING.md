@@ -1,7 +1,7 @@
 # Contributing
 
 ## Development Requirements
-- Node v7.10.1 and above
+- Node v14.17.0 and above
 - NPM
 - Gulp, installed globally
 
@@ -11,14 +11,14 @@
 - Clone this repository.
 - Install node dependencies: `npm install`
 - Edit .env to set `ENV=LOCAL`
-- Run `gulp watch` to boot up local development server and build tools. Normally this would boot up `localhost:3000`, or whichever port is available.
+- Do I need this? tktktk Run `gulp watch` to boot up local development server and build tools. Normally this would boot up `localhost:3000`, or whichever port is available.
 - Get some coffee. Shake up. Start coding :).
 
 ## Build
 
-Run `gulp` to compile all the source files into the `public` folder.
+tktktk Run `gulp` to compile all the source files into the `public` folder.
 
-Run `yarn zip` to create a compressed zip file. This is saved as `moveon.zip` in the `public` folder.
+tktktk Run `yarn zip` to create a compressed zip file. This is saved as `moveon.zip` in the `public` folder.
 
 
 ## Files and Directories
@@ -28,7 +28,7 @@ All the editable files are located inside the `src` folder.
 The local server files are located inside the `public` folder.
 
 
-### Templates
+### Templates -- needed??? tktktk
 
 Templates are **twig** files compiled into html through `gulp pages`. They are located in `src/templates`.  
 
@@ -36,7 +36,7 @@ For Twig templating guides, please refer to their [site](https://twig.symfony.co
 
 ### Stylesheets
 
-SASS-compiled stylesheets are located in `src/styles`. 
+SASS-compiled stylesheets are located in `src/styles`.
 
 ### Scripts
 

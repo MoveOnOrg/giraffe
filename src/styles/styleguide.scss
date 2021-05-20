@@ -11,6 +11,13 @@ body.styleguide {
     padding-top: 117px;
   }
 
+  .styleguide-blockquote {
+
+    blockquote {
+      width: 50%;
+    }
+  }
+
   .styleguide-description {
     margin-bottom: 30px;
     font-size: 15px;
@@ -71,7 +78,6 @@ body.styleguide {
 @import "styleguide/breakpoints";
 @import "styleguide/headings";
 @import "styleguide/icons";
-@import "styleguide/blockquote";
 @import "styleguide/animated-underline";
 @import "styleguide/round-image";
 @import "styleguide/cta";

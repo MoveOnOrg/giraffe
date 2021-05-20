@@ -4,9 +4,8 @@ $bp-lg: 1008px;
 $bp-xl: 1440px;
 
 $breakpoints: (
-  sm: $bp-sm,
-  md: $bp-md,
-  lg: $bp-lg,
-  xl: $bp-xl,
+  "sm": $bp-sm,
+  "md": $bp-md,
+  "lg": $bp-lg,
+  "xl": $bp-xl,
 );
-
