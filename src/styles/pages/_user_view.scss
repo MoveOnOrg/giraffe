@@ -1,3 +1,15 @@
+@mixin ellipsis($before:true) {
+  content: "\2026";
+  font-size: 24px;
+  // display: inline-block;
+  display: inline;
+  @if($before) {
+    margin-right: 2.5px;
+  } @else {
+    margin-left: 2.5px;
+  }
+}
+
 body.user_view {
   color: #000000;
   font-family: Roboto Condensed;
@@ -108,13 +120,6 @@ padding-top: 1px;
       }
     }
   }
-  .donation-dashboard-container {
-    display: flex;
-    flex-flow: column nowrap;
-    @media (min-width: 600px) {
-      flex-flow: row nowrap;
-    }
-  }
   .gray-block {
     background-color: #EFEFEF;
     padding: 20px 20px 24px 20px;
@@ -132,7 +137,7 @@ padding-top: 1px;
     .contact-info {
       display: flex;
       flex-flow: column nowrap;
-      @media (min-width: 1050px) {
+      @media (min-width: 768px) {
         flex-flow: row nowrap;
       }
     }
@@ -145,7 +150,7 @@ padding-top: 1px;
     h4 {
       font-family: Roboto;
     }
-    @media (min-width: 600px) {
+    @media (min-width: 768px) {
       display: block;
     }
     a {
@@ -153,10 +158,11 @@ padding-top: 1px;
       font-weight: bold;
       text-decoration: underline;
     }
+    margin-bottom: 40px;
   }
   .member-thanks-mobile {
     display: block;
-    @media (min-width: 600px) {
+    @media (min-width: 768px) {
       display: none;
     }
   }
@@ -177,8 +183,10 @@ padding-top: 1px;
       margin-bottom: 0;
     }
     hr {
-      border: 5px solid #C4C4C4;
+      border: 0px solid #C4C4C4;
       margin-bottom: 20px;
+      height: 10px;
+      background: #C4C4C4;
     }
     ul {
       list-style: none;
@@ -195,7 +203,7 @@ padding-top: 1px;
   }
   .subscription-status-desktop {
     display: none;
-    @media (min-width: 600px) {
+    @media (min-width: 768px) {
       display: block;
     }
   }
@@ -206,7 +214,7 @@ padding-top: 1px;
     margin-left: -15px;
     padding: 33px;
     margin-top: 0;
-    @media (min-width: 600px) {
+    @media (min-width: 768px) {
       display: none;
     }
   }
@@ -220,7 +228,7 @@ padding-top: 1px;
   }
   .welcome {
     text-align: center;
-    @media (min-width: 600px) {
+    @media (min-width: 768px) {
       text-align: left;
     }
   }
@@ -237,13 +245,13 @@ padding-top: 1px;
       justify-content: space-between;
       list-style: none;
       margin: 0;
-      @media (min-width: 600px) {
+      @media (min-width: 768px) {
         justify-content: flex-start;
       }
     li.nav-item {
       display: inline;
       padding: 5px 21px;
-      @media (min-width: 600px) {
+      @media (min-width: 768px) {
         padding: 6px 35px;
       }
 
@@ -290,27 +298,27 @@ padding-top: 1px;
       }
     }
     .pagination {
+      cursor: pointer;
       display: flex;
       font-family: Roboto;
       font-size: 17px;
       font-weight: 400;
       justify-content: space-around;
       margin: 0 auto;
-      width: 25%;
+      width: 48%;
       a {
         color: #000000;
-        padding: 10px;
+        // padding: 10px;
         text-decoration: none;
       }
       li {
-        display: inline;
+        display: inline-flex;
       }
-        .pagination-active {
+        .active {
           a {
-
           font-weight: 700;
           text-decoration-line: underline;
-        }
+          }
         }
       }
     }
@@ -337,9 +345,108 @@ padding-top: 1px;
   }
 
   #donation-pagination-nav {
-    height: 34px;
-    margin-bottom: -34px;
     align-items: center;
+    display: flex;
+    height: auto;
+    flex-flow: column;
+    height: auto;
+    margin-bottom: -34px;
+    li {
+      &:first-child,
+      &:nth-child(2),
+      &:nth-last-child(2),
+      &.active-sibling,
+      &.active,
+      &.active + li,
+      &:last-child {
+        display: inline-flex !important;
+      }
+
+      // There are >= 7 pages
+      &:first-child:nth-last-child(n+8) {
+        $how-many-on-ends: 5; // 1,2,3,4,5,...,10 || 1,...6,7,8,9,10
+
+        &~li {
+          // Start out with all siblings hidden
+          display: none;
+
+          // Show ellipsis before the previous one
+          &.active-sibling:before {
+              @include ellipsis(true);
+          }
+          // Show ellipsis after the next one
+          &.active + li:after {
+              @include ellipsis(false);
+          }
+
+          // Show the last children in the list by default
+          &:nth-last-child(-n+#{$how-many-on-ends}) {
+            display: inline-flex;
+          }
+
+          // The child at the beginning of the last group shows ellipsis for the group
+          &:nth-last-child(#{$how-many-on-ends}) {
+            &:before {
+              @include ellipsis(true);
+            }
+          }
+
+          // The very beginning elements do not need to show ellipsis
+          &:nth-child(-n+#{$how-many-on-ends - 3}),
+          // The very end elements do not need to show ellipsis
+          &:nth-last-child(-n+#{$how-many-on-ends - 3}),
+          // Even if it's a sibling to "active"
+          &.active-sibling:nth-last-child(-n+#{$how-many-on-ends - 1}) {
+            &:before, &:after {
+              display: none !important;
+            }
+          }
+        }
+
+        &.active,
+         &~li.active {
+
+           // Hide the last group if "active" comes before them
+           &~li:nth-last-child(-n+#{$how-many-on-ends}) {
+             display: none;
+
+             // If there is overlap, the element will show, but hide it's ellipsis
+             &:before {
+              display: none;
+             }
+           }
+
+           // Show the first group together if "active" comes before them
+           &~li:nth-child(-n+#{$how-many-on-ends}) {
+             display: inline-flex;
+           }
+
+           // If "active" is before the last member in the group, don't show ellipsis
+           &~li:nth-child(-n+#{$how-many-on-ends - 1}) {
+              &:after {
+                display: none;
+              }
+           }
+
+
+          // The child at the end of the first group shows ellipsis for the group
+          &~li:nth-child(#{$how-many-on-ends}) {
+            &:after {
+              @include ellipsis(false);
+            }
+          }
+
+           // "active" should never show ellipsis
+           &:before, &:after {
+             display: none;
+           }
+        }
+      }
+    }
+    @media (min-width: 768px) {
+      flex-flow: row;
+      height: 34px;
+    }
   }
   #how-you-help {
     p {
@@ -353,16 +460,19 @@ padding-top: 1px;
   }
   #one-time-donation-cta {
     display: none;
-    @media (min-width: 600px) {
+    @media (min-width: 768px) {
       display: block;
     }
   }
 
   #recurring-pane {
     li {
-      border-bottom: 1px solid #C4C4C4;
+
       padding-top: 45px;
       padding-bottom: 18px;
+    }
+    li + li {  border-bottom: 1px solid #C4C4C4;
+
     }
   }
   #sticky-footer-button {
@@ -385,7 +495,7 @@ padding-top: 1px;
         color: #FFFFFF;
       }
     }
-    @media (min-width: 600px) {
+    @media (min-width: 768px) {
       display: none;
     }
   }
@@ -401,7 +511,7 @@ body.user_update {
     }
     form {
       margin: 0 auto;
-      @media (min-width: 600px) {
+      @media (min-width: 768px) {
         width: 50%;
       }
     }
@@ -419,4 +529,23 @@ body.user_update {
 #back-to-dash-bottom {
   margin-top: 85px;
 margin-bottom: 44px;
+}
+
+#recurring-update-user-info {
+  text-align: center;
+  a {
+    font-weight: 700;
+    color: #357FBA;
+    &:hover {
+      text-decoration: underline;
+    }
+    &:visited {
+      color: #357FBA;
+    }
+  }
+  p {
+    font-family: Roboto;
+    font-weight: normal;
+    font-size: 22px;
+  }
 }
