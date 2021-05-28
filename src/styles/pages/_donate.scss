@@ -291,11 +291,11 @@ body.donate-page {
   }
 
   .donation-container {
-    display: flex;
-    flex-flow: column nowrap;
-    @media screen and (min-width: $bp-md) {
-      flex-flow: row wrap;
-    }
+    // display: flex;
+    // flex-flow: column nowrap;
+    // @media screen and (min-width: $bp-md) {
+    //   flex-flow: row wrap;
+    // }
   }
 
   .custom-radio-payment {
@@ -449,14 +449,6 @@ body.donate-page {
   }
 
   .form-section {
-    display: flex;
-    flex-flow: column nowrap;
-    width: 100%;
-    @media screen and (min-width: $bp-md) {
-      width: 50%;
-      flex: 1 1 0;
-    }
-
     input {
       background-color: $white;
       background-size: 16px 18px;
@@ -496,6 +488,8 @@ body.donate-page {
         border-left: 1px solid $moriginal-gray-lighter;
         border-top: 0 !important;
         margin-top: 0;
+        float: right;
+        width: 50%;
       }
 
       h3 {
@@ -520,24 +514,14 @@ body.donate-page {
         color: $black;
       }
     }
-
-    .billing-desktop {
-      display: none;
-      @media screen and (min-width: $bp-md) {
-        display: flex;
-        flex-flow: column nowrap;
-      }
-    }
-
-    .billing-mobile {
-      display: flex;
-      @media screen and (min-width: $bp-md) {
-        display: none;
-      }
-    }
   }
 
   .form-section--donation {
+    @media screen and (min-width: $bp-md) {
+      float: left;
+      width: 50%;
+    }
+
     h3 {
       font-family: "Roboto Condensed", sans-serif;
       font-size: 27px;
@@ -549,6 +533,8 @@ body.donate-page {
 
   .form-section--payment {
     @media screen and (min-width: $bp-md) {
+      float: left;
+      width: 50%;
       margin-top: 40px;
     }
 
