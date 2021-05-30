@@ -481,7 +481,7 @@ body.donate-page {
 
     .form-section--billing {
       border-top: 0 !important;
-      margin-top: 0;
+      margin-top: 15px;
       border: none;
       flex-flow: column;
       @media screen and (min-width: $bp-md) {
@@ -639,7 +639,7 @@ body.donate-page {
     width: 100%;
     z-index: 100;
     @media screen and (min-width: $bp-md) {
-      margin-bottom: 30px;
+      margin-bottom: 35px;
       position: relative;
     }
   }
@@ -1017,14 +1017,8 @@ body.donate-page {
   }
 
   #card_num_box {
-    .wf-icon {
-      font-size: 1.5em;
-      line-height: 1em;
-    }
-
-    .icon-lock {
-      color: $moriginal-gray-medium;
-      font-size: 1em;
+    img {
+      vertical-align: bottom;
     }
 
     label {
