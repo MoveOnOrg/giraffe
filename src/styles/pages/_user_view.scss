@@ -15,16 +15,20 @@ body.user_view {
   font-family: Roboto Condensed;
   font-style: normal;
   text-align: left;
+
   a {
     font-weight: 700;
     color: #357FBA;
+
     &:hover {
       text-decoration: underline;
     }
+
     &:visited {
       color: #357FBA;
     }
   }
+
   button {
     background: #00ABFF;
     color: #fff;
@@ -33,76 +37,93 @@ body.user_view {
     padding: 6px 17px;
     text-align: center;
     text-transform: uppercase;
+
     a {
       color: #fff;
       text-decoration: none;
+
       &:hover {
         color: #fff;
         text-decoration: none;
       }
+
       &:visited {
         color: #fff;
         text-decoration: none;
+
         &:hover {
           color: #fff;
           text-decoration: none;
         }
       }
     }
+
     &:hover {
       background: #357FBA;
     }
   }
+
   h1 {
     font-size: 42px;
     font-weight: bold;
   }
+
   h2 {
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 0;
   }
+
   h3 {
     font-size: 22px;
     text-transform: uppercase;
     font-weight: bold;
   }
+
   h4 {
     font-size: 22px;
     font-weight: bold;
   }
+
   p {
     font-family: Roboto;
     font-weight: normal;
     font-size: 22px;
   }
+
   nav {
     background: #CAF4FF;
     display: flex;
+
     img {
       padding-right: 4px;
-padding-top: 1px;
+      padding-top: 1px;
     }
   }
 
   .call-to-action {
     margin: 26px 0;
+
     img {
       display: block;
       width: 100%;
-      -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+      -webkit-filter: grayscale(100%);
+      /* Safari 6.0 - 9.0 */
       filter: grayscale(100%);
     }
+
     .caption {
       background: #000000;
       font-size: 30px;
       font-weight: bold;
+
       a {
         color: #FFFFFF;
         display: block;
         padding: 8px 12px 11px;
         text-decoration: none;
       }
+
       img {
         display: inline;
         height: 25px;
@@ -110,22 +131,28 @@ padding-top: 1px;
         width: auto;
       }
     }
+
     &:hover {
       img {
-        -webkit-filter: none; /* Safari 6.0 - 9.0 */
+        -webkit-filter: none;
+        /* Safari 6.0 - 9.0 */
         filter: none;
       }
+
       .caption {
         background: #00ABFF;
       }
     }
   }
+
   .gray-block {
     background-color: #EFEFEF;
-    padding: 20px 20px 24px 20px;
+    padding: 20px 20px 24px;
+
     h3 {
       padding-bottom: 23px;
     }
+
     > div {
       color: #000000;
       font-family: Roboto;
@@ -134,6 +161,7 @@ padding-top: 1px;
       font-size: 18px;
       padding-bottom: 23px;
     }
+
     .contact-info {
       display: flex;
       flex-flow: column nowrap;
@@ -142,17 +170,21 @@ padding-top: 1px;
       }
     }
   }
+
   .member-donations {
     margin-bottom: 60px;
   }
+
   .member-thanks-desktop {
     display: none;
+
     h4 {
       font-family: Roboto;
     }
     @media (min-width: 768px) {
       display: block;
     }
+
     a {
       color: #000000;
       font-weight: bold;
@@ -160,53 +192,65 @@ padding-top: 1px;
     }
     margin-bottom: 40px;
   }
+
   .member-thanks-mobile {
     display: block;
     @media (min-width: 768px) {
       display: none;
     }
   }
+
   .med-font {
     font-size: 20px;
   }
+
   .small {
     font-family: Roboto;
     font-weight: normal;
     font-size: 18px;
   }
+
   .subscription-status {
     margin-top: 75px;
+
     button {
       margin-top: 15px;
     }
+
     h3 {
       margin-bottom: 0;
     }
+
     hr {
-      border: 0px solid #C4C4C4;
+      border: 0 solid #C4C4C4;
       margin-bottom: 20px;
       height: 10px;
       background: #C4C4C4;
     }
+
     ul {
       list-style: none;
       margin-left: 0;
       font-family: Roboto;
+
       li {
         font-size: 22px;
         font-weight: bold;
       }
     }
+
     p {
       margin-bottom: 0;
     }
   }
+
   .subscription-status-desktop {
     display: none;
     @media (min-width: 768px) {
       display: block;
     }
   }
+
   .subscription-status-mobile {
     background: rgba(196, 196, 196, 0.2);
     display: block;
@@ -218,46 +262,53 @@ padding-top: 1px;
       display: none;
     }
   }
+
   .tab-content {
     > .tab-pane {
       display: none;
     }
+
     > .active {
       display: block;
     }
   }
+
   .welcome {
     text-align: center;
     @media (min-width: 768px) {
       text-align: left;
     }
   }
+
   .x-small {
     font-family: Roboto;
     font-weight: normal;
     font-size: 16px;
   }
+
   ul#donation-nav {
-      display:flex;
-      font-family: Roboto;
-      font-weight: bold;
-      font-size: 17px;
-      justify-content: space-between;
-      list-style: none;
-      margin: 0;
-      @media (min-width: 768px) {
-        justify-content: flex-start;
-      }
+    display: flex;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 17px;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    @media (min-width: 768px) {
+      justify-content: flex-start;
+    }
+
     li.nav-item {
       display: inline;
       padding: 5px 21px;
       @media (min-width: 768px) {
         padding: 6px 35px;
       }
-
     }
+
     .nav-item.active {
       background: #CAF4FF;
+
       a {
         color: #000000;
       }
@@ -267,77 +318,94 @@ padding-top: 1px;
   #donations-content {
     background: #CAF4FF;
     padding: 34px 27px;
+
     .no-donations {
       display: none;
       padding: 40px 25px;
+
       p {
         padding: 6px 0;
       }
     }
+
     .tab-pane {
       background: white;
+
       ul {
         list-style: none;
       }
+
       table {
-        border-spacing: 0px;
+        border-spacing: 0;
         width: calc(100% + 1px);
-      tr {
-        display: flex;
-        font-family: Roboto;
-        font-size: 18px;
-        font-weight: normal;
-        justify-content: space-between;
-        padding: 8px 4px;
-        a {
-          font-size: 15px;
+
+        tr {
+          display: flex;
+          font-family: Roboto;
+          font-size: 18px;
+          font-weight: normal;
+          justify-content: space-between;
+          padding: 8px 4px;
+
+          a {
+            font-size: 15px;
+          }
+        }
+
+        tr:nth-child(even) {
+          background-color: #CAF4FF;
         }
       }
-      tr:nth-child(even) {
-        background-color: #CAF4FF;
-      }
-    }
-    .pagination {
-      cursor: pointer;
-      display: flex;
-      font-family: Roboto;
-      font-size: 17px;
-      font-weight: 400;
-      justify-content: space-around;
-      margin: 0 auto;
-      width: 48%;
-      a {
-        color: #000000;
-        // padding: 10px;
-        text-decoration: none;
-      }
-      li {
-        display: inline-flex;
-      }
+
+      .pagination {
+        cursor: pointer;
+        display: flex;
+        font-family: Roboto;
+        font-size: 17px;
+        font-weight: 400;
+        justify-content: space-around;
+        margin: 0 auto;
+        width: 48%;
+
+        a {
+          color: #000000;
+          // padding: 10px;
+          text-decoration: none;
+        }
+
+        li {
+          display: inline-flex;
+        }
+
         .active {
           a {
-          font-weight: 700;
-          text-decoration-line: underline;
+            font-weight: 700;
+            text-decoration-line: underline;
           }
         }
       }
     }
   }
+
   #donations-history {
     display: none;
     font-family: Roboto;
     font-size: 22px;
     text-align: center;
+
     a {
       font-weight: bold;
       text-decoration: underline;
     }
+
     h2 {
       margin: 34px 0;
     }
+
     p {
       margin-bottom: 6px;
     }
+
     .donation-item {
       font-size: 18px;
       padding: 10px 0;
@@ -351,17 +419,17 @@ padding-top: 1px;
     flex-flow: column;
     height: auto;
     margin-bottom: -34px;
+
     li {
-      &:first-child,
-      &:nth-child(2),
-      &:nth-last-child(2),
-      &.active-sibling,
       &.active,
       &.active + li,
-      &:last-child {
+      &.active-sibling,
+      &:first-child,
+      &:last-child,
+      &:nth-child(2),
+      &:nth-last-child(2) {
         display: inline-flex !important;
       }
-
       // There are >= 7 pages
       &:first-child:nth-last-child(n+8) {
         $how-many-on-ends: 5; // 1,2,3,4,5,...,10 || 1,...6,7,8,9,10
@@ -369,77 +437,68 @@ padding-top: 1px;
         &~li {
           // Start out with all siblings hidden
           display: none;
-
           // Show ellipsis before the previous one
           &.active-sibling:before {
-              @include ellipsis(true);
+            @include ellipsis(true);
           }
           // Show ellipsis after the next one
           &.active + li:after {
-              @include ellipsis(false);
+            @include ellipsis(false);
           }
-
           // Show the last children in the list by default
           &:nth-last-child(-n+#{$how-many-on-ends}) {
             display: inline-flex;
           }
-
           // The child at the beginning of the last group shows ellipsis for the group
           &:nth-last-child(#{$how-many-on-ends}) {
             &:before {
               @include ellipsis(true);
             }
           }
-
           // The very beginning elements do not need to show ellipsis
-          &:nth-child(-n+#{$how-many-on-ends - 3}),
+          &:nth-child(-n+#{$how-many-on-ends - 2}),
           // The very end elements do not need to show ellipsis
-          &:nth-last-child(-n+#{$how-many-on-ends - 3}),
+          &:nth-last-child(-n+#{$how-many-on-ends - 2}),
           // Even if it's a sibling to "active"
           &.active-sibling:nth-last-child(-n+#{$how-many-on-ends - 1}) {
-            &:before, &:after {
+            &:after,
+            &:before {
               display: none !important;
             }
           }
         }
 
         &.active,
-         &~li.active {
-
-           // Hide the last group if "active" comes before them
-           &~li:nth-last-child(-n+#{$how-many-on-ends}) {
-             display: none;
-
-             // If there is overlap, the element will show, but hide it's ellipsis
-             &:before {
+        &~li.active {
+          // Hide the last group if "active" comes before them
+          &~li:nth-last-child(-n+#{$how-many-on-ends}) {
+            display: none;
+            // If there is overlap, the element will show, but hide it's ellipsis
+            &:before {
               display: none;
-             }
-           }
-
-           // Show the first group together if "active" comes before them
-           &~li:nth-child(-n+#{$how-many-on-ends}) {
-             display: inline-flex;
-           }
-
-           // If "active" is before the last member in the group, don't show ellipsis
-           &~li:nth-child(-n+#{$how-many-on-ends - 1}) {
-              &:after {
-                display: none;
-              }
-           }
-
-
+            }
+          }
+          // Show the first group together if "active" comes before them
+          &~li:nth-child(-n+#{$how-many-on-ends}) {
+            display: inline-flex;
+          }
+          // If "active" is before the last member in the group, don't show ellipsis
+          &~li:nth-child(-n+#{$how-many-on-ends - 1}) {
+            &:after {
+              display: none;
+            }
+          }
           // The child at the end of the first group shows ellipsis for the group
           &~li:nth-child(#{$how-many-on-ends}) {
             &:after {
               @include ellipsis(false);
             }
           }
-
-           // "active" should never show ellipsis
-           &:before, &:after {
-             display: none;
-           }
+          // "active" should never show ellipsis
+          &:after,
+          &:before {
+            display: none;
+          }
         }
       }
     }
@@ -448,16 +507,19 @@ padding-top: 1px;
       height: 34px;
     }
   }
+
   #how-you-help {
     p {
       margin-bottom: 60px;
     }
   }
+
   #no-recurring-donations {
     button {
       margin: 15px 0 0;
     }
   }
+
   #one-time-donation-cta {
     display: none;
     @media (min-width: 768px) {
@@ -467,14 +529,15 @@ padding-top: 1px;
 
   #recurring-pane {
     li {
-
       padding-top: 45px;
       padding-bottom: 18px;
     }
-    li + li {  border-bottom: 1px solid #C4C4C4;
 
+    li + li {
+      border-bottom: 1px solid #C4C4C4;
     }
   }
+
   #sticky-footer-button {
     background: #00ABFF;
     bottom: 0;
@@ -489,8 +552,10 @@ padding-top: 1px;
     text-transform: uppercase;
     width: 100%;
     z-index: 100;
+
     a {
       color: #FFFFFF;
+
       &:visited {
         color: #FFFFFF;
       }
@@ -502,47 +567,56 @@ padding-top: 1px;
 }
 
 body.user_update {
-    font-family: Roboto;
-    font-size: 22px;
-    text-align: center;
-    a {
-      font-weight: bold;
-      text-decoration: underline;
+  font-family: Roboto;
+  font-size: 22px;
+  text-align: center;
+
+  a {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  form {
+    margin: 0 auto;
+    @media (min-width: 768px) {
+      width: 50%;
     }
-    form {
-      margin: 0 auto;
-      @media (min-width: 768px) {
-        width: 50%;
-      }
-    }
-    h2 {
-      margin: 34px 0;
-    }
-    p {
-      margin-bottom: 6px;
-    }
-    .account-update {
-        text-align: left;
-    }
+  }
+
+  h2 {
+    margin: 34px 0;
+  }
+
+  p {
+    margin-bottom: 6px;
+  }
+
+  .account-update {
+    text-align: left;
+  }
 }
 
 #back-to-dash-bottom {
   margin-top: 85px;
-margin-bottom: 44px;
+  margin-bottom: 44px;
 }
 
 #recurring-update-user-info {
   text-align: center;
+
   a {
     font-weight: 700;
     color: #357FBA;
+
     &:hover {
       text-decoration: underline;
     }
+
     &:visited {
       color: #357FBA;
     }
   }
+
   p {
     font-family: Roboto;
     font-weight: normal;
