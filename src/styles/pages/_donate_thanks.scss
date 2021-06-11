@@ -6,8 +6,13 @@ body.donation-pagetype.thanks-page {
     font-size: 18px;
   }
 
-  .container {
-    padding: 0 !important;
+  div[role="main"] {
+    padding-top: 96px;
+    padding-left: 0;
+    padding-right: 0;
+    @media (min-width: $bp-md) {
+      padding-top: 0;
+    }
   }
 
   h2 {
@@ -361,6 +366,10 @@ body.donation-pagetype.thanks-page {
     .modal-lg {
       width: 900px;
     }
+  }
+
+  .row {
+    margin: 0;
   }
 
   #thankyou {
