@@ -1,0 +1,242 @@
+body.donate-page {
+  .ask-sub-text-quickpay {
+    background-color: inherit;
+    color: black;
+    margin: 0 0 1em;
+    font-size: 22.5px;
+    margin: 1em 0.5em 1em 0.5em !important;
+    text-align: left;
+  }
+
+  .quickpay-form {
+    background-color: #f3f3f3;
+    border-top: 1px solid #CCCCCC;
+    color: #555555;
+    padding: 0;
+
+    form {
+      padding: 0;
+      @media (min-width: $bp-md) {
+        padding: 0;
+      }
+
+      h3 {
+        font-family: "Source Sans Pro", Helvetica, Arial;
+        font-size: 21px;
+        font-weight: 400;
+        @media (min-width: $bp-md) {
+          font-size: 27px;
+        }
+      }
+
+      label {
+        font-size: 15px;
+        @media (min-width: $bp-md) {
+          font-size: 19px;
+        }
+      }
+
+      p {
+        font-size: 14px;
+        margin: 0 0 12.5px;
+        @media (min-width: $bp-md) {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .donation-container-quickpay {
+      padding: 15px;
+      @media (min-width: $bp-md) {
+        padding: 30px;
+      }
+
+      .form-section {
+        width: 100%;
+      }
+    }
+
+    button.btn {
+      background: #296ecb;
+      border-top: 0;
+      border-left: 0;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 2em;
+      font-weight: bold;
+      padding: 10px;
+      margin: 0;
+      @media (min-width: $bp-md) {
+        padding: 0.5em 0.75em;
+        margin: 0 0.5em 0.5em 0;
+        min-width: 0;
+      }
+    }
+
+    .big-checkbox-quickpay {
+      .big-checkbox-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        min-height: 50px;
+        background-color: #296ecb;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        transition: all 0.15s linear;
+
+        .checkbox-label {
+          color: #fff;
+          cursor: pointer;
+          display: inline-block;
+          flex: 1;
+          font-size: 15px;
+          font-weight: 700;
+          padding-left: 30px;
+          width: 85%;
+          @media screen and (min-width: $bp-md) {
+            width: 91%;
+            font-size: 19px;
+          }
+        }
+
+        #id_donation_type_recurring:checked + .checkbox-overlay,
+        #id_donation_type_recurring:not(:checked) + .checkbox-overlay {
+          position: relative;
+          width: 25px;
+          height: 25px;
+          left: 15px;
+          background: #eee;
+          border: 1px solid #999;
+          border-radius: 4px;
+          transition: background 0.1s ease;
+          cursor: pointer;
+
+          &:after {
+            content: '';
+            position: absolute;
+            width: 11px;
+            height: 19px;
+            top: 0;
+            left: 6px;
+            opacity: 0;
+            transform: rotate(45deg) scale(0);
+            border-right: 4px solid #fff;
+            border-bottom: 4px solid #fff;
+            transition: opacity 0.2s ease, transform 0.4s ease;
+            border-radius: 3px;
+          }
+        }
+
+        #id_donation_type_recurring:checked ~ .checkbox-overlay,
+        #retired_checkbox:checked ~ .checkbox-overlay {
+          border-color: transparent;
+          background: #37b34a;
+
+          &:after {
+            opacity: 1;
+            transform: rotate(45deg) scale(1);
+          }
+        }
+      }
+    }
+
+    .btn-group {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 0.5em 0.5em 0;
+    }
+
+    #amount_other_field {
+      box-shadow: none;
+      font-size: 1em;
+      line-height: 1em;
+      padding-bottom: 1px;
+      padding-top: 1px;
+      padding-left: 1.25em;
+      height: auto;
+      border: 1px solid #CCCCCC;
+      border-left-color: #a9a9a9;
+      border-top-color: #a9a9a9;
+      border-radius: 3px;
+      color: #555555;
+      margin: 0;
+      padding: 6px 12px 6px 50px;
+      max-width: 100%;
+      transition: all 0.15s linear;
+      -webkit-appearance: none;
+      width: 100%;
+      @media (min-width: $bp-md) {
+        font-size: 2em;
+        line-height: 2em;
+        width: 5em;
+        padding-left: 50px;
+      }
+    }
+
+    #other-amount-submit {
+      background: #296ecb;
+      border-left: 0;
+      border-radius: 0;
+      border-top: 0;
+      box-shadow: none;
+      color: white;
+      display: inline-block;
+      font-size: 2em;
+      font-weight: bold;
+      line-height: 30px;
+      margin: 0 0.5em 0.5em 0;
+      padding: 0.5em 0.75em;
+      text-transform: uppercase;
+      transition: all 0.15s linear;
+      width: 100%;
+      @media screen and (min-width: $bp-md) {
+        width: auto;
+      }
+
+      &:visited {
+        color: white;
+      }
+
+      &:disabled {
+        background-color: #719eda;
+        color: white !important;
+      }
+    }
+
+    #other_amount_container label {
+      background-color: transparent;
+      box-shadow: none;
+      color: #296ECB;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: 18px;
+      line-height: 40px;
+      margin: 0 0 0.5em;
+      position: relative;
+      text-shadow: none;
+      transition: all 0.15s linear;
+      width: 100%;
+
+      .currency_sym {
+        font-size: 1em;
+        line-height: 1em;
+        left: 0.5em;
+        position: absolute;
+        text-align: center;
+        width: 7px;
+        @media (min-width: $bp-md) {
+          font-size: 2em;
+          line-height: 2em;
+          width: 30px;
+        }
+      }
+    }
+
+    #quickpay-buttons {
+      display: flex;
+      flex-flow: row nowrap;
+    }
+  }
+}

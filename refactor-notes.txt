@@ -1,0 +1,38 @@
+questions for refactor:
+
+What is bower_components doing here? do we need this? *** Decided to remove bower as it is entirely deprecated and doesn't appear to be called anywhere.
+What is flickity--do we use this on wordpress? -- yes, we do!
+What about all the *.twig files? this is a php thing.
+
+How do we feel about where/how we're serving images and fonts? Better to host them through aws as this is, or through actionkit?
+
+What is all the stuff in src/scripts? It looks like it might be garbage, but maybe it actually is how the front end builds?
+
+upgraded node to 14.17.0
+Upgraded bootstrap to v4.
+
+Really outdated/dangerous packages:
+* gulp --has had no updates in 2 years. Gulp also will not work with node 14. Alternatives: https://www.slant.co/options/4228/alternatives/~gulp-alternatives
+* gulp-tasks-preset
+* gulp-svg-sprite
+* gulp-font
+
+
+** removed gulp and related packages; shifting deployment tasks to grunt, which is actively maintained. Would webpack be better? Unclear.
+
+Do we need:
+    'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/flickity/dist/flickity.pkgd.min.js',
+    'node_modules/flickity-sync/flickity-sync.js',
+    'src/scripts/components/modernizr-custom.js',
+
+Flickity is the hero carousel. Do we need that or is it implicitly in WP?
+I think we load jq from the CDN in ak-templates. Do we need that in WP?
+
+It looks like even in style-guide, we're dynamically loading fonts from google fonts, BUT we have a whole big fonts folder. We should do one or the other--which one?
+We have a /images but we also manage images within AK. Should we pick one?
+
+What is the role of bootstrap in here?
+When & how to use bootstrap
+
+**** CORE QUESTION: What is Giraffe for? If it is JUST providing styles and styleguide, then we should be able to get rid of a lot of stuff in here and massively simplify build tasks.

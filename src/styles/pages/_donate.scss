@@ -6,7 +6,8 @@ html {
 }
 
 body.donate-page {
-  padding-top: 0px;
+  padding-top: 0;
+
   a {
     color: $azure;
     text-decoration: underline;
@@ -40,9 +41,12 @@ body.donate-page {
   }
 
   div[role="main"] {
-    padding-top: 60px;
+    padding-top: 96px;
     padding-left: 0;
     padding-right: 0;
+    @media (min-width: $bp-md) {
+      padding-top: 0;
+    }
   }
 
   h3 {
@@ -54,9 +58,10 @@ body.donate-page {
     margin-bottom: 0 !important;
   }
 
-      button[type="submit"] {
-        margin: 0 auto;
-      }
+  button[type="submit"] {
+    margin: 0 auto;
+  }
+
   form {
     padding: 10px 22px;
     @media (min-width: $bp-md) {
@@ -75,6 +80,7 @@ body.donate-page {
     h3 {
       font-family: "Roboto Condensed", sans-serif;
     }
+
     input {
       font-size: 18px;
       line-height: 1.428571429;
@@ -84,7 +90,7 @@ body.donate-page {
       height: 39px;
     }
 
-    input[type=radio]{
+    input[type=radio] {
       height: auto;
       display: inline-block;
     }
@@ -99,10 +105,12 @@ body.donate-page {
       font-weight: 700;
       font-size: 18px;
     }
+
     .form-group {
       margin-bottom: 15px;
     }
   }
+
   [type="radio"]:checked + label,
   [type="radio"]:not(:checked) + label {
     display: flex;
@@ -115,7 +123,6 @@ body.donate-page {
     margin-top: 4px;
     font-size: 14px;
     line-height: 20px;
-
     @media (min-width: $bp-md) {
       margin-top: 8px;
     }
@@ -127,8 +134,8 @@ body.donate-page {
 
     .alert,
     ul#ak-errors > li,
-    ul.errorlist > li,
-    ul.ak-err > li {
+    ul.ak-err > li,
+    ul.errorlist > li {
       padding: 0;
     }
 
@@ -136,10 +143,12 @@ body.donate-page {
       display: inline-block;
     }
   }
+
   .alt-payment-links + h3 {
     font-family: "Roboto Condensed", sans-serif;
     margin-top: 0;
   }
+
   .ask-sub-text {
     font-family: "Roboto Condensed", sans-serif;
     background-color: $azure;
@@ -149,9 +158,12 @@ body.donate-page {
     text-align: center;
     padding: 15px;
     margin: 0 auto;
+    max-width: fit-content;
+
     p {
       margin-bottom: 0;
     }
+
     p[style*="font-size: 80%"] {
       font-family: "Roboto", sans-serif;
       color: $black;
@@ -161,19 +173,9 @@ body.donate-page {
     }
   }
 
-  .ask-sub-text-quickpay {
-    background-color: inherit;
-    color: black;
-    margin: 0 0 1em 0;
-    font-size: 1.25em;
-    margin: 1em .5em 1em .5em !important;
-    padding-left: 35px;
-    text-align: left;
-  }
-
   h1.ask-text {
     color: $black;
-    margin: 0 0 1em 0;
+    margin: 0 0 1em;
     font-size: 1.25em;
     margin: 1em 0.5em 1em 0.5em !important;
 
@@ -191,11 +193,10 @@ body.donate-page {
     border-bottom-right-radius: 3px;
     transition: all 0.15s linear;
     font-size: 16px;
-    .checkbox-label {
-      @media (min-width: $bp-md) {
-      }
-    }
 
+    .checkbox-label {
+      @media (min-width: $bp-md) {}
+    }
     /* NOTE: :checked / :not() acts as a fallback for < ie8
       as they're ignored and the native checkbox should display */
     #id_donation_type_recurring:checked,
@@ -204,6 +205,7 @@ body.donate-page {
     #retired_checkbox:not(:checked) {
       display: none;
     }
+
     #id_donation_type_recurring:checked + .checkbox-overlay,
     #id_donation_type_recurring:not(:checked) + .checkbox-overlay,
     #retired_checkbox:checked + .checkbox-overlay,
@@ -215,6 +217,7 @@ body.donate-page {
       box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
       transition: background 0.1s ease;
       cursor: pointer;
+
       &:after {
         content: "";
         position: absolute;
@@ -229,33 +232,7 @@ body.donate-page {
         transition: opacity 0.2s ease, transform 0.4s ease;
       }
     }
-    #id_donation_type_recurring:checked + .checkbox-overlay-quickpay,
-    #id_donation_type_recurring:not(:checked) + .checkbox-overlay-quickpay,
-    #retired_checkbox:checked + .checkbox-overlay-quickpay,
-    #retired_checkbox:not(:checked) + .checkbox-overlay-quickpay {
-      position: relative;
-      background-color: $white;
-      margin-right: 20px;
-      width: 44px;
-      height: 44px;
-      border: none;
-      box-shadow: none;
-      transition: background 0.1s ease;
-      cursor: pointer;
-      &:after {
-        content: "";
-        position: absolute;
-        width: 23px;
-        height: 38px;
-        top: 0;
-        left: 11px;
-        opacity: 0;
-        transform: rotate(45deg) scale(0);
-        border-right: 4px solid white;
-        border-bottom: 4px solid white;
-        transition: opacity 0.2s ease, transform 0.4s ease;
-      }
-    }
+
     .checkbox-label {
       flex: 1;
       padding-left: 10px;
@@ -274,80 +251,10 @@ body.donate-page {
     #id_donation_type_recurring:checked ~ .checkbox-overlay,
     #retired_checkbox:checked ~ .checkbox-overlay {
       background: $azure;
+
       &:after {
         opacity: 1;
         transform: rotate(45deg) scale(1);
-      }
-    }
-  }
-
-  #big-checkbox-row-quickpay {
-    .big-checkbox-row {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      min-height: 50px;
-      background-color: #296ecb;
-      border-bottom-left-radius: 3px;
-      border-bottom-right-radius: 3px;
-      transition: all .15s linear;
-      #id_donation_type_recurring:checked,
-      #id_donation_type_recurring:not(:checked) {
-        display: none;
-      }
-      #id_donation_type_recurring:checked + .checkbox-overlay,
-      #id_donation_type_recurring:not(:checked) + .checkbox-overlay {
-        position: relative;
-    width: 25px;
-    height: 25px;
-    left: 15px;
-    background: #eee;
-    border: 1px solid #999;
-    border-radius: 4px;
-    transition: background 0.1s ease;
-    cursor: pointer;
-      }
-
-      #id_donation_type_recurring:checked + .checkbox-overlay-quickpay,
-      #id_donation_type_recurring:not(:checked) + .checkbox-overlay-quickpay {
-        position: relative;
-        background-color: $white;
-        margin-right: 20px;
-        width: 44px;
-        height: 44px;
-        border: none;
-        box-shadow: none;
-        transition: background 0.1s ease;
-        cursor: pointer;
-        &:after {
-          content: "";
-          position: absolute;
-          width: 23px;
-          height: 38px;
-          top: 0;
-          left: 11px;
-          opacity: 0;
-          transform: rotate(45deg) scale(0);
-          border-right: 4px solid white;
-          border-bottom: 4px solid white;
-          transition: opacity 0.2s ease, transform 0.4s ease;
-        }
-      }
-
-      #id_donation_type_recurring:checked ~ .checkbox-overlay,
-      #retired_checkbox:checked ~ .checkbox-overlay {
-        background: #37b34a;
-        &:after {
-          opacity: 1;
-          transform: rotate(45deg) scale(1);
-        }
-      }
-      .checkbox-label {
-        flex: 1;
-        padding-left: 30px;
-        color: #fff;
-        font-weight: 700;
-      cursor: pointer;
       }
     }
   }
@@ -357,24 +264,25 @@ body.donate-page {
     display: inline-block;
     text-align: right;
     font-weight: 400;
+
     a {
       width: 100%;
     }
   }
+
   .credit-card-icons-container {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
   }
 
-  .check-link, .paypal-link-or {
+  .check-link,
+  .paypal-link-or {
     display: none;
-
     @media (min-width: $bp-md) {
       display: inline-block;
     }
   }
-
 
   .container {
     @media (min-width: $bp-md) {
@@ -383,119 +291,12 @@ body.donate-page {
   }
 
   .donation-container {
-    display: flex;
-    flex-flow: column nowrap;
-    @media screen and (min-width: $bp-md) {
-      flex-flow: row wrap;
-    }
+    // display: flex;
+    // flex-flow: column nowrap;
+    // @media screen and (min-width: $bp-md) {
+    //   flex-flow: row wrap;
+    // }
   }
-
-  .donation-container-quickpay {
-    background-color: rgb(243, 243, 243);
-    border-top: 1px solid #CCCCCC;
-    color: rgb(85, 85, 85);
-    padding: 30px;
-    h3 {
-      font-family: "Source Sans Pro", Helvetica, Arial;
-      font-size: 27px;
-      font-weight: 400;
-
-    }
-    p {
-
-      margin: 0 0 12.5px;
-    }
-    #quickpay-amounts {
-      p {
-
-        margin: 0 0 12.5px;
-      }
-      button.btn {
-        background: #296ecb;
-        border-top: 0;
-        border-left: 0;
-        border-radius: 4px;
-        color: #fff;
-        font-size: 2em;
-        font-weight: bold;
-        margin: 0 0.5em 0.5em 0;
-        padding: 0.5em 0.75em;
-      }
-      .btn-group {
-        position: relative;
-        display: inline-block;
-        vertical-align: middle;
-      }
-      #other_amount_container label {
-        background-color: transparent;
-box-shadow: none;
-color: #296ECB;
-display: flex;
-    flex-direction: row;
-    align-items: center;
-font-size: 18px;
-line-height: 40px;
-margin: 0 0 0.5em 0;
-position: relative;
-text-shadow: none;
-transition: all .15s linear;
-width: 100%;
-.currency_sym {
-  font-size: 2em;
-line-height: 2em;
-left: 0.5em;
-position: absolute;
-text-align: center;
-width: 30px;
-}
-#amount_other_field {
-  box-shadow: none;
-    font-size: 2em;
-    line-height: 2em;
-    padding-bottom: 1px;
-    padding-top: 1px;
-    padding-left: 1.25em;
-    width: 5em;
-    height: auto;
-    border: 1px solid #CCCCCC;
-    border-left-color: #a9a9a9;
-    border-top-color: #a9a9a9;
-    border-radius: 3px;
-    color: #555555;
-    margin: 0;
-    padding: 6px 12px 6px 50px;
-    max-width: 100%;
-    transition: all .15s linear;
-    -webkit-appearance: none;
-}
-      }
-      #other-amount-submit {
-        background: #296ecb;
-        color: white;
-        font-size: 2em;
-        margin: 0 0.5em 0.5em 0;
-        border-top: 0;
-        border-left: 0;
-        display: inline-block;
-        font-weight: bold;
-        padding: 0.5em 0.75em;
-        border: 1px solid #296ECB;
-        border-right: 1px solid #193F92;
-        border-bottom: 1px solid #193F92;
-        border-radius: 3px;
-        box-shadow: none;
-        line-height: 30px;
-        text-transform: uppercase;
-        transition: all .15s linear;
-        font-size: 2em;
-        &:disabled {
-          background-color: #719eda;
-          color: white;
-        }
-      }
-    }
-  }
-
 
   .custom-radio-payment {
     font-weight: normal !important;
@@ -507,6 +308,8 @@ width: 30px;
     padding: 0;
     margin: 0;
     background-color: $white;
+    width: 102%;
+
     input {
       display: none;
     }
@@ -517,6 +320,7 @@ width: 30px;
       @media screen and (min-width: $bp-md) {
         width: 32%;
       }
+
       label {
         background: $moriginal-gray-light;
         color: $black;
@@ -529,19 +333,22 @@ width: 30px;
         text-align: center;
         line-height: 2.25em;
       }
+
       label:hover {
         background: $azure;
         color: $white;
       }
+
       label.ak-radio-checked {
         background-color: $azure;
       }
     }
 
     li#other_amount_container {
-      box-shadow: inset 0px 0px 0px 2px black;
+      box-shadow: inset 0 0 0 2px black;
       margin-right: 2px;
       padding: 0 10px;
+
       label {
         background: none;
         color: $black;
@@ -549,7 +356,6 @@ width: 30px;
         text-align: left;
         top: 2px;
       }
-
       @media screen and (min-width: $bp-md) {
         width: 65%;
       }
@@ -565,8 +371,9 @@ width: 30px;
           width: 75%;
         }
       }
-      input.amount_other_field::-webkit-input-placeholder,
+
       input.amount_other_field:-ms-input-placeholder,
+      input.amount_other_field::-webkit-input-placeholder,
       input.amount_other_field::placeholder {
         /* Edge */
         font-weight: 100;
@@ -599,10 +406,10 @@ width: 30px;
         }
       }
     }
-
     /* ---product templateset specific styles--- */
     li#other-amount-container-product {
       width: auto;
+
       label {
         background: none;
         color: $moriginal-blue-medium;
@@ -611,10 +418,12 @@ width: 30px;
         text-align: left;
         width: auto;
       }
+
       span.currency_sym {
         float: left;
-      margin-right: 0.5em;
+        margin-right: 0.5em;
       }
+
       input.amount_other_field {
         float: left;
         margin-bottom: 1em;
@@ -625,16 +434,11 @@ width: 30px;
     /* ---end product templateset specific styles ---*/
   }
 
-
   .donation-container .checkbox input[type="checkbox"] {
     height: 25px;
     width: 25px;
   }
 
-  .donation-legal > div {
-    background: white;
-    // background: $moriginal-gray-light;
-  }
   .faded {
     color: $moriginal-gray-medium;
   }
@@ -645,18 +449,8 @@ width: 30px;
   }
 
   .form-section {
-    display: flex;
-    flex-flow: column nowrap;
-    width: 100%;
-    @media screen and (min-width: $bp-md) {
-      width: 50%;
-      flex: 1 1 0;
-    }
     input {
       background-color: $white;
-      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==);
-      background-repeat: no-repeat;
-      background-attachment: scroll;
       background-size: 16px 18px;
       background-position: 98% 50%;
       border: 2px solid black;
@@ -670,6 +464,7 @@ width: 30px;
       width: 100%;
       cursor: text;
     }
+
     select {
       display: block;
       width: 100%;
@@ -683,8 +478,19 @@ width: 30px;
       border: 2px solid black;
       border-radius: 0;
     }
-    .form-section--wrapper.form-section--billing {
-      margin-top: 30px;
+
+    .form-section--billing {
+      border-top: 0 !important;
+      margin-top: 15px;
+      border: none;
+      flex-flow: column;
+      @media screen and (min-width: $bp-md) {
+        border-left: 1px solid $moriginal-gray-lighter;
+        border-top: 0 !important;
+        margin-top: 0;
+        float: right;
+        width: 50%;
+      }
 
       h3 {
         font-family: "Roboto Condensed", sans-serif;
@@ -692,6 +498,11 @@ width: 30px;
         font-weight: 600;
         margin-bottom: 30px;
       }
+
+      input {
+        background-image: none;
+      }
+
       label {
         text-transform: uppercase;
         font-weight: 700;
@@ -701,32 +512,16 @@ width: 30px;
       label[for="retired_checkbox"] {
         text-transform: none;
         color: $black;
-    }
-    }
-
-      .form-section--wrapper.form-section--billing {
-        border-left: 1px solid $moriginal-gray-lighter;
-        border-top: 0 !important;
-        margin-top: 0;
-      }
-
-      .billing-desktop {
-        display: none;
-        @media screen and (min-width: $bp-md) {
-          display: flex;
-          flex-flow: column nowrap;
-        }
-      }
-      .billing-mobile {
-        display: flex;
-        @media screen and (min-width: $bp-md) {
-          display: none;
-        }
       }
     }
   }
 
   .form-section--donation {
+    @media screen and (min-width: $bp-md) {
+      float: left;
+      width: 50%;
+    }
+
     h3 {
       font-family: "Roboto Condensed", sans-serif;
       font-size: 27px;
@@ -738,8 +533,11 @@ width: 30px;
 
   .form-section--payment {
     @media screen and (min-width: $bp-md) {
-      padding-top: 40px;
+      float: left;
+      width: 50%;
+      margin-top: 40px;
     }
+
     h3 {
       font-family: "Roboto Condensed", sans-serif;
       color: $black;
@@ -757,19 +555,56 @@ width: 30px;
     padding-left: 8px;
     padding-right: 8px;
   }
+
+  .footer-container {
+    width: 100%;
+  }
+
   .help-block {
     font-size: 0.75em;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #959595;
   }
+
   .hidden {
     display: none;
   }
+
+  .hosted-field {
+    border: 2px solid black;
+  }
+
+  .donation-legal {
+    margin: 50px auto auto;
+
+    > div {
+      background-color: #f3f3f3;
+    }
+  }
+
   .legal {
+    color: #555555;
+    font-size: 16px;
     padding: 40px;
     @media screen and (min-width: $bp-md) and (max-width: 800px) {
       padding: 40px 100px;
     }
     @media screen and (min-width: 800px) {
-      padding: 40px 250px;
+      padding: 40px;
+    }
+
+    a {
+      color: $azure;
+      text-decoration: underline;
+    }
+
+    h4 {
+      color: #000000;
+      font-size: 24px;
+      font-weight: 400;
+      margin-bottom: 12.5px;
     }
   }
 
@@ -788,55 +623,97 @@ width: 30px;
   .modal {
     display: none;
   }
-  .moveon-amount {
-    .candidate-details {
-      font-weight: bold;
-      color: $moriginal-blue-medium;
-    }
+
+  .navbar-default {
+    z-index: 10;
   }
 
   .navbar {
-    max-height: 65px;
-    box-shadow: 0 2px 2px rgba(0,0,0,0.25);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .25);
     background: none;
     border: none;
     min-height: 60px;
+    position: fixed;
     top: 0;
     background-color: #fff;
     width: 100%;
     z-index: 100;
-    margin-bottom: 30px;
-    position: relative;
-    @media screen and (min-width: bp-md) {
-    max-height: 79px;
+    @media screen and (min-width: $bp-md) {
+      margin-bottom: 35px;
+      position: relative;
+    }
   }
+
+  .navbar-header {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    width: 100%;
+    z-index: 10;
+    height: 70px;
+    @media screen and (min-width: $bp-md) {
+      min-width: 210px;
+    }
+    @media screen and (min-width: $bp-md) {
+      min-width: 264px;
+    }
   }
-  .navbar-header .logo {
+
+  a.navbar-brand {
+    max-width: 240px;
+    height: auto;
+    width: 100%;
+    margin-left: -30px;
+    @media screen and (min-width: $bp-md) {
+      width: 100%;
+    }
+    @media screen and (min-width: $bp-md) {
+      max-width: 264px;
+    }
+  }
+
+  .navbar {
+    a.navbar-brand {
+      margin-top: 10px;
+      margin-left: 0;
+    }
+  }
+
+  .navbar .logo,
+  .navbar .mo-logo-new {
     display: block;
     fill: inherit;
-    height: 45px;
+    height: 80px;
     left: 50%;
     position: absolute;
     -ms-transform: translateX(-50%);
-    top: 27px;
+    top: 9.5px;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     width: 180px;
     z-index: 1000;
-    @media screen and (min-width: $bp-md) {
-        top: 56px;
-        height: 80px;
+    @media screen and (max-width: 750px) {
+      .navbar {
+        a.navbar-brand {
+          margin-left: 0;
+          margin-top: 5px;
+        }
+      }
     }
-    img {
-      max-width: 140px;
-      display: block;
-      margin: auto;
-    }
+  }
+
+  .candidate-details {
+    font-weight: bold;
+    color: $moriginal-blue-medium;
   }
 
   .payment-border {
     border-top: 1px solid gray;
   }
+
   .payment-checkbox {
     display: inline-block;
     width: 50px;
@@ -856,8 +733,10 @@ width: 30px;
   .payment-options-header {
     padding-top: 20px;
   }
+
   .payment-select {
     margin: 9px 0;
+
     label {
       border-radius: 0;
       font-family: "Roboto";
@@ -874,73 +753,88 @@ width: 30px;
         font-size: 30px;
         height: 50px;
       }
+
       span {
         width: calc(100% - 50px);
         display: inline-flex;
         align-items: center;
         justify-content: center;
+
         img {
           height: 35px;
         }
         @media (min-width: $bp-md) {
           width: calc(100% - 50px);
+
           img {
             height: 35px;
           }
         }
       }
     }
+
     label[for="credit-card"] {
       color: $white;
       background: $cerulean;
       font-size: 18px;
+
       input {
         background: $cerulean;
       }
+
       span {
         padding-left: 23px;
       }
     }
+
     label[for="ach"] {
       color: $white;
       background: $cerulean;
       font-size: 18px;
+
       input {
         background: $cerulean;
       }
+
       span {
         padding-left: 23px;
       }
     }
+
     label[for="paypal"] {
       color: $white;
       background: $light-gold;
+
       input {
         background: $cerulean;
       }
+
       span {
         padding-left: 23px;
       }
     }
+
     label[for="apple"] {
       background: $black;
     }
 
-    [type="radio"]:not(:checked),
-    [type="radio"]:checked {
+    [type="radio"]:checked,
+    [type="radio"]:not(:checked) {
       position: absolute;
       left: 0;
       opacity: 0.01;
     }
-    [type="radio"]:not(:checked) + label,
-    [type="radio"]:checked + label {
+
+    [type="radio"]:checked + label,
+    [type="radio"]:not(:checked) + label {
       position: relative;
       padding-left: 2.3em;
       line-height: 1.7;
       cursor: pointer;
     }
-    [type="radio"]:not(:checked) + label:before,
-    [type="radio"]:checked + label:before {
+
+    [type="radio"]:checked + label:before,
+    [type="radio"]:not(:checked) + label:before {
       content: "";
       position: absolute;
       left: 0;
@@ -955,10 +849,9 @@ width: 30px;
         height: 50px;
       }
     }
-
     /* checked mark aspect */
-    [type="radio"]:not(:checked) + label:after,
-    [type="radio"]:checked + label:after {
+    [type="radio"]:checked + label:after,
+    [type="radio"]:not(:checked) + label:after {
       content: url("https://s3.amazonaws.com/s3.moveon.org/images/checkmark.svg");
       position: absolute;
       left: 3px;
@@ -981,7 +874,6 @@ width: 30px;
     [type="radio"]:checked + label {
       border: 3px solid $azure;
     }
-
     /* checked mark aspect changes */
     [type="radio"]:not(:checked) + label:after {
       opacity: 0;
@@ -994,10 +886,9 @@ width: 30px;
       -webkit-transform: scale(1) rotate(0);
       transform: scale(1) rotate(0);
     }
-
     /* Disabled radio */
-    [type="radio"]:disabled:not(:checked) + label:before,
-    [type="radio"]:disabled:checked + label:before {
+    [type="radio"]:disabled:checked + label:before,
+    [type="radio"]:disabled:not(:checked) + label:before {
       box-shadow: none;
       border-color: $medium-light-gray;
       background-color: $light-gray;
@@ -1010,12 +901,10 @@ width: 30px;
     [type="radio"]:disabled + label {
       color: $medium-light-gray;
     }
-
     /* Accessibility */
     [type="checkbox"]:checked:focus + label:before,
     [type="checkbox"]:not(:checked):focus + label:before {
-      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1),
-        0 0 0 6px rgba(203, 34, 237, 0.2);
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 0 6px rgba(203, 34, 237, 0.2);
     }
   }
 
@@ -1025,26 +914,31 @@ width: 30px;
     margin-right: 0;
     margin-left: 0;
   }
+
   .security-icons {
     text-align: center;
     color: $medium-dark-gray;
     text-transform: uppercase;
     padding-top: 6px;
+
     div {
       display: block;
       @media screen and (min-width: $bp-md) {
         display: inline-block;
       }
     }
+
     img {
       height: 20px;
     }
+
     span {
       padding-top: 4px;
       padding-right: 10px;
       padding-left: 2px;
     }
   }
+
   .select-payment-header {
     display: flex;
     flex-flow: row nowrap;
@@ -1058,10 +952,12 @@ width: 30px;
   #ach-panel {
     .radio-btn {
       display: flex;
+
       [type=radio] {
         width: auto;
         margin-top: 5px;
       }
+
       label {
         font-size: 16px;
         font-weight: 400;
@@ -1069,28 +965,34 @@ width: 30px;
         margin-left: 20px;
       }
     }
+
     #ak-mandate {
       margin-bottom: 30px;
       width: 90%;
     }
   }
+
   #act-form-container {
     margin: 0 auto;
     width: 100%;
   }
+
   #ak-exp_date-hosted {
     width: 100%;
     @media (min-width: $bp-md) {
       width: 50%;
     }
   }
+
   #amount_list .donation-header {
     font-weight: bold;
   }
 
-  div#amount_list ul.ak-unstyled li, label.ak-btn {
+  div#amount_list ul.ak-unstyled li,
+  label.ak-btn {
     width: 95px;
   }
+
   #amount_other_field {
     &:focus {
       box-shadow: none;
@@ -1103,11 +1005,11 @@ width: 30px;
     }
   }
 
-
   #candidate_list {
     .candidate-details {
       width: 80%;
     }
+
     .candidate-portrait {
       float: left;
       margin: 0 1em 1em 0;
@@ -1115,22 +1017,20 @@ width: 30px;
   }
 
   #card_num_box {
-    .wf-icon {
-      font-size: 1.5em;
-      line-height: 1em;
+    img {
+      vertical-align: bottom;
     }
-    .icon-lock {
-      color: $moriginal-gray-medium;
-      font-size: 1em;
-    }
+
     label {
       display: block;
     }
-    .col-md-8,
-    .col-md-4 {
+
+    .col-md-4,
+    .col-md-8 {
       padding: 0;
       margin-bottom: 5px;
     }
+
     .cc-icons {
       float: right;
     }
@@ -1138,6 +1038,7 @@ width: 30px;
     .wf-icon.matched {
       color: $moriginal-green-medium;
     }
+
     .wf-icon:before {
       margin: 0;
     }
@@ -1145,6 +1046,7 @@ width: 30px;
 
   #custom-donate-split {
     max-width: 500px;
+
     .amount-with-currency {
       min-height: 42px;
       padding-right: 50%;
@@ -1155,6 +1057,7 @@ width: 30px;
         padding-top: 5px;
         padding-bottom: 5px;
       }
+
       input {
         float: left;
       }
@@ -1177,21 +1080,28 @@ width: 30px;
     }
   }
 
+  #donation-link-onetime {
+    float: none;
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0;
+    @media (min-width: $bp-md) {
+      margin-top: 30px;
+      margin-bottom: -32px;
+    }
+  }
+
   #name {
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==);
-    background-repeat: no-repeat;
-    background-attachment: scroll;
+    background-image: none;
     background-size: 16px 18px;
     background-position: 98% 50%;
     cursor: auto;
   }
 
   #other-amount-container-label {
-      margin-top: 30px;
-      margin-bottom: 7px;
-    }
-
-
+    margin-top: 30px;
+    margin-bottom: 7px;
+  }
 
   #paypal-button-desktop {
     background-color: $paypal-blue;
@@ -1208,13 +1118,16 @@ width: 30px;
     display: inline-block;
     width: 75%;
   }
+
   #product_list {
     .mobile-quantity-label {
       display: none;
     }
+
     .product-amount {
       white-space: nowrap;
     }
+
     .product-header {
       text-align: center;
     }
@@ -1227,6 +1140,7 @@ width: 30px;
       height: auto;
       width: 100%;
     }
+
     .product-name {
       font-weight: 600;
     }
@@ -1251,14 +1165,17 @@ width: 30px;
       .product-row {
         flex-direction: column;
       }
+
       .mobile-quantity-label {
         display: block;
       }
+
       .product-description img {
         height: auto;
         width: 50%;
         margin: 0 auto;
       }
+
       #product-table-headers {
         display: none;
       }
@@ -1269,24 +1186,26 @@ width: 30px;
     th.product-amount {
       white-space: nowrap;
     }
+
     th#product-details-header {
       text-align: center;
     }
   }
-
   /* --Specific to product pages using the product templateset --*/
   div#product_list_product {
+    td.product-amount,
     td.product-details,
     td.product-quantity,
-    td.product-amount,
-    th#product-quantity-header,
+    th#product-amount-header,
     th#product-details-header,
-    th#product-amount-header {
+    th#product-quantity-header {
       padding: 0.5em;
     }
+
     table {
       margin-bottom: 1em;
     }
+
     th#product-details-header {
       text-align: left;
     }
@@ -1294,394 +1213,32 @@ width: 30px;
   /* --end product templateset specific styles -- */
   #save_payment_information {
     span {
+      color: #b0b0b0;
       font-size: 15px;
       font-weight: 400;
     }
   }
+
   #save_payment_information_checkbox {
     height: 15px;
     width: 15px;
   }
+
   #total_div {
     clear: both;
   }
+
   #total-span {
     color: $moriginal-green-medium;
   }
-
-.donation-legal {
-  width: 75%;
-  background-color: white;
-  color: #555555;
-  font-family: "Source Sans Pro", Helvetica, Arial;
-  font-size: 16px;
-  margin: auto;
-  a {
-    color: $azure;
-    text-decoration: underline;
-  }
-  h4 {
-    color: #000000;
-    font-size: 24px;
-    font-weight: 400;
-    margin-bottom: 12.5px;
-  }
 }
 
-
-
-body.donation-pagetype.thanks-page {
-  color: #555555;
-  padding-top: 0px;
-  p {
-    font-size: 18px;
-  }
-  .container {
-    padding: 0 !important;
-  }
-
-  h2 {
-    font-weight: 200;
-    font-size: 64px;
-    margin-left: -3px;
-    text-transform: none;
-  }
-
-  table {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 25px;
-    background-color: transparent;
-    border-collapse: collapse;
-    border-spacing: 0;
-    td {
-      padding: 8px;
-    line-height: 1.4;
-    vertical-align: top;
-    border-top: 1px solid #ddd;
-    }
-  }
-
-  .mo-logo-new {
-    max-width: 170px;
-    position: relative;
-    top: 2px;
-  }
-  // Kill the scroll on the body
-.modal-open {
-  overflow: hidden;
-}
-
-// Container that the modal scrolls within
-.modal {
-  display: none;
-  overflow: hidden;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1000;
-  -webkit-overflow-scrolling: touch;
-
-  // Prevent Chrome on Windows from adding a focus outline. For details, see
-  // https://github.com/twbs/bootstrap/pull/10951.
-  outline: 0;
-
-  // When fading in the modal, animate it to slide down
-  &.fade .modal-dialog {
-    transform: translate(0, -25%);
-  transition-transform: (0.3s ease-out);
-  }
-  &.in .modal-dialog { transform: translate(0, 0) }
-}
-.modal-open .modal {
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-// Shell div to position the modal with bottom padding
-.modal-dialog {
-  position: relative;
-  width: 600px;
-    margin: 30px auto;
-}
-
-// Actual modal
-.modal-content {
-  position: relative;
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.2); //old browsers fallback (ie8 etc)
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
-  box-shadow: 0 3px 9px rgba(0,0,0,.5);
-  background-clip: padding-box;
-  // Remove focus outline from opened modal
-  outline: 0;
-}
-
-// Modal background
-.modal-backdrop {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 999;
-  background-color: #000;
-  // Fade for backdrop
-  &.fade { opacity: 0; }
-  &.in { opacity: 0.5; }
-}
-
-// Modal header
-
-// Close icon
-.modal-header .close {
-  margin-top: -2px;
-}
-
-// Modal body
-// Where all modal content resides (sibling of .modal-header and .modal-footer)
-.modal-body {
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-  position: relative;
-  color: rgb(85, 85, 85);
-  padding: 15px;
-  input[type="submit"].btn-block {
-    width: 100%;
-    -webkit-appearance: button;
-    cursor: pointer;
-    border: none;
-    color: #fff;
-    background-color: #193f92;
-    margin-bottom: 0;
-    font-weight: normal;
-    text-align: center;
-    vertical-align: middle;
-    touch-action: manipulation;
-    white-space: nowrap;
-    padding: 6px 12px;
-    font-size: 18px;
-    line-height: 1.428571429;
-    border-radius: 4px;
-  }
-  .close {
-
-    float: right;
-    font-size: 27px;
-    font-weight: bold;
-    line-height: 1;
-    color: #000;
-    text-shadow: 0 1px 0 #fff;
-    opacity: 0.2;
-    button {
-      padding: 0;
-cursor: pointer;
-background: transparent;
-border: 0;
--webkit-appearance: none;
-    }
-  }
-  .form-group {
-    margin-bottom: 15px;
-    label {
-      text-align: right;
-    margin-bottom: 0;
-    padding-top: 7px;
-    width: 25%;
-    font-size: 18px;
-    display: inline-block;
-    font-weight: bold;
-    }
-    > div {
-      display: inline-block;
-      width: 72%;
-      padding: 0;
-    }
-    input {
-
-      border: 1px solid #CCCCCC;
-    border-left-color: #a9a9a9;
-    border-top-color: #a9a9a9;
-    border-radius: 3px;
-    box-shadow: 0 0 0 rgba(41, 110, 203, 25%);
-    color: #555555;
-    font-size: 16px;
-    height: auto;
-    line-height: 25px;
-    margin: 0;
-    padding: 6px 12px;
-    max-width: 100%;
-    width: 100%;
-    transition: all .15s linear;
-    -webkit-appearance: none;
-    }
-  }
-  .hide {
-    display: none !important;
-  }
-}
-
-  .navbar {
-    max-height: 65px;
-    box-shadow: 0 2px 2px rgba(0,0,0,0.25);
-    background: none;
-    border: none;
-    min-height: 60px;
-    top: 0;
-    background-color: #fff;
-    width: 100%;
-    z-index: 100;
-    margin-bottom: 30px;
-    position: relative;
-    @media screen and (min-width: bp-md) {
-    max-height: 79px;
-  }
-  }
-  .navbar-header {
-    display: block;
-    fill: inherit;
-    height: 45px;
-    left: 50%;
-    position: absolute;
-    -ms-transform: translateX(-50%);
-    top: 27px;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    width: 180px;
-    z-index: 1000;
-    @media screen and (min-width: $bp-md) {
-        // top: 56px;
-        height: 80px;
-    }
-    img {
-      max-width: 140px;
-      display: block;
-      margin: auto;
-    }
-  }
-
-  #thankyou {
-
-    text-transform: none;
-    font-weight: bold;
-    font-size: 3em;
-  }
-
-    .donationthanks-makeitmonthly {
-    margin: 0;
-    box-shadow: 0 0 20px $moriginal-gray-medium;
-    h3 {
-      width: 100%;
-      font-weight: 600;
-      background-color: $moriginal-gray-light;
-      font-size: 20px;
-      padding: 10px 15px;
-    }
-    #upsell-amount-choices {
-      a.btn {
-        background-color: #1055dc;
-        display: inline-block;
-        margin-bottom: 0;
-        font-weight: normal;
-        text-align: center;
-        text-transform: none;
-        vertical-align: middle;
-        touch-action: manipulation;
-        cursor: pointer;
-        border: 1px solid transparent;
-        white-space: nowrap;
-        padding: 6px 12px;
-        font-size: 18px;
-        line-height: 1.428571429;
-        border-radius: 4px;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        color: #fff;
-        border-color: #15367c;
-      }
-    }
-
-    form#mimother_link {
-      /*get them all on the same line*/
-      .input-group {
-        display: flex;
-        justify-content: flex-end;
-      }
-
-      .input-group-btn {
-        font-size: 0;
-        white-space: nowrap;
-      }
-      .mo-label {
-        border: none;
-        width: auto;
-        box-shadow: unset;
-        margin-right: 5px;
-        padding: 6px;
-        font-size: .8em;
-        font-weight: bold;
-      }
-
-      .currency_sym {
-        z-index: 3;
-        color: $moriginal-blue-medium;
-        padding-top: 7px;
-        margin-right: -17px;
-      }
-      [type=submit] {
-        background-color: #1055dc;
-        border-color: #15367c;
-        border: 1px solid transparent;
-        border-radius: 4px;
-        border-bottom-left-radius: 0;
-        border-top-left-radius: 0;
-        color: #fff;
-        cursor: pointer;
-        display: inline-block;
-        font-size: 18px;
-        font-weight: normal;
-        line-height: 1.428571429;
-        margin-bottom: 0;
-        padding: 6px 12px;
-        text-align: center;
-        text-transform: none;
-        touch-action: manipulation;
-        vertical-align: middle;
-        white-space: nowrap;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-      input[type=text] {
-        background-color: #fff;
-        border: 1px solid #ccc;
-        border-top-left-radius: 3px;
-        border-bottom-left-radius: 3px;
-        color: #878787;
-        font-size: 18px;
-        height: 39px;
-        line-height: 1.428571429;
-        padding: 6px 12px;
-        width: 5em;
-        z-index: 2;
-      }
-    }
-
-    @media screen and (min-width: $bp-md) {
-      margin-top: -50px;
-    }
-  }
-}
 .test-class {
   background: $white;
   margin-bottom: -10px;
   width: 105%;
   font-size: 25px !important;
+
   a {
     display: inline !important;
   }

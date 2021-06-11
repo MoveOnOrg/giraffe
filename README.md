@@ -12,12 +12,16 @@ To generate a new encrypted secret_access_key, install the travis command line t
 
 Setting ENV=production in .env ensures that assets are minified in tktktkgulp tasks that run before deployment. To uglify, set ENV=LOCAL before running `gulp` or `gulp watch`.
 
-## Evolving specific comps into a design system 
+## Evolving specific comps into a design system
 
-We ultimately want giraffe to encompass a library of base styles (a design system) that we apply to pages and tweak or build on only as necessary to make them fit any specific designs. That being said, in the interest of rebrand timing, we must implement certain comps in this repo exactly as they are before setting base styles that we can override. So we will namespace the CSS corresponding to those comps/pages with the goal of adding base styles and styleguide components as we flesh out the styleguide, checking the namespaced pages for regressions. 
+We ultimately want giraffe to encompass a library of base styles (a design system) that we apply to pages and tweak or build on only as necessary to make them fit any specific designs. That being said, in the interest of rebrand timing, we must implement certain comps in this repo exactly as they are before setting base styles that we can override. So we will namespace the CSS corresponding to those comps/pages with the goal of adding base styles and styleguide components as we flesh out the styleguide, checking the namespaced pages for regressions.
 
 Ultimately we want to replace as much CSS as possible with the design system CSS, to keep main.css as lean as possible.
 
 ## External documentation
 
 [MoveOn's custom WordPress theme](https://github.com/MoveOnOrg/front-wordpress) implements giraffe and has [documentation on how to manually configure key content on a site running the theme](https://github.com/MoveOnOrg/front-wordpress/blob/main-giraffe/wp-content/themes/moveon2018/CONTENT-MANAGEMENT.md).
+
+TEMP:
+update current stylesheet on test template set:
+ aws s3 cp compiled.css s3://static.moveon.org/giraffe/styles/giraffe_refactor-site.css --acl public-read
