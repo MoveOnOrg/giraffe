@@ -72,6 +72,7 @@ body {
   @import "mo-components/blurb";
   @import "mo-components/searchbar";
   @import "mo-components/social";
+  @import "components/smarty-streets";
 
   // PER PAGE COMPONENTS
 
@@ -89,7 +90,6 @@ body {
 @import "pages/petition";
 @import "pages/donate";
 @import "pages/recurring-update";
-@import 'pages/survey';
 
 // MO OVERRIDES and REGRESSION FIXES
 @import "mo-components/fixes";
