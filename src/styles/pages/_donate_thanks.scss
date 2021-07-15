@@ -490,4 +490,39 @@ body.donation-pagetype.thanks-page {
       margin-top: -50px;
     }
   }
+
+  .donation-legal {
+    margin: 50px auto auto;
+
+    > div {
+      background-color: #f3f3f3;
+    }
+  }
+
+  .legal {
+    color: #555555;
+    font-size: 16px;
+    padding: 40px;
+    @media screen and (min-width: $bp-md) {
+      padding: 40px 100px;
+    }
+
+    a {
+      color: $azure;
+      text-decoration: underline;
+    }
+
+    h4 {
+      color: #000000;
+      font-size: 24px;
+      font-weight: 400;
+      margin-bottom: 12.5px;
+    }
+  }
+
+  .legal .small {
+    border: none;
+    text-align: left;
+    padding: 0;
+  }
 }

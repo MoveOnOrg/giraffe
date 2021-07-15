@@ -6,6 +6,8 @@ html {
 }
 
 body.donate-page {
+  font-size: 18px;
+  line-height: 1.428571429;
   padding-top: 0;
 
   a {
@@ -557,6 +559,8 @@ body.donate-page {
   }
 
   .footer-container {
+    margin: 0 auto;
+    max-width: 1170px;
     width: 100%;
   }
 
@@ -588,11 +592,8 @@ body.donate-page {
     color: #555555;
     font-size: 16px;
     padding: 40px;
-    @media screen and (min-width: $bp-md) and (max-width: 800px) {
+    @media screen and (min-width: $bp-md) {
       padding: 40px 100px;
-    }
-    @media screen and (min-width: 800px) {
-      padding: 40px;
     }
 
     a {
