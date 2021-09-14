@@ -508,6 +508,9 @@ form {
     }
   }
   .input-block {
+    .bold-label {
+      font-weight: bold;
+    }
     .input-white {
       background: $white;
       border: none;
@@ -524,9 +527,6 @@ form {
         position:relative;
         width:100%;
         top:0;
-      }
-      .bold-label {
-        font-weight: bold;
       }
     }
     &.active {
