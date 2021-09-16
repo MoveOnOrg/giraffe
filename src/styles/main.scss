@@ -81,7 +81,6 @@ body {
 @import "pages/donate";
 @import "pages/donate_quickpay";
 @import "pages/donate_thanks";
-@import "pages/recurring-update";
-@import 'pages/survey'; // MO OVERRIDES and REGRESSION FIXES
+@import "pages/recurring-update"; // @import 'pages/survey'; // MO OVERRIDES and REGRESSION FIXES
 @import "mo-components/fixes"; // VENDOR OVERRIDES
 @import "trumps/flickity";
