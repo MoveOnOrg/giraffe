@@ -1,4 +1,3 @@
-<!-- test commit -->
 # MoveOn
 
 For development please read **CONTRIBUTING.md**.
