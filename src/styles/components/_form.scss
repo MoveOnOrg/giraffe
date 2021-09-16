@@ -425,6 +425,11 @@ form {
         margin-left: 10px;
       }
 
+      &.cta {
+        width:100%;
+        font-size:24px;
+      }
+
       &.azure {
         @include btn--azure;
 
