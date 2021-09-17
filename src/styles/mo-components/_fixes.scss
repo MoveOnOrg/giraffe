@@ -11,10 +11,6 @@
 
 /* Fixes to regressions in Red Peak comp'ed pages introduced by changes to giraffe base styles */
 
-p.donate-form__agreement {
-  margin: 0 !important;
-}
-
 p.home-hero__body {
   margin-bottom: 0;
   @include respond((
@@ -50,230 +46,6 @@ form .input-block:not(:first-of-type) {
     margin-top: 2.25rem;
 }
 
-/* moui overrides
-*/
-
-body.donate-page {
-  @media screen and (min-width: $bp-md) {
-    .header {
-      .logo {
-        left: 15%;
-      }
-    }
-  }
-
-  .mo-nav {
-    display: none;
-  }
-
-  form {
-    input[type=radio],
-    input[type=checkbox] {
-      margin: 0;
-    }
-
-    &.donate-form {
-      .input-block  {
-        color: $black;
-
-        label {
-          color: $light-gray;
-        }
-      }
-    }
-
-    button[type=submit] {
-      margin-top: 28px;
-      background-color: $azure;
-      color: $white;
-    }
-  }
-
-  .alt-payment-links {
-    float: right;
-    margin-top: 4px;
-    font-size: 14px;
-    line-height: 20px;
-
-    @media (min-width: $bp-lg) {
-      margin-top: 8px;
-    }
-
-    a {
-      color: $azure;
-    }
-
-    .paypal-link-container {
-      display: inline-block;
-    }
-
-    .check-link,
-    .paypal-link-or {
-      display: none;
-
-      @media (min-width: $bp-lg) {
-        display: inline-block;
-      }
-    }
-
-    .check-link {
-      margin-top: 0;
-    }
-  }
-
-  .donate-form {
-    &__subheading {
-      color: $black;
-      font-weight: bold;
-      text-transform: none;
-      letter-spacing: inherit;
-    }
-
-    .known-user {
-      margin: 10px 0;
-    }
-
-    .candidate-row {
-      padding: 5px;
-    }
-
-    .candidate-amount {
-      margin-top: 0;
-    }
-
-    .candidate-details {
-      line-height: 36px;
-    }
-
-    .total-split {
-      font-weight: bold;
-    }
-
-    .moveon-amount {
-      .candidate-details {
-        color: $black;
-        font-weight: normal;
-      }
-    }
-
-    .cc-placeholder {
-      height: 40px;
-      width: 100%;
-      border: none;
-      background: transparent;
-    }
-
-    
-    .productslist {
-      h3 {
-        padding-bottom: 10px;
-      }
-
-      table {
-        border-collapse: collapse;
-      }
-    }
-
-    .productheader {
-      th {
-        padding: 5px 0 10px;
-      }
-    }
-
-    .amountother {
-      position: relative;
-    }
-
-    .otherlabel {
-      position: absolute;
-      top: 14px;
-      left: 10px;
-    }
-
-    .productquantity input[type="number"],
-    .amount_other_field {
-      appearance: none;
-      background: transparent;
-      height: 50px;
-      border: 1px solid rgba(0, 0, 0, .54);
-      margin-right: 20px;
-      padding: 0 8px;
-      width: 70px;
-      color: rgba(0, 0, 0, .54);
-      font-size: 16px;
-      line-height: 20px;
-    }
-
-    .amount_other_field {
-      width: 100%;
-      padding-left: 20px;
-    }
-
-    .productquantity {
-      .checkboxinput {
-        margin: auto;
-        width: 20px;
-      }
-    }
-
-    .productdetails {
-      padding: 10px 0;
-
-      .inputhelper {
-        margin: 0;
-      }
-    }
-
-  }
-
-  #donation-link-onetime {
-    float: right;
-    margin-top: 30px;
-    margin-bottom: -32px;
-    font-size: 18px;
-  }
-
-  ul.ak-err > li {
-    padding: 10px;
-  }
-}
-
-/* donate-page v3 radios
-*/
-.giraffe {
-  .donate-v3 {
-    .donate-form {
-      .price-select {
-        max-width: 300px;
-
-        .radio-input {
-          width: 30%;
-          min-width: 90px;
-
-          &:nth-child(2),
-          &:nth-child(3),
-          &:nth-child(5),
-          &:nth-child(6) {
-            @include respond((
-              margin-left: 0 0 0,
-            ));
-          }
-        }
-
-        .radio-input-other {
-          @include respond((
-            margin-left: 0 0 0,
-          ));
-
-          @media screen and (max-width: $bp-lg) {
-            width: 157px;
-          }
-        }
-      }
-    }
-  }
-}
-
 /* Homepage join form fixes */
 
 .subscribe-sms-conditions {
@@ -282,17 +54,17 @@ body.donate-page {
 }
 
 .subscribe-sms-conditions.dimmed {
-  opacity: 0.5;  
+  opacity: 0.5;
 }
 
 /* object-fit fix for IE11 */
 
 .img-container {
-  
+
     &.compat-object-fit {
         background-size: cover;
         background-position: center center;
-   
+
         img { // hide image if object fit is not supported
             opacity: 0;
         }

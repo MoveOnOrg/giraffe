@@ -1,9 +1,7 @@
 // SETTINGS
 @import "settings/breakpoints";
 @import "settings/colors";
-@import "settings/typography";
-
-// MIXINS
+@import "settings/typography"; // MIXINS
 @import "bootstrap/mixins/float";
 @import "bootstrap/mixins/hover";
 @import "bootstrap/mixins/text-emphasis";
@@ -13,9 +11,7 @@
 @import "mixins/respond";
 @import "mixins/aspect-ratio";
 @import "mixins/clearfix";
-@import "mixins/buttons";
-
-// CONFIGS
+@import "mixins/buttons"; // CONFIGS
 @include define-breakpoints($breakpoints);
 
 html {
@@ -36,11 +32,9 @@ body {
   @import "bootstrap/utilities/sizing";
   @import "bootstrap/utilities/spacing";
   @import "bootstrap/utilities/text";
-
   // UTILITY CLASSES
   @import "mo-utilities/color-classes";
   @import "mo-utilities/borders";
-
   // COMPONENTS
   @import "components/container";
   @import "mo-components/content-block";
@@ -57,7 +51,6 @@ body {
   @import "mo-components/modal";
   @import "components/form";
   @import "components/media";
-
   @import "components/header";
   @import "components/nav";
   @import "components/footer";
@@ -73,9 +66,7 @@ body {
   @import "mo-components/searchbar";
   @import "mo-components/social";
   @import "components/smarty-streets";
-
   // PER PAGE COMPONENTS
-
   @import "components/home-hero";
   @import "components/home-illustration";
   @import "components/home-carousel";
@@ -85,14 +76,11 @@ body {
   @import "components/petition-card";
   @import "components/petition-details";
 }
-
 // PAGE STYLES
 @import "pages/petition";
 @import "pages/donate";
-@import "pages/recurring-update";
-
-// MO OVERRIDES and REGRESSION FIXES
-@import "mo-components/fixes";
-
-// VENDOR OVERRIDES
+@import "pages/donate_quickpay";
+@import "pages/donate_thanks";
+@import "pages/recurring-update"; // @import 'pages/survey'; // MO OVERRIDES and REGRESSION FIXES
+@import "mo-components/fixes"; // VENDOR OVERRIDES
 @import "trumps/flickity";

@@ -1,10 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+
 html {
   max-width: 100%;
 }
 
 body.donate-page {
+  font-size: 18px;
+  line-height: 1.428571429;
+  padding-top: 0;
+
   a {
     color: $azure;
     text-decoration: underline;
@@ -24,7 +29,6 @@ body.donate-page {
     border: none;
     @media (min-width: $bp-md) {
       font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
-      padding: 0;
     }
   }
 
@@ -32,10 +36,19 @@ body.donate-page {
     display: block;
   }
 
+  checkbox {
+    label {
+      font-size: 15px;
+    }
+  }
+
   div[role="main"] {
-    padding-top: 60px;
+    padding-top: 96px;
     padding-left: 0;
     padding-right: 0;
+    @media (min-width: $bp-md) {
+      padding-top: 0;
+    }
   }
 
   h3 {
@@ -43,19 +56,14 @@ body.donate-page {
     font-weight: 700;
   }
 
-  input[type=text] {
-    cursor: text;
-  }
-
-  label {
-    margin-bottom: 5px;
-    color: $moriginal-gray-dark;
-    font-weight: 700;
-    font-size: 18px;
-  }
   .form-section--wrapper .form-group label {
     margin-bottom: 0 !important;
   }
+
+  button[type="submit"] {
+    margin: 0 auto;
+  }
+
   form {
     padding: 10px 22px;
     @media (min-width: $bp-md) {
@@ -74,6 +82,7 @@ body.donate-page {
     h3 {
       font-family: "Roboto Condensed", sans-serif;
     }
+
     input {
       font-size: 18px;
       line-height: 1.428571429;
@@ -83,14 +92,27 @@ body.donate-page {
       height: 39px;
     }
 
-    button[type="submit"] {
-      margin: 0 auto;
+    input[type=radio] {
+      height: auto;
+      display: inline-block;
+    }
+
+    input[type=text] {
+      cursor: text;
+    }
+
+    label {
+      margin-bottom: 5px;
+      color: $moriginal-gray-dark;
+      font-weight: 700;
+      font-size: 18px;
     }
 
     .form-group {
       margin-bottom: 15px;
     }
   }
+
   [type="radio"]:checked + label,
   [type="radio"]:not(:checked) + label {
     display: flex;
@@ -103,7 +125,6 @@ body.donate-page {
     margin-top: 4px;
     font-size: 14px;
     line-height: 20px;
-
     @media (min-width: $bp-md) {
       margin-top: 8px;
     }
@@ -115,8 +136,8 @@ body.donate-page {
 
     .alert,
     ul#ak-errors > li,
-    ul.errorlist > li,
-    ul.ak-err > li {
+    ul.ak-err > li,
+    ul.errorlist > li {
       padding: 0;
     }
 
@@ -124,29 +145,12 @@ body.donate-page {
       display: inline-block;
     }
   }
+
   .alt-payment-links + h3 {
     font-family: "Roboto Condensed", sans-serif;
     margin-top: 0;
   }
-  .apple-pay-button {
-    padding-top: 5px;
-    display: inline-block;
-    width: 2px;
-    -webkit-appearance: -apple-pay-button;
-    -apple-pay-button-type: check-out; /* also: check-out, book, or subscribe */
-  }
-  .apple-pay-button-black {
-    padding-top: 5px;
-    -apple-pay-button-style: black;
-  }
-  .apple-pay-button-white {
-    padding-top: 5px;
-    -apple-pay-button-style: white;
-  }
-  .apple-pay-button-white-with-line {
-    padding-top: 5px;
-    -apple-pay-button-style: white-outline;
-  }
+
   .ask-sub-text {
     font-family: "Roboto Condensed", sans-serif;
     background-color: $azure;
@@ -156,6 +160,12 @@ body.donate-page {
     text-align: center;
     padding: 15px;
     margin: 0 auto;
+    max-width: fit-content;
+
+    p {
+      margin-bottom: 0;
+    }
+
     p[style*="font-size: 80%"] {
       font-family: "Roboto", sans-serif;
       color: $black;
@@ -165,14 +175,9 @@ body.donate-page {
     }
   }
 
-  .ask-sub-text-quickpay {
-    background-color: $white;
-    width: 73%;
-    margin: 0 auto;
-  }
   h1.ask-text {
     color: $black;
-    margin: 0 0 1em 0;
+    margin: 0 0 1em;
     font-size: 1.25em;
     margin: 1em 0.5em 1em 0.5em !important;
 
@@ -190,26 +195,21 @@ body.donate-page {
     border-bottom-right-radius: 3px;
     transition: all 0.15s linear;
     font-size: 16px;
-    .checkbox-label {
-      @media (min-width: $bp-md) {
-        // font-size: 16px !important;
-      }
-    }
 
+    .checkbox-label {
+      @media (min-width: $bp-md) {}
+    }
     /* NOTE: :checked / :not() acts as a fallback for < ie8
       as they're ignored and the native checkbox should display */
     #id_donation_type_recurring:checked,
     #id_donation_type_recurring:not(:checked),
-    #save_payment_information_checkbox:checked,
-    #save_payment_information_checkbox:not(:checked),
     #retired_checkbox:checked,
     #retired_checkbox:not(:checked) {
       display: none;
     }
+
     #id_donation_type_recurring:checked + .checkbox-overlay,
     #id_donation_type_recurring:not(:checked) + .checkbox-overlay,
-    #save_payment_information_checkbox:checked + .checkbox-overlay,
-    #save_payment_information_checkbox:not(:checked) + .checkbox-overlay,
     #retired_checkbox:checked + .checkbox-overlay,
     #retired_checkbox:not(:checked) + .checkbox-overlay {
       position: relative;
@@ -219,6 +219,7 @@ body.donate-page {
       box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
       transition: background 0.1s ease;
       cursor: pointer;
+
       &:after {
         content: "";
         position: absolute;
@@ -234,36 +235,6 @@ body.donate-page {
       }
     }
 
-    #id_donation_type_recurring:checked + .checkbox-overlay-quickpay,
-    #id_donation_type_recurring:not(:checked) + .checkbox-overlay-quickpay,
-    #save_payment_information_checkbox:checked + .checkbox-overlay-quickpay,
-    #save_payment_information_checkbox:not(:checked)
-      + .checkbox-overlay-quickpay,
-    #retired_checkbox:checked + .checkbox-overlay-quickpay,
-    #retired_checkbox:not(:checked) + .checkbox-overlay-quickpay {
-      position: relative;
-      background-color: $white;
-      margin-right: 20px;
-      width: 44px;
-      height: 44px;
-      border: none;
-      box-shadow: none;
-      transition: background 0.1s ease;
-      cursor: pointer;
-      &:after {
-        content: "";
-        position: absolute;
-        width: 23px;
-        height: 38px;
-        top: 0;
-        left: 11px;
-        opacity: 0;
-        transform: rotate(45deg) scale(0);
-        border-right: 4px solid white;
-        border-bottom: 4px solid white;
-        transition: opacity 0.2s ease, transform 0.4s ease;
-      }
-    }
     .checkbox-label {
       flex: 1;
       padding-left: 10px;
@@ -275,57 +246,45 @@ body.donate-page {
       @media screen and (min-width: $bp-md) {
         font-size: 19px;
         width: 91%;
-        // padding-left: 20px;
         display: inline-block;
       }
     }
 
-    .checkbox-label-quickpay {
-      font-family: "Roboto";
-      font-style: normal;
-      font-weight: bold;
-      font-size: 22px;
-      line-height: 26px;
-    }
-
     #id_donation_type_recurring:checked ~ .checkbox-overlay,
-    #retired_checkbox:checked ~ .checkbox-overlay,
-    #save_payment_information_checkbox:checked ~ .checkbox-overlay {
+    #retired_checkbox:checked ~ .checkbox-overlay {
       background: $azure;
+
       &:after {
         opacity: 1;
         transform: rotate(45deg) scale(1);
       }
     }
   }
-  .big-checkbox-row-quickpay {
-    margin-top: 20px;
-  }
-
 
   .check-link {
     margin-top: 0;
     display: inline-block;
     text-align: right;
     font-weight: 400;
+
     a {
       width: 100%;
     }
   }
+
   .credit-card-icons-container {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
   }
 
-  .check-link, .paypal-link-or {
+  .check-link,
+  .paypal-link-or {
     display: none;
-
     @media (min-width: $bp-md) {
       display: inline-block;
     }
   }
-
 
   .container {
     @media (min-width: $bp-md) {
@@ -334,15 +293,12 @@ body.donate-page {
   }
 
   .donation-container {
-    display: flex;
-    flex-flow: column nowrap;
-    @media screen and (min-width: $bp-md) {
-      flex-flow: row wrap;
-    }
+    // display: flex;
+    // flex-flow: column nowrap;
+    // @media screen and (min-width: $bp-md) {
+    //   flex-flow: row wrap;
+    // }
   }
-
-
-
 
   .custom-radio-payment {
     font-weight: normal !important;
@@ -354,6 +310,8 @@ body.donate-page {
     padding: 0;
     margin: 0;
     background-color: $white;
+    width: 102%;
+
     input {
       display: none;
     }
@@ -364,6 +322,7 @@ body.donate-page {
       @media screen and (min-width: $bp-md) {
         width: 32%;
       }
+
       label {
         background: $moriginal-gray-light;
         color: $black;
@@ -376,19 +335,22 @@ body.donate-page {
         text-align: center;
         line-height: 2.25em;
       }
+
       label:hover {
         background: $azure;
         color: $white;
       }
+
       label.ak-radio-checked {
         background-color: $azure;
       }
     }
 
     li#other_amount_container {
-      box-shadow: inset 0px 0px 0px 2px black;
+      box-shadow: inset 0 0 0 2px black;
       margin-right: 2px;
       padding: 0 10px;
+
       label {
         background: none;
         color: $black;
@@ -396,7 +358,6 @@ body.donate-page {
         text-align: left;
         top: 2px;
       }
-
       @media screen and (min-width: $bp-md) {
         width: 65%;
       }
@@ -412,8 +373,9 @@ body.donate-page {
           width: 75%;
         }
       }
-      input.amount_other_field::-webkit-input-placeholder,
+
       input.amount_other_field:-ms-input-placeholder,
+      input.amount_other_field::-webkit-input-placeholder,
       input.amount_other_field::placeholder {
         /* Edge */
         font-weight: 100;
@@ -446,10 +408,10 @@ body.donate-page {
         }
       }
     }
-
     /* ---product templateset specific styles--- */
     li#other-amount-container-product {
       width: auto;
+
       label {
         background: none;
         color: $moriginal-blue-medium;
@@ -458,11 +420,12 @@ body.donate-page {
         text-align: left;
         width: auto;
       }
+
       span.currency_sym {
         float: left;
-        // line-height: 2.2em;
         margin-right: 0.5em;
       }
+
       input.amount_other_field {
         float: left;
         margin-bottom: 1em;
@@ -473,15 +436,11 @@ body.donate-page {
     /* ---end product templateset specific styles ---*/
   }
 
-
   .donation-container .checkbox input[type="checkbox"] {
     height: 25px;
     width: 25px;
   }
 
-  .donation-legal > div {
-    background: $moriginal-gray-light;
-  }
   .faded {
     color: $moriginal-gray-medium;
   }
@@ -492,14 +451,48 @@ body.donate-page {
   }
 
   .form-section {
-    display: flex;
-    flex-flow: column nowrap;
-    width: 100%;
-    @media screen and (min-width: $bp-md) {
-      width: 50%;
+    input {
+      background-color: $white;
+      background-size: 16px 18px;
+      background-position: 98% 50%;
+      border: 2px solid black;
+      border-radius: 0;
+      color: $moriginal-gray-medium;
+      font-size: 18px;
+      height: 39px;
+      line-height: 1.428571429;
+      padding: 6px 12px;
+      transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+      width: 100%;
+      cursor: text;
     }
-    .form-section--wrapper.form-section--billing {
-      margin-top: 30px;
+
+    select {
+      display: block;
+      width: 100%;
+      height: 39px;
+      padding: 6px 12px;
+      font-size: 18px;
+      line-height: 1.428571429;
+      color: $moriginal-gray-medium;
+      background-color: $white;
+      background-image: none;
+      border: 2px solid black;
+      border-radius: 0;
+    }
+
+    .form-section--billing {
+      border-top: 0 !important;
+      margin-top: 15px;
+      border: none;
+      flex-flow: column;
+      @media screen and (min-width: $bp-md) {
+        border-left: 1px solid $moriginal-gray-lighter;
+        border-top: 0 !important;
+        margin-top: 0;
+        float: right;
+        width: 50%;
+      }
 
       h3 {
         font-family: "Roboto Condensed", sans-serif;
@@ -507,6 +500,11 @@ body.donate-page {
         font-weight: 600;
         margin-bottom: 30px;
       }
+
+      input {
+        background-image: none;
+      }
+
       label {
         text-transform: uppercase;
         font-weight: 700;
@@ -516,63 +514,16 @@ body.donate-page {
       label[for="retired_checkbox"] {
         text-transform: none;
         color: $black;
-    }
-        input {
-          background-color: $white;
-          background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==);
-          background-repeat: no-repeat;
-          background-attachment: scroll;
-          background-size: 16px 18px;
-          background-position: 98% 50%;
-          border: 2px solid black;
-          border-radius: 0;
-          color: $moriginal-gray-medium;
-          font-size: 18px;
-          height: 39px;
-          line-height: 1.428571429;
-          padding: 6px 12px;
-          transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-          width: 100%;
-          cursor: text;
-        }
-        select {
-          display: block;
-          width: 100%;
-          height: 39px;
-          padding: 6px 12px;
-          font-size: 18px;
-          line-height: 1.428571429;
-          color: $moriginal-gray-medium;
-          background-color: $white;
-          background-image: none;
-          border: 2px solid black;
-          border-radius: 0;
-        }
-    }
-
-      .form-section--wrapper.form-section--billing {
-        border-left: 1px solid $moriginal-gray-lighter;
-        border-top: 0 !important;
-        margin-top: 0;
-      }
-
-      .billing-desktop {
-        display: none;
-        @media screen and (min-width: $bp-md) {
-          display: flex;
-          flex-flow: column nowrap;
-        }
-      }
-      .billing-mobile {
-        display: flex;
-        @media screen and (min-width: $bp-md) {
-          display: none;
-        }
       }
     }
   }
 
   .form-section--donation {
+    @media screen and (min-width: $bp-md) {
+      float: left;
+      width: 50%;
+    }
+
     h3 {
       font-family: "Roboto Condensed", sans-serif;
       font-size: 27px;
@@ -584,9 +535,11 @@ body.donate-page {
 
   .form-section--payment {
     @media screen and (min-width: $bp-md) {
-      padding-top: 40px;
+      float: left;
+      width: 50%;
+      margin-top: 40px;
     }
-    // border-top: 1px solid $moriginal-gray-lighter;
+
     h3 {
       font-family: "Roboto Condensed", sans-serif;
       color: $black;
@@ -595,47 +548,7 @@ body.donate-page {
       display: inline-block;
     }
   }
-  .form-section--quickpay {
-      background-color: $thin-air;
-      color: $black;
-      font-style: normal;
-      margin: 0 auto 67px;
-      padding: 35px 12px;
-      text-align: center;
-      width: 100%;
-      h3 {
-        font-family: "Roboto Condensed";
-        font-size: 32px;
-        font-weight: bold;
-      }
-      p {
-        font-family: "Roboto", "Roboto Condensed";
-        font-size: 22px;
-        font-weight: normal;
-      }
-      .help-block {
-        font-size: 0.65em;
-      }
-      .faded-quickpay {
-        color: $black;
-        font-family: "Roboto";
-        font-style: normal;
-        font-weight: normal;
-        font-size: 18px;
-        letter-spacing: -0.02em;
-        margin: 35px 0;
-      }
-      @media screen and (min-width: $bp-md) and (max-width: 800px) {
-        padding: 35px 40px;
-        width: 100%;
-        text-align: left;
-      }
-      @media screen and (min-width: 800px) {
-        padding: 35px 40px;
-        width: 53%;
-        text-align: left;
-      }
-    }
+
   .form-section--submit {
     text-align: center;
   }
@@ -644,19 +557,55 @@ body.donate-page {
     padding-left: 8px;
     padding-right: 8px;
   }
+
+  .footer-container {
+    margin: 0 auto;
+    max-width: 1170px;
+    width: 100%;
+  }
+
   .help-block {
     font-size: 0.75em;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #959595;
   }
+
   .hidden {
     display: none;
   }
+
+  .hosted-field {
+    border: 2px solid black;
+  }
+
+  .donation-legal {
+    margin: 50px auto auto;
+
+    > div {
+      background-color: #f3f3f3;
+    }
+  }
+
   .legal {
+    color: #555555;
+    font-size: 16px;
     padding: 40px;
-    @media screen and (min-width: $bp-md) and (max-width: 800px) {
+    @media screen and (min-width: $bp-md) {
       padding: 40px 100px;
     }
-    @media screen and (min-width: 800px) {
-      padding: 40px 250px;
+
+    a {
+      color: $azure;
+      text-decoration: underline;
+    }
+
+    h4 {
+      color: #000000;
+      font-size: 24px;
+      font-weight: 400;
+      margin-bottom: 12.5px;
     }
   }
 
@@ -665,29 +614,107 @@ body.donate-page {
     text-align: left;
     padding: 0;
   }
-  .logo {
-    top: 20px;
-    img {
-      max-width: 140px;
-      display: block;
-      margin: auto;
-    }
-  }
 
+  .mo-logo-new {
+    max-width: 170px;
+    position: relative;
+    top: 2px;
+  }
 
   .modal {
     display: none;
   }
-  .moveon-amount {
-    .candidate-details {
-      font-weight: bold;
-      color: $moriginal-blue-medium;
+
+  .navbar-default {
+    z-index: 10;
+  }
+
+  .navbar {
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .25);
+    background: none;
+    border: none;
+    min-height: 60px;
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    width: 100%;
+    z-index: 100;
+    @media screen and (min-width: $bp-md) {
+      margin-bottom: 35px;
+      position: relative;
     }
+  }
+
+  .navbar-header {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    width: 100%;
+    z-index: 10;
+    height: 70px;
+    @media screen and (min-width: $bp-md) {
+      min-width: 210px;
+    }
+    @media screen and (min-width: $bp-md) {
+      min-width: 264px;
+    }
+  }
+
+  a.navbar-brand {
+    max-width: 240px;
+    height: auto;
+    width: 100%;
+    margin-left: -30px;
+    @media screen and (min-width: $bp-md) {
+      width: 100%;
+    }
+    @media screen and (min-width: $bp-md) {
+      max-width: 264px;
+    }
+  }
+
+  .navbar {
+    a.navbar-brand {
+      margin-top: 10px;
+      margin-left: 0;
+    }
+  }
+
+  .navbar .logo,
+  .navbar .mo-logo-new {
+    display: block;
+    fill: inherit;
+    height: 80px;
+    left: 50%;
+    position: absolute;
+    -ms-transform: translateX(-50%);
+    top: 9.5px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    width: 180px;
+    z-index: 1000;
+    @media screen and (max-width: 750px) {
+      .navbar {
+        a.navbar-brand {
+          margin-left: 0;
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+
+  .candidate-details {
+    font-weight: bold;
+    color: $moriginal-blue-medium;
   }
 
   .payment-border {
     border-top: 1px solid gray;
   }
+
   .payment-checkbox {
     display: inline-block;
     width: 50px;
@@ -707,8 +734,10 @@ body.donate-page {
   .payment-options-header {
     padding-top: 20px;
   }
+
   .payment-select {
     margin: 9px 0;
+
     label {
       border-radius: 0;
       font-family: "Roboto";
@@ -725,56 +754,88 @@ body.donate-page {
         font-size: 30px;
         height: 50px;
       }
+
       span {
         width: calc(100% - 50px);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
         img {
           height: 35px;
         }
         @media (min-width: $bp-md) {
           width: calc(100% - 50px);
+
           img {
             height: 35px;
           }
         }
       }
     }
+
     label[for="credit-card"] {
       color: $white;
       background: $cerulean;
       font-size: 18px;
+
       input {
         background: $cerulean;
       }
+
       span {
         padding-left: 23px;
       }
     }
-    label[for="paypal"] {
+
+    label[for="ach"] {
       color: $white;
-      background: $light-gold;
+      background: $cerulean;
+      font-size: 18px;
+
       input {
         background: $cerulean;
       }
+
+      span {
+        padding-left: 23px;
+      }
     }
+
+    label[for="paypal"] {
+      color: $white;
+      background: $light-gold;
+
+      input {
+        background: $cerulean;
+      }
+
+      span {
+        padding-left: 23px;
+      }
+    }
+
     label[for="apple"] {
       background: $black;
     }
 
-    [type="radio"]:not(:checked),
-    [type="radio"]:checked {
+    [type="radio"]:checked,
+    [type="radio"]:not(:checked) {
       position: absolute;
       left: 0;
       opacity: 0.01;
     }
-    [type="radio"]:not(:checked) + label,
-    [type="radio"]:checked + label {
+
+    [type="radio"]:checked + label,
+    [type="radio"]:not(:checked) + label {
       position: relative;
       padding-left: 2.3em;
       line-height: 1.7;
       cursor: pointer;
     }
-    [type="radio"]:not(:checked) + label:before,
-    [type="radio"]:checked + label:before {
+
+    [type="radio"]:checked + label:before,
+    [type="radio"]:not(:checked) + label:before {
       content: "";
       position: absolute;
       left: 0;
@@ -789,10 +850,9 @@ body.donate-page {
         height: 50px;
       }
     }
-
     /* checked mark aspect */
-    [type="radio"]:not(:checked) + label:after,
-    [type="radio"]:checked + label:after {
+    [type="radio"]:checked + label:after,
+    [type="radio"]:not(:checked) + label:after {
       content: url("https://s3.amazonaws.com/s3.moveon.org/images/checkmark.svg");
       position: absolute;
       left: 3px;
@@ -815,7 +875,6 @@ body.donate-page {
     [type="radio"]:checked + label {
       border: 3px solid $azure;
     }
-
     /* checked mark aspect changes */
     [type="radio"]:not(:checked) + label:after {
       opacity: 0;
@@ -828,10 +887,9 @@ body.donate-page {
       -webkit-transform: scale(1) rotate(0);
       transform: scale(1) rotate(0);
     }
-
     /* Disabled radio */
-    [type="radio"]:disabled:not(:checked) + label:before,
-    [type="radio"]:disabled:checked + label:before {
+    [type="radio"]:disabled:checked + label:before,
+    [type="radio"]:disabled:not(:checked) + label:before {
       box-shadow: none;
       border-color: $medium-light-gray;
       background-color: $light-gray;
@@ -844,12 +902,10 @@ body.donate-page {
     [type="radio"]:disabled + label {
       color: $medium-light-gray;
     }
-
     /* Accessibility */
     [type="checkbox"]:checked:focus + label:before,
     [type="checkbox"]:not(:checked):focus + label:before {
-      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1),
-        0 0 0 6px rgba(203, 34, 237, 0.2);
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 0 6px rgba(203, 34, 237, 0.2);
     }
   }
 
@@ -859,26 +915,31 @@ body.donate-page {
     margin-right: 0;
     margin-left: 0;
   }
+
   .security-icons {
     text-align: center;
     color: $medium-dark-gray;
     text-transform: uppercase;
     padding-top: 6px;
+
     div {
       display: block;
       @media screen and (min-width: $bp-md) {
         display: inline-block;
       }
     }
+
     img {
       height: 20px;
     }
+
     span {
       padding-top: 4px;
       padding-right: 10px;
       padding-left: 2px;
     }
   }
+
   .select-payment-header {
     display: flex;
     flex-flow: row nowrap;
@@ -888,19 +949,51 @@ body.donate-page {
   .sr-only {
     display: none;
   }
+
+  #ach-panel {
+    .radio-btn {
+      display: flex;
+
+      [type=radio] {
+        width: auto;
+        margin-top: 5px;
+      }
+
+      label {
+        font-size: 16px;
+        font-weight: 400;
+        display: inline;
+        margin-left: 20px;
+      }
+    }
+
+    #ak-mandate {
+      margin-bottom: 30px;
+      width: 90%;
+    }
+  }
+
+  #act-form-container {
+    margin: 0 auto;
+    width: 100%;
+  }
+
   #ak-exp_date-hosted {
     width: 100%;
     @media (min-width: $bp-md) {
       width: 50%;
     }
   }
+
   #amount_list .donation-header {
     font-weight: bold;
   }
 
-  div#amount_list ul.ak-unstyled li, label.ak-btn {
+  div#amount_list ul.ak-unstyled li,
+  label.ak-btn {
     width: 95px;
   }
+
   #amount_other_field {
     &:focus {
       box-shadow: none;
@@ -913,11 +1006,11 @@ body.donate-page {
     }
   }
 
-
   #candidate_list {
     .candidate-details {
       width: 80%;
     }
+
     .candidate-portrait {
       float: left;
       margin: 0 1em 1em 0;
@@ -925,22 +1018,20 @@ body.donate-page {
   }
 
   #card_num_box {
-    .wf-icon {
-      font-size: 1.5em;
-      line-height: 1em;
+    img {
+      vertical-align: bottom;
     }
-    .icon-lock {
-      color: $moriginal-gray-medium;
-      font-size: 1em;
-    }
+
     label {
       display: block;
     }
-    .col-md-8,
-    .col-md-4 {
+
+    .col-md-4,
+    .col-md-8 {
       padding: 0;
       margin-bottom: 5px;
     }
+
     .cc-icons {
       float: right;
     }
@@ -948,6 +1039,7 @@ body.donate-page {
     .wf-icon.matched {
       color: $moriginal-green-medium;
     }
+
     .wf-icon:before {
       margin: 0;
     }
@@ -955,6 +1047,7 @@ body.donate-page {
 
   #custom-donate-split {
     max-width: 500px;
+
     .amount-with-currency {
       min-height: 42px;
       padding-right: 50%;
@@ -965,11 +1058,11 @@ body.donate-page {
         padding-top: 5px;
         padding-bottom: 5px;
       }
+
       input {
         float: left;
       }
       @media screen and (min-width: $bp-md) {
-        //tk
         input {
           float: none;
         }
@@ -988,69 +1081,33 @@ body.donate-page {
     }
   }
 
+  #donation-link-onetime {
+    float: none;
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0;
+    @media (min-width: $bp-md) {
+      margin-top: 30px;
+      margin-bottom: -32px;
+    }
+  }
+
   #name {
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==);
-    background-repeat: no-repeat;
-    background-attachment: scroll;
+    background-image: none;
     background-size: 16px 18px;
     background-position: 98% 50%;
     cursor: auto;
   }
 
   #other-amount-container-label {
-      margin-top: 30px;
-      margin-bottom: 7px;
-    }
-    #other-amount-container-quickpay {
-      background-color: $white;
-      width: 100%;
-      height: 111px;
-
-      label {
-        width: 100%;
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: center;
-      }
-      span {
-        color: $black;
-        font-family: "Roboto Condensed";
-        font-style: normal;
-        font-weight: bold;
-        font-size: 48px;
-        padding: 25px 20px;
-        text-align: center;
-        letter-spacing: -0.02em;
-        @media screen and (min-width: $bp-md) {
-          font-size: 48px;
-          line-height: 56px;
-
-        }
-      }
-      input {
-        border: none;
-        box-shadow: none;
-        display: block;
-        width: 100%;
-        height: 39px;
-        padding: 6px 12px;
-        font-size: 18px;
-        line-height: 1.428571429;
-        color: $moriginal-gray-medium;
-        background-color: $white;
-        background-image: none;
-      }
-      input:focus {
-        box-shadow: none;
-      }
-    }
+    margin-top: 30px;
+    margin-bottom: 7px;
+  }
 
   #paypal-button-desktop {
     background-color: $paypal-blue;
     border-radius: 5px;
     box-shadow: 1px 1px $paypal-blue-dark;
-    //  display: none;
     padding: 10px;
     margin-top: 15px;
     @media screen and (min-width: $bp-md) {
@@ -1062,13 +1119,16 @@ body.donate-page {
     display: inline-block;
     width: 75%;
   }
+
   #product_list {
     .mobile-quantity-label {
       display: none;
     }
+
     .product-amount {
       white-space: nowrap;
     }
+
     .product-header {
       text-align: center;
     }
@@ -1081,6 +1141,7 @@ body.donate-page {
       height: auto;
       width: 100%;
     }
+
     .product-name {
       font-weight: 600;
     }
@@ -1102,229 +1163,83 @@ body.donate-page {
       margin: 15px;
     }
     @media (max-width: 768px) {
-      //smallest breakpoint in bootstrap 3.5.
       .product-row {
         flex-direction: column;
       }
+
       .mobile-quantity-label {
         display: block;
       }
+
       .product-description img {
         height: auto;
         width: 50%;
         margin: 0 auto;
       }
+
       #product-table-headers {
         display: none;
       }
     }
   }
 
-  #quickpay-amounts {
-    p {
-      margin-bottom: 0;
-    }
-    button.btn {
-      background-color: $white;
-      border: none;
-      border-radius: 0;
-      color: $black;
-      font-family: "Roboto Condensed";
-      font-size: 30px;
-      font-style: normal;
-      font-weight: bold;
-      text-align: center;
-      @media screen and (min-width: $bp-md) {
-        font-size: .7em;
-        font-size: 48px;
-        letter-spacing: -0.02em;
-      }
-
-    }
-    button.btn:hover {
-      background-color: $azure;
-      color: $white;
-    }
-    #quickpay-amount-buttons {
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: space-between;
-      width: 100%;
-      @media screen and (min-width: $bp-md) {
-        justify-content: flex-start;
-      }
-      .btn-group {
-        width: 95px;
-        height: 95px;
-        @media screen and (min-width: $bp-md) {
-          height: 111px;
-          width: 111px;
-          margin: 0 10px;
-          &:first-of-type {
-            margin-left: 0;
-          }
-        }
-        button {
-          background: $azure;
-          color: $white;
-          font-size: 38px;
-          height: 100%;
-          width: 100%;
-        }
-      }
-    }
-    #other-amount-container-label {
-      margin-top: 30px;
-      margin-bottom: 7px;
-    }
-    #other_amount_submit {
-      width: 75%;
-      background-color: $azure;
-      display: block;
-      font-family: "Roboto Condensed";
-      font-style: normal;
-      font-weight: bold;
-      font-size: 42px;
-      margin: 35px auto;
-      padding: 10px 20px;
-      position: relative;
-      text-align: center;
-
-      color: $white;
-      @media screen and (min-width: $bp-md) {
-        font-size: 42px;
-        width: auto;
-      }
-    }
-
-    .form-group label {
-      display: block;
-    }
-  }
-
-
-
   #product_list {
     th.product-amount {
       white-space: nowrap;
     }
+
     th#product-details-header {
       text-align: center;
     }
   }
-
   /* --Specific to product pages using the product templateset --*/
   div#product_list_product {
+    td.product-amount,
     td.product-details,
     td.product-quantity,
-    td.product-amount,
-    th#product-quantity-header,
+    th#product-amount-header,
     th#product-details-header,
-    th#product-amount-header {
+    th#product-quantity-header {
       padding: 0.5em;
     }
+
     table {
       margin-bottom: 1em;
     }
+
     th#product-details-header {
       text-align: left;
     }
   }
   /* --end product templateset specific styles -- */
+  #save_payment_information {
+    span {
+      color: #b0b0b0;
+      font-size: 15px;
+      font-weight: 400;
+    }
+  }
+
+  #save_payment_information_checkbox {
+    height: 15px;
+    width: 15px;
+  }
+
   #total_div {
     clear: both;
   }
+
   #total-span {
     color: $moriginal-green-medium;
   }
-
-.donation-legal {
-  /*out of body.donation-page*/
-  margin-top: 50px;
-  // width: 100vw;
-  // position: relative;
-  // left: 50%;
-  // right: 50%;
-  // margin-left: -50vw;
-  // margin-right: -50vw;
-
-  a {
-    color: $azure;
-    text-decoration: underline;
-  }
 }
 
-
-
-body.donation-pagetype.thanks-page {
-  .container {
-    padding: 56px 0 !important;
-  }
-
-  h2 {
-    font-weight: 200;
-    font-size: 64px;
-    margin-left: -3px;
-    text-transform: none;
-  }
-
-  // old make-it-monthly styles remaining for testing
-  .donationthanks-makeitmonthly {
-    margin: 0;
-    box-shadow: 0 0 20px $moriginal-gray-medium;
-
-    h3 {
-      width: 100%;
-      font-weight: 600;
-      background-color: $moriginal-gray-light;
-      font-size: 20px;
-      padding: 10px 15px;
-    }
-
-    form#mimother_link {
-      /*get them all on the same line*/
-      .mo-label {
-        float:right;
-        border:none;
-        width:auto;
-        box-shadow: unset;
-        margin-right: 5px;
-        padding: 6px;
-        font-weight: bold;
-        font-size: .7em;
-
-        @media screen and (min-width: $bp-md) {
-          font-size: .8em;
-        }
-      }
-
-      .currency_sym {
-        position: absolute;
-        top: 5px;
-        right: 146px;
-        left: auto;
-        z-index: 3;
-        color: $moriginal-blue-medium;
-      }
-
-      input[type=text] {
-       width:5em;
-       float:right;
-       border-top-left-radius: 3px;
-       border-bottom-left-radius: 3px;
-      }
-    }
-
-    @media screen and (min-width: $bp-md) {
-      margin-top: -50px;
-    }
-  }
-}
 .test-class {
   background: $white;
   margin-bottom: -10px;
   width: 105%;
   font-size: 25px !important;
+
   a {
     display: inline !important;
   }
