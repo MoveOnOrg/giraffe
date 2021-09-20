@@ -871,10 +871,6 @@ body.donate-page {
       height: 47px;
       width: 47px;
     }
-
-    [type="radio"]:checked + label {
-      border: 3px solid $azure;
-    }
     /* checked mark aspect changes */
     [type="radio"]:not(:checked) + label:after {
       opacity: 0;
