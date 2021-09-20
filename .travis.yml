@@ -1,36 +1,15 @@
-language: python
-python:
-- '3.6'
-dist: trusty
-before_install:
-- wget https://github.com/mozilla/geckodriver/releases/download/v0.19.1/geckodriver-v0.19.1-linux64.tar.gz
-- mkdir geckodriver
-- tar -xzf geckodriver-v0.19.1-linux64.tar.gz -C geckodriver
-- export PATH=$PATH:$PWD/geckodriver
-install:
-- pip install -r requirements.txt
+language: node_js
+node_js:
+- 8.4.0
 before_script:
-- export DISPLAY=:99.0
-- sh -e /etc/init.d/xvfb start
-- sleep 3
-script: aktemplates test tests
-notifications:
-  slack:
-    rooms:
-    - moveonorg:LgpahgoMRkw3Pmqnp8Y4xFyI#rebrand-implement
-    - moveonorg:LgpahgoMRkw3Pmqnp8Y4xFyI#rebrand-github-log
-    on_start: never
-    on_success: change
-    on_failure: change
-    template:
-    - Build <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) of %{repository_slug}@%{branch}
-      by %{author} %{result} in %{duration}. <https://s3.amazonaws.com/actionkit.moveon.org/test/projects/%{branch}/index.html|rendered>
+- npm install -g gulp-cli
+script: gulp
 before_deploy:
-- export STATIC_URL=https://static.moveon.org/
-- aktemplates runserver --verbosity 0 &>/dev/null &
-- sleep 3
-- wget --recursive --page-requisites --level=3 --convert-links --html-extension http://localhost:8000/
-  || true
+- cp -r public/images deploy/
+- cp -r public/scripts deploy/
+- cp -r public/styles deploy/
+- cp -r public/styleguide deploy/
+- cp -r public/*.html deploy/
 deploy:
   - provider: s3
     on:
