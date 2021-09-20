@@ -1,39 +1,46 @@
-language: node_js
-node_js:
-- 8.4.0
+language: python
+python:
+- '3.6'
+dist: trusty
+before_install:
+- wget https://github.com/mozilla/geckodriver/releases/download/v0.19.1/geckodriver-v0.19.1-linux64.tar.gz
+- mkdir geckodriver
+- tar -xzf geckodriver-v0.19.1-linux64.tar.gz -C geckodriver
+- export PATH=$PATH:$PWD/geckodriver
+install:
+- pip install -r requirements.txt
 before_script:
-- npm install -g gulp-cli
-script: gulp
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- sleep 3
+script: aktemplates test tests
+notifications:
+  slack:
+    rooms:
+    - moveonorg:LgpahgoMRkw3Pmqnp8Y4xFyI#rebrand-implement
+    - moveonorg:LgpahgoMRkw3Pmqnp8Y4xFyI#rebrand-github-log
+    on_start: never
+    on_success: change
+    on_failure: change
+    template:
+    - Build <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) of %{repository_slug}@%{branch}
+      by %{author} %{result} in %{duration}. <https://s3.amazonaws.com/actionkit.moveon.org/test/projects/%{branch}/index.html|rendered>
 before_deploy:
-- cp -r public/images deploy/
-- cp -r public/scripts deploy/
-- cp -r public/styles deploy/
-- cp -r public/styleguide deploy/
-- cp -r public/*.html deploy/
+- export STATIC_URL=https://static.moveon.org/
+- aktemplates runserver --verbosity 0 &>/dev/null &
+- sleep 3
+- wget --recursive --page-requisites --level=3 --convert-links --html-extension http://localhost:8000/
+  || true
 deploy:
-  - provider: s3
-    on:
-      branch: main
-    access_key_id: AKIAITZUUGIJNKLB4PHA
-    bucket: static.moveon.org
-    skip_cleanup: true
-    region: us-east-2
-    acl: public_read
-    cache_control: max-age=31536000
-    local_dir: deploy
-    upload-dir: giraffe
-    secret_access_key:
-      secure:  iUALB02yBqakz6BGi9QF7RCrfhjzel2VKO/6YQmYsxgTsPj9kVqHjutdyhqzNuX1lwiszqkZzU/FYiZ1j47MNYwqoo+SjlmjZEfGZdOBtgPzbSZfoYWRSqqszXAH7l5rxaF9m3/qXDUu3Esj5Eptwr/pe6dTViH0zAabOmFJUrw4hd4m635EkFeVODPiG2rgbTjHtVrg9GvG70bszB8j4PjyGPW/yNF9rXrIkVSh1oRftXxoaPoDGBcaj/s3KlXl3GFeYgL4ZH+qIpOLxh8s20FFh4jF+cfig1nC6lP051C1e/aMSDLnqHC+iGc42nFo4JOGhy0Xp4REO1BpDJ9kwAbKO8w5CirUc+J7+nWAq2TBrwi24jYzQ+zR1ejLIlFDNur3+V96p9eKS1CpFIYVxsMsQ37ldJ523kbuEnLn1Yd4h2tvnOeOsvCsQ5HzS/db8N4w5nEu9WL2Zz8p93dkl/pePkjmsI/HGsNFjjfroh+iNIbzW/xRaQzp/drOD8IbloyUUnT4OUEtTgmtNbg/GQjhGKSBYvzYdWzuCvc6S89PY6eiooVcepVjGmPHBJyrFNghAn23ln0CD3GZlDVoCvL0OZ8a/ZXU30vKm8jClQZ/4hjBSD8DFMiCrUpT/0+TeTg9eXSWdAsMNlUL1IHhBgHRx3cGxn/TyEPx1+R2gdE=
-
-  - provider: s3
-    on:
-      branch: main
-    access_key_id: AKIAITZUUGIJNKLB4PHA
-    bucket: mop-static-stage
-    skip_cleanup: true
-    region: us-west-1
-    acl: public_read
-    local_dir: deploy
-    upload-dir: giraffe
-    secret_access_key:
-      secure:  iUALB02yBqakz6BGi9QF7RCrfhjzel2VKO/6YQmYsxgTsPj9kVqHjutdyhqzNuX1lwiszqkZzU/FYiZ1j47MNYwqoo+SjlmjZEfGZdOBtgPzbSZfoYWRSqqszXAH7l5rxaF9m3/qXDUu3Esj5Eptwr/pe6dTViH0zAabOmFJUrw4hd4m635EkFeVODPiG2rgbTjHtVrg9GvG70bszB8j4PjyGPW/yNF9rXrIkVSh1oRftXxoaPoDGBcaj/s3KlXl3GFeYgL4ZH+qIpOLxh8s20FFh4jF+cfig1nC6lP051C1e/aMSDLnqHC+iGc42nFo4JOGhy0Xp4REO1BpDJ9kwAbKO8w5CirUc+J7+nWAq2TBrwi24jYzQ+zR1ejLIlFDNur3+V96p9eKS1CpFIYVxsMsQ37ldJ523kbuEnLn1Yd4h2tvnOeOsvCsQ5HzS/db8N4w5nEu9WL2Zz8p93dkl/pePkjmsI/HGsNFjjfroh+iNIbzW/xRaQzp/drOD8IbloyUUnT4OUEtTgmtNbg/GQjhGKSBYvzYdWzuCvc6S89PY6eiooVcepVjGmPHBJyrFNghAn23ln0CD3GZlDVoCvL0OZ8a/ZXU30vKm8jClQZ/4hjBSD8DFMiCrUpT/0+TeTg9eXSWdAsMNlUL1IHhBgHRx3cGxn/TyEPx1+R2gdE=
+  on:
+    all_branches: true
+  provider: s3
+  access_key_id: AKIA3AO6RW2Y3RZOP56E
+  bucket: actionkit.moveon.org
+  skip_cleanup: true
+  region: us-east-1
+  acl: public_read
+  local_dir: localhost:8000
+  upload-dir: test/projects/$TRAVIS_BRANCH
+  secret_access_key:
+    secure: sJQKnjZibJMwqv1ILyKCownHvTpEqbEmfwOlb0vp66M+aKq78PxYOWK1TreL/yb0H78oGZoX7dVKjCCgF0U2B4rBpGcCD/+Vc2v3nPomyEHZpAoESr4j/PzzsY4loOMohWJn0cDeBwWmitXybGo7U7YyDk3NqlG2SkwwFKloSAyIY7IyvhIyOWoY+Wq38O6I/83YpaitJdQm6lrvIFdN5TuS7zYBIXFBE/vQ64upTDqGO64vRuU08aA3F5f3nSDAClfuCJJeBPSolZ6WimDwIhrWcqWOUbv49jZZnenKZnMMh+112P2tYWmE9cKcFN+7H3XZu0ZM3Hws7Nm/HArlW42kAeixEjHkfcobmptx7oquKF20EGmF6kG7V0gPb3ijEfmvLP9/BGXjUxykBHDNoaHcR69sOpBnxrTeXIC1on9LB+oDQwHV3tRb4XcoMLmFqlqcDku+FtYUzsbV5Ia9g7JM/a974nvTHVihtJV7q/XyXIEp6uSqxEhnJHOEGYBYnXwqBR4btEKkA4uroLGTCjKPZco1Tk1h5VzLxqCrzhNFgo3i6H93GDCPcLDyMW8hF/9hQbzVriT8tzeqeUl+oMzpj/gm9/D20bWDch1hrlNbqKBwwg32Mf6m2GAp5Wmtt+a/iSRQYuJmGVtQOuB0BniqtMf0ihXfjS6ic6rjxzo=
