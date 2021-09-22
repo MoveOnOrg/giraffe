@@ -18,7 +18,7 @@ form {
   box-shadow: none;
 
   .hidden {
-    display: none;
+    display: none !important;
   }
 
   .input-block {
