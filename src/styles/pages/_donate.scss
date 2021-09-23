@@ -173,6 +173,16 @@ body.donate-page {
       text-align: center;
       background: $white;
     }
+
+    .ask-text-small {
+      font-size: 0.5em;
+      font-weight: 400;
+
+      a {
+        color: $black;
+        display: inline;
+      }
+    }
   }
 
   h1.ask-text {
