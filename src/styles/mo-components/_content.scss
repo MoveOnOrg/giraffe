@@ -6,18 +6,21 @@ p {
   margin-bottom: 1em;
 }
 
-small, .small {
-  font-size: .8em;
+.small,
+small {
+  font-size: 0.8em;
   font-weight: normal;
   line-height: 1em;
 }
 
-large, .large {
+.large,
+large {
   font-size: 1.2em;
   font-weight: normal;
 }
 
-b, .bold {
+.bold,
+b {
   font-weight: bold;
   @include font(roboto-bold);
 }
@@ -28,34 +31,33 @@ img {
 }
 
 .text-align-center {
-  text-align:center;
+  text-align: center;
 }
 
 .text-align-left {
-  text-align:left;
+  text-align: left;
 }
 
 .text-align-right {
-  text-align:right;
+  text-align: right;
 }
 
 .text-align-center-desktop-left-mobile {
-  text-align:center;
-
+  text-align: center;
   @media only screen and (max-width: 650px) {
-		text-align:left;
-	}
+    text-align: left;
+  }
 }
 
 .fine-print {
-  font-size: .8em !important;
+  font-size: 0.8em !important;
   line-height: 1.5em !important;
   font-weight: normal !important;
 
   &.fine-print-message {
     font-family: 'Roboto', sans-serif;
     font-style: italic;
-    font-size: .8em !important;
+    font-size: 0.8em !important;
     line-height: 1.5em !important;
     font-weight: normal !important;
     padding-top: 5px;
@@ -66,15 +68,15 @@ img {
     right: 0;
     top: 0;
     color: black;
-    padding-right: 1.5rem !important; /* matches p-4 padding for contact info block */
+    padding-right: 1.5rem !important;
+    /* matches p-4 padding for contact info block */
   }
 
   &.lost-pages-incontentblock {
     position: relative;
     text-align: right;
     margin-top: -20px;
-    padding-top: 0px;
-
+    padding-top: 0;
     @media only screen and (max-width: 768px) {
       text-align: left;
     }
@@ -84,4 +86,23 @@ img {
     text-align: center;
   }
 }
-
+@media (max-width: 767px) {
+  .hidden-xs {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .hidden-md {
+    display: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  .hidden-lg {
+    display: none !important;
+  }
+}
