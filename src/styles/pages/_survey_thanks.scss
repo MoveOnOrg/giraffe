@@ -1,0 +1,10 @@
+body.survey-pagetype.thanks-page {
+  padding-top: 75px;
+  @media screen and (min-width: $bp-md) {
+    padding-top: 150px;
+  }
+
+  .text-info {
+    color: #0098AD; //giraffe has #17a2b8 for .text-info but Brianna says it should be darker teal for this page.
+  }
+}
