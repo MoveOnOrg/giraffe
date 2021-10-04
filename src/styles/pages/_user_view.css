@@ -14,43 +14,35 @@
 }
 
 body.user_view {
-  color: #000000;
-  font-family: Roboto Condensed;
-  font-style: normal;
-  text-align: left;
-
-  a {
-    font-weight: 700;
-    color: #357FBA;
-
-    &:hover {
-      text-decoration: underline;
-    }
-
-    &:visited {
-      color: #357FBA;
-    }
-  }
-
-  button {
-    background: #00ABFF;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 6px 17px;
-    text-align: center;
-    text-transform: uppercase;
+  #account-dashboard {
+    color: #000000;
+    font-family: Roboto Condensed;
+    font-style: normal;
+    text-align: left;
 
     a {
-      color: #fff;
-      text-decoration: none;
+      font-weight: 700;
+      color: #357FBA;
 
       &:hover {
-        color: #fff;
-        text-decoration: none;
+        text-decoration: underline;
       }
 
       &:visited {
+        color: #357FBA;
+      }
+    }
+
+    button {
+      background: #00ABFF;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 6px 17px;
+      text-align: center;
+      text-transform: uppercase;
+
+      a {
         color: #fff;
         text-decoration: none;
 
@@ -58,49 +50,59 @@ body.user_view {
           color: #fff;
           text-decoration: none;
         }
+
+        &:visited {
+          color: #fff;
+          text-decoration: none;
+
+          &:hover {
+            color: #fff;
+            text-decoration: none;
+          }
+        }
+      }
+
+      &:hover {
+        background: #357FBA;
       }
     }
 
-    &:hover {
-      background: #357FBA;
+    h1 {
+      font-size: 42px;
+      font-weight: bold;
     }
-  }
 
-  h1 {
-    font-size: 42px;
-    font-weight: bold;
-  }
+    h2 {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
 
-  h2 {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 0;
-  }
+    h3 {
+      font-size: 22px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
 
-  h3 {
-    font-size: 22px;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
+    h4 {
+      font-size: 22px;
+      font-weight: bold;
+    }
 
-  h4 {
-    font-size: 22px;
-    font-weight: bold;
-  }
+    p {
+      font-family: Roboto;
+      font-weight: normal;
+      font-size: 22px;
+    }
 
-  p {
-    font-family: Roboto;
-    font-weight: normal;
-    font-size: 22px;
-  }
+    nav {
+      background: #CAF4FF;
+      display: flex;
 
-  nav {
-    background: #CAF4FF;
-    display: flex;
-
-    img {
-      padding-right: 4px;
-      padding-top: 1px;
+      img {
+        padding-right: 4px;
+        padding-top: 1px;
+      }
     }
   }
 
