@@ -839,6 +839,8 @@ body.donate-page.donate {
     [type="radio"]:checked + label,
     [type="radio"]:not(:checked) + label {
       position: relative;
+      padding-top: 25px;
+      padding-bottom: 25px;
       padding-left: 2.3em;
       line-height: 1.7;
       cursor: pointer;
@@ -1049,6 +1051,10 @@ body.donate-page.donate {
     .wf-icon:before {
       margin: 0;
     }
+  }
+
+  #cc-panel {
+    margin-top: 20px;
   }
 
   #custom-donate-split {
