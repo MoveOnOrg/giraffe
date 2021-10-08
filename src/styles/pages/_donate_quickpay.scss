@@ -4,6 +4,7 @@ body.donate-page {
     color: black;
     margin: 0 auto 1em;
     text-align: center;
+    width: 73%;
   }
 
   #act-form-container.quickpay-form {
@@ -65,13 +66,15 @@ body.donate-page {
       color: #fff;
       font-size: 34px;
       font-weight: bold;
-      margin: 0;
-      padding: 0.5em 0.6em;
+      width: 100%;
+      // margin: 0;
+      // padding: 0.5em 0.6em;
       // margin: 0 0.5em 0.5em 0;
-      @media (min-width: $bp-md) {
+      @media (min-width: $bp-lg) {
         font-size: 48px;
-        margin: 0 0.5em 0.5em 0;
-        min-width: 0;
+        // margin: 0 0.5em 0.5em 0;
+        // min-width: 0;
+        // padding: 0.5em;
         padding: 0.5em 0.75em;
       }
 
@@ -113,13 +116,13 @@ body.donate-page {
           cursor: pointer;
           // border: 1px solid #999;
           // border-radius: 4px;
-          height: 44px;
+          height: 43px;
           // height: 25px;
           left: 5px;
           margin-bottom: 0;
           position: relative;
           transition: background 0.1s ease;
-          width: 44px;
+          width: 43px;
           // width: 25px;
           &:after {
             // border-bottom: 4px solid #fff;
@@ -152,10 +155,24 @@ body.donate-page {
     }
 
     .btn-group {
-      display: inline-block;
+      display: flex;
+      flex: 1;
+      margin: 5px;
+      // display: inline-block;
       // margin: 0 0.5em 0.5em 0;
       position: relative;
       vertical-align: middle;
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+      @media (min-width: $bp-lg) {
+        flex: none;
+      }
     }
 
     #amount_other_field {
