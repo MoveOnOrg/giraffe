@@ -9,8 +9,6 @@ body.donate-page {
 
   #act-form-container.quickpay-form {
     background-color: #CAF4FF;
-    // background-color: #f3f3f3;
-    // border-top: 1px solid #CCCCCC;
     color: $black;
     padding: 0;
     width: 100%;
@@ -25,7 +23,6 @@ body.donate-page {
       }
 
       h3 {
-        // font-family: "Source Sans Pro", Helvetica, Arial;
         font-size: 32px;
         font-weight: 400;
       }
@@ -59,22 +56,14 @@ body.donate-page {
 
     button.btn {
       background: #00ABFF;
-      // background: #296ecb;
       border-top: 0;
       border-left: 0;
-      // border-radius: 4px;
       color: #fff;
       font-size: 34px;
       font-weight: bold;
       width: 100%;
-      // margin: 0;
-      // padding: 0.5em 0.6em;
-      // margin: 0 0.5em 0.5em 0;
       @media (min-width: $bp-lg) {
         font-size: 48px;
-        // margin: 0 0.5em 0.5em 0;
-        // min-width: 0;
-        // padding: 0.5em;
         padding: 0.5em 0.75em;
       }
 
@@ -114,20 +103,14 @@ body.donate-page {
           background: #eee;
           border: none;
           cursor: pointer;
-          // border: 1px solid #999;
-          // border-radius: 4px;
           height: 43px;
-          // height: 25px;
           left: 5px;
           margin-bottom: 0;
           position: relative;
           transition: background 0.1s ease;
           width: 43px;
-          // width: 25px;
+
           &:after {
-            // border-bottom: 4px solid #fff;
-            // border-radius: 3px;
-            // border-right: 4px solid #fff;
             content: '';
             height: 42px;
             left: 15px;
@@ -158,8 +141,6 @@ body.donate-page {
       display: flex;
       flex: 1;
       margin: 5px;
-      // display: inline-block;
-      // margin: 0 0.5em 0.5em 0;
       position: relative;
       vertical-align: middle;
 
@@ -177,10 +158,6 @@ body.donate-page {
 
     #amount_other_field {
       border: none;
-      // border: 1px solid #CCCCCC;
-      // border-left-color: #a9a9a9;
-      // border-top-color: #a9a9a9;
-      // border-radius: 3px;
       box-shadow: none;
       color: $black;
       font-family: "Roboto Condensed", sans-serif;
@@ -196,7 +173,6 @@ body.donate-page {
 
     #other-amount-submit {
       background: #00ABFF;
-      // background: #296ecb;
       border-left: 0;
       border-radius: 0;
       border-top: 0;
@@ -211,9 +187,7 @@ body.donate-page {
       text-transform: uppercase;
       transition: all 0.15s linear;
       width: 100%;
-      // @media screen and (min-width: $bp-md) {
-      //   width: auto;
-      // }
+
       &:visited {
         color: white;
       }
