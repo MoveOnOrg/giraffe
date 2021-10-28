@@ -104,198 +104,201 @@ body.user_view {
         padding-top: 1px;
       }
     }
-  }
 
-  .call-to-action {
-    margin: 26px 0;
+    .call-to-action {
+      margin: 26px 0;
 
-    img {
-      display: block;
-      width: 100%;
-      -webkit-filter: grayscale(100%);
-      /* Safari 6.0 - 9.0 */
-      filter: grayscale(100%);
-    }
-
-    .caption {
-      background: #000000;
-      font-size: 30px;
-      font-weight: bold;
-
-      a {
-        color: #FFFFFF;
+      img {
         display: block;
-        padding: 8px 12px 11px;
-        text-decoration: none;
-      }
-
-      img {
-        display: inline;
-        height: 25px;
-        padding-left: 10px;
-        width: auto;
-      }
-    }
-
-    &:hover {
-      img {
-        -webkit-filter: none;
+        width: 100%;
+        -webkit-filter: grayscale(100%);
         /* Safari 6.0 - 9.0 */
-        filter: none;
+        filter: grayscale(100%);
       }
 
       .caption {
-        background: #00ABFF;
+        background: #000000;
+        font-size: 30px;
+        font-weight: bold;
+
+        a {
+          color: #FFFFFF;
+          display: block;
+          padding: 8px 12px 11px;
+          text-decoration: none;
+          text-transform: uppercase;
+        }
+
+        img {
+          display: inline;
+          height: 25px;
+          padding-left: 10px;
+          width: auto;
+        }
+      }
+
+      &:hover {
+        img {
+          -webkit-filter: none;
+          /* Safari 6.0 - 9.0 */
+          filter: none;
+        }
+
+        .caption {
+          background: #00ABFF;
+          color: white;
+          text-decoration: none;
+        }
       }
     }
-  }
 
-  .gray-block {
-    background-color: #EFEFEF;
-    padding: 20px 20px 24px;
+    .gray-block {
+      background-color: #EFEFEF;
+      padding: 20px 20px 24px;
 
-    h3 {
-      padding-bottom: 23px;
+      h3 {
+        padding-bottom: 23px;
+      }
+
+      >div {
+        color: #000000;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        padding-bottom: 23px;
+      }
+
+      .contact-info {
+        display: flex;
+        flex-flow: column nowrap;
+
+        @media (min-width: 768px) {
+          flex-flow: row nowrap;
+        }
+      }
     }
 
-    >div {
-      color: #000000;
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 18px;
-      padding-bottom: 23px;
+    .member-donations {
+      margin-bottom: 60px;
     }
 
-    .contact-info {
-      display: flex;
-      flex-flow: column nowrap;
+    .member-thanks-desktop {
+      display: none;
+
+      h4 {
+        font-family: Roboto;
+      }
 
       @media (min-width: 768px) {
-        flex-flow: row nowrap;
+        display: block;
       }
-    }
-  }
 
-  .member-donations {
-    margin-bottom: 60px;
-  }
-
-  .member-thanks-desktop {
-    display: none;
-
-    h4 {
-      font-family: Roboto;
-    }
-
-    @media (min-width: 768px) {
-      display: block;
-    }
-
-    a {
-      color: #000000;
-      font-weight: bold;
-      text-decoration: underline;
-    }
-
-    margin-bottom: 40px;
-  }
-
-  .member-thanks-mobile {
-    display: block;
-
-    @media (min-width: 768px) {
-      display: none;
-    }
-  }
-
-  .med-font {
-    font-size: 20px;
-  }
-
-  .small {
-    font-family: Roboto;
-    font-weight: normal;
-    font-size: 18px;
-  }
-
-  .subscription-status {
-    margin-top: 75px;
-
-    button {
-      margin-top: 15px;
-    }
-
-    h3 {
-      margin-bottom: 0;
-    }
-
-    hr {
-      border: 0 solid #C4C4C4;
-      margin-bottom: 20px;
-      height: 10px;
-      background: #C4C4C4;
-    }
-
-    ul {
-      list-style: none;
-      margin-left: 0;
-      font-family: Roboto;
-
-      li {
-        font-size: 22px;
+      a {
+        color: #000000;
         font-weight: bold;
+        text-decoration: underline;
+      }
+
+      margin-bottom: 40px;
+    }
+
+    .member-thanks-mobile {
+      display: block;
+
+      @media (min-width: 768px) {
+        display: none;
       }
     }
 
-    p {
-      margin-bottom: 0;
+    .med-font {
+      font-size: 20px;
     }
-  }
 
-  .subscription-status-desktop {
-    display: none;
-
-    @media (min-width: 768px) {
-      display: block;
+    .small {
+      font-family: Roboto;
+      font-weight: normal;
+      font-size: 18px;
     }
-  }
 
-  .subscription-status-mobile {
-    background: rgba(196, 196, 196, 0.2);
-    display: block;
-    margin-right: -15px;
-    margin-left: -15px;
-    padding: 33px;
-    margin-top: 0;
+    .subscription-status {
+      margin-top: 75px;
 
-    @media (min-width: 768px) {
+      button {
+        margin-top: 15px;
+      }
+
+      h3 {
+        margin-bottom: 0;
+      }
+
+      hr {
+        border: 0 solid #C4C4C4;
+        margin-bottom: 20px;
+        height: 10px;
+        background: #C4C4C4;
+      }
+
+      ul {
+        list-style: none;
+        margin-left: 0;
+        font-family: Roboto;
+
+        li {
+          font-size: 22px;
+          font-weight: bold;
+        }
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    .subscription-status-desktop {
       display: none;
-    }
-  }
 
-  .tab-content {
-    >.tab-pane {
-      display: none;
+      @media (min-width: 768px) {
+        display: block;
+      }
     }
 
-    >.active {
+    .subscription-status-mobile {
+      background: rgba(196, 196, 196, 0.2);
       display: block;
+      margin-right: -15px;
+      margin-left: -15px;
+      padding: 33px;
+      margin-top: 0;
+
+      @media (min-width: 768px) {
+        display: none;
+      }
     }
-  }
 
-  .welcome {
-    text-align: center;
+    .tab-content {
+      >.tab-pane {
+        display: none;
+      }
 
-    @media (min-width: 768px) {
-      text-align: left;
+      >.active {
+        display: block;
+      }
     }
-  }
 
-  .x-small {
-    font-family: Roboto;
-    font-weight: normal;
-    font-size: 16px;
+    .welcome {
+      text-align: center;
+
+      @media (min-width: 768px) {
+        text-align: left;
+      }
+    }
+
+    .x-small {
+      font-family: Roboto;
+      font-weight: normal;
+      font-size: 16px;
+    }
   }
 
   ul#donation-nav {
