@@ -183,6 +183,17 @@ body.donate-page {
         display: inline;
       }
     }
+
+    .ask-text-small-white {
+      background: $white;
+      font-size: 0.5em;
+      font-weight: 400;
+
+      a {
+        color: $black;
+        display: inline;
+      }
+    }
   }
 
   h1.ask-text {
