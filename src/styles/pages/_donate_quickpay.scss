@@ -7,6 +7,11 @@ body.donate-page {
     width: 73%;
   }
 
+  .faded-quickpay,
+  .help-block-quickpay {
+    color: #000000;
+  }
+
   #act-form-container.quickpay-form {
     background-color: #CAF4FF;
     color: $black;
