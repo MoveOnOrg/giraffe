@@ -161,7 +161,6 @@ body.donate-page.donate {
 
   .ask-sub-text {
     font-family: "Roboto Condensed", sans-serif;
-    background-color: $azure;
     color: $black;
     font-size: 1.8em;
     font-weight: 600;
@@ -174,20 +173,24 @@ body.donate-page.donate {
       margin-bottom: 0;
     }
 
-    p[style*="font-size: 80%"] {
-      font-family: "Roboto", sans-serif;
-      color: $black;
-      font-weight: 600;
-      text-align: center;
-      background: $white;
+    .ask-text-large {
+      background-color: $azure;
+      box-shadow: -7px 0 0 10px #fff, 7px 0 0 10px #fff;
+      line-height: 70px;
+      padding: 10px 25px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
     }
 
     .ask-text-small {
-      font-size: 0.5em;
+      background: $white;
+      font-family: "Roboto", sans-serif;
+      font-size: 18px;
       font-weight: 400;
+      margin: 30px -15px 90px;
 
       a {
-        color: $black;
+        color: #357FBA;
         display: inline;
       }
     }
