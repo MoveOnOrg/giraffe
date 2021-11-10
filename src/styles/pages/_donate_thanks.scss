@@ -1,9 +1,9 @@
 body.donation-pagetype.thanks-page {
-  color: #555555;
+  color: #000000;
   padding-top: 0;
 
   p {
-    font-size: 18px;
+    font-size: 24px;
   }
 
   div[role="main"] {
@@ -17,7 +17,7 @@ body.donation-pagetype.thanks-page {
 
   h2 {
     font-weight: 200;
-    font-size: 64px;
+    font-size: 40px;
     margin-left: -3px;
     text-transform: none;
   }
@@ -29,6 +29,7 @@ body.donation-pagetype.thanks-page {
     background-color: transparent;
     border-collapse: collapse;
     border-spacing: 0;
+    font-size: 24px;
 
     td {
       padding: 8px;
@@ -494,14 +495,10 @@ body.donation-pagetype.thanks-page {
   .donation-legal {
     margin: 50px auto auto;
 
-    > div {
-      background-color: #f3f3f3;
-    }
   }
 
   .legal {
-    color: #555555;
-    font-size: 16px;
+    font-size: 20px;
     padding: 40px;
     @media screen and (min-width: $bp-md) {
       padding: 40px 100px;
@@ -514,7 +511,7 @@ body.donation-pagetype.thanks-page {
 
     h4 {
       color: #000000;
-      font-size: 24px;
+      font-size: 25px;
       font-weight: 400;
       margin-bottom: 12.5px;
     }

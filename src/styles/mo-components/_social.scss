@@ -34,6 +34,12 @@
     @include btn--azure;
     padding: 10px 20px;
     color: $white;
+    &.social_2021 {
+      padding: 13px 19px;
+      font-family: "Roboto Condensed", sans-serif;
+      text-transform: uppercase;
+      width: 100%;
+    }
 
     &:active,
     &:visited {
@@ -68,4 +74,73 @@
       fill: $white;
     }
   }
+}
+
+
+.thankyou p,
+.share-block {
+  p {
+    font-size:18px;
+  }
+  &.bg-teal {
+    background-color: #CAF4FF;
+  }
+  .share-item-url {
+    background-color: #D2D2D2;
+    color: #000000;
+    cursor: pointer;
+    padding: 10px;    
+  }
+  
+}
+
+.share-item-facebook { background-color: #0C188A; }
+.share-item-facebook:hover { background-color: #1877F2; }
+.share-item-facebook-messenger {
+  border: 1px #3B5998 solid;
+  background-color: #FFF;
+  color: #3B5998;
+  &:hover { background-color: #0C188A; }
+}
+.share-item-twitter { background-color: #5AA5EB; 
+  &:hover { background-color: #51BDFF; }
+}
+.share-item-email { background-color: #DC6868; 
+  &:hover { background-color: #FF3E27; }
+}
+.share-item-sms { background-color: #3EA755; 
+  &:hover {background-color: #1F7231; }
+}
+.share-block {
+  &.share-btn-icon {
+    display: flex;
+    transition: all .3s;
+  }
+}
+.share-item-url:hover {
+  background-color: #717171;
+  color: #FFF;
+}
+.share-block{
+ .share-btn-icon { display: flex; transition: all .3s; }
+ .share-btn-icon-hover { display: none; transition: all .3s; }
+ .share-item-facebook-messenger:hover {
+   .share-btn-icon { display: none; }
+   .share-btn-icon-hover  { display: flex; }
+ }
+ .share-item-url:hover {
+   .share-btn-icon { display: none; }
+   .share-btn-icon-hover { display: flex; }
+ }
+ .input-block-wrapper {
+   align-self: center;
+   .input-block {
+     width: 100%;
+     padding: 10px;
+     font-size: 16px;
+   }
+   @include respond((
+     text-align: center left left
+   ));
+ }
 }
