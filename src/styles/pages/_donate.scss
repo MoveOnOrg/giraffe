@@ -64,6 +64,14 @@ body.donate-page.donate {
     margin: 0 auto;
   }
 
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+
   form {
     padding: 10px 22px;
     @media (min-width: $bp-md) {
@@ -153,7 +161,6 @@ body.donate-page.donate {
 
   .ask-sub-text {
     font-family: "Roboto Condensed", sans-serif;
-    background-color: $azure;
     color: $black;
     font-size: 1.8em;
     font-weight: 600;
@@ -166,15 +173,30 @@ body.donate-page.donate {
       margin-bottom: 0;
     }
 
-    p[style*="font-size: 80%"] {
-      font-family: "Roboto", sans-serif;
-      color: $black;
-      font-weight: 600;
-      text-align: center;
-      background: $white;
+    .ask-text-large {
+      background-color: $azure;
+      box-shadow: -7px 0 0 10px #fff, 7px 0 0 10px #fff;
+      line-height: 70px;
+      padding: 10px 25px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
     }
 
     .ask-text-small {
+      background: $white;
+      font-family: "Roboto", sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      margin: 30px -15px 90px;
+
+      a {
+        color: #357FBA;
+        display: inline;
+      }
+    }
+
+    .ask-text-small-white {
+      background: $white;
       font-size: 0.5em;
       font-weight: 400;
 
@@ -839,6 +861,8 @@ body.donate-page.donate {
     [type="radio"]:checked + label,
     [type="radio"]:not(:checked) + label {
       position: relative;
+      padding-top: 25px;
+      padding-bottom: 25px;
       padding-left: 2.3em;
       line-height: 1.7;
       cursor: pointer;
@@ -1049,6 +1073,10 @@ body.donate-page.donate {
     .wf-icon:before {
       margin: 0;
     }
+  }
+
+  #cc-panel {
+    margin-top: 20px;
   }
 
   #custom-donate-split {

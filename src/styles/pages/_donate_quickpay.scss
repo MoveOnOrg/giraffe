@@ -1,19 +1,25 @@
 body.donate-page {
-  .ask-sub-text-quickpay {
-    background-color: inherit;
+  .ask-sub-text.ask-sub-text-quickpay {
+    background-color: $white;
     color: black;
-    margin: 0 0 1em;
-    font-size: 1.25em;
-    margin-bottom: 0;
-    // margin: 1em 0.5em 1em 0.5em !important;
-    text-align: left;
+    margin: 0 auto 1em;
+    text-align: center;
+    width: 73%;
   }
 
-  .quickpay-form {
-    background-color: #f3f3f3;
-    border-top: 1px solid #CCCCCC;
-    color: #555555;
+  .faded-quickpay,
+  .help-block-quickpay {
+    color: #000000;
+  }
+
+  #act-form-container.quickpay-form {
+    background-color: #CAF4FF;
+    color: $black;
     padding: 0;
+    width: 100%;
+    @media (min-width: $bp-md) {
+      width: 60%;
+    }
 
     form {
       padding: 0;
@@ -22,12 +28,8 @@ body.donate-page {
       }
 
       h3 {
-        font-family: "Source Sans Pro", Helvetica, Arial;
-        font-size: 21px;
+        font-size: 32px;
         font-weight: 400;
-        @media (min-width: $bp-md) {
-          font-size: 27px;
-        }
       }
 
       label {
@@ -38,10 +40,10 @@ body.donate-page {
       }
 
       p {
-        font-size: 14px;
+        font-size: 18px;
         margin: 0 0 12.5px;
         @media (min-width: $bp-md) {
-          font-size: 18px;
+          font-size: 22px;
         }
       }
     }
@@ -58,33 +60,32 @@ body.donate-page {
     }
 
     button.btn {
-      background: #296ecb;
+      background: #00ABFF;
       border-top: 0;
       border-left: 0;
-      border-radius: 4px;
       color: #fff;
-      font-size: 2em;
+      font-size: 34px;
       font-weight: bold;
-      padding: 10px;
-      margin: 0;
-      padding: 0.5em 0.75em;
-      margin: 0 0.5em 0.5em 0;
-      @media (min-width: $bp-md) {
+      width: 100%;
+      @media (min-width: $bp-lg) {
+        font-size: 48px;
         padding: 0.5em 0.75em;
-        margin: 0 0.5em 0.5em 0;
-        min-width: 0;
+      }
+
+      &:hover {
+        background: #0080BF;
       }
     }
 
     .big-checkbox-quickpay {
       .big-checkbox-row {
+        align-items: center;
+        background-color: #0080BF;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
         display: flex;
         flex-direction: row;
-        align-items: center;
         min-height: 50px;
-        background-color: #296ecb;
-        border-bottom-left-radius: 3px;
-        border-bottom-right-radius: 3px;
         transition: all 0.15s linear;
 
         .checkbox-label {
@@ -92,50 +93,48 @@ body.donate-page {
           cursor: pointer;
           display: inline-block;
           flex: 1;
-          font-size: 15px;
+          font-size: 20px;
           font-weight: 700;
           padding-left: 30px;
           width: 85%;
           @media screen and (min-width: $bp-md) {
+            font-size: 22px;
             width: 91%;
-            font-size: 19px;
           }
         }
 
         #id_donation_type_recurring:checked + .checkbox-overlay,
         #id_donation_type_recurring:not(:checked) + .checkbox-overlay {
-          position: relative;
-          width: 25px;
-          height: 25px;
-          left: 15px;
           background: #eee;
-          border: 1px solid #999;
-          border-radius: 4px;
-          transition: background 0.1s ease;
+          border: none;
           cursor: pointer;
+          height: 43px;
+          left: 5px;
+          margin-bottom: 0;
+          position: relative;
+          transition: background 0.1s ease;
+          width: 43px;
 
           &:after {
             content: '';
-            position: absolute;
-            width: 11px;
-            height: 19px;
-            top: 0;
-            left: 6px;
+            height: 42px;
+            left: 15px;
             opacity: 0;
+            position: absolute;
+            top: 0;
             transform: rotate(45deg) scale(0);
-            border-right: 4px solid #fff;
-            border-bottom: 4px solid #fff;
             transition: opacity 0.2s ease, transform 0.4s ease;
-            border-radius: 3px;
+            width: 17px;
           }
         }
 
         #id_donation_type_recurring:checked ~ .checkbox-overlay,
         #retired_checkbox:checked ~ .checkbox-overlay {
+          background: #00ABFF;
           border-color: transparent;
-          background: #37b34a;
 
           &:after {
+            color: white;
             opacity: 1;
             transform: rotate(45deg) scale(1);
           }
@@ -144,34 +143,41 @@ body.donate-page {
     }
 
     .btn-group {
+      display: flex;
+      flex: 1;
+      margin: 5px;
       position: relative;
-      display: inline-block;
       vertical-align: middle;
-      margin: 0 0.5em 0.5em 0;
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+      @media (min-width: $bp-lg) {
+        flex: none;
+      }
     }
 
     #amount_other_field {
+      border: none;
       box-shadow: none;
+      color: $black;
+      font-family: "Roboto Condensed", sans-serif;
       font-size: 2em;
-      line-height: 2em;
-      padding-bottom: 1px;
-      padding-top: 1px;
-      padding-left: 1.25em;
       height: auto;
-      border: 1px solid #CCCCCC;
-      border-left-color: #a9a9a9;
-      border-top-color: #a9a9a9;
-      border-radius: 3px;
-      color: #555555;
-      margin: 0;
+      line-height: 2em;
       padding: 6px 12px 6px 50px;
+      margin: 0;
       transition: all 0.15s linear;
       -webkit-appearance: none;
-      width: 5em;
+      width: 100%;
     }
 
     #other-amount-submit {
-      background: #296ecb;
+      background: #00ABFF;
       border-left: 0;
       border-radius: 0;
       border-top: 0;
@@ -186,9 +192,6 @@ body.donate-page {
       text-transform: uppercase;
       transition: all 0.15s linear;
       width: 100%;
-      @media screen and (min-width: $bp-md) {
-        width: auto;
-      }
 
       &:visited {
         color: white;
@@ -201,12 +204,12 @@ body.donate-page {
     }
 
     #other_amount_container label {
+      align-items: center;
       background-color: transparent;
       box-shadow: none;
       color: #296ECB;
       display: flex;
       flex-direction: row;
-      align-items: center;
       font-size: 18px;
       line-height: 40px;
       margin: 0 0 0.5em;
@@ -216,9 +219,10 @@ body.donate-page {
       width: 100%;
 
       .currency_sym {
+        color: $black;
         font-size: 2em;
-        line-height: 2em;
         left: 0.5em;
+        line-height: 2em;
         position: absolute;
         text-align: center;
         width: 30px;
@@ -228,7 +232,10 @@ body.donate-page {
     #quickpay-buttons {
       display: flex;
       flex-flow: row wrap;
-      justify-content: flex-start;
+      justify-content: space-between;
+      @media (min-width: $bp-md) {
+        justify-content: flex-start;
+      }
     }
   }
 }
