@@ -380,8 +380,9 @@ body.donation-pagetype.thanks-page {
   }
 
   .donationthanks-makeitmonthly {
-    margin: 0;
     box-shadow: 0 0 20px $moriginal-gray-medium;
+    margin: 0;
+    padding: 30px;
 
     h3 {
       width: 100%;
@@ -394,26 +395,25 @@ body.donation-pagetype.thanks-page {
     #upsell-amount-choices {
       a.btn {
         background-color: #1055dc;
+        border: 1px solid #15367c;
+        border-radius: 4px;
+        color: #fff;
+        cursor: pointer;
         display: inline-block;
-        margin-bottom: 0;
+        font-size: 18px;
         font-weight: normal;
+        line-height: 1.428571429;
+        margin-bottom: 0;
+        padding: 6px 12px;
         text-align: center;
         text-transform: none;
-        vertical-align: middle;
         touch-action: manipulation;
-        cursor: pointer;
-        border: 1px solid transparent;
+        vertical-align: middle;
         white-space: nowrap;
-        padding: 6px 12px;
-        font-size: 18px;
-        line-height: 1.428571429;
-        border-radius: 4px;
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
-        color: #fff;
-        border-color: #15367c;
       }
     }
 
@@ -421,7 +421,7 @@ body.donation-pagetype.thanks-page {
       /*get them all on the same line*/
       .input-group {
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
       }
 
       .input-group-btn {
@@ -444,6 +444,7 @@ body.donation-pagetype.thanks-page {
         color: $moriginal-blue-medium;
         padding-top: 7px;
         margin-right: -17px;
+        position: relative;
       }
 
       [type=submit] {
@@ -460,6 +461,7 @@ body.donation-pagetype.thanks-page {
         font-weight: normal;
         line-height: 1.428571429;
         margin-bottom: 0;
+        margin-right: 12px;
         padding: 6px 12px;
         text-align: center;
         text-transform: none;
@@ -472,7 +474,7 @@ body.donation-pagetype.thanks-page {
         user-select: none;
       }
 
-      input[type=text] {
+      input[type=number] {
         background-image: none;
         background-color: #fff;
         border: 1px solid #ccc;
@@ -482,7 +484,8 @@ body.donation-pagetype.thanks-page {
         font-size: 18px;
         height: 39px;
         line-height: 1.428571429;
-        padding: 6px 12px;
+        padding: 6px 14px;
+        position: relative;
         width: 5em;
         z-index: 2;
       }
