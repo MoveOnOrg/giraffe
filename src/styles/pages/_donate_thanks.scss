@@ -3,7 +3,7 @@ body.donation-pagetype.thanks-page {
   padding-top: 0;
 
   p {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   div[role="main"] {
@@ -25,14 +25,14 @@ body.donation-pagetype.thanks-page {
   table {
     width: 100%;
     max-width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
     background-color: transparent;
     border-collapse: collapse;
     border-spacing: 0;
-    font-size: 24px;
+    font-size: 20px;
 
     td {
-      padding: 8px;
+      padding: 18px 8px 18px 0;
       line-height: 1.4;
       vertical-align: top;
       border-top: 1px solid #ddd;
@@ -496,27 +496,25 @@ body.donation-pagetype.thanks-page {
   }
 
   .donation-legal {
-    margin: 50px auto auto;
+    margin: 110px auto auto;
 
   }
 
   .legal {
-    font-size: 20px;
-    padding: 40px;
+    padding: 40px 40px 40px 0px;
     @media screen and (min-width: $bp-md) {
-      padding: 40px 100px;
-    }
-
-    a {
-      color: $azure;
-      text-decoration: underline;
+      padding: 40px 100px 40px 0px;
     }
 
     h4 {
+      @include font(roboto);
       color: #000000;
-      font-size: 25px;
-      font-weight: 400;
-      margin-bottom: 12.5px;
+      font-size:16px;
+      font-weight: 700;
+      margin-bottom: 0;
+    }
+    p {
+      font-size: 16px;
     }
   }
 
