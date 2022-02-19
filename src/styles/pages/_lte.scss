@@ -1,0 +1,159 @@
+body.lte {
+  a {
+    cursor: pointer;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .lte-title {
+    display: flex;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+    height: 130px;
+    justify-content: center;
+    align-items: center;
+    background-color: $azure;
+    transition: background-color .3s;
+    text-align: center;
+
+    h1 {
+      display: inline-block;
+      margin-bottom: -10px;
+      padding: 0 20px;
+      text-transform: uppercase;
+      background-color: $black;
+      color: $azure;
+    }
+  }
+
+  .ak-form {
+    margin-top: 160px;
+  }
+
+  .btn-lte {
+    width: 100%;
+    padding: 12px !important;
+    font-size: 30px !important;
+  }
+
+  .lte-progress {
+    display: table;
+    margin: 25px auto;
+    padding: 20px 5px;
+    height: auto;
+    width: 250px;
+    text-align: center;
+  }
+
+  .lte-progress-text {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+
+  .lte-progress-pct {
+    margin: -10px 0 0 5px;
+    font-size: 7rem;
+    font-weight: bold;
+    height: 120px;
+  }
+
+  .lte-progress-count {
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: normal;
+  }
+
+  .lte-user-form-heading {
+    font-size: 1.75rem;
+  }
+
+  .user-form {
+    background: $thin-air;
+    padding: 20px 15px;
+
+    .fine-print {
+      position: relative;
+      margin-left: auto;
+      margin-top: -10px;
+      margin-bottom: -10px;
+      width: 160px;
+    }
+
+    select {
+      height: 40px;
+    }
+
+    h2 {
+      display: none;
+    }
+  }
+
+  .input-white input {
+    height: 40px;
+  }
+
+  #known_user {
+    margin: 20px auto;
+    max-width: 200px;
+  }
+
+  .lte-media-target {
+    padding: 15px;
+    margin-bottom: 10px;
+    background: #f3f3f3;
+
+    label {
+      font-weight: bold;
+    }
+  }
+
+  .lte-selected-target {
+    display: inline-block;
+    padding: 8px 12px;
+    margin-top: -10px;
+    color: $white;
+    font-size: 1.1rem;
+  }
+
+  .radio-input {
+    cursor: pointer;
+    margin-bottom: 10px;
+
+    input {
+      margin: 0;
+    }
+
+    label {
+      margin-top: 2px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+  }
+
+  .lte-letter-form {
+    min-width: 300px;
+  }
+
+  .lte-letter-text {
+    min-height: 408px;
+  }
+
+  .lte-word-counter {
+    text-align: right;
+  }
+
+  .count-error {
+    color: $red;
+  }
+
+  .lte-help h3 div {
+    font-size: 1.1rem;
+  }
+}
