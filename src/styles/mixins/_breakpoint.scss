@@ -1,27 +1,26 @@
-/*
-IMPROVED BREAKPOINT MIXINS
-USAGE:
-1. Define your breakpoints:
-    @include define-breakpoints((
-      small: null,
-      medium: 768,
-      large: 1280 1920,
-      // $name: $sizes
-    ));
-    - $name:    A breakpoint name
-    - $sizes:   (number) The min-width. Max-width value will be computed as next breakpoint - 1.
-                (list) Min-width and max-width.
-2. Use a breakpoint:
-    @include breakpoint(medium only) {
-      // Styles here
-    }
-    - parameters: $name $scope
-        $name - One of the defined breakpoints
-        $scope (optional)
-            - only - Uses min-width and max-width
-            - down - Uses max-width only
-    - If both min-width and max-width computed values are null, no media query will be used.
- */
+// IMPROVED BREAKPOINT MIXINS
+// USAGE:
+// 1. Define your breakpoints:
+//     @include define-breakpoints((
+//       small: null,
+//       medium: 768,
+//       large: 1280 1920,
+//       // $name: $sizes
+//     ));
+//     - $name:    A breakpoint name
+//     - $sizes:   (number) The min-width. Max-width value will be computed as next breakpoint - 1.
+//                 (list) Min-width and max-width.
+// 2. Use a breakpoint:
+//     @include breakpoint(medium only) {
+//       // Styles here
+//     }
+//     - parameters: $name $scope
+//         $name - One of the defined breakpoints
+//         $scope (optional)
+//             - only - Uses min-width and max-width
+//             - down - Uses max-width only
+//     - If both min-width and max-width computed values are null, no media query will be used.
+
 
 @mixin define-breakpoints($breakpoints-map: ()) {
   @if type-of($breakpoints-map) == map {
