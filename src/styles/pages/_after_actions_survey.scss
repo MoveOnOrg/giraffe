@@ -2,7 +2,7 @@ body.survey-page
 {
   .aa_makeover {
     a {
-        color: $azure;
+        color: $dark-blue;
         text-decoration: underline;
         display: inline;
     }
@@ -13,5 +13,44 @@ body.survey-page
     p {
       font-size:20px;
     }
+
+    #survey-questions {
+      font-size:24px;
+      p {
+        font-size:20px;
+      }
+      textarea {
+        font-size:22px;
+      }
+      // Placeholder
+      ::placeholder {
+        color: $placeholder-gray;
+        // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+        opacity: 1;
+      }
+    }
+    // RADIO
+    .radio-input {
+      font-size:24px;
+
+      input[type=radio] {
+        border: 1px solid #000000;
+        margin-right:0.25em;
+
+        &:checked {
+          border: 0px;
+          background-color: $azure;
+          opacity: 1;
+          box-shadow: none;
+        }
+      }
+    }
+
+      label {
+        color:inherit;
+        @include respond((
+          line-height: 1,
+        ));
+      }
   }
 }
