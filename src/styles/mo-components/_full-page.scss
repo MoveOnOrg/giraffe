@@ -1,0 +1,9 @@
+.full-page-outer-div { 
+    width: 100vw;
+    position: relative;
+    left: calc(-50vw + 50%);
+}
+.full-page-inner-div {
+    margin: auto;
+    max-width: $full-page-inner-div-max-width;
+}
