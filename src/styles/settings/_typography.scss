@@ -17,7 +17,7 @@ $weights: (
 );
 
 @mixin font( $name) {
-  @if ( map-has-key($fonts, $name) & map-has-key($weights, $name)) {
+  @if ( map-has-key($fonts, $name) and map-has-key($weights, $name)) {
     font-family: map-get($fonts, $name);
     font-weight: map-get($weights, $name);
   }
