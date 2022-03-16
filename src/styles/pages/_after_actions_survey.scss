@@ -12,6 +12,12 @@ body.survey-page
     p {
       font-size:20px;
     }
+    h3 {
+      @include font(roboto);
+    }
+    #known_user {
+      text-align:center;
+    }
 
     #survey-questions {
       p {
@@ -28,6 +34,9 @@ body.survey-page
       }
     }
     
+    .known_user_firstname {
+      font-weight: 700;
+    }
     .btn.cta {
         display: inline-flex;
         justify-content: center;
@@ -36,7 +45,7 @@ body.survey-page
         padding: 10px 20px;
         color: $white;
         padding: 13px 19px;
-        font-family: "Roboto Condensed", sans-serif;
+        @include font(roboto-condensed);
         text-transform: uppercase;
         width: 100%;
         background-color:$azure;
@@ -44,7 +53,7 @@ body.survey-page
     
     // RADIO
     .radio-input {
-      font-size:24px;
+      font-size:20px;
 
       input[type=radio] {
         border: 1px solid #000000;
