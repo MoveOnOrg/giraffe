@@ -1,31 +1,29 @@
 body.survey-page
 {
   .aa_makeover {
+    h1 {
+      font-size: 2.25rem;
+      text-transform: uppercase;
+    }
+    h2 {
+      font-size: 2.0rem;
+    }
     a {
         color: $dark-blue;
         display: inline;
     }
     label {
       font-weight:normal;
-      font-size:20px;
-    }
-    p {
-      font-size:20px;
-    }
-    h3 {
-      @include font(roboto);
     }
     #known_user {
       text-align:center;
+      h3 {
+        @include font(roboto);
+        font-size: 16px;
+      }
     }
 
     #survey-questions {
-      p {
-        font-size:20px;
-      }
-      textarea {
-        font-size:22px;
-      }
       // Placeholder
       ::placeholder {
         color: $placeholder-gray;
@@ -46,6 +44,8 @@ body.survey-page
         color: $white;
         padding: 13px 19px;
         @include font(roboto-condensed);
+        font-size: 1.8rem;
+        font-weight: 700;
         text-transform: uppercase;
         width: 100%;
         background-color:$azure;
@@ -53,7 +53,7 @@ body.survey-page
     
     // RADIO
     .radio-input {
-      font-size:20px;
+      //font-size:20px;
 
       input[type=radio] {
         border: 1px solid #000000;
