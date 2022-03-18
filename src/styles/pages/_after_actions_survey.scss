@@ -1,13 +1,14 @@
 body.survey-page
 {
-  scroll-margin-top:57px;
   .aa_makeover {
     h1 {
       font-size: 2.25rem;
       text-transform: uppercase;
     }
     h2 {
-      font-size: 2.0rem;
+      font-size: 28px;
+      @include font(roboto);
+      font-weight:bold;
     }
     a {
         color: $dark-blue;
