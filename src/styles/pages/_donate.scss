@@ -1195,6 +1195,7 @@ body.donate-page.donate {
     #product-table-headers {
       background: $white;
       margin: 15px;
+      display: flex;
     }
     @media (max-width: 768px) {
       .product-row {
@@ -1222,8 +1223,16 @@ body.donate-page.donate {
       white-space: nowrap;
     }
 
-    th#product-details-header {
+    #product-details-header {
       text-align: center;
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+
+    #product-amount-header,
+    #product-quantity-header {
+      flex: 0 0 25%;
+      max-width: 25%;
     }
   }
   /* --Specific to product pages using the product templateset --*/
