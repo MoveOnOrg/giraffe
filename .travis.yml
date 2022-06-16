@@ -30,7 +30,7 @@ deploy:
     access_key_id: AKIA3AO6RW2Y3RZOP56E
     bucket: static.moveon.org
     skip_cleanup: true
-    region: us-west-1
+    region: us-east-2
     acl: public_read
     local_dir: deploy
     upload-dir: giraffe-staging
