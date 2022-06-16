@@ -1,0 +1,232 @@
+body.lte {
+  a {
+    cursor: pointer;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .lte-title {
+    display: flex;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+    height: 130px;
+    justify-content: center;
+    align-items: center;
+    background-color: $azure;
+    transition: background-color .3s;
+    text-align: center;
+
+    h1 {
+      display: inline-block;
+      margin-bottom: -10px;
+      text-transform: uppercase;
+      color: $azure;
+
+      // https://stackoverflow.com/a/34660112
+      span {
+        background-color: $black;
+        padding: 0 20px;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+      }
+    }
+  }
+
+  .ak-form {
+    margin-top: 160px;
+    min-height: 600px;
+  }
+
+  .btn-lte {
+    width: 100%;
+    padding: 12px !important;
+    font-size: 30px !important;
+  }
+
+  .lte-progress {
+    display: table;
+    margin: 25px auto;
+    padding: 20px 5px;
+    height: auto;
+    width: 250px;
+    text-align: center;
+  }
+
+  .lte-progress-text {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+
+  .lte-progress-pct {
+    margin: -10px 0 0 5px;
+    font-size: 7rem;
+    font-weight: bold;
+    height: 120px;
+  }
+
+  .lte-progress-count {
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: normal;
+  }
+
+  .lte-user-form-heading {
+    font-size: 1.75rem;
+  }
+
+  .user-form {
+    background: $thin-air;
+    padding: 20px 15px;
+
+    .fine-print {
+      position: relative;
+      margin-left: auto;
+      margin-top: -10px;
+      margin-bottom: -10px;
+      width: 160px;
+    }
+
+    h2 {
+      display: none;
+    }
+  }
+
+  .input-white input,
+  select.input-white,
+  textarea {
+    height: 40px;
+
+    &:focus,
+    &:invalid:focus {
+      color: $deep-sea-blue;
+    }
+
+    &.ak-error {
+      box-shadow: 0 0 0 2px $red;
+    }
+  }
+
+  #known_user {
+    margin: 20px auto;
+    max-width: 200px;
+  }
+
+  .lte-media-target {
+    padding: 15px;
+    margin-bottom: 10px;
+    background: #f3f3f3;
+
+    label {
+      font-weight: bold;
+    }
+  }
+
+  .lte-selected-target {
+    display: inline-block;
+    padding: 8px 12px;
+    margin-top: -10px;
+    color: $white;
+    font-size: 1.1rem;
+  }
+
+  .accordion {
+    background: #f3f3f3;
+
+    .accordion-toggle {
+      margin-top: 3px;
+      margin-bottom: -3px;
+      margin-left: auto;
+
+      .caret {
+        margin: auto;
+        fill: $azure;
+        width: 24px;
+        height: 14px;
+        transition: transform .2s ease-in-out;
+
+        &.show {
+          margin: auto;
+          width: 24px;
+          height: 14px;
+          transform: rotate(-90deg);
+        }
+
+        &:hover {
+          fill: darken($azure, 10%);
+        }
+      }
+    }
+
+    .accordion-title {
+      display: flex;
+    }
+
+    .collapse {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height .5s cubic-bezier(0, 1, 0, 1);
+    }
+
+    .show {
+      max-height: 1000px;
+      transition: max-height .75s ease-in-out;
+    }
+  }
+
+  .radio-input {
+    cursor: pointer;
+    margin: 0;
+
+    input {
+      cursor: pointer;
+      margin: 0;
+      transition: border-color .05s ease-in-out;
+    }
+
+    label {
+      cursor: pointer;
+      margin-top: .5px;
+      margin-bottom: -.5px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: color .05s ease-in-out;
+    }
+
+    &:hover {
+      input {
+        border-color: $azure;
+      }
+
+      label {
+        color: $azure;
+      }
+    }
+  }
+
+  .lte-letter-form {
+    min-width: 300px;
+  }
+
+  .lte-letter-text {
+    min-height: 408px;
+  }
+
+  .lte-word-counter {
+    text-align: right;
+  }
+
+  .count-error {
+    color: $red;
+  }
+
+  .lte-help h3 div {
+    font-size: 1.1rem;
+  }
+}
