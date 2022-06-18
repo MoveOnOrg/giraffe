@@ -1,4 +1,6 @@
 body.lte {
+  overflow-x: hidden;
+
   a {
     cursor: pointer;
   }
@@ -9,15 +11,11 @@ body.lte {
 
   .lte-title {
     display: flex;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    width: 100vw;
-    height: 130px;
     justify-content: center;
     align-items: center;
+    width: 200%;
+    margin: 0 -25%;
+    padding: 40px 25%;
     background-color: $azure;
     transition: background-color .3s;
     text-align: center;
@@ -36,10 +34,19 @@ body.lte {
         box-decoration-break: clone;
       }
     }
+
+    @media (max-width: 576px) {
+      margin-bottom: -30px;
+      padding: 40px 30%;
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
   }
 
   .ak-form {
-    margin-top: 160px;
+    margin-top: 50px;
     min-height: 600px;
   }
 
@@ -101,7 +108,7 @@ body.lte {
   .input-white input,
   select.input-white,
   textarea {
-    height: 40px;
+    min-height: 40px;
 
     &:focus,
     &:invalid:focus {
