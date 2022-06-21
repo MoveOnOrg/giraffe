@@ -10,13 +10,3 @@ $breakpoints: (
   xl: $bp-xl,
 );
 
-// Grid breakpoints
-// These should match those defined as $grid-breakpoints in _variables.scss.
-// They are re-defined here instead of included via the variables file because they have
-// very limited use outside of the grid definitions, and the variables file contains
-// many extraneous variables, some of which don't compile.
-$g-bp-xs: 0;
-$g-bp-sm: 576px;
-$g-bp-m: 768px;
-$g-bp-lg: 992px;
-$g-bp-xl: 1200px;
