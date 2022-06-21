@@ -80,10 +80,6 @@ body.survey-pagetype.thanks-page {
         .copy-url-icon svg {
           fill: white;
         }
-        
-        .fb-messenger-icon svg {
-          fill: white;
-        }
       }
     }
 
@@ -124,9 +120,31 @@ body.survey-pagetype.thanks-page {
   }
 
   // TODO: Why are some of these colors different from the ones in _social.scss?
-  .share-item-facebook { background-color: #3B5998; }
-  .share-item-facebook-messenger:hover { color: #FFF !important; }
-  .share-item-twitter { background-color: #1DA1F2; }
-  .share-item-email { background-color: #D85040; }
+  .share-item-facebook { 
+    background-color: #3B5998;
+    &:hover { background-color: #1877F2; }
+  }
+  .share-item-facebook-messenger {
+    border: 1px #3B5998 solid;
+    background-color: #FFF;
+    color: #3B5998 !important;
+
+    &:hover {
+      background-color: #0C188A;
+      color: #FFF !important; 
+
+      .fb-messenger-icon svg {
+        fill: white;
+      }
+    }
+  }
+  .share-item-twitter {
+    background-color: #1DA1F2;
+    &:hover { background-color: #51BDFF; }
+  }
+  .share-item-email {
+    background-color: #D85040;
+    &:hover { background-color: #FF3E27; }
+  }
 
 }
