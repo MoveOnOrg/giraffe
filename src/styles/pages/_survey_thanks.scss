@@ -26,7 +26,11 @@ body.survey-pagetype.thanks-page {
   }
 
   .text-info {
-    color: #0098AD; //giraffe has #17a2b8 for .text-info but Brianna says it should be darker teal for this page.
+    // TODO: Aili set this color to #0098AD on Sep 24, 2021, with the following note:
+    //giraffe has #17a2b8 for .text-info but Brianna says it should be darker teal for this page.
+    // Now, the Survey Thank You page redesign is setting this color to black. Need to find out which
+    // pages are supposed to have color 0098AD and target them more specifically.
+    color: #000 !important;
   }
 
   #donation-info {
@@ -51,4 +55,78 @@ body.survey-pagetype.thanks-page {
       }
     }
   }
+
+  #thankyou {
+    font-size: 2.5em;
+    text-transform: uppercase;
+  }
+
+  .thankyou p {
+    font-size: 18px;
+  }
+
+  .share-block {
+    .bg-teal {
+      background-color: #CAF4FF;
+    }
+
+    .share-item-url {
+      color: #000000 !important;
+      padding: 10px;
+
+      &:hover {
+        color: #FFF !important;
+
+        .copy-url-icon svg {
+          fill: white;
+        }
+        
+        .fb-messenger-icon svg {
+          fill: white;
+        }
+      }
+    }
+
+    .copy-url-icon {
+      display: flex;
+      svg {
+        fill: black;
+        transition: all .3s;
+      }
+    }
+
+    .fb-messenger-icon {
+      display: flex;
+      svg {
+        fill: #0C188A;
+        transition: all .3s;
+      }
+    }
+
+    .input-block-wrapper {
+      @media (min-width: $g-bp-sm) {
+        text-align: center;
+      }
+      @media (min-width: $g-bp-lg) {
+        text-align: left;
+      }
+    }
+
+  }
+
+  .share_item {
+    &__btn {
+      padding: 13px 19px;
+      font-family: "Roboto Condensed", sans-serif;
+      text-transform: uppercase;
+      color: #FFF !important;
+    }
+  }
+
+  // TODO: Why are some of these colors different from the ones in _social.scss?
+  .share-item-facebook { background-color: #3B5998; }
+  .share-item-facebook-messenger:hover { color: #FFF !important; }
+  .share-item-twitter { background-color: #1DA1F2; }
+  .share-item-email { background-color: #D85040; }
+
 }
