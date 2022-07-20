@@ -1,0 +1,34 @@
+.hero-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 10%;
+  width: 100%;
+  background-color: $azure;
+  transition: background-color .3s;
+  text-align: center;
+
+  h1 {
+    display: inline-block;
+    margin-bottom: -10px;
+    text-transform: uppercase;
+    color: $azure;
+
+    // https://stackoverflow.com/a/34660112
+    span {
+      background-color: $black;
+      padding: 0 20px;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+  }
+
+  @media (max-width: 576px) {
+    margin-bottom: -30px;
+    padding: 40px 5%;
+
+    h1 {
+      font-size: 2rem;
+    }
+  }
+}
