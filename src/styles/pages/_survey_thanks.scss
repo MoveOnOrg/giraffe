@@ -14,7 +14,7 @@ body.survey-pagetype.thanks-page {
   }
 
   ol li:before {
-    color: #00ABFF;
+    color: $azure;
     content: counter(custom) " ";
     font-size: 40px;
     font-weight: 900;
@@ -26,7 +26,7 @@ body.survey-pagetype.thanks-page {
   }
 
   .text-info {
-    color: #0098AD; //giraffe has #17a2b8 for .text-info but Brianna says it should be darker teal for this page.
+    color: $black !important;
   }
 
   #donation-info {
@@ -51,4 +51,97 @@ body.survey-pagetype.thanks-page {
       }
     }
   }
+
+  #thankyou {
+    font-size: 2.5em;
+    text-transform: uppercase;
+  }
+
+  .thankyou p {
+    font-size: 18px;
+  }
+
+  .share-block {
+    .bg-teal {
+      background-color: $thin-air;
+    }
+
+    .share-item-url {
+      color: $black !important;
+      padding: 10px;
+
+      &:hover {
+        color: $white !important;
+
+        .copy-url-icon svg {
+          fill: $white;
+        }
+      }
+    }
+
+    .copy-url-icon {
+      display: flex;
+      svg {
+        fill: $black;
+        transition: all .3s;
+      }
+    }
+
+    .fb-messenger-icon {
+      display: flex;
+      svg {
+        fill: $c-fb-messenger-hover;
+        transition: all .3s;
+      }
+    }
+
+    .input-block-wrapper {
+      @media (min-width: $g-bp-sm) {
+        text-align: center;
+      }
+      @media (min-width: $g-bp-lg) {
+        text-align: left;
+      }
+    }
+
+  }
+
+  .share_item {
+    &__btn {
+      padding: 13px 19px;
+      font-family: "Roboto Condensed", sans-serif;
+      text-transform: uppercase;
+      color: $white !important;
+    }
+  }
+
+  // Some of these colors different from the ones in _social.scss. When the new style guide is
+  // implemented, we should standardize across pages
+  .share-item-facebook { 
+    background-color: $c-facebook;
+    &:hover { background-color: $c-facebook-hover; }
+  }
+  .share-item-facebook-messenger {
+    border: 1px $c-facebook solid;
+    background-color: $white;
+    color: $c-facebook !important;
+
+    &:hover {
+      background-color: $c-fb-messenger-hover;
+      color: $white !important; 
+
+      .fb-messenger-icon svg {
+        fill: $white;
+      }
+    }
+  }
+  .share-item-twitter {
+    background-color: #1DA1F2;
+    &:hover { background-color: $c-twitter-hover; }
+  }
+  .share-item-email {
+    background-color: $c-email;
+    &:hover { background-color: $c-email-hover; }
+  }
+
 }
