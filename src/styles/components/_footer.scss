@@ -715,6 +715,11 @@
 
       .caret-icon {
         padding-left: 23px;
+
+        svg {
+          width: 8px;
+          height: 12px;
+        }
       }
     }
   }
