@@ -302,3 +302,447 @@
     }
   }
 }
+
+#footer-2022 {
+  padding: 0px;
+  font-family: "Roboto", Sans-serif;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+  position: relative;
+
+  *:focus {
+    outline: 2px solid #006394;
+    outline-offset: -2px;
+  }
+
+  .footer-container {
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  ul {
+    margin: 0px;
+    list-style: none;
+  }
+
+  a {
+    color: #FFFFFF !important;
+    
+    &:hover {
+      color: #00ABFF !important;
+      transition: color .3s;
+    }
+  }
+
+  p {
+    color: #FFFFFF;
+    font-size: 13px;
+    line-height: 1.375rem;
+
+    &.p-short {
+      line-height: 1rem;
+    }
+  }
+
+  #footer-reorder {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $bp-md) {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+  }
+
+  #footer-signup-form {
+    transition: background-color .3s;
+    background-color: #000000;
+    padding: 15px 20px 20px;
+
+    @media (min-width: $bp-md) {
+      background-color: #00ABFF;
+      padding: 12px 20px 20px;
+      order: -1;
+      flex-basis: 100%;
+    }
+
+    .footer-container {
+      @media (min-width: $bp-md) {
+        display: flex;
+        flex-direction: row;
+      }
+
+      &#alternate-signup {
+        display: block;
+        text-align: center;
+        padding: 6px 10px;
+
+        @media (min-width: $bp-md) {
+          padding: 6px 0px 14px;
+        }
+
+        h2 {
+          text-align: center;
+
+          @media (min-width: $bp-md) {
+            margin-bottom: 8px;
+          }
+        }
+
+        button {
+          @media (min-width: $bp-md) {
+            width: 335px;
+          }
+        }
+      }
+    }
+
+    form {
+      flex-basis: 85%;
+      display: flex;
+      flex-direction: column;
+
+      @media (min-width: $bp-md) {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .errorlist {
+        @media (min-width: $bp-md) {
+          margin: 7px 7px 0px 7px;
+          flex-basis: calc(99% - 14px);
+        }
+      }
+    }
+
+    h2 {
+      color: #FFFFFF;
+      font-size: 21px;
+      text-align: center;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 13px;
+      flex-basis: 15%;
+
+      @media (min-width: $bp-md) {
+        color: #000000;
+        font-size: 28px;
+        text-align: left;
+        line-height: 30px;
+        margin-top: 16px;
+      }
+
+    }
+
+    .input-block {
+      width: 100%;
+      margin: 0px 0px 10px 0px;
+
+      @media (min-width: $bp-md) {
+        width: calc(33% - 14px);
+        margin: 0px 7px 7px 7px;
+      }
+    }
+
+    label {
+      position: static;
+      height: auto;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #FFFFFF;
+
+      @media (min-width: $bp-md) {
+        color: #000000;
+      }
+    }
+
+    input {
+      background-color: #FFFFFF;
+      border: none;
+      font-size: 18px;
+      line-height: 2.5rem !important;
+      font-weight: 400;
+      padding: 6px 16px;
+      height: 47px;
+
+      @media (min-width: $bp-md) {
+        font-size: 20px;
+      }
+
+      &:focus {
+        color: #006394;
+      }
+    }
+
+    button {
+      background-color: #00ABFF;
+      color: #000000;
+      width: 100%;
+      height: 47px;
+      font-size: 28px;
+      padding: 8px;
+      transition: width 0s, color .3s, background-color .3s;
+
+      @media (min-width: $bp-md) {
+        background-color: #000000;
+        color: #FFFFFF;
+        flex-basis: calc(99% - 14px);
+        margin: 0px 7px 0px 7px;
+      }
+
+      &:hover {
+        background-color: #FFFFFF;
+        color: #000000;
+      }
+    }
+  }
+
+  #footer-socials {
+    padding: 30px 10px;
+
+    @media (min-width: $bp-md) {
+      padding: 40px 0px 0px 0px;
+      flex-basis: 31%;
+      max-width: 300px;
+      margin-left: auto;
+    }
+  }
+
+  .footer-links {
+    color: #FFFFFF;
+    font-size: 16px;
+    padding: 26px 30px;
+
+    @media (min-width: $bp-md) {
+      padding: 38px 10px 30px 8px;
+      flex-basis: 23%;
+      max-width: 215px;
+    }
+
+    h2 {
+      font-family: "Roboto", Sans-serif;
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: 700;
+      margin: 5px 0px 10px;
+
+      @media (min-width: $bp-md) {
+        margin: 5px 0px 15px;
+      }
+    }
+
+    li {
+      line-height: 29px;
+      padding-left: 2px;
+    }
+
+    a {
+      font-weight: 400 !important;
+    }
+
+  }
+
+  .get-involved-links {
+    @media (min-width: $bp-md) {
+      margin-right: auto;
+    }
+  }
+
+  .logo-2022 {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 90px;
+    transition: all 0s;
+
+    @media (min-width: $bp-md) {
+      width: 130px;
+    }
+  }
+
+  .social-row {
+    text-align: center;
+    margin-top: 10px;
+
+    @media (min-width: $bp-md) {
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 130px;
+    }
+
+    a {
+      display: inline-block;
+    }
+
+    svg {
+      height: 30px;
+      width: 30px;
+      padding: 6px;
+      fill: #FFFFFF;
+      vertical-align: bottom;
+      transition: fill .3s;
+
+      @media (min-width: $bp-md) {
+        height: 33px;
+        width: 33px;
+      }
+
+      &:hover {
+        fill: #00ABFF !important;
+      }
+    }
+
+  }
+
+  #divider {
+    background-color: #FFFFFF;
+    height: 1px;
+    width: 65%;
+    margin: 0px 0px 0px 30px;
+
+    @media (min-width: $bp-md) {
+      display: none;
+    }
+  }
+
+  #footer-info {
+    display: flex;
+    background-color: #383838;
+    padding: 30px;
+    border-style: solid;
+    border-width: 5px 0px 0px 0px;
+    border-color: #00ABFF;
+    flex-direction: column;
+    margin-top: 4px;
+
+    @media (min-width: $bp-md) {
+      flex-direction: row;
+      margin-top: 0px;
+    }
+
+    .info-c4-pac {
+      @media (min-width: $bp-md) {
+        flex-basis: 43%;
+        max-width: 491px;
+        padding: 0px 30px 0px 0px;
+        margin-left: auto;
+      }
+    }
+
+    .info-c4 {
+      @media (min-width: $bp-md) {
+        flex-basis: 29%;
+        max-width: 327px;
+        padding: 0px 50px 0px 10px;
+      }
+    }
+
+    .info-pac {
+      @media (min-width: $bp-md) {
+        flex-basis: 28%;
+        max-width: 318px;
+        padding: 0px 0px 0px 10px;
+        margin-right: auto;
+      }
+    }
+
+    #divider {
+      width: 54%;
+      margin: 25px auto;
+    }
+
+    .divided-block {
+      @media (min-width: $bp-md) {
+        border-style: solid;
+        border-width: 0px 0px 0px 1px;
+        border-color: #FFFFFF;
+      }
+    }
+
+    h2 {
+      color: #FFFFFF;
+      font-family: "Roboto", Sans-serif !important;
+      font-size: 14px;
+      font-weight: 700;
+      margin: 0px;
+      text-align: center;
+
+      @media (min-width: $bp-md) {
+        text-align: left;
+      }
+    }
+
+    p {
+      padding: 13px 0px;
+      margin: 0px;
+      text-align: center;
+
+      @media (min-width: $bp-md) {
+        text-align: left;
+      }
+    }
+
+    .donate-button {
+      color: #FFFFFF;
+      text-align: center;
+      line-height: 1;
+      font-size: 13px;
+      font-weight: 700;
+
+      a {
+        display: flex;
+        justify-content: center;
+
+        @media (min-width: $bp-md) {
+          justify-content: flex-start;
+        }
+      }
+
+      &:hover a {
+        color: #00ABFF !important;
+      }
+
+      svg {
+        fill: #FFFFFF;
+        height: 13px;
+        vertical-align: text-top;
+      }
+
+      &:hover svg {
+        fill: #00ABFF;
+      }
+
+      .caret-icon {
+        padding-left: 23px;
+
+        svg {
+          width: 8px;
+          height: 12px;
+        }
+      }
+    }
+  }
+
+  #footer-disclaimer {
+    background-color: #262626;
+    
+    .footer-container {
+      padding: 20px;
+    }
+
+    p {
+      text-align: center;
+      border-style: solid;
+      border-width: 1px 1px 1px 1px;
+      border-color: rgba(255, 255, 255, 0.54);
+      margin-bottom: 0px;
+      padding: 18px 5px;
+
+      @media (min-width: $bp-md) {
+        padding: 13px 0px;
+      }
+    }
+
+  }
+}

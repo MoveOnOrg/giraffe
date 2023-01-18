@@ -386,3 +386,416 @@
     font-weight: 600;
   }
 }
+
+#main-header-2022 {
+  position: fixed;
+  top: 0;
+  height: auto;
+  max-height: 100vh;
+  overflow: auto;
+
+  @media (min-width: $bp-lgr) {
+    overflow: visible;
+  }
+
+  *:focus {
+    outline: 2px solid #006394;
+    outline-offset: -2px;
+  }
+
+  .nav-button {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: color .3s, background-color .3s;
+  }
+
+  .text-button {
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+  }
+
+  .btn-dark-blue {
+    background-color: #006394;
+  }
+
+  .btn-mid-blue {
+    background-color: #00ABFF;
+    color: #000000 !important;
+  }
+
+  .btn-light-blue {
+    background-color: #99DDFF;
+    color: #000000 !important;
+  }
+
+  .nav-button.btn-white {
+    background-color: #FFFFFF !important;
+    color: #006394 !important;
+  }
+
+  @media (hover: hover) {
+    .btn-hover-black:hover {
+      background-color: #000000;
+      color: #FFFFFF !important;
+
+      svg {
+        fill: #00ABFF !important;
+      }
+    }
+  }
+
+  .logo-2022 img {
+    vertical-align: bottom;
+    height: 51px;
+    margin: 10px 0px 4px 0px;
+
+    @media (min-width: $bp-lgr) {
+      height: auto;
+      margin: 0px;
+      width: 170px;
+    }
+  }
+
+  .nav-dropdown-title {
+    float: left;
+  }
+
+  .nav-caret {
+    float: right;
+  }
+
+  .upper-nav {
+    background-color: #00ABFF;
+    position: relative;
+    z-index: 200;
+
+    .nav-container {
+      max-width: 1140px !important;
+      margin: 0px;
+      color: #FFFFFF;
+      list-style: none;
+
+      &.short-text {
+        display: flex;
+        flex-direction: row;
+
+        @media (min-width: $bp-md) {
+          display: none;
+        }
+      }
+
+      &.full-text {
+        display: none;
+
+        @media (min-width: $bp-md) {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          margin-right: auto;
+          margin-left: auto;
+        }
+      }
+    }
+
+    li {
+      height: 38px !important;
+      width: 50%;
+
+      @media (min-width: $bp-md) {
+        height: 42px !important;
+        width: fit-content;
+      }
+    }
+
+    .nav-button {
+      &.text-button {
+        padding-left: 23px;
+        padding-right: 23px;
+        color: #FFFFFF;
+        font-size: 20px;
+
+        @media (min-width: $bp-md) {
+          font-size: 16px;
+        }
+      }
+
+      svg {
+        height: 17px;
+        width: 17px;
+        margin-left: 12px;
+        margin-right: 12px;
+        fill: #000000;
+      }
+    }
+  }
+  
+  .lower-nav {
+    background-color: #000000;
+    position: relative;
+    z-index: 100;
+    height: auto;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+
+    @media (min-width: $bp-lgr) {
+      max-height: 60px !important;
+    }
+
+    .nav-container {
+      margin-right: auto;
+      margin-left: auto;
+      color: #FFFFFF;
+      text-align: center;
+      display: block;
+
+      @media (min-width: $bp-lgr) {
+        display: flex;
+        max-width: 1140px !important;
+        flex-direction: row;
+        justify-content: flex-end;
+      }
+
+      .left-nav-container {
+        width: 100% !important;
+        display: block;
+
+        @media (min-width: $bp-lgr) {
+          width: 25% !important;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+        }
+      }
+
+      .right-nav-container {
+        min-height: 42px;
+        width: 100% !important;
+
+        @media (min-width: $bp-lgr) {
+          width: 75% !important;
+        }
+      }
+    }
+
+    .nav-button.btn-white:focus {
+      background-color: #00ABFF !important;
+      color: #000000 !important;
+    }
+
+    @media (hover: hover) {
+      .nav-button:hover {
+        color: #FFFFFF !important;
+        background-color: #757575 !important;
+
+        @media (min-width: $bp-lgr) {
+          background-color: #000000 !important;
+          color: #00ABFF !important;
+        }
+
+        &.btn-white {
+          background-color: #00ABFF !important;
+          color: #000000 !important;
+        }
+
+        .nav-caret svg {
+          fill: #FFFFFF;
+
+          @media (min-width: $bp-lgr) {
+            fill: #00ABFF;
+          }
+        }
+      }
+    }
+
+    .nav-button.text-button {
+      display: block;
+      height: 40px !important;
+      padding: 10px 45px;
+      font-size: 17px;
+      background-color: #FFFFFF;
+      color: #000000;
+
+      @media (min-width: $bp-lgr) {
+        display: flex;
+        height: 60px !important;
+        padding: 0px 20px;
+        font-size: 19px;
+        background-color: #000000;
+        color: #FFFFFF;
+      }
+    }
+
+    .nav-caret svg {
+      height: 14px;
+      width: 14px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      fill: #000000;
+      margin: 0px 0px 0px 7px;
+      transition: fill .3s;
+
+      @media (min-width: $bp-lgr) {
+        fill: #FFFFFF;
+      }
+    }
+  }
+
+  #nav-menu-open {
+    padding: 6px 0px 5px 0px;
+
+    svg {
+      width: 18px;
+      height: 22px;
+      vertical-align: sub;
+    }
+  }
+
+  #nav-menu-close {
+    padding: 7px 0px 3px 0px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      vertical-align: text-top;
+    }
+  }
+
+  .nav-menu-control {
+    display: block;
+    font-size: 18px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    width: fit-content;
+    margin: 0px auto;
+
+    @media (min-width: $bp-lgr) {
+      display: none;
+    }
+
+    svg {
+      fill: #FFFFFF;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: #00ABFF;
+      }
+
+      &:hover svg {
+        fill: #00ABFF;
+      }
+    }
+  }
+
+  #lower-nav-menu {
+    display: none;
+    list-style: none;
+    border-width: 4px 0px 8px 0px;
+    border-style: solid;
+    border-color: #00ABFF;
+    margin: 10px 0px 0px 0px;
+
+    @media (min-width: $bp-lgr) {
+      display: flex !important;
+      flex-direction: row;
+      justify-content: flex-end;
+      border: none;
+      margin: 0px;
+    }
+  }
+
+  .nav-submenu {
+    display: none;
+    list-style: none;
+    text-align: left;
+    background-color: #FFFFFF;
+    margin: 0px;
+    border-width: 4px 0px 8px 0px;
+    border-style: solid;
+    border-color: #00ABFF;
+
+    @media (min-width: $bp-lgr) {
+      position: absolute;
+      box-shadow: 0px 0px 23px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    li {
+      a {
+        display: block;
+        text-transform: uppercase;
+        font-family: 'Roboto Condensed', sans-serif !important;
+        color: #000000 !important;
+        font-weight: 700 !important;
+        font-size: 17px;
+        line-height: 20px;
+        padding: 10px 45px 10px 10px;
+        border-left: 8px solid transparent;
+
+        @media (min-width: $bp-lgr) {
+          padding: 13px 45px 13px 10px;
+        }
+
+        &:focus {
+          color: #FFFFFF !important;
+          background-color: #757575;
+        }
+
+        &.btn-black {
+          background-color: #000000 !important;
+          color: #FFFFFF !important;
+        }
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          a {
+            color: #FFFFFF !important;
+            background-color: #757575;
+
+            &.btn-black {
+              color: #00ABFF !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .nav-dropdown {
+    @media (hover: hover) {
+      &:hover {
+        .nav-dropdown-btn {
+          color: #FFFFFF !important;
+          background-color: #757575 !important;
+
+          @media (min-width: $bp-lgr) {
+            background-color: #000000 !important;
+            color: #00ABFF !important;
+          }
+        }
+      }
+    }
+
+    .nav-dropdown-btn.nav-dropdown-expanded {
+      background-color: #757575 !important;
+      color: #FFFFFF !important;
+
+      @media (min-width: $bp-lgr) {
+        background-color: #000000 !important;
+        color: #00ABFF !important;
+      }
+
+      .nav-caret svg {
+        fill: #FFFFFF;
+
+        @media (min-width: $bp-lgr) {
+          fill: #00ABFF;
+        }
+      }
+    }
+  }
+}

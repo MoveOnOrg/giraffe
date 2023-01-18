@@ -54,9 +54,15 @@
 
 // You can use either a '.giraffe>body' or a .giraffe#wrapper to add padding for the nav
 body, &#giraffe-wrapper {
-  @include respond((
-    padding-top: 57px null 120px,
-  ));
+  padding-top: 145px;
+
+  @media (min-width: $bp-md) {
+    padding-top: 149px;
+  }
+
+  @media (min-width: $bp-lgr) {
+    padding-top: 102px;
+  }
 }
 
 .styleguide-block__content .header {
