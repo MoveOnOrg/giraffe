@@ -43,4 +43,3 @@ Setting ENV=production in .env ensures that assets are minified in gulp tasks th
 ## External documentation
 
 [MoveOn's custom WordPress theme](https://github.com/MoveOnOrg/front-wordpress) implements giraffe and has [documentation on how to manually configure key content on a site running the theme](https://github.com/MoveOnOrg/front-wordpress/blob/main-giraffe/wp-content/themes/moveon2018/CONTENT-MANAGEMENT.md).
-
