@@ -13,6 +13,9 @@
 .bg-gray {
   background-color: $gray;
 }
+.bg-lighter-gray {
+  background-color: $lighter-gray;
+}
 .bg-light-gray {
   background-color: $light-gray;
 }
@@ -46,6 +49,12 @@
 .bg-light-blue {
   background-color: $light-blue;
 }
+.bg-lapis-blue {
+  background-color: $lapis-blue;
+}
+.bg-pale-blue {
+  background-color: $pale-blue;
+}
 .bg-red {
   background-color: $red;
 }
@@ -66,6 +75,9 @@
 }
 .gray {
   color: $gray;
+}
+.lighter-gray {
+  color: $lighter-gray;
 }
 .light-gray {
   color: $light-gray;
@@ -96,6 +108,12 @@
 }
 .light-blue {
   color: $light-blue;
+}
+.lapis-blue {
+  color: $lapis-blue;
+}
+.pale-blue {
+  color: $pale-blue;
 }
 .red {
   color: $red;

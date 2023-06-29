@@ -1,0 +1,33 @@
+.giraffe {
+  .cpa {
+
+    #unknown_user {
+      background-color: $lighter-gray;
+      padding:27px;
+      .input-block {
+      
+        label {
+          font-size: 15px;
+        }
+
+        input {
+          width: 100%;
+          border: 0px;
+          background-color: $white;
+        }
+    
+      }
+
+    }
+
+    form #survey-questions label {
+      font-size:25px;
+    }
+    button.btn {
+      background-color: $lapis-blue;
+      @include hover {
+        background-color: $lapis-blue;
+      }
+    }
+  }
+}
