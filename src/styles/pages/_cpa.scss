@@ -33,10 +33,13 @@
     }
     .modal-content {
       background-color: #fff;
-      margin: 20% auto 35% auto;
-      width: 50% !important;
+      margin: 200px auto auto auto;
+      width: 80% !important;
       padding-top: 40px;
       padding-bottom: 40px;
+      @media (min-width: $bp-md) {
+        width: 50% !important;
+      }
     }
     .modal-buttons {
       display: flex;
@@ -54,12 +57,16 @@
       font-size: 18px;
       font-family: Roboto Condensed, sans-serif;
       font-weight: 700;
-      width: 30%;
+      width: 90%;
       margin-top: 10px;
       margin-bottom: 10px;
       padding: 10px;
       text-transform: unset;
-    }
+      transition: width 0s;
+      @media (min-width: $bp-md) {
+        width: 30%;
+      }
+      }
     #modal-confirm {
       margin-left:auto;
     }
