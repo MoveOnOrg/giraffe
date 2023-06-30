@@ -1,6 +1,5 @@
 .giraffe {
   .cpa {
-
     #unknown_user {
       background-color: $lighter-gray;
       padding:27px;
@@ -84,6 +83,14 @@
       @include hover {
         background-color: $lapis-blue;
       }
+    }
+  }
+}
+.giraffe .pagename-manage-opt-out-preferences .cpa {
+  #unknown_user {
+    background-color: unset;
+    h2 {
+      display:none;
     }
   }
 }
