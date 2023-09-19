@@ -114,6 +114,18 @@
 
         background-color: $red;
 
+        a,
+        a:visited,
+        a:active {
+          color: $black;
+          text-decoration: underline;
+          font-weight: bold;
+        }
+
+        a:hover {
+          color: $white;
+        }
+
         .home-hero__heading {
 
             span {
