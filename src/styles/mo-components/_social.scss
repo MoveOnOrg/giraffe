@@ -93,6 +93,7 @@
     color: #000000;
     cursor: pointer;
     padding: 13px 19px;
+    transition-duration: 0s;
   }
   
 }
@@ -123,6 +124,7 @@
 .share-item-url:hover {
   background-color: #717171;
   color: #FFF;
+  transition-duration: 0s;
 }
 .share-block{
  .share-btn-icon { display: flex; transition: all .3s; }
