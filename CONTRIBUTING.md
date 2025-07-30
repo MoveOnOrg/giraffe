@@ -1,24 +1,20 @@
 # Contributing
 
-## Development Requirements
-- Node v7.10.1 and above
-- NPM
-- Gulp, installed globally
-
-
 ## Local Setup
 
 - Clone this repository.
-- Install node dependencies: `npm install`
+- [Install nvm if you haven't previously used it](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Install/set NodeJS version: `nvm install`
+- Install node dependencies: `npm ci`
 - Edit .env to set `ENV=LOCAL`
-- Run `gulp watch` to boot up local development server and build tools. Normally this would boot up `localhost:3000`, or whichever port is available.
+- Run `npm run watch` to boot up local development server and build tools. Normally this would boot up `localhost:3000`, or whichever port is available.
 - Get some coffee. Shake up. Start coding :).
 
 ## Build
 
-Run `gulp` to compile all the source files into the `public` folder.
+Run `npm run compile` to compile all the source files into the `public` folder.
 
-Run `yarn zip` to create a compressed zip file. This is saved as `moveon.zip` in the `public` folder.
+Run `npm run zip` to create a compressed zip file. This is saved as `moveon.zip` in the `public` folder.
 
 
 ## Files and Directories
@@ -30,7 +26,7 @@ The local server files are located inside the `public` folder.
 
 ### Templates
 
-Templates are **twig** files compiled into html through `gulp pages`. They are located in `src/templates`.  
+Templates are **twig** files compiled into html through `npx gulp pages`. They are located in `src/templates`.  
 
 For Twig templating guides, please refer to their [site](https://twig.symfony.com/doc/2.x/templates.html).
 
