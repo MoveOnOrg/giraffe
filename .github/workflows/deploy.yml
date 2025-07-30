@@ -27,7 +27,7 @@ jobs:
         run: npm ci
           
       - name: Build
-        run: gulp
+        run: npm run compile
         
       - name: Prepare deployment files
         run: |

@@ -16,7 +16,8 @@ jobs:
         node-version: '10'
         cache: 'npm'
 
+    - name: Install dependencies
+      run: npm ci
+          
     - name: Build
-      run: |
-        npm ci
-        gulp
+      run: npm run compile
