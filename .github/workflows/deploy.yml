@@ -2,7 +2,7 @@ name: Deploy to S3
 
 on:
   push:
-    branches: [remove-travis-test]
+    branches: [main]
 
 jobs:
   deploy:
@@ -45,11 +45,11 @@ jobs:
           aws-region: us-east-2
       - name: Deploy to S3 (giraffe)
         run: |
-          aws s3 sync deploy/ s3://static.moveon.org/test \
+          aws s3 sync deploy/ s3://static.moveon.org/giraffe \
             --acl public-read \
             --cache-control "max-age=31536000"
             
       - name: Deploy to S3 (giraffe-staging)
         run: |
-          aws s3 sync deploy/ s3://static.moveon.org/test-staging \
+          aws s3 sync deploy/ s3://static.moveon.org/giraffe-staging \
             --acl public-read
