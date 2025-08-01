@@ -20,9 +20,9 @@ For development please read **CONTRIBUTING.md**.
 
 Deploy CSS, JS, images and fonts to AWS S3 (for MoveOn devs)
 
-Updating `main` branch and pushing to github with ENV=production (in .env) triggers AWS S3 autodeploy via Travis. Minified assets are copied from public/fonts, public/images, public/scripts and public/styles into the `deploy` directory and then pushed to https://static.moveon.org/giraffe/. See `.travis.yml` for details.
+Merging a PR into the remote GitHub repo's `main` branch with ENV=production (in `.env`) triggers AWS S3 auto-deploy via a GitHub Workflow. Minified assets are copied from public/fonts, public/images, public/scripts and public/styles into the `deploy` directory and then pushed to https://static.moveon.org/giraffe/. See `.github/workflows/deploy.yml` for details.
 
-To generate a new encrypted secret_access_key, install the travis command line tool https://github.com/travis-ci/travis.rb#installation and then run the `travis encrypt` command in https://docs.travis-ci.com/user/deployment/s3/ using the credentials for an aws user with write access to the proper s3 bucket. Be sure to lint your updated config with `travis lint .travis.yml`!
+Secrets used in workflows are stored in [the GitHub repo's repository secrets](https://github.com/MoveOnOrg/giraffe/settings/secrets/actions).
 
 ### Uglify and minify assets
 

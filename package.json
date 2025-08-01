@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "compile": "gulp",
+    "watch": "gulp watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "zip": "cd public; rm -f moveon.zip && zip -r moveon.zip *"
   },

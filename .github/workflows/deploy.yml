@@ -1,0 +1,55 @@
+name: Deploy to S3
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '10'
+          cache: 'npm'
+        
+      - name: Setup Python (for node-gyp)
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10' 
+          
+      - name: Install dependencies
+        run: npm ci
+          
+      - name: Build
+        run: npm run compile
+        
+      - name: Prepare deployment files
+        run: |
+          cp -r public/images deploy/
+          cp -r public/scripts deploy/
+          cp -r public/styles deploy/
+          cp -r public/styleguide deploy/
+          cp public/*.html deploy/
+          
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-2
+      - name: Deploy to S3 (giraffe)
+        run: |
+          aws s3 sync deploy/ s3://static.moveon.org/giraffe \
+            --acl public-read \
+            --cache-control "max-age=31536000"
+            
+      - name: Deploy to S3 (giraffe-staging)
+        run: |
+          aws s3 sync deploy/ s3://static.moveon.org/giraffe-staging \
+            --acl public-read
